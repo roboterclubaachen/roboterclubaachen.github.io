@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Roboterclub Aachen</title>
+        <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+        <link>http://roboterclub.github.io/</link>
+        <description></description>
+        <pubDate>Tue, 05 Jun 2018 23:58:06 +0200</pubDate>
+        
+        <item>
+            <title>µMotor</title>
+            <link>/blog/2018/umotor-treiber</link>
+            <guid isPermaLink="true">/blog/2018/umotor-treiber</guid>
+            <description>&lt;p&gt;Wir testen für die Saison 2019 schonmal einen neuen, intelligenten Motortreiber.
+Er ist uns beim Waschen leider etwas eingegangen. Funktioniert aber trotzdem noch.&lt;/p&gt;
+
+&lt;div class=&quot;jekyll-twitter-plugin&quot;&gt;&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;The first prototype of our next-generation motor controller &amp;#39;µMotor&amp;#39; is assembled and basically functional (LED is blinking!!).&lt;br /&gt;One-cent coin for scale. &lt;a href=&quot;https://t.co/db2JuhzwpL&quot;&gt;pic.twitter.com/db2JuhzwpL&lt;/a&gt;&lt;/p&gt;&amp;mdash; RoboterClub Aachen (@RCA_eV) &lt;a href=&quot;https://twitter.com/RCA_eV/status/992582078163189761?ref_src=twsrc%5Etfw&quot;&gt;May 5, 2018&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;jekyll-twitter-plugin&quot;&gt;&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Photo of the back side of the board. &lt;a href=&quot;https://t.co/ml8lta2A0r&quot;&gt;pic.twitter.com/ml8lta2A0r&lt;/a&gt;&lt;/p&gt;&amp;mdash; RoboterClub Aachen (@RCA_eV) &lt;a href=&quot;https://twitter.com/RCA_eV/status/992882982213115904?ref_src=twsrc%5Etfw&quot;&gt;May 5, 2018&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;jekyll-twitter-plugin&quot;&gt;&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Bonus: 3D-printed SWD programmer adapter &lt;a href=&quot;https://t.co/cxr7r0s5Mf&quot;&gt;pic.twitter.com/cxr7r0s5Mf&lt;/a&gt;&lt;/p&gt;&amp;mdash; RoboterClub Aachen (@RCA_eV) &lt;a href=&quot;https://twitter.com/RCA_eV/status/992884250394406912?ref_src=twsrc%5Etfw&quot;&gt;May 5, 2018&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+&lt;/div&gt;
+</description>
+            <pubDate>Sat, 05 May 2018 00:00:00 +0200</pubDate>
+        </item>
+        
+        <item>
+            <title>Saisonstart 2018</title>
+            <link>/blog/2017/saisonstart-2018</link>
+            <guid isPermaLink="true">/blog/2017/saisonstart-2018</guid>
+            <description>&lt;p&gt;Die Entwicklungsphase für die Saison 2018 ist gestartet.
+Dieses Jahr steht der Eurobot unter dem Motto “Robot Cities”.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/robo_antrieb.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Wir haben schonmal einen neuen Allradantrieb konstruiert, hilf uns mit ihn zu bauen.&lt;/p&gt;
+</description>
+            <pubDate>Mon, 23 Oct 2017 00:00:00 +0200</pubDate>
+        </item>
+        
+    </channel>
+</rss>

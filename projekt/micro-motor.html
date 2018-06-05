@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer=true src="/assets/js/main.min.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/img/rca.svg">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="http://roboterclub.github.io/projekt/micro-motor">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="Roboterclub Aachen" href="http://roboterclub.github.io///feed.xml"/>
+
+    <!-- Font Awesome -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/vendor/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    
+
+    <!-- KaTeX 0.8.3 -->
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/vendor/katex.min.css">
+    <script src="/assets/js/vendor/katex.min.js">
+    </script>
+    
+
+    <!-- Google Analytics -->
+    
+    
+    <!-- seo tags -->
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Micro-Motor | Roboterclub Aachen</title>
+<meta name="generator" content="Jekyll v3.8.2" />
+<meta property="og:title" content="Micro-Motor" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Zusammenfassung" />
+<meta property="og:description" content="Zusammenfassung" />
+<link rel="canonical" href="http://roboterclub.github.io/projekt/micro-motor" />
+<meta property="og:url" content="http://roboterclub.github.io/projekt/micro-motor" />
+<meta property="og:site_name" content="Roboterclub Aachen" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-06-05T23:58:06+02:00" />
+<script type="application/ld+json">
+{"headline":"Micro-Motor","dateModified":"2018-06-05T23:58:06+02:00","url":"http://roboterclub.github.io/projekt/micro-motor","datePublished":"2018-06-05T23:58:06+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://roboterclub.github.io/projekt/micro-motor"},"description":"Zusammenfassung","@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- Manual seo tags -->
+    <!--
+    <title>Micro-Motor | Roboterclub Aachen</title>
+    <meta name="description" content="Zusammenfassung">
+    -->
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+		<a href="/">
+			<img class="avatar" src="/assets/img/rca.svg" alt=""/>
+		</a>
+
+		<h1 class="site-title">
+			<a href="/">Roboterclub Aachen</a>
+		</h1>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a id="pull" class="toggle" href="#">
+    <i class="fa fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        <!-- Auto Generation of pages in the navbar -->
+        
+        <li class="separator">|</li>
+        <li>
+            <a class="clear" href="/mach-mit">
+            
+                Mach Mit!
+            
+            </a>
+        </li>
+        
+        <li class="separator">|</li>
+        <li>
+            <a class="clear" href="/blog">
+            
+                Blog
+            
+            </a>
+        </li>
+        
+        <li class="separator">|</li>
+        <li>
+            <a class="clear" href="/kontakt">
+            
+                Kontakt
+            
+            </a>
+        </li>
+        
+        <li class="separator">|</li>
+        <li>
+            <a class="clear" href="/search">
+            
+                <i class="fa fa-search" aria-hidden="true"></i>
+            
+            </a>
+        </li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article class="feature-image">
+  <header id="main" style="background-image: url('/assets/img/projektbeschreibungen/micro-motor.jpg');background-position: center;">
+    <h1 id="Micro-Motor" class="title">Micro-Motor</h1>
+  </header>
+  <section class="post-content">
+<p>Micro-Motor ist eine Platine zum Anschluss an CAN-Bus welche einen Motor ansteuern kann.</p>
+
+<h2 id="zusammenfassung">Zusammenfassung</h2>
+
+<p>In den Aktoren verbaute Motoren müssen angesteuert werden, dazu verfolgt der Micro-Motor das Konzept von verteilten Ansteuerungen.</p>
+
+<p>An jedem Motor wird unmittelbar eine kompakte Micro-Motor Platine montiert, welche gleichzeitig auch einen Magnetencoder [1] optional beinhaltet.
+Diese Platine wird über einen einzigen Stecker mit Strom und CAN-Bus versorgt und kann eigenständig den Motor ansteuern.
+Zusätzlich kann ein Endschalter ausgelesen werden und die Temperatur des Motors überwacht werden.</p>
+
+<p>Auf dem Microcontroller sollen frei konfigurierbare Pid-Regler und ggf. auch “Motor-mit-Endschalter”-Komponenten, welche den Aktor parametrierbar initialisieren und verfahren können, das Interface nach außen bilden.</p>
+
+<h3 id="technische-daten-geplant">Technische Daten (geplant)</h3>
+<ul>
+  <li>3 Phasen (DC und BLDC Motoren)</li>
+  <li>ca. 10A pro Phase</li>
+  <li>20V Betriebsspannung (Akku) -&gt; 40V oder 60V Auslegung</li>
+  <li>Anschluss für AB-Encoder</li>
+  <li>optional Magnetencoder [1] auf dem PCB</li>
+  <li>Anschluss für Hall-Sensor</li>
+  <li>Temperatursensor (kontaktlos auf dem PCB verlötet oder I²C)</li>
+  <li>Strommessung</li>
+  <li>LEDs für Software-Status &amp; Encoderstatus</li>
+  <li>Konfigurierbare ID (ggf. STM32-Hardware-ID)</li>
+  <li>Einfach lötbar und aufbaubar</li>
+  <li>Abmessungen: Rund, Grund-Ø 20mm (Namiki-Motoren: Ø 22mm)</li>
+</ul>
+
+<h2 id="tätigkeitsfelder-und-technologien">Tätigkeitsfelder und Technologien</h2>
+<ul>
+  <li>PCB Design 4-Layer (mit KiCAD)
+    <ul>
+      <li>EMV-gerechtes Design</li>
+    </ul>
+  </li>
+  <li>STM32-Peripherie: Timer, Adc, Dac, Komparator</li>
+  <li>Recherche und Auslegung Leistungs-MOSFETs und MOSFET-Treiber</li>
+  <li>Software Low-Level Hardware-Ansteuerung</li>
+  <li>Software Hardabstraktion</li>
+  <li>Reflow-Löten</li>
+</ul>
+
+  </section>
+
+  <!-- Social media shares -->
+  <div class="share-buttons">
+    <ul class="share-buttons">
+        <div class="meta">Teilen</div>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?source=http://roboterclub.github.io/projekt/micro-motor&text=Micro-Motor%20%7C%20Roboterclub Aachen:%20http://roboterclub.github.io/projekt/micro-motor" target="_blank" title="Twittern">
+			<i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
+			<span class="sr-only">Twittern</span>
+		</a>
+        </li>
+                
+        <li>
+            <a href="mailto:?subject=Micro-Motor%20%7C%20Roboterclub Aachen&body=:%20http://roboterclub.github.io/projekt/micro-motor" target="_blank" title="Email">
+			<i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i>
+			<span class="sr-only">Email</span>
+		</a>
+        </li>
+        
+    </ul>
+</div>
+
+   <!-- Tag list -->
+  
+  
+
+
+<footer>
+  <div class="tag-list">
+    
+      <div class="meta">Tags</div>
+    
+
+    
+    <a class="button" href="/tags#elektronik">
+      <p><i class="fa fa-tag fa-fw"></i> elektronik</p>
+    </a>
+    
+    <a class="button" href="/tags#pcb">
+      <p><i class="fa fa-tag fa-fw"></i> pcb</p>
+    </a>
+    
+  </div>
+</footer>
+
+
+</article>
+
+    </div>
+    
+<footer class="site-footer">
+    <p class="text"><a href="/impressum">Impressum</a></p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+	<a href="http://roboterclub.github.io/feed.xml" title="Folge dem RSS Feed">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/RoboterClubAachen" title="Folge uns GitHub">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/RCA_eV" title="Folge uns Twitter" class="type">
+        <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+
+  </body>
+</html>

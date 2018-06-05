@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer=true src="/assets/js/main.min.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/img/rca.svg">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="http://roboterclub.github.io/blog/2018/umotor-treiber">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="Roboterclub Aachen" href="http://roboterclub.github.io///feed.xml"/>
+
+    <!-- Font Awesome -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/vendor/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    
+
+    <!-- KaTeX 0.8.3 -->
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/vendor/katex.min.css">
+    <script src="/assets/js/vendor/katex.min.js">
+    </script>
+    
+
+    <!-- Google Analytics -->
+    
+    
+    <!-- seo tags -->
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>µMotor | Roboterclub Aachen</title>
+<meta name="generator" content="Jekyll v3.8.2" />
+<meta property="og:title" content="µMotor" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Wir testen für die Saison 2019 schonmal einen neuen, intelligenten Motortreiber. Er ist uns beim Waschen leider etwas eingegangen. Funktioniert aber trotzdem noch." />
+<meta property="og:description" content="Wir testen für die Saison 2019 schonmal einen neuen, intelligenten Motortreiber. Er ist uns beim Waschen leider etwas eingegangen. Funktioniert aber trotzdem noch." />
+<link rel="canonical" href="http://roboterclub.github.io/blog/2018/umotor-treiber" />
+<meta property="og:url" content="http://roboterclub.github.io/blog/2018/umotor-treiber" />
+<meta property="og:site_name" content="Roboterclub Aachen" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-05-05T00:00:00+02:00" />
+<script type="application/ld+json">
+{"headline":"µMotor","dateModified":"2018-05-05T00:00:00+02:00","url":"http://roboterclub.github.io/blog/2018/umotor-treiber","datePublished":"2018-05-05T00:00:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://roboterclub.github.io/blog/2018/umotor-treiber"},"description":"Wir testen für die Saison 2019 schonmal einen neuen, intelligenten Motortreiber. Er ist uns beim Waschen leider etwas eingegangen. Funktioniert aber trotzdem noch.","@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- Manual seo tags -->
+    <!--
+    <title>µMotor | Roboterclub Aachen</title>
+    <meta name="description" content="Wir testen für die Saison 2019 schonmal einen neuen, intelligenten Motortreiber.Er ist uns beim Waschen leider etwas eingegangen. Funktioniert aber trotzdem ...">
+    -->
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+		<a href="/">
+			<img class="avatar" src="/assets/img/rca.svg" alt=""/>
+		</a>
+
+		<h1 class="site-title">
+			<a href="/">Roboterclub Aachen</a>
+		</h1>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a id="pull" class="toggle" href="#">
+    <i class="fa fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        <!-- Auto Generation of pages in the navbar -->
+        
+        <li class="separator">|</li>
+        <li>
+            <a class="clear" href="/mach-mit">
+            
+                Mach Mit!
+            
+            </a>
+        </li>
+        
+        <li class="separator">|</li>
+        <li>
+            <a class="clear" href="/blog">
+            
+                Blog
+            
+            </a>
+        </li>
+        
+        <li class="separator">|</li>
+        <li>
+            <a class="clear" href="/kontakt">
+            
+                Kontakt
+            
+            </a>
+        </li>
+        
+        <li class="separator">|</li>
+        <li>
+            <a class="clear" href="/search">
+            
+                <i class="fa fa-search" aria-hidden="true"></i>
+            
+            </a>
+        </li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article class="feature-image">
+  <header id="main" style="background-image: url('/assets/img/blog/umotor-pcb.jpg');background-position: center;">
+    <h1 id="%C2%B5Motor" class="title">µMotor</h1>
+    <p class="meta">
+    May 5, 2018
+    
+    </p>
+  </header>
+  <section class="post-content"><p>Wir testen für die Saison 2019 schonmal einen neuen, intelligenten Motortreiber.
+Er ist uns beim Waschen leider etwas eingegangen. Funktioniert aber trotzdem noch.</p>
+
+<div class="jekyll-twitter-plugin"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">The first prototype of our next-generation motor controller &#39;µMotor&#39; is assembled and basically functional (LED is blinking!!).<br />One-cent coin for scale. <a href="https://t.co/db2JuhzwpL">pic.twitter.com/db2JuhzwpL</a></p>&mdash; RoboterClub Aachen (@RCA_eV) <a href="https://twitter.com/RCA_eV/status/992582078163189761?ref_src=twsrc%5Etfw">May 5, 2018</a></blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+
+<div class="jekyll-twitter-plugin"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">Photo of the back side of the board. <a href="https://t.co/ml8lta2A0r">pic.twitter.com/ml8lta2A0r</a></p>&mdash; RoboterClub Aachen (@RCA_eV) <a href="https://twitter.com/RCA_eV/status/992882982213115904?ref_src=twsrc%5Etfw">May 5, 2018</a></blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+
+<div class="jekyll-twitter-plugin"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">Bonus: 3D-printed SWD programmer adapter <a href="https://t.co/cxr7r0s5Mf">pic.twitter.com/cxr7r0s5Mf</a></p>&mdash; RoboterClub Aachen (@RCA_eV) <a href="https://twitter.com/RCA_eV/status/992884250394406912?ref_src=twsrc%5Etfw">May 5, 2018</a></blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+</section>
+
+  <!-- Social media shares -->
+  <div class="share-buttons">
+    <ul class="share-buttons">
+        <div class="meta">Teilen</div>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?source=http://roboterclub.github.io/blog/2018/umotor-treiber&text=µMotor%20%7C%20Roboterclub Aachen:%20http://roboterclub.github.io/blog/2018/umotor-treiber" target="_blank" title="Twittern">
+			<i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
+			<span class="sr-only">Twittern</span>
+		</a>
+        </li>
+                
+        <li>
+            <a href="mailto:?subject=µMotor%20%7C%20Roboterclub Aachen&body=:%20http://roboterclub.github.io/blog/2018/umotor-treiber" target="_blank" title="Email">
+			<i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i>
+			<span class="sr-only">Email</span>
+		</a>
+        </li>
+        
+    </ul>
+</div>
+
+   <!-- Tag list -->
+  
+  
+
+
+<footer>
+  <div class="tag-list">
+    
+      <div class="meta">Tags</div>
+    
+
+    
+    <a class="button" href="/tags#elektronik">
+      <p><i class="fa fa-tag fa-fw"></i> elektronik</p>
+    </a>
+    
+    <a class="button" href="/tags#informatik">
+      <p><i class="fa fa-tag fa-fw"></i> informatik</p>
+    </a>
+    
+    <a class="button" href="/tags#saison19">
+      <p><i class="fa fa-tag fa-fw"></i> saison19</p>
+    </a>
+    
+  </div>
+</footer>
+
+
+</article>
+
+    </div>
+    
+<footer class="site-footer">
+    <p class="text"><a href="/impressum">Impressum</a></p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+	<a href="http://roboterclub.github.io/feed.xml" title="Folge dem RSS Feed">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/RoboterClubAachen" title="Folge uns GitHub">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/RCA_eV" title="Folge uns Twitter" class="type">
+        <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+
+  </body>
+</html>

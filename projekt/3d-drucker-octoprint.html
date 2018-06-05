@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer=true src="/assets/js/main.min.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/img/rca.svg">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="http://roboterclub.github.io/projekt/3d-drucker-octoprint">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="Roboterclub Aachen" href="http://roboterclub.github.io///feed.xml"/>
+
+    <!-- Font Awesome -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/vendor/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    
+
+    <!-- KaTeX 0.8.3 -->
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/vendor/katex.min.css">
+    <script src="/assets/js/vendor/katex.min.js">
+    </script>
+    
+
+    <!-- Google Analytics -->
+    
+    
+    <!-- seo tags -->
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>3D-Drucker Octoprint | Roboterclub Aachen</title>
+<meta name="generator" content="Jekyll v3.8.2" />
+<meta property="og:title" content="3D-Drucker Octoprint" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Zusammenfassung" />
+<meta property="og:description" content="Zusammenfassung" />
+<link rel="canonical" href="http://roboterclub.github.io/projekt/3d-drucker-octoprint" />
+<meta property="og:url" content="http://roboterclub.github.io/projekt/3d-drucker-octoprint" />
+<meta property="og:site_name" content="Roboterclub Aachen" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-06-05T23:58:06+02:00" />
+<script type="application/ld+json">
+{"headline":"3D-Drucker Octoprint","dateModified":"2018-06-05T23:58:06+02:00","url":"http://roboterclub.github.io/projekt/3d-drucker-octoprint","datePublished":"2018-06-05T23:58:06+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://roboterclub.github.io/projekt/3d-drucker-octoprint"},"description":"Zusammenfassung","@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- Manual seo tags -->
+    <!--
+    <title>3D-Drucker Octoprint | Roboterclub Aachen</title>
+    <meta name="description" content="Zusammenfassung">
+    -->
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+		<a href="/">
+			<img class="avatar" src="/assets/img/rca.svg" alt=""/>
+		</a>
+
+		<h1 class="site-title">
+			<a href="/">Roboterclub Aachen</a>
+		</h1>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a id="pull" class="toggle" href="#">
+    <i class="fa fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        <!-- Auto Generation of pages in the navbar -->
+        
+        <li class="separator">|</li>
+        <li>
+            <a class="clear" href="/mach-mit">
+            
+                Mach Mit!
+            
+            </a>
+        </li>
+        
+        <li class="separator">|</li>
+        <li>
+            <a class="clear" href="/blog">
+            
+                Blog
+            
+            </a>
+        </li>
+        
+        <li class="separator">|</li>
+        <li>
+            <a class="clear" href="/kontakt">
+            
+                Kontakt
+            
+            </a>
+        </li>
+        
+        <li class="separator">|</li>
+        <li>
+            <a class="clear" href="/search">
+            
+                <i class="fa fa-search" aria-hidden="true"></i>
+            
+            </a>
+        </li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article class="feature-image">
+  <header id="main" style="background-image: url('/assets/img/projektbeschreibungen/octoprint.jpg');background-position: center;">
+    <h1 id="3D-Drucker+Octoprint" class="title">3D-Drucker Octoprint</h1>
+  </header>
+  <section class="post-content">
+<p>Einrichten und konfigurieren der Software Octoprint zum Betrieb des 3D-Druckers.</p>
+
+<h2 id="zusammenfassung">Zusammenfassung</h2>
+
+<p>Der 3D-Drucker soll an einen Raspberry angeschlossen werden, welcher mit der Software Octoprint [1] als Server fungiert und darüber den 3D-Drucker steuern kann.</p>
+
+<p>Primär soll das Drucken von den CAD-Workstations mit wenigen Klicks zu starten sein, ebenfalls ist es wünschenswert von jedem beliebigen PC oder Laptop Druckaufträge zu erteilen und zu überwachen.</p>
+
+<p>Weitere optional umsetzbare Features sind ein Touch-Display direkt am Drucker, eine Kamera-Überwachung im Druckergehäuse sowie eine gut sichtbare LED-Statusanzeige am Drucker.</p>
+
+<h2 id="tätigkeitsfelder-und-technologien">Tätigkeitsfelder und Technologien</h2>
+<ul>
+  <li>Raspberry Pi</li>
+  <li>Linux</li>
+  <li>3D-Druck</li>
+</ul>
+
+  </section>
+
+  <!-- Social media shares -->
+  <div class="share-buttons">
+    <ul class="share-buttons">
+        <div class="meta">Teilen</div>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?source=http://roboterclub.github.io/projekt/3d-drucker-octoprint&text=3D-Drucker Octoprint%20%7C%20Roboterclub Aachen:%20http://roboterclub.github.io/projekt/3d-drucker-octoprint" target="_blank" title="Twittern">
+			<i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
+			<span class="sr-only">Twittern</span>
+		</a>
+        </li>
+                
+        <li>
+            <a href="mailto:?subject=3D-Drucker Octoprint%20%7C%20Roboterclub Aachen&body=:%20http://roboterclub.github.io/projekt/3d-drucker-octoprint" target="_blank" title="Email">
+			<i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i>
+			<span class="sr-only">Email</span>
+		</a>
+        </li>
+        
+    </ul>
+</div>
+
+   <!-- Tag list -->
+  
+  
+
+
+<footer>
+  <div class="tag-list">
+    
+      <div class="meta">Tags</div>
+    
+
+    
+    <a class="button" href="/tags#3d-druck">
+      <p><i class="fa fa-tag fa-fw"></i> 3d-druck</p>
+    </a>
+    
+    <a class="button" href="/tags#software">
+      <p><i class="fa fa-tag fa-fw"></i> software</p>
+    </a>
+    
+  </div>
+</footer>
+
+
+</article>
+
+    </div>
+    
+<footer class="site-footer">
+    <p class="text"><a href="/impressum">Impressum</a></p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+	<a href="http://roboterclub.github.io/feed.xml" title="Folge dem RSS Feed">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/RoboterClubAachen" title="Folge uns GitHub">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/RCA_eV" title="Folge uns Twitter" class="type">
+        <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+
+  </body>
+</html>

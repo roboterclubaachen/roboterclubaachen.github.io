@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer=true src="/assets/js/main.min.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/img/rca.svg">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="http://roboterclub.github.io/projekt/laserscanner-positioning">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="Roboterclub Aachen" href="http://roboterclub.github.io///feed.xml"/>
+
+    <!-- Font Awesome -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/vendor/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    
+
+    <!-- KaTeX 0.8.3 -->
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/vendor/katex.min.css">
+    <script src="/assets/js/vendor/katex.min.js">
+    </script>
+    
+
+    <!-- Google Analytics -->
+    
+    
+    <!-- seo tags -->
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Laserscanner-Positionierung | Roboterclub Aachen</title>
+<meta name="generator" content="Jekyll v3.8.2" />
+<meta property="og:title" content="Laserscanner-Positionierung" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Zusammenfassung" />
+<meta property="og:description" content="Zusammenfassung" />
+<link rel="canonical" href="http://roboterclub.github.io/projekt/laserscanner-positioning" />
+<meta property="og:url" content="http://roboterclub.github.io/projekt/laserscanner-positioning" />
+<meta property="og:site_name" content="Roboterclub Aachen" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-06-05T23:58:06+02:00" />
+<script type="application/ld+json">
+{"headline":"Laserscanner-Positionierung","dateModified":"2018-06-05T23:58:06+02:00","url":"http://roboterclub.github.io/projekt/laserscanner-positioning","datePublished":"2018-06-05T23:58:06+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://roboterclub.github.io/projekt/laserscanner-positioning"},"description":"Zusammenfassung","@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- Manual seo tags -->
+    <!--
+    <title>Laserscanner-Positionierung | Roboterclub Aachen</title>
+    <meta name="description" content="Zusammenfassung">
+    -->
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+		<a href="/">
+			<img class="avatar" src="/assets/img/rca.svg" alt=""/>
+		</a>
+
+		<h1 class="site-title">
+			<a href="/">Roboterclub Aachen</a>
+		</h1>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a id="pull" class="toggle" href="#">
+    <i class="fa fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        <!-- Auto Generation of pages in the navbar -->
+        
+        <li class="separator">|</li>
+        <li>
+            <a class="clear" href="/mach-mit">
+            
+                Mach Mit!
+            
+            </a>
+        </li>
+        
+        <li class="separator">|</li>
+        <li>
+            <a class="clear" href="/blog">
+            
+                Blog
+            
+            </a>
+        </li>
+        
+        <li class="separator">|</li>
+        <li>
+            <a class="clear" href="/kontakt">
+            
+                Kontakt
+            
+            </a>
+        </li>
+        
+        <li class="separator">|</li>
+        <li>
+            <a class="clear" href="/search">
+            
+                <i class="fa fa-search" aria-hidden="true"></i>
+            
+            </a>
+        </li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article class="feature-image">
+  <header id="main" style="background-image: url('/assets/img/projektbeschreibungen/micro-motor.jpg');background-position: center;">
+    <h1 id="Laserscanner-Positionierung" class="title">Laserscanner-Positionierung</h1>
+  </header>
+  <section class="post-content">
+<p>Entwicklung einer Software-Komponente zur Bestimmung der Roboterposition mit einem SICK-Laserscanner.</p>
+
+<h2 id="zusammenfassung">Zusammenfassung</h2>
+
+<p>Wir besitzen einen SICK TIM 551 Laserscanner, der mittels eines Infrarotlasers radial Distanzen misst. In der richtigen
+Höhe in einen unserer Roboter eingebaut, wäre es damit prinzipiell möglich, die Roboterposition anhand der
+beobachteten Entfernungen zum Spielfeldrand zu berechnen. Probleme machen dabei jedoch die Ausreißer durch im Lichtweg
+befindliche Spielelemente, das Messrauschen, die zeitliche Latenz der Verarbeitung und die Verzerrung der Messungen bei
+Bewegung des Roboters.</p>
+
+<p>Daher soll eine Software-Komponente entwickelt und in die Robotersoftware integriert werden, die die per Ethernet/UDP
+ausgegebenen Daten des Laserscanners verarbeitet, daraus seine Position und Ausrichtung auf dem Spielfeld schätzt und
+diese an die Robotersoftware übermittelt. Dort soll eine weitere Komponente die Positionsdaten entgegennehmen und unter
+bestimmten Voraussetzungen und Ausgleich der Zeitverzögerung die bekannte Roboterposition und -ausrichtung damit
+korrigieren.</p>
+
+<p>Da für den Laserscanner bereits ein Treiber im Software-Framework ROS existiert, bietet es sich an, die Software zur
+Positionsberechnung ebenfalls in ROS zu entwickeln und die Daten anschließend über das XPCC-Protokoll an den
+Microcontroller des Roboters zu senden.</p>
+
+<h3 id="geplante-features">Geplante Features:</h3>
+<ul>
+  <li>Filterung der Messwerte (Tiefpass?)</li>
+  <li>Ausreißer-Elimination (z.B. RANSAC-Verfahren)</li>
+  <li>Überwachung der Roboterbewegung; Korrektur nur bei stehendem Roboter oder Entzerrung der Messung</li>
+  <li>Plausibilitätsprüfung der Positionen/Ausrichtungen vor Korrektur</li>
+  <li>Visualisierung der berechneten Daten zur Validierung des Verfahrens</li>
+  <li>Entwicklung als ROS-Node; zusätzliche Nodes zur Kommunikation mit dem Roboter</li>
+</ul>
+
+<h2 id="tätigkeitsfelder-und-technologien">Tätigkeitsfelder und Technologien</h2>
+<ul>
+  <li>Herleitung von Geometrische Berechnungen und Algorithmen</li>
+  <li>Entwicklung von Algorithmen zur Signalverarbeitung (Filterung, Ausreißeranalyse)</li>
+  <li>Software-Entwicklung für ROS in Python und/oder C++</li>
+  <li>Software für Microcontroller in C++ mit modm.io</li>
+</ul>
+
+  </section>
+
+  <!-- Social media shares -->
+  <div class="share-buttons">
+    <ul class="share-buttons">
+        <div class="meta">Teilen</div>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?source=http://roboterclub.github.io/projekt/laserscanner-positioning&text=Laserscanner-Positionierung%20%7C%20Roboterclub Aachen:%20http://roboterclub.github.io/projekt/laserscanner-positioning" target="_blank" title="Twittern">
+			<i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
+			<span class="sr-only">Twittern</span>
+		</a>
+        </li>
+                
+        <li>
+            <a href="mailto:?subject=Laserscanner-Positionierung%20%7C%20Roboterclub Aachen&body=:%20http://roboterclub.github.io/projekt/laserscanner-positioning" target="_blank" title="Email">
+			<i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i>
+			<span class="sr-only">Email</span>
+		</a>
+        </li>
+        
+    </ul>
+</div>
+
+   <!-- Tag list -->
+  
+  
+
+
+<footer>
+  <div class="tag-list">
+    
+      <div class="meta">Tags</div>
+    
+
+    
+    <a class="button" href="/tags#software">
+      <p><i class="fa fa-tag fa-fw"></i> software</p>
+    </a>
+    
+  </div>
+</footer>
+
+
+</article>
+
+    </div>
+    
+<footer class="site-footer">
+    <p class="text"><a href="/impressum">Impressum</a></p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+	<a href="http://roboterclub.github.io/feed.xml" title="Folge dem RSS Feed">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/RoboterClubAachen" title="Folge uns GitHub">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/RCA_eV" title="Folge uns Twitter" class="type">
+        <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+
+  </body>
+</html>
