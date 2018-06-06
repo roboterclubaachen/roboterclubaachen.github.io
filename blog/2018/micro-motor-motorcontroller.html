@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer=true src="/assets/js/main.min.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/img/rca.svg">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="http://roboterclub.github.io/blog/2018/micro-motor-motorcontroller">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="Roboterclub Aachen" href="http://roboterclub.github.io///feed.xml"/>
+
+    <!-- Font Awesome -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/vendor/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    
+
+    <!-- KaTeX 0.8.3 -->
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/vendor/katex.min.css">
+    <script src="/assets/js/vendor/katex.min.js">
+    </script>
+    
+
+    <!-- Google Analytics -->
+    
+    
+    <!-- seo tags -->
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>µMotor | Roboterclub Aachen</title>
+<meta name="generator" content="Jekyll v3.8.2" />
+<meta property="og:title" content="µMotor" />
+<meta name="author" content="Raphael" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Die Idee ist schon älter, aber nun haben wir uns an die Umsetzung gewagt: Ein miniaturisierter Motorcontroller, welche dezentral direkt an jeden Motor verbaut wird…" />
+<meta property="og:description" content="Die Idee ist schon älter, aber nun haben wir uns an die Umsetzung gewagt: Ein miniaturisierter Motorcontroller, welche dezentral direkt an jeden Motor verbaut wird…" />
+<link rel="canonical" href="http://roboterclub.github.io/blog/2018/micro-motor-motorcontroller" />
+<meta property="og:url" content="http://roboterclub.github.io/blog/2018/micro-motor-motorcontroller" />
+<meta property="og:site_name" content="Roboterclub Aachen" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-05-05T00:00:00+02:00" />
+<script type="application/ld+json">
+{"description":"Die Idee ist schon älter, aber nun haben wir uns an die Umsetzung gewagt: Ein miniaturisierter Motorcontroller, welche dezentral direkt an jeden Motor verbaut wird…","author":{"@type":"Person","name":"Raphael"},"@type":"BlogPosting","url":"http://roboterclub.github.io/blog/2018/micro-motor-motorcontroller","headline":"µMotor","dateModified":"2018-05-05T00:00:00+02:00","datePublished":"2018-05-05T00:00:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://roboterclub.github.io/blog/2018/micro-motor-motorcontroller"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- Manual seo tags -->
+    <!--
+    <title>µMotor | Roboterclub Aachen</title>
+    <meta name="description" content="Die Idee ist schon älter, aber nun haben wir uns an die Umsetzung gewagt:  Ein miniaturisierter Motorcontroller, welche dezentral direkt an jeden Motor verba...">
+    -->
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+		<a href="/">
+			<img class="avatar" src="/assets/img/rca.svg" alt=""/>
+		</a>
+
+		<h1 class="site-title">
+			<a href="/">Roboterclub Aachen</a>
+		</h1>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a id="pull" class="toggle" href="#">
+    <i class="fa fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        <!-- Auto Generation of pages in the navbar -->
+        
+        <li class="separator">|</li>
+        <li>
+            <a class="clear" href="/mach-mit">
+            
+                Mach Mit!
+            
+            </a>
+        </li>
+        
+        <li class="separator">|</li>
+        <li>
+            <a class="clear" href="/blog">
+            
+                Blog
+            
+            </a>
+        </li>
+        
+        <li class="separator">|</li>
+        <li>
+            <a class="clear" href="/kontakt">
+            
+                Kontakt
+            
+            </a>
+        </li>
+        
+        <li class="separator">|</li>
+        <li>
+            <a class="clear" href="/search">
+            
+                <i class="fa fa-search" aria-hidden="true"></i>
+            
+            </a>
+        </li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article class="feature-image">
+  <header id="main" style="background-image: url('/assets/img/blog/micro-motor/umotor-pcb.jpg');background-position: center;">
+    <h1 class="title">µMotor</h1>
+    <p class="meta">
+    May 5, 2018
+     - Raphael
+    </p>
+  </header>
+  <section class="post-content post-content-text"><h2 id="idee">Idee</h2>
+
+<p>Die Idee ist schon älter, aber nun haben wir uns an die Umsetzung gewagt:<br />
+Ein miniaturisierter Motorcontroller, welche dezentral direkt an jeden Motor verbaut wird
+und nur an Strom und CAN-Bus angeschlossen werden muss.</p>
+
+<h2 id="anforderungen">Anforderungen</h2>
+
+<p>Die Anforderungen haben wir in den letzten Jahren gesammelt:</p>
+<ul>
+  <li><del>2 Phasen (nur DC Motoren) oder</del> 3 Phasen (DC und BLDC Motoren)</li>
+  <li>ca. 10A pro Phase</li>
+  <li>20V Betriebsspannung (Akku) -&gt; 40V oder 60V Auslegung</li>
+  <li>Anschluss für Encoder mit AB(I)-Interface</li>
+  <li>optional Magnetencoder auf dem PCB</li>
+  <li>Anschluss für Hall-Sensor</li>
+  <li>Temperatursensor (kontaktlos auf dem PCB verlötet oder I²C)</li>
+  <li>Strommessung</li>
+  <li>LEDs für Software-Status &amp; Encoderstatus</li>
+  <li>Konfigurierbare ID (ggf. STM32-Hardware-ID)</li>
+  <li>Einfach lötbar und aufbaubar</li>
+  <li>Abmessungen: Rund, Grund-Ø 20mm (Namiki-Motoren: Ø 22mm)</li>
+</ul>
+
+<h2 id="komponentenauswahl">Komponentenauswahl</h2>
+
+<p><img src="/assets/img/blog/micro-motor/umotor-pcb.jpg" alt="Er ist uns beim Waschen leider etwas eingegangen. Funktioniert aber trotzdem noch." /></p>
+
+<p>Als nächsten Schritt mussten wir die Komponenten auswählen.
+Die Wahl des Mikrocontrollers fiel schnell und wenig überraschen auf einen STM32, konkret einen <a href="http://www.st.com/en/microcontrollers/stm32l433cc.html">STM32L433CCU</a> im 7x7mm²-UFQFPN48 Gehäuse.
+Geeignete MOSFETs und MOSFET-Treiber auszuwählen gestaltete sich als deutlich komplizierter.
+Eine große Herausforderung ist die kleine Baugröße von nur Ø 20mm.
+Recht schnell war klar, dass dies nur realisierbar ist mit Komponenten welche Reflow-Löten erfordern,
+somit waren DFN-Gehäuse nicht mehr wie bei früheren Projekten im RCA unerwünscht.</p>
+
+<p>Das Anschluss ist ein 5-poliger Stecker mit CAN-Bus (2 Pins), Versorgungsspannung (12-40V), Logikspannung zu Versorgung des Controllers und natürlich Ground (GND).
+Die Logikspannung ist von der Versorgungsspannung getrennt, da letztere möglicherweise durch Not-Aus-Schaltkreise deaktiviert werden kann, wobei die Controller aktiv bleiben sollen.</p>
+
+<p>Schlussendlich haben wir nach wochenlanger Recherche den <a href="http://www.ti.com/product/drv8323">DRV8323S</a> von Texas Intruments als MOSFET-Treiber ausgewählt.
+Die entscheidenden Merkmale neben dem kompakten 6x6mm²-40WQFN Gehäuse die geringe Anzahl der benötigten externen Widerstände und Kondensatoren sowie das SPI-Interface über welches alle Parameter konfiguriert werden können.
+Eines der Parameter ist der Gate-Drive-Strom, dadurch können Widerstände in den Gate-Leitungen zu den MOSFETs entfallen.
+Ein weiterer Vorteil ist die Ladungspumpe zur Ansteuerung der High-Side-MOSFETs welche 100% PWM-Dutycycle erlaubt in Kontrast zu Bootstrap-Schaltungen bei Alternativkomponenten.
+Mit Shunt-Widerstände in zwei der drei Motor-Phasen, einem Shunt-Widerstand welche den Gesamtstrom misst und den drei integrierten Strom-Messverstärkern des Gatetreibers wird die Strommesssung und eine Cycle-by-Cycle Strombegrenzung realisiert.</p>
+
+<p>Die Wahl der MOSFETs fiel auf den Typ <a href="http://www.onsemi.com/PowerSolutions/product.do?id=FDMD8260L">FDMD8260L</a>:</p>
+<ul>
+  <li>Zwei n-Channel MOSFETs im 3.3x5mm²-DFN12 Gehäuse</li>
+  <li>V_DS 60V, R_DSon 5.8 mΩ</li>
+  <li>I_D 40A (continuous max.)</li>
+</ul>
+
+<p>Aus der Rückseite befindet sich der Magnetencoder <a href="https://ams.com/AS5045">AS5045B</a> von AMS,
+den wir vorher schon alleinstehend verwendet haben.
+Falls der Motor einen Encoder mitbringt kann dieser Chip nicht bestückt werden und stattdessen der Motorencoder über Lötpads unterhalb des Magnetencoder-Footprints angelötet werden.
+Für externe Motorencoder wurde zus#tzlich ein ansonsten nicht benötigter 5V-Spannungsregler vorgesehen.</p>
+
+<p>Daneben sind auf der Platine nur ein CAN-Bus-Transceiver (<a href="http://www.ti.com/product/tcan332">TCAN332</a>) und Spannungsregler verbaut,
+welche aufgrund der kleinen Bauform ausgewählt wurden.</p>
+
+<h2 id="schaltplan-und-layout">Schaltplan und Layout</h2>
+
+<p><img src="/assets/img/blog/micro-motor/schematic-overview-screenshot.jpg" alt="Schaltplanübersicht micro-motor (µMotor) in KiCad" />
+<img src="/assets/img/blog/micro-motor/pcb-layout-screenshot.jpg" alt="PCB Layout micro-motor (µMotor) in KiCad" /></p>
+
+<p>Aus den Anforderungen und Überlegungen sind in den vergangenen Monaten Schaltpläne und ein kompaktes Platinenlayout entstanden.
+Das Platinenlayout ist 4-lagig ausgeführt, anders wäre die geforderte Bauform nicht umsetzbar gewesen.</p>
+
+<h2 id="aufbau-und-inbetriebnahme">Aufbau und Inbetriebnahme</h2>
+
+<p>Der erste Aufbau mit Reflow-Ofen und die Inbetriebnahme gestalten sich als nicht trivial,
+weil es auf der winzigen Platine kaum möglich ist elektrische oder Software- Probleme mit Multimeter, Oszilloskop oder Logicanalyser zu debuggen.
+Einige Leitungen sind nur unter Bauteilen und auf den inneren Lagen geführt.</p>
+
+<p><img src="/assets/img/blog/micro-motor/pcb-assembled-before-reflow-onecent.jpg" alt="micro-motor (µMotor) vor dem Reflow-Löten. Ein-Cent-Münze zum Größenvergleich." />
+<img src="/assets/img/blog/micro-motor/reflow-ofen.jpg" alt="micro-motor (µMotor) im Reflow Ofen" /></p>
+
+<p>Der erste und einzige aufgebaute Prototyp funktioniert weitgehend.
+der bisher einzige Hardwarefehler konnte mit Hilfe von Fädeldraht und einem zusätzlichen Widerstand behoben werden.</p>
+
+<h2 id="software">Software</h2>
+
+<p>Die Software auf dem Mikrocontroller wird mit <a href="http://modm.io/">modm</a> entwickelt.
+Bisher sind die Hardware-Abstraktion (Board-Support-Package) und einige Testprogramme für die Inbetriebnahme der Hardware fertiggestellt.</p>
+
+<p>Die Hauptsoftware fehlt noch.</p>
+
+<p>Auf dem Microcontroller sollen frei konfigurierbare Pid-Regler und ggf. auch “Motor-mit-Endschalter”-Komponenten,
+welche den Aktor parametrierbar initialisieren und verfahren können, das Interface nach außen bilden.</p>
+
+<p>Programiert werden muss der Micro-Motor über den 3D-gedruckten Programieradapter mit Federkontaktstiften.
+Der Adapter verfügt außerdem über eine Pin zum abgreifen der UART-Ausgabe zu Debug-Zwecken.</p>
+
+<p><img src="/assets/img/blog/micro-motor/swd-adapter.jpg" alt="Programieradapter für den micro-motor (µMotor)" /></p>
+
+<h2 id="ausblick">Ausblick</h2>
+
+<p>In den nächsten Wochen werden wir die Hardware vollstandig testen, Software implementieren, Messungen vornehmen und Dokumentation schreiben.</p>
+
+<p>Zeitnah werden wir den Quellcode, Schaltplan, Platinenlayout und mechanische CAD-Modelle unter einer OpenSource Lizenz veröffentlichen.</p>
+
+<p>To be continued…</p>
+</section>
+
+  <!-- Social media shares -->
+  <div class="share-buttons">
+    <ul class="share-buttons">
+        <div class="meta">Teilen</div>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?source=http://roboterclub.github.io/blog/2018/micro-motor-motorcontroller&text=µMotor%20%7C%20Roboterclub Aachen:%20http://roboterclub.github.io/blog/2018/micro-motor-motorcontroller" target="_blank" title="Twittern">
+			<i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
+			<span class="sr-only">Twittern</span>
+		</a>
+        </li>
+                
+        <li>
+            <a href="mailto:?subject=µMotor%20%7C%20Roboterclub Aachen&body=:%20http://roboterclub.github.io/blog/2018/micro-motor-motorcontroller" target="_blank" title="Email">
+			<i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i>
+			<span class="sr-only">Email</span>
+		</a>
+        </li>
+        
+    </ul>
+</div>
+
+   <!-- Tag list -->
+  
+  
+
+
+<footer>
+  <div class="tag-list">
+    
+      <div class="meta">Tags</div>
+    
+
+    
+    <a class="button" href="/tags#elektronik">
+      <p><i class="fa fa-tag fa-fw"></i> elektronik</p>
+    </a>
+    
+    <a class="button" href="/tags#informatik">
+      <p><i class="fa fa-tag fa-fw"></i> informatik</p>
+    </a>
+    
+    <a class="button" href="/tags#saison19">
+      <p><i class="fa fa-tag fa-fw"></i> saison19</p>
+    </a>
+    
+  </div>
+</footer>
+
+
+</article>
+
+    </div>
+    
+<footer class="site-footer">
+    <p class="text"><a href="/impressum">Impressum</a></p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+	<a href="http://roboterclub.github.io/feed.xml" title="Folge dem RSS Feed">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/RoboterClubAachen" title="Folge uns GitHub">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/RCA_eV" title="Folge uns Twitter" class="type">
+        <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+
+  </body>
+</html>

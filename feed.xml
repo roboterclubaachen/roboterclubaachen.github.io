@@ -5,26 +5,113 @@
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
         <link>http://roboterclub.github.io/</link>
         <description></description>
-        <pubDate>Wed, 06 Jun 2018 04:13:08 +0200</pubDate>
+        <pubDate>Wed, 06 Jun 2018 17:17:18 +0200</pubDate>
         
         <item>
             <title>µMotor</title>
-            <link>/blog/2018/umotor-treiber</link>
-            <guid isPermaLink="true">/blog/2018/umotor-treiber</guid>
-            <description>&lt;p&gt;Wir testen für die Saison 2019 schonmal einen neuen, intelligenten Motortreiber.
-Er ist uns beim Waschen leider etwas eingegangen. Funktioniert aber trotzdem noch.&lt;/p&gt;
+            <link>/blog/2018/micro-motor-motorcontroller</link>
+            <guid isPermaLink="true">/blog/2018/micro-motor-motorcontroller</guid>
+            <description>&lt;h2 id=&quot;idee&quot;&gt;Idee&lt;/h2&gt;
 
-&lt;div class=&quot;jekyll-twitter-plugin&quot;&gt;&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;The first prototype of our next-generation motor controller &amp;#39;µMotor&amp;#39; is assembled and basically functional (LED is blinking!!).&lt;br /&gt;One-cent coin for scale. &lt;a href=&quot;https://t.co/db2JuhzwpL&quot;&gt;pic.twitter.com/db2JuhzwpL&lt;/a&gt;&lt;/p&gt;&amp;mdash; RoboterClub Aachen (@RCA_eV) &lt;a href=&quot;https://twitter.com/RCA_eV/status/992582078163189761?ref_src=twsrc%5Etfw&quot;&gt;May 5, 2018&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-&lt;/div&gt;
+&lt;p&gt;Die Idee ist schon älter, aber nun haben wir uns an die Umsetzung gewagt:&lt;br /&gt;
+Ein miniaturisierter Motorcontroller, welche dezentral direkt an jeden Motor verbaut wird
+und nur an Strom und CAN-Bus angeschlossen werden muss.&lt;/p&gt;
 
-&lt;div class=&quot;jekyll-twitter-plugin&quot;&gt;&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Photo of the back side of the board. &lt;a href=&quot;https://t.co/ml8lta2A0r&quot;&gt;pic.twitter.com/ml8lta2A0r&lt;/a&gt;&lt;/p&gt;&amp;mdash; RoboterClub Aachen (@RCA_eV) &lt;a href=&quot;https://twitter.com/RCA_eV/status/992882982213115904?ref_src=twsrc%5Etfw&quot;&gt;May 5, 2018&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-&lt;/div&gt;
+&lt;h2 id=&quot;anforderungen&quot;&gt;Anforderungen&lt;/h2&gt;
 
-&lt;div class=&quot;jekyll-twitter-plugin&quot;&gt;&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Bonus: 3D-printed SWD programmer adapter &lt;a href=&quot;https://t.co/cxr7r0s5Mf&quot;&gt;pic.twitter.com/cxr7r0s5Mf&lt;/a&gt;&lt;/p&gt;&amp;mdash; RoboterClub Aachen (@RCA_eV) &lt;a href=&quot;https://twitter.com/RCA_eV/status/992884250394406912?ref_src=twsrc%5Etfw&quot;&gt;May 5, 2018&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-&lt;/div&gt;
+&lt;p&gt;Die Anforderungen haben wir in den letzten Jahren gesammelt:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;del&gt;2 Phasen (nur DC Motoren) oder&lt;/del&gt; 3 Phasen (DC und BLDC Motoren)&lt;/li&gt;
+  &lt;li&gt;ca. 10A pro Phase&lt;/li&gt;
+  &lt;li&gt;20V Betriebsspannung (Akku) -&amp;gt; 40V oder 60V Auslegung&lt;/li&gt;
+  &lt;li&gt;Anschluss für Encoder mit AB(I)-Interface&lt;/li&gt;
+  &lt;li&gt;optional Magnetencoder auf dem PCB&lt;/li&gt;
+  &lt;li&gt;Anschluss für Hall-Sensor&lt;/li&gt;
+  &lt;li&gt;Temperatursensor (kontaktlos auf dem PCB verlötet oder I²C)&lt;/li&gt;
+  &lt;li&gt;Strommessung&lt;/li&gt;
+  &lt;li&gt;LEDs für Software-Status &amp;amp; Encoderstatus&lt;/li&gt;
+  &lt;li&gt;Konfigurierbare ID (ggf. STM32-Hardware-ID)&lt;/li&gt;
+  &lt;li&gt;Einfach lötbar und aufbaubar&lt;/li&gt;
+  &lt;li&gt;Abmessungen: Rund, Grund-Ø 20mm (Namiki-Motoren: Ø 22mm)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;komponentenauswahl&quot;&gt;Komponentenauswahl&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/micro-motor/umotor-pcb.jpg&quot; alt=&quot;Er ist uns beim Waschen leider etwas eingegangen. Funktioniert aber trotzdem noch.&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Als nächsten Schritt mussten wir die Komponenten auswählen.
+Die Wahl des Mikrocontrollers fiel schnell und wenig überraschen auf einen STM32, konkret einen &lt;a href=&quot;http://www.st.com/en/microcontrollers/stm32l433cc.html&quot;&gt;STM32L433CCU&lt;/a&gt; im 7x7mm²-UFQFPN48 Gehäuse.
+Geeignete MOSFETs und MOSFET-Treiber auszuwählen gestaltete sich als deutlich komplizierter.
+Eine große Herausforderung ist die kleine Baugröße von nur Ø 20mm.
+Recht schnell war klar, dass dies nur realisierbar ist mit Komponenten welche Reflow-Löten erfordern,
+somit waren DFN-Gehäuse nicht mehr wie bei früheren Projekten im RCA unerwünscht.&lt;/p&gt;
+
+&lt;p&gt;Das Anschluss ist ein 5-poliger Stecker mit CAN-Bus (2 Pins), Versorgungsspannung (12-40V), Logikspannung zu Versorgung des Controllers und natürlich Ground (GND).
+Die Logikspannung ist von der Versorgungsspannung getrennt, da letztere möglicherweise durch Not-Aus-Schaltkreise deaktiviert werden kann, wobei die Controller aktiv bleiben sollen.&lt;/p&gt;
+
+&lt;p&gt;Schlussendlich haben wir nach wochenlanger Recherche den &lt;a href=&quot;http://www.ti.com/product/drv8323&quot;&gt;DRV8323S&lt;/a&gt; von Texas Intruments als MOSFET-Treiber ausgewählt.
+Die entscheidenden Merkmale neben dem kompakten 6x6mm²-40WQFN Gehäuse die geringe Anzahl der benötigten externen Widerstände und Kondensatoren sowie das SPI-Interface über welches alle Parameter konfiguriert werden können.
+Eines der Parameter ist der Gate-Drive-Strom, dadurch können Widerstände in den Gate-Leitungen zu den MOSFETs entfallen.
+Ein weiterer Vorteil ist die Ladungspumpe zur Ansteuerung der High-Side-MOSFETs welche 100% PWM-Dutycycle erlaubt in Kontrast zu Bootstrap-Schaltungen bei Alternativkomponenten.
+Mit Shunt-Widerstände in zwei der drei Motor-Phasen, einem Shunt-Widerstand welche den Gesamtstrom misst und den drei integrierten Strom-Messverstärkern des Gatetreibers wird die Strommesssung und eine Cycle-by-Cycle Strombegrenzung realisiert.&lt;/p&gt;
+
+&lt;p&gt;Die Wahl der MOSFETs fiel auf den Typ &lt;a href=&quot;http://www.onsemi.com/PowerSolutions/product.do?id=FDMD8260L&quot;&gt;FDMD8260L&lt;/a&gt;:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Zwei n-Channel MOSFETs im 3.3x5mm²-DFN12 Gehäuse&lt;/li&gt;
+  &lt;li&gt;V_DS 60V, R_DSon 5.8 mΩ&lt;/li&gt;
+  &lt;li&gt;I_D 40A (continuous max.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Aus der Rückseite befindet sich der Magnetencoder &lt;a href=&quot;https://ams.com/AS5045&quot;&gt;AS5045B&lt;/a&gt; von AMS,
+den wir vorher schon alleinstehend verwendet haben.
+Falls der Motor einen Encoder mitbringt kann dieser Chip nicht bestückt werden und stattdessen der Motorencoder über Lötpads unterhalb des Magnetencoder-Footprints angelötet werden.
+Für externe Motorencoder wurde zus#tzlich ein ansonsten nicht benötigter 5V-Spannungsregler vorgesehen.&lt;/p&gt;
+
+&lt;p&gt;Daneben sind auf der Platine nur ein CAN-Bus-Transceiver (&lt;a href=&quot;http://www.ti.com/product/tcan332&quot;&gt;TCAN332&lt;/a&gt;) und Spannungsregler verbaut,
+welche aufgrund der kleinen Bauform ausgewählt wurden.&lt;/p&gt;
+
+&lt;h2 id=&quot;schaltplan-und-layout&quot;&gt;Schaltplan und Layout&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/micro-motor/schematic-overview-screenshot.jpg&quot; alt=&quot;Schaltplanübersicht micro-motor (µMotor) in KiCad&quot; /&gt;
+&lt;img src=&quot;/assets/img/blog/micro-motor/pcb-layout-screenshot.jpg&quot; alt=&quot;PCB Layout micro-motor (µMotor) in KiCad&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Aus den Anforderungen und Überlegungen sind in den vergangenen Monaten Schaltpläne und ein kompaktes Platinenlayout entstanden.
+Das Platinenlayout ist 4-lagig ausgeführt, anders wäre die geforderte Bauform nicht umsetzbar gewesen.&lt;/p&gt;
+
+&lt;h2 id=&quot;aufbau-und-inbetriebnahme&quot;&gt;Aufbau und Inbetriebnahme&lt;/h2&gt;
+
+&lt;p&gt;Der erste Aufbau mit Reflow-Ofen und die Inbetriebnahme gestalten sich als nicht trivial,
+weil es auf der winzigen Platine kaum möglich ist elektrische oder Software- Probleme mit Multimeter, Oszilloskop oder Logicanalyser zu debuggen.
+Einige Leitungen sind nur unter Bauteilen und auf den inneren Lagen geführt.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/micro-motor/pcb-assembled-before-reflow-onecent.jpg&quot; alt=&quot;micro-motor (µMotor) vor dem Reflow-Löten. Ein-Cent-Münze zum Größenvergleich.&quot; /&gt;
+&lt;img src=&quot;/assets/img/blog/micro-motor/reflow-ofen.jpg&quot; alt=&quot;micro-motor (µMotor) im Reflow Ofen&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Der erste und einzige aufgebaute Prototyp funktioniert weitgehend.
+der bisher einzige Hardwarefehler konnte mit Hilfe von Fädeldraht und einem zusätzlichen Widerstand behoben werden.&lt;/p&gt;
+
+&lt;h2 id=&quot;software&quot;&gt;Software&lt;/h2&gt;
+
+&lt;p&gt;Die Software auf dem Mikrocontroller wird mit &lt;a href=&quot;http://modm.io/&quot;&gt;modm&lt;/a&gt; entwickelt.
+Bisher sind die Hardware-Abstraktion (Board-Support-Package) und einige Testprogramme für die Inbetriebnahme der Hardware fertiggestellt.&lt;/p&gt;
+
+&lt;p&gt;Die Hauptsoftware fehlt noch.&lt;/p&gt;
+
+&lt;p&gt;Auf dem Microcontroller sollen frei konfigurierbare Pid-Regler und ggf. auch “Motor-mit-Endschalter”-Komponenten,
+welche den Aktor parametrierbar initialisieren und verfahren können, das Interface nach außen bilden.&lt;/p&gt;
+
+&lt;p&gt;Programiert werden muss der Micro-Motor über den 3D-gedruckten Programieradapter mit Federkontaktstiften.
+Der Adapter verfügt außerdem über eine Pin zum abgreifen der UART-Ausgabe zu Debug-Zwecken.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/micro-motor/swd-adapter.jpg&quot; alt=&quot;Programieradapter für den micro-motor (µMotor)&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;ausblick&quot;&gt;Ausblick&lt;/h2&gt;
+
+&lt;p&gt;In den nächsten Wochen werden wir die Hardware vollstandig testen, Software implementieren, Messungen vornehmen und Dokumentation schreiben.&lt;/p&gt;
+
+&lt;p&gt;Zeitnah werden wir den Quellcode, Schaltplan, Platinenlayout und mechanische CAD-Modelle unter einer OpenSource Lizenz veröffentlichen.&lt;/p&gt;
+
+&lt;p&gt;To be continued…&lt;/p&gt;
 </description>
             <pubDate>Sat, 05 May 2018 00:00:00 +0200</pubDate>
         </item>
