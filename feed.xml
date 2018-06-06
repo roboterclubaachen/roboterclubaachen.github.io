@@ -5,7 +5,7 @@
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
         <link>http://roboterclub.github.io/</link>
         <description></description>
-        <pubDate>Wed, 06 Jun 2018 02:55:56 +0200</pubDate>
+        <pubDate>Wed, 06 Jun 2018 04:13:08 +0200</pubDate>
         
         <item>
             <title>µMotor</title>
@@ -41,6 +41,55 @@ Dieses Jahr steht der Eurobot unter dem Motto “Robot Cities”.&lt;/p&gt;
 &lt;p&gt;Wir haben schonmal einen neuen Allradantrieb konstruiert, hilf uns mit ihn zu bauen.&lt;/p&gt;
 </description>
             <pubDate>Mon, 23 Oct 2017 00:00:00 +0200</pubDate>
+        </item>
+        
+        <item>
+            <title>We are German champion 2017</title>
+            <link>/blog/2017/we-are-german-champion-2017</link>
+            <guid isPermaLink="true">/blog/2017/we-are-german-champion-2017</guid>
+            <description>&lt;p&gt;We are qualified for the international contest in France!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/2017/PR_Eurobot2017_Siegerfoto_Dresden.jpg&quot; alt=&quot;Eurobot 2017 Siegerfoto Dresden&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Our robots, Juri and Siggi, won nearly every game at the German Eurobot contest 2018 in Dresden.
+The competition was well organized by TURAG. Thank you for the great time!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/2017/Juri_Siggi_Rooftop_Back.jpg&quot; alt=&quot;Juri Siggi Rooftop Back&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We would like to thank our sponsors and supporters for their generous backing.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/2017/Juri_Siggi_Rooftop_Front.jpg&quot; alt=&quot;Juri Siggi Rooftop Front&quot; /&gt;&lt;/p&gt;
+</description>
+            <pubDate>Mon, 01 May 2017 00:00:00 +0200</pubDate>
+        </item>
+        
+        <item>
+            <title>We are German champion 2016</title>
+            <link>/blog/2016/we-are-german-champion-2016</link>
+            <guid isPermaLink="true">/blog/2016/we-are-german-champion-2016</guid>
+            <description>&lt;p&gt;We are qualified for the international contest in France!
+Our robots, Hassel and Hoff, won every game at the German Eurobot contest 2016 in Stuttgart.&lt;/p&gt;
+
+&lt;p&gt;The competition was well organized by VtAS. Thank you for the great time!&lt;/p&gt;
+
+&lt;p&gt;We would like to thank our sponsors for their generous support.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/2016/Foto2016StuttgartCropped.jpg&quot; alt=&quot;RCA in Stuttgart 2016&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/2016/2016HasselHoff.jpg&quot; alt=&quot;Roboter Hassel und Hoff&quot; /&gt;&lt;/p&gt;
+</description>
+            <pubDate>Tue, 03 May 2016 00:00:00 +0200</pubDate>
+        </item>
+        
+        <item>
+            <title>The Rules for Eurobot 2016 are published</title>
+            <link>/blog/2015/rules-eurobot-2016</link>
+            <guid isPermaLink="true">/blog/2015/rules-eurobot-2016</guid>
+            <description>&lt;p&gt;The new theme for Eurobot 2016 is “The Beach Bots”. There are many actions for the Robots to do and many parts to move. We are already brainstorming and looking forward to exiting games.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/2016/phobos_in_castle.jpg&quot; alt=&quot;Phobos in castle&quot; /&gt;&lt;/p&gt;
+</description>
+            <pubDate>Tue, 20 Oct 2015 00:00:00 +0200</pubDate>
         </item>
         
     </channel>

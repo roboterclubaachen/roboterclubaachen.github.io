@@ -21,6 +21,36 @@
         "content"  : "<p>Die Entwicklungsphase für die Saison 2018 ist gestartet.\nDieses Jahr steht der Eurobot unter dem Motto “Robot Cities”.</p>\n\n<p><img src=\"/assets/img/blog/robo_antrieb.jpg\" alt=\"\" /></p>\n\n<p>Wir haben schonmal einen neuen Allradantrieb konstruiert, hilf uns mit ihn zu bauen.</p>\n"
       },
    
+      {
+        "title"    : "We are German champion 2017",
+        "category" : "",
+        "tags"     : " eurobot, saison17",
+        "url"      : "/blog/2017/we-are-german-champion-2017",
+        "date"     : "May 1, 2017",
+        "excerpt"  : "<p>We are qualified for the international contest in France!</p>\n\n",
+        "content"  : "<p>We are qualified for the international contest in France!</p>\n\n<p><img src=\"/assets/img/blog/2017/PR_Eurobot2017_Siegerfoto_Dresden.jpg\" alt=\"Eurobot 2017 Siegerfoto Dresden\" /></p>\n\n<p>Our robots, Juri and Siggi, won nearly every game at the German Eurobot contest 2018 in Dresden.\nThe competition was well organized by TURAG. Thank you for the great time!</p>\n\n<p><img src=\"/assets/img/blog/2017/Juri_Siggi_Rooftop_Back.jpg\" alt=\"Juri Siggi Rooftop Back\" /></p>\n\n<p>We would like to thank our sponsors and supporters for their generous backing.</p>\n\n<p><img src=\"/assets/img/blog/2017/Juri_Siggi_Rooftop_Front.jpg\" alt=\"Juri Siggi Rooftop Front\" /></p>\n"
+      },
+   
+      {
+        "title"    : "We are German champion 2016",
+        "category" : "",
+        "tags"     : " eurobot, saison17",
+        "url"      : "/blog/2016/we-are-german-champion-2016",
+        "date"     : "May 3, 2016",
+        "excerpt"  : "<p>We are qualified for the international contest in France!\nOur robots, Hassel and Hoff, won every game at the German Eurobot contest 2016 in Stuttgart.</p>\n\n",
+        "content"  : "<p>We are qualified for the international contest in France!\nOur robots, Hassel and Hoff, won every game at the German Eurobot contest 2016 in Stuttgart.</p>\n\n<p>The competition was well organized by VtAS. Thank you for the great time!</p>\n\n<p>We would like to thank our sponsors for their generous support.</p>\n\n<p><img src=\"/assets/img/blog/2016/Foto2016StuttgartCropped.jpg\" alt=\"RCA in Stuttgart 2016\" /></p>\n\n<p><img src=\"/assets/img/blog/2016/2016HasselHoff.jpg\" alt=\"Roboter Hassel und Hoff\" /></p>\n"
+      },
+   
+      {
+        "title"    : "The Rules for Eurobot 2016 are published",
+        "category" : "",
+        "tags"     : " eurobot, saison16",
+        "url"      : "/blog/2015/rules-eurobot-2016",
+        "date"     : "October 20, 2015",
+        "excerpt"  : "<p>The new theme for Eurobot 2016 is “The Beach Bots”. There are many actions for the Robots to do and many parts to move. We are already brainstorming and looking forward to exiting games.</p>\n\n",
+        "content"  : "<p>The new theme for Eurobot 2016 is “The Beach Bots”. There are many actions for the Robots to do and many parts to move. We are already brainstorming and looking forward to exiting games.</p>\n\n<p><img src=\"/assets/img/blog/2016/phobos_in_castle.jpg\" alt=\"Phobos in castle\" /></p>\n"
+      },
+   
    
    
      {
