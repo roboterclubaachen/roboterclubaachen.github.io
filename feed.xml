@@ -5,12 +5,12 @@
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
         <link>http://roboterclub.github.io/</link>
         <description></description>
-        <pubDate>Thu, 07 Jun 2018 00:31:31 +0200</pubDate>
+        <pubDate>Thu, 07 Jun 2018 17:15:45 +0200</pubDate>
         
         <item>
             <title>µMotor</title>
-            <link>/blog/2018/micro-motor-motorcontroller</link>
-            <guid isPermaLink="true">/blog/2018/micro-motor-motorcontroller</guid>
+            <link>/blog/2018/micro-motor-motorcontroller.html</link>
+            <guid isPermaLink="true">/blog/2018/micro-motor-motorcontroller.html</guid>
             <description>&lt;h2 id=&quot;idee&quot;&gt;Idee&lt;/h2&gt;
 
 &lt;p&gt;Die Idee ist schon älter, aber nun haben wir uns an die Umsetzung gewagt:&lt;br /&gt;
@@ -118,8 +118,8 @@ Der Adapter verfügt außerdem über eine Pin zum abgreifen der UART-Ausgabe zu 
         
         <item>
             <title>Saisonstart 2018</title>
-            <link>/blog/2017/saisonstart-2018</link>
-            <guid isPermaLink="true">/blog/2017/saisonstart-2018</guid>
+            <link>/blog/2017/saisonstart-2018.html</link>
+            <guid isPermaLink="true">/blog/2017/saisonstart-2018.html</guid>
             <description>&lt;p&gt;Die Entwicklungsphase für die Saison 2018 ist gestartet.
 Dieses Jahr steht der Eurobot unter dem Motto “Robot Cities”.&lt;/p&gt;
 
@@ -132,8 +132,8 @@ Dieses Jahr steht der Eurobot unter dem Motto “Robot Cities”.&lt;/p&gt;
         
         <item>
             <title>We are German champion 2017</title>
-            <link>/blog/2017/we-are-german-champion-2017</link>
-            <guid isPermaLink="true">/blog/2017/we-are-german-champion-2017</guid>
+            <link>/blog/2017/we-are-german-champion-2017.html</link>
+            <guid isPermaLink="true">/blog/2017/we-are-german-champion-2017.html</guid>
             <description>&lt;p&gt;We are qualified for the international contest in France!&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/blog/2017/PR_Eurobot2017_Siegerfoto_Dresden.jpg&quot; alt=&quot;Eurobot 2017 Siegerfoto Dresden&quot; /&gt;&lt;/p&gt;
@@ -152,8 +152,8 @@ The competition was well organized by TURAG. Thank you for the great time!&lt;/p
         
         <item>
             <title>We are German champion 2016</title>
-            <link>/blog/2016/we-are-german-champion-2016</link>
-            <guid isPermaLink="true">/blog/2016/we-are-german-champion-2016</guid>
+            <link>/blog/2016/we-are-german-champion-2016.html</link>
+            <guid isPermaLink="true">/blog/2016/we-are-german-champion-2016.html</guid>
             <description>&lt;p&gt;We are qualified for the international contest in France!
 Our robots, Hassel and Hoff, won every game at the German Eurobot contest 2016 in Stuttgart.&lt;/p&gt;
 
@@ -170,8 +170,8 @@ Our robots, Hassel and Hoff, won every game at the German Eurobot contest 2016 i
         
         <item>
             <title>The Rules for Eurobot 2016 are published</title>
-            <link>/blog/2015/rules-eurobot-2016</link>
-            <guid isPermaLink="true">/blog/2015/rules-eurobot-2016</guid>
+            <link>/blog/2015/rules-eurobot-2016.html</link>
+            <guid isPermaLink="true">/blog/2015/rules-eurobot-2016.html</guid>
             <description>&lt;p&gt;The new theme for Eurobot 2016 is “The Beach Bots”. There are many actions for the Robots to do and many parts to move. We are already brainstorming and looking forward to exiting games.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/blog/2016/phobos_in_castle.jpg&quot; alt=&quot;Phobos in castle&quot; /&gt;&lt;/p&gt;

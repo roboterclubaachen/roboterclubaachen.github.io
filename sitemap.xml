@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.sitemaps.org/schemas/sitemap/0.9 https://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+	<!-- post -->
+    <loc>http://roboterclub.github.io/blog/2018/micro-motor-motorcontroller.html</loc>
+    
+    <changefreq>weekly</changefreq>
+    
+  </url>
+
+  <url>
+	<!-- post -->
+    <loc>http://roboterclub.github.io/blog/2017/saisonstart-2018.html</loc>
+    
+    <changefreq>weekly</changefreq>
+    
+  </url>
+
+  <url>
+	<!-- post -->
+    <loc>http://roboterclub.github.io/blog/2017/we-are-german-champion-2017.html</loc>
+    
+    <changefreq>weekly</changefreq>
+    
+  </url>
+
+  <url>
+	<!-- post -->
+    <loc>http://roboterclub.github.io/blog/2016/we-are-german-champion-2016.html</loc>
+    
+    <changefreq>weekly</changefreq>
+    
+  </url>
+
+  <url>
+	<!-- post -->
+    <loc>http://roboterclub.github.io/blog/2015/rules-eurobot-2016.html</loc>
+    
+    <changefreq>weekly</changefreq>
+    
+  </url>
+
+
+  <url>
+	<!-- project -->
+    <loc>http://roboterclub.github.io/projekt/3d-drive.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://roboterclub.github.io/projekt/3d-drucker-octoprint.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://roboterclub.github.io/projekt/aktorik.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://roboterclub.github.io/projekt/alpha-motor.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://roboterclub.github.io/projekt/batterie-management-system.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://roboterclub.github.io/projekt/biegebank.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://roboterclub.github.io/projekt/camera-recognition.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://roboterclub.github.io/projekt/can-to-X.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://roboterclub.github.io/projekt/debugserver-hardware.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://roboterclub.github.io/projekt/debugserver-webmonitor.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://roboterclub.github.io/projekt/driver.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://roboterclub.github.io/projekt/fahrplattform-little.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://roboterclub.github.io/projekt/fraese-aufarbeiten.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://roboterclub.github.io/projekt/funk-komm-xpcc-backend.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://roboterclub.github.io/projekt/gewichtsmessung.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://roboterclub.github.io/projekt/imu.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://roboterclub.github.io/projekt/laserscanner-positioning.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://roboterclub.github.io/projekt/librobots-open-source.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://roboterclub.github.io/projekt/micro-motor.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://roboterclub.github.io/projekt/modm-concurrency-modelle.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://roboterclub.github.io/projekt/modm-units-and-fixed-point.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://roboterclub.github.io/projekt/motor-commutation.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://roboterclub.github.io/projekt/odometrie-maussensoren.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://roboterclub.github.io/projekt/odometrie.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://roboterclub.github.io/projekt/python-gui.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://roboterclub.github.io/projekt/rca-projekte-auf-modm-portieren.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://roboterclub.github.io/projekt/roboter-caddy.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://roboterclub.github.io/projekt/routing.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://roboterclub.github.io/projekt/silikon-raeder.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://roboterclub.github.io/projekt/ultraschall-baken.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://roboterclub.github.io/projekt/win-the-eurobot.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+   
+  <url>
+	<!-- page -->
+    <loc>http://roboterclub.github.io/feed.xml</loc>
+    
+    
+    
+  </url>
+  
+  <url>
+	<!-- page -->
+    <loc>http://roboterclub.github.io/impressum/</loc>
+    
+    
+    <priority>0.1</priority>
+  </url>
+  
+  <url>
+	<!-- page -->
+    <loc>http://roboterclub.github.io/blog/</loc>
+    
+    
+    
+  </url>
+  
+  <url>
+	<!-- page -->
+    <loc>http://roboterclub.github.io/</loc>
+    
+    
+    
+  </url>
+  
+  <url>
+	<!-- page -->
+    <loc>http://roboterclub.github.io/kontakt/</loc>
+    
+    
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+	<!-- page -->
+    <loc>http://roboterclub.github.io/mach-mit/</loc>
+    
+    
+    <priority>0.9</priority>
+  </url>
+          
+  <url>
+	<!-- page -->
+    <loc>http://roboterclub.github.io/unterstuetzer-und-foerderer/</loc>
+    
+    
+    <priority>0.3</priority>
+  </url>
+   
+</urlset>
