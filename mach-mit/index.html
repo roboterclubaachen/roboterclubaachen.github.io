@@ -42,7 +42,7 @@
     <!-- seo tags -->
     <!-- Begin Jekyll SEO tag v2.5.0 -->
 <title>Mach Mit! | Roboterclub Aachen</title>
-<meta name="generator" content="Jekyll v3.8.2" />
+<meta name="generator" content="Jekyll v3.8.3" />
 <meta property="og:title" content="Mach Mit!" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Wir bauen autonome Roboter" />
@@ -51,7 +51,7 @@
 <meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/mach-mit/" />
 <meta property="og:site_name" content="Roboterclub Aachen" />
 <script type="application/ld+json">
-{"headline":"Mach Mit!","url":"http://www.roboterclub.rwth-aachen.de/mach-mit/","description":"Wir bauen autonome Roboter","@type":"WebPage","@context":"http://schema.org"}</script>
+{"description":"Wir bauen autonome Roboter","@type":"WebPage","url":"http://www.roboterclub.rwth-aachen.de/mach-mit/","headline":"Mach Mit!","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
@@ -152,6 +152,73 @@ Die Auflistung ist keineswegs vollständig, eigene Ideen, die zum Roboter beitra
 Prinzipiell ist bei (fast) allen Projekten deine Mithilfe willkommen. Wenn du Interesse an einem Projekt hast, komm auf uns zu und sprich uns an!</p>
 
 <p>Viel Spaß beim Stöbern.</p>
+
+
+</section>
+
+<section>
+
+
+
+<script type="text/javascript">
+function onClick(tag) {
+    var x = document.querySelectorAll(".project-cell");
+    var i;
+    for (i = 0; i < x.length; i++) {
+        x[i].style.opacity = 0.3;
+    }
+    x = document.querySelectorAll(".tag-"+tag);
+    for (i = 0; i < x.length; i++) {
+        x[i].style.opacity = 1;
+    }
+
+    x = document.querySelectorAll(".filter-button");
+    for (i = 0; i < x.length; i++) {
+        x[i].classList.remove("button-link-selected");
+    }
+    document.querySelector(".filter-button-"+tag).classList.add("button-link-selected");
+}
+</script>
+
+
+<center>
+  <div class="tag-list">
+    <div class="meta">Filter by Tags</div>
+    
+    <a class="button filter-button filter-button-3d-druck" onclick="onClick('3d-druck')" href="javascript:;">
+      <p><i class="fa fa-tag fa-fw"></i> 3d-druck</p>
+    </a>
+    
+    <a class="button filter-button filter-button-elektronik" onclick="onClick('elektronik')" href="javascript:;">
+      <p><i class="fa fa-tag fa-fw"></i> elektronik</p>
+    </a>
+    
+    <a class="button filter-button filter-button-eurobot" onclick="onClick('eurobot')" href="javascript:;">
+      <p><i class="fa fa-tag fa-fw"></i> eurobot</p>
+    </a>
+    
+    <a class="button filter-button filter-button-mechanik" onclick="onClick('mechanik')" href="javascript:;">
+      <p><i class="fa fa-tag fa-fw"></i> mechanik</p>
+    </a>
+    
+    <a class="button filter-button filter-button-pcb" onclick="onClick('pcb')" href="javascript:;">
+      <p><i class="fa fa-tag fa-fw"></i> pcb</p>
+    </a>
+    
+    <a class="button filter-button filter-button-software" onclick="onClick('software')" href="javascript:;">
+      <p><i class="fa fa-tag fa-fw"></i> software</p>
+    </a>
+    
+    <a class="button filter-button filter-button-webentwicklung" onclick="onClick('webentwicklung')" href="javascript:;">
+      <p><i class="fa fa-tag fa-fw"></i> webentwicklung</p>
+    </a>
+    
+    <a class="button filter-button filter-button-werkzeug" onclick="onClick('werkzeug')" href="javascript:;">
+      <p><i class="fa fa-tag fa-fw"></i> werkzeug</p>
+    </a>
+    
+  </div>
+</center>
 
 
 </section>
