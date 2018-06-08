@@ -162,58 +162,64 @@ Prinzipiell ist bei (fast) allen Projekten deine Mithilfe willkommen. Wenn du In
 
 <script type="text/javascript">
 function onClick(tag) {
-    var x = document.querySelectorAll(".project-cell");
-    var i;
-    for (i = 0; i < x.length; i++) {
-        x[i].style.opacity = 0.3;
-    }
-    x = document.querySelectorAll(".tag-"+tag);
-    for (i = 0; i < x.length; i++) {
-        x[i].style.opacity = 1;
+    document.querySelector(".filter-button-" + tag).classList.toggle("button-link-selected");
+
+    var selected_tags = []
+    for (b of document.querySelectorAll(".filter-button")) {
+        if (!b.classList.contains("button-link-selected")) continue;
+        selected_tags.push(b.getAttribute("tag"))
     }
 
-    x = document.querySelectorAll(".filter-button");
-    for (i = 0; i < x.length; i++) {
-        x[i].classList.remove("button-link-selected");
+    for (s of document.querySelectorAll(".project-cell")) {
+        if (selected_tags.length) {
+            s.style.opacity = 0.2;
+        } else {
+            s.style.opacity = 1;
+        }
     }
-    document.querySelector(".filter-button-"+tag).classList.add("button-link-selected");
+
+    for (t of selected_tags) {
+        for (s of document.querySelectorAll(".tag-" + t)) {
+            s.style.opacity = 1;
+        }
+    }
 }
 </script>
 
 
 <center>
   <div class="tag-list">
-    <div class="meta">Filter by Tags</div>
+    <div class="meta">Filter über mehrere Tags</div>
     
-    <a class="button filter-button filter-button-3d-druck" onclick="onClick('3d-druck')" href="javascript:;">
+    <a class="button filter-button filter-button-3d-druck" tag="3d-druck" onclick="onClick('3d-druck')" href="javascript:;">
       <p><i class="fa fa-tag fa-fw"></i> 3d-druck</p>
     </a>
     
-    <a class="button filter-button filter-button-elektronik" onclick="onClick('elektronik')" href="javascript:;">
+    <a class="button filter-button filter-button-elektronik" tag="elektronik" onclick="onClick('elektronik')" href="javascript:;">
       <p><i class="fa fa-tag fa-fw"></i> elektronik</p>
     </a>
     
-    <a class="button filter-button filter-button-eurobot" onclick="onClick('eurobot')" href="javascript:;">
+    <a class="button filter-button filter-button-eurobot" tag="eurobot" onclick="onClick('eurobot')" href="javascript:;">
       <p><i class="fa fa-tag fa-fw"></i> eurobot</p>
     </a>
     
-    <a class="button filter-button filter-button-mechanik" onclick="onClick('mechanik')" href="javascript:;">
+    <a class="button filter-button filter-button-mechanik" tag="mechanik" onclick="onClick('mechanik')" href="javascript:;">
       <p><i class="fa fa-tag fa-fw"></i> mechanik</p>
     </a>
     
-    <a class="button filter-button filter-button-pcb" onclick="onClick('pcb')" href="javascript:;">
+    <a class="button filter-button filter-button-pcb" tag="pcb" onclick="onClick('pcb')" href="javascript:;">
       <p><i class="fa fa-tag fa-fw"></i> pcb</p>
     </a>
     
-    <a class="button filter-button filter-button-software" onclick="onClick('software')" href="javascript:;">
+    <a class="button filter-button filter-button-software" tag="software" onclick="onClick('software')" href="javascript:;">
       <p><i class="fa fa-tag fa-fw"></i> software</p>
     </a>
     
-    <a class="button filter-button filter-button-webentwicklung" onclick="onClick('webentwicklung')" href="javascript:;">
+    <a class="button filter-button filter-button-webentwicklung" tag="webentwicklung" onclick="onClick('webentwicklung')" href="javascript:;">
       <p><i class="fa fa-tag fa-fw"></i> webentwicklung</p>
     </a>
     
-    <a class="button filter-button filter-button-werkzeug" onclick="onClick('werkzeug')" href="javascript:;">
+    <a class="button filter-button filter-button-werkzeug" tag="werkzeug" onclick="onClick('werkzeug')" href="javascript:;">
       <p><i class="fa fa-tag fa-fw"></i> werkzeug</p>
     </a>
     
