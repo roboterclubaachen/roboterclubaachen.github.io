@@ -51,9 +51,9 @@
 <meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html" />
 <meta property="og:site_name" content="Roboterclub Aachen" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-06-10T18:37:53+02:00" />
+<meta property="article:published_time" content="2018-06-10T22:03:18+02:00" />
 <script type="application/ld+json">
-{"description":"Zusammenfassung","@type":"BlogPosting","url":"http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html","headline":"Alpha-Motor","dateModified":"2018-06-10T18:37:53+02:00","datePublished":"2018-06-10T18:37:53+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html"},"@context":"http://schema.org"}</script>
+{"url":"http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html","headline":"Alpha-Motor","dateModified":"2018-06-10T22:03:18+02:00","datePublished":"2018-06-10T22:03:18+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html"},"description":"Zusammenfassung","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
@@ -142,7 +142,13 @@
 
 <p>Der Alpha-Motor erfüllt mehrere Funktionen gleichzeitig: Ansteuern von ein oder zwei Motoren, etwa den Antriebsmotoren des Roboters, Odometrie und das Ausführen der Robotersoftware.</p>
 
-<p>Jede Platine verfügt dazu über ein Setup, das sowohl ein oder zwei DC-Motoren als auch ein oder zwei dreiphasige Brushless-DC Motoren unterstützt. Benötigt werden also sechs H-Brücken aus jeweils vier Leistungstransistoren, die von drei Brückentreibern kontrolliert werden. Das Herzstück ist dann der Mikrocontroller. Dieser steuert nicht nur die genannten Brückentreiber, sondern liest Motorencoder aus und kommuniziert über verschiedene Schnittstellen (vor allem CAN) mit dem Rest des Roboters. Zusätzlich wird durch den Mikrocontroller auf zwei Wegen der Strom in den Motoren überwacht: Eine grobe Strommessung über jeweils einen Shunt-Widerstand pro Motor und eine genauere, die von Hall-Sensoren im eigenen Package durchgeführt wird. Zu guter Letzt dürfen Ausgänge und LEDs zu Debug-Zwecken auch nicht fehlen.</p>
+<p>Jede Platine verfügt dazu über ein Setup, das sowohl ein oder zwei DC-Motoren als auch ein oder zwei dreiphasige Brushless-DC Motoren unterstützt.
+Benötigt werden also sechs H-Brücken aus jeweils vier Leistungstransistoren, die von drei Brückentreibern kontrolliert werden.
+Das Herzstück ist dann der Mikrocontroller.
+Dieser steuert nicht nur die genannten Brückentreiber, sondern liest Motorencoder aus und kommuniziert über verschiedene Schnittstellen (vor allem CAN) mit dem Rest des Roboters.
+Zusätzlich wird durch den Mikrocontroller auf zwei Wegen der Strom in den Motoren überwacht:
+Eine grobe Strommessung über jeweils einen Shunt-Widerstand pro Motor und eine genauere, die von Hall-Sensoren in einem eigenen Bauteil durchgeführt wird.
+Zu guter Letzt dürfen Ausgänge und LEDs zu Debug-Zwecken auch nicht fehlen.</p>
 
 <p>Auf dem Microcontroller befindet sich neben den Motor-Reglern auch der Code, der den restlichen Roboter steuert. Die Befehle werden über CAN an die Peripherie (zum Beispiel die Motortreiberplatinen “Micro-Motor” oder andere Alpha-Motor-Platinen) weitergeleitet, aber andersherum können auch Sensordaten oder die Kommunikation mit dem Display hierüber ablaufen.</p>
 

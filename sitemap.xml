@@ -170,6 +170,12 @@
 
   <url>
 	<!-- project -->
+    <loc>http://www.roboterclub.rwth-aachen.de/projekt/modm-dokumentation.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
     <loc>http://www.roboterclub.rwth-aachen.de/projekt/modm-units-and-fixed-point.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -253,7 +259,7 @@
   
   <url>
 	<!-- page -->
-    <loc>http://www.roboterclub.rwth-aachen.de/blog/</loc>
+    <loc>http://www.roboterclub.rwth-aachen.de/</loc>
     
     
     
@@ -261,7 +267,7 @@
   
   <url>
 	<!-- page -->
-    <loc>http://www.roboterclub.rwth-aachen.de/</loc>
+    <loc>http://www.roboterclub.rwth-aachen.de/blog/</loc>
     
     
     

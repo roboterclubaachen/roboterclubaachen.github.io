@@ -17,7 +17,7 @@
     <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/img/rca.svg">
 
     <!-- Canonical -->
-    <link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/fraese-aufarbeiten.html">
+    <link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/modm-dokumentation.html">
 
     <!-- RSS -->
     <link rel="alternate" type="application/atom+xml" title="Roboterclub Aachen" href="http://www.roboterclub.rwth-aachen.de///feed.xml"/>
@@ -41,24 +41,24 @@
     
     <!-- seo tags -->
     <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>CNC Fräse Aufarbeiten | Roboterclub Aachen</title>
+<title>modm: Besseres Dokumentationsformat | Roboterclub Aachen</title>
 <meta name="generator" content="Jekyll v3.8.3" />
-<meta property="og:title" content="CNC Fräse Aufarbeiten" />
+<meta property="og:title" content="modm: Besseres Dokumentationsformat" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Zusammenfassung" />
 <meta property="og:description" content="Zusammenfassung" />
-<link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/fraese-aufarbeiten.html" />
-<meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/fraese-aufarbeiten.html" />
+<link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/modm-dokumentation.html" />
+<meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/modm-dokumentation.html" />
 <meta property="og:site_name" content="Roboterclub Aachen" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2018-06-10T22:03:18+02:00" />
 <script type="application/ld+json">
-{"url":"http://www.roboterclub.rwth-aachen.de/projekt/fraese-aufarbeiten.html","headline":"CNC Fräse Aufarbeiten","dateModified":"2018-06-10T22:03:18+02:00","datePublished":"2018-06-10T22:03:18+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/fraese-aufarbeiten.html"},"description":"Zusammenfassung","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"url":"http://www.roboterclub.rwth-aachen.de/projekt/modm-dokumentation.html","headline":"modm: Besseres Dokumentationsformat","dateModified":"2018-06-10T22:03:18+02:00","datePublished":"2018-06-10T22:03:18+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/modm-dokumentation.html"},"description":"Zusammenfassung","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
     <!--
-    <title>CNC Fräse Aufarbeiten | Roboterclub Aachen</title>
+    <title>modm: Besseres Dokumentationsformat | Roboterclub Aachen</title>
     <meta name="description" content="Zusammenfassung">
     -->
 </head>
@@ -130,38 +130,47 @@
 
     <div class="content">
       <article class="feature-image">
-  <header id="main" style="background-image: url('/assets/img/projektbeschreibungen/fraese.jpg');background-position: center;">
-    <h1 id="CNC+Fr%C3%A4se+Aufarbeiten" class="title">CNC Fräse Aufarbeiten</h1>
+  <header id="main" style="background-image: url('/assets/img/projektbeschreibungen/modm-docs.png');background-position: center;">
+    <h1 id="modm%3A+Besseres+Dokumentationsformat" class="title">modm: Besseres Dokumentationsformat</h1>
   </header>
   <section class="post-content post-content-text">
   <hr>
-<p>Die CNC Fräse wird samt Umhausung und Kühlschmiermittelkreislauf überholt.</p>
+<p>Programmieren eines Dokutools mit Doxygen und lbuild Anbindung und Automatisierung von Doku-Qualitätkontrollen.</p>
 
   <hr>
 <h2 id="zusammenfassung">Zusammenfassung</h2>
 
-<p>Der Roboterclub ist im Besitz einer CNC-Fräse vom Typ Haase Cut 2500M [1] aus dem Jahr 2008.
-Hiermit fräsen wir den Großteil alles Bauteile für unsere Roboter aus Aluminium, Kunststoffen oder selten auch Holz.</p>
+<p>Sowohl xpcc als auch modm sind relativ gut <em>im Code</em> mittels Doxygen dokumentiert.
+Für xpcc haben wir somit einfach den generierten Doxygenoutput online gestellt [1].
+Doxygen eignet sich allerdings nicht besonders gut für Konzeptdokumentation und Beispielcode.</p>
 
-<p>Die Umhausung der Fräse weist einige Probleme auf, welche behoben werden sollen um in Zukunft bequemes und sicheres Fräsen mit hochqualitativen Ergebnissen zu ermöglichen.</p>
+<p>Mit <code class="highlighter-rouge">lbuild</code> ist modm in mehrere Module aufgeteilt, die jeweils nur eine überschaubare Anzahl an Klassen verwalten.
+Diese Module können separat in Markdown dokumentiert werden und erlauben detailierte Konzeptdokumentation [2].
+Die Doxygendokumentation des Codes kann als XML ausgegeben und per Python3 eingelesen werden [3], momentan, werden
+allerdings nur die wichtigsten Objektnamen angezeigt [4].</p>
 
-<p>Desweiteren gibt es viele kleine Aufgaben:</p>
-<ul>
-  <li>Für die Fräse liegt eine Werkzeuglängensensor bereit, welcher eingebaut und in der Software passend konfiguriert werden muss.</li>
-  <li>Der Filter im Kühlschmiermittelkreislauf ist schwer zugänglich, daher schwer zu leeren und zu klein. Daher soll der Kühlschmiermittelkreislauf konzeptionell überarbeitet werden und neu aufgebaut werden und der Kühlschmiermitteldurchfluss erhöht werden.</li>
-  <li>Ein Spritzschutz um den Fräser herum soll konstruiert und gebaut werden.</li>
-  <li>Das Gehäuse soll von innen vollständig mit 2K-EP-Harz abgedichtet werden.</li>
-  <li>Der Endschalter der X-Achse ist defekt und muss ersetzt werden.</li>
-  <li>Verbesserung der Aufspannvorrichtung für Platten.</li>
-  <li>Beschaffung oder Konstruktion und Bau eines Schraubstocks für kleine Bauteile.</li>
-</ul>
+<p>Es soll ein Konzept erarbeitet werden, wie am Besten die Doxygendokumentation in die Moduldokumentation eingebunden werden kann,
+sodass es einfach ist komplexe Dokumentation zu schreiben und mit der Implementation zu verlinken.
+Desweiteren sollen Beispiele in der Moduldokumentation kompilierbar sein, und wenn möglich weitere Überprüfungen (zB. valide Objektnamen im Fließtext) als Teil des CIs implementiert werden.
+Damit soll die Dokumentation synchron zur Implementierung gehalten werden.
+Abschließend soll diese Dokumentation visuell ansprechendend, durchsuchbar und gut navigierbar unter docs.modm.io automatisch
+deployed werden.</p>
+
+<p>In Zukunft soll dieses Tool auch für librobots und evtl. andere RCA Projekte verwendet werden.
+Als Vorbild für Design und Vollständigkeit gilt die Qt5 Dokumentation [5].</p>
+
+<p><em>Es ist explizit nicht erforderlich, Dokumentation für modm zu schreiben!</em>
+Es geht hier um die automatische Erstellung und Pflege der Dokumentation, nicht unbedingt den Inhalt.</p>
 
 <h2 id="tätigkeitsfelder-und-technologien">Tätigkeitsfelder und Technologien</h2>
+
 <ul>
-  <li>Schaltschrank aufbauen</li>
-  <li>Holz und Metallbearbeitung</li>
-  <li>LinuxCNC</li>
-  <li>Einweisung zur Bedienung der Fräse</li>
+  <li>Doxygen XML Auswertung für Assembly, C, C++</li>
+  <li>Python3 und Jinja2 für Datenumwandlung und Dokumentationsgeneration</li>
+  <li>Editieren Technischer Dokumentation</li>
+  <li>Automatische Compilierung von Beispielcode</li>
+  <li>Automatisches Deployment der Dokumentation</li>
+  <li>Webdevelopment und -design, evtl. mit vorhandener Doku-Engine</li>
 </ul>
 
 
@@ -171,7 +180,23 @@ Hiermit fräsen wir den Großteil alles Bauteile für unsere Roboter aus Alumini
 
 
 
-<li>[1] https://www.team-haase.de/cut2500/ Haase Cut 2500M (Profiversion)</li>
+<li>[1] http://xpcc.io/api</li>
+
+
+
+<li>[2] https://modm.io/reference/module/modm-platform-core</li>
+
+
+
+<li>[3] https://github.com/modm-io/modm/blob/feature/docs/tools/doc_generator/module.lb</li>
+
+
+
+<li>[4] https://modm.io/reference/module/modm-architecture</li>
+
+
+
+<li>[5] https://doc.qt.io</li>
 
 </ul>
   </section>
@@ -182,14 +207,14 @@ Hiermit fräsen wir den Großteil alles Bauteile für unsere Roboter aus Alumini
         <div class="meta">Teilen</div>
          
         <li>
-            <a href="https://twitter.com/intent/tweet?source=http://www.roboterclub.rwth-aachen.de/projekt/fraese-aufarbeiten.html&text=CNC Fräse Aufarbeiten%20%7C%20Roboterclub Aachen:%20http://www.roboterclub.rwth-aachen.de/projekt/fraese-aufarbeiten.html" target="_blank" title="Twittern">
+            <a href="https://twitter.com/intent/tweet?source=http://www.roboterclub.rwth-aachen.de/projekt/modm-dokumentation.html&text=modm: Besseres Dokumentationsformat%20%7C%20Roboterclub Aachen:%20http://www.roboterclub.rwth-aachen.de/projekt/modm-dokumentation.html" target="_blank" title="Twittern">
 			<i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Twittern</span>
 		</a>
         </li>
                 
         <li>
-            <a href="mailto:?subject=CNC Fräse Aufarbeiten%20%7C%20Roboterclub Aachen&body=:%20http://www.roboterclub.rwth-aachen.de/projekt/fraese-aufarbeiten.html" target="_blank" title="Email">
+            <a href="mailto:?subject=modm: Besseres Dokumentationsformat%20%7C%20Roboterclub Aachen&body=:%20http://www.roboterclub.rwth-aachen.de/projekt/modm-dokumentation.html" target="_blank" title="Email">
 			<i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Email</span>
 		</a>
@@ -209,12 +234,16 @@ Hiermit fräsen wir den Großteil alles Bauteile für unsere Roboter aus Alumini
     
 
     
-    <a class="button" href="/tags#werkzeug">
-      <p><i class="fa fa-tag fa-fw"></i> werkzeug</p>
+    <a class="button" href="/tags#software">
+      <p><i class="fa fa-tag fa-fw"></i> software</p>
     </a>
     
-    <a class="button" href="/tags#mechanik">
-      <p><i class="fa fa-tag fa-fw"></i> mechanik</p>
+    <a class="button" href="/tags#webentwicklung">
+      <p><i class="fa fa-tag fa-fw"></i> webentwicklung</p>
+    </a>
+    
+    <a class="button" href="/tags#werkzeug">
+      <p><i class="fa fa-tag fa-fw"></i> werkzeug</p>
     </a>
     
   </div>
