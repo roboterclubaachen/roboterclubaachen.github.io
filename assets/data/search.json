@@ -427,6 +427,18 @@
    
      {
        
+          "title"    : "Projekt: modm: Hardware Unittests",
+          "category" : "Projekt",
+          "tags"     : " software, webentwicklung, elektronik, werkzeug",
+          "url"      : "/projekt/modm-hwut.html",
+          "date"     : "June 10, 2018",
+          "excerpt"  : "Automatisches Ausführen von Unit- und Integrationstests auf Arm Cortex-M Mikrocontrollern.",
+          "content"  : "<h2 id=\"zusammenfassung\">Zusammenfassung</h2>\n\n<p>modm enthält eine große Anzahl an Unittests [1], die auch in unserem CI automatisch auf x86 ausgeführt werden.\nDiese Unittests können auch direkt auf dem Mikrocontroller ausgeführt werden, allerdings nur manuell und mit diversen Einschränkungen [2].\nDieser Prozess soll automatisiert werden, und die Ergebnisse als Teil des modm CIs für alle öffentlichen Pull Requests auf GitHub zur Verfügung gestellt werden.\nDazu stellen wir eine große Anzahl an diversen STM32 Discovery und Nucleo Development Boards.</p>\n\n<p>Da die modm Unittests recht begrenzt sind in ihrer Funktionalität, wäre es evtl. sinnvoll ein vollständigeres Unittest Framework wie Metal.Test zu nutzen [3].\nTracing und Performance könnte zusätzlich mit der Arm Cortex-M Debughardware erfasst werden [4].</p>\n\n<p>Zusätzlich zu in sich geschlossenen Unittests sollen auch Hardware Integrationstests erforscht werden.\nDazu gibt es Überlegungen, während eines Testes die Input/Output Werte des Mikrocontrollers mit Hilfe vom SigRok [5] zu erfassen und gegen diverse Eigenschaften und Testcases zu überprüfen.\nHier sollen verschiedene komplexe Tests gefahren und ausgewertet werden können [6], evtl. mit FPGA als IO-Multiplexer und Logikanalyzer.</p>\n\n<h2 id=\"tätigkeitsfelder-und-technologien\">Tätigkeitsfelder und Technologien</h2>\n\n<ul>\n  <li>Testing mit Hardware-in-Loop</li>\n  <li>Anzeige als GitHub Continuous Integration Service</li>\n  <li>Debugging mit GDB auf Arm Cortex-M</li>\n  <li>Arm Cortex-M Debug-Hardware</li>\n  <li>Erstellen von Logikwaveformtests</li>\n  <li>Automatisierte Auswertung von Logikprotokollanalysen</li>\n  <li>PCB Design mit FPGAs</li>\n</ul>\n"
+       
+     } ,
+   
+     {
+       
           "title"    : "Projekt: modm: Konzept und Umsetzung einer DMA Schnittstelle",
           "category" : "Projekt",
           "tags"     : " software",
