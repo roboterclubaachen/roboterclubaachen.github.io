@@ -103,6 +103,18 @@
    
      {
        
+          "title"    : "Projekt: Bachelor/Master Thesis: Lokalisierung mit Ultraschall und IMU",
+          "category" : "Projekt",
+          "tags"     : " software, elektronik",
+          "url"      : "/projekt/imu.html",
+          "date"     : "June 11, 2018",
+          "excerpt"  : "Kooperative Lokalisierung mit Ultraschall und Inertial Measurement Unit (IMU) für kompetitive mobile Robotik.",
+          "content"  : "<h2 id=\"zusammenfassung\">Zusammenfassung</h2>\n\n<p>Im der kommenden Saison setzt der RCA ein neues System zu Lokalisierung und der Roboter auf dem Spielfeld ein. Das Lokalisierungssystem basiert zur Zeit auf Ultraschallsignalen die von festen Ankerknoten (Baken) ausgestrahlt werden.\nDie Zeitsynchronisierung erfolgt mit Hilfe von Funksignalen.\nZusätlich können die mobilen Knoten des Systems drahtlos ihre jeweiligen Messdaten austauschen,\nso dass eine kooperative Lokalisierung ermöglicht wird. Dies ermöglicht eine Verbesserung der Zuverlässigkeit.\nDas grundlegen technische Konzept wurde in den letzten Jahren bereits entwicket und erfolgreich getestet.</p>\n\n<p>In dieser Masterarbeit sollen die mobilen Knoten des System um jeweils eine inertial measurement unit (IMU) erweitert werden.\nDabei geht es vor allem um die Implementierung und Leistungsanalyse von Sensorfusionsalgorithmen.</p>\n\n<h3 id=\"ziel\">Ziel</h3>\n\n<p>Theoretische Analyse und dazugehöriger experimenteller Aufbau eines kooperativen Lokalisierungssystems am Spielfeldrand und auf den mobilen Robotereinheiten.</p>\n\n<h3 id=\"requirements\">Requirements</h3>\n\n<ul>\n  <li>Verständnis von Signalverarbeitung</li>\n  <li>Erfahrung mit C++ Programmierung</li>\n  <li>Erfahrung mit Mikrocontrollerprogrammierung (Embedded Software Entwicklung)</li>\n  <li>Python or Matlab</li>\n</ul>\n\n<p><strong>Beneficial</strong></p>\n\n<ul>\n  <li>Soldering skills</li>\n  <li>PCB design</li>\n</ul>\n"
+       
+     } ,
+   
+     {
+       
           "title"    : "Projekt: Battery Management System",
           "category" : "Projekt",
           "tags"     : " elektronik, pcb",
@@ -278,18 +290,6 @@
           "date"     : "June 11, 2018",
           "excerpt"  : "Entwicklung einer intelligenten Kommutierungsmethode für Bürstenlose Gleichstrommotoren.",
           "content"  : "<h2 id=\"zusammenfassung\">Zusammenfassung</h2>\n\n<p>Bei den zumeist verwendeten Motoren handelt es sich um Bürstenlose Gleichstrommotoren (BLDC), welche von einem externen Steuergerät angesteuert werden müssen.</p>\n\n<p>Dieses Steuergerät enthält neben der Leistungselektronik auch noch Logik welche das vom Motor benötigte rotierende Magnetfeld erzeugt.</p>\n\n<p>Die einfachste und derzeit im RCA genutzte sogenannte Kommutierungsmethode ist die Block-Kommutierung.\nEs gibt Alternativen zur Block-Kommutierung, die u.a. Vorteile in den Punkten Kraft und Laufruhe bringen. Der Blog-Post [1] liefert hier ein erste Übersicht.</p>\n\n<p>Ziel diese Projektes ist die Evaluierung der Möglichkeiten sowie die Erstellung einer an die Bedürfnisse des RCA angepasste Simulation und idealerweise anschließende reale Implementation einer intelligenten Kommutierungslogik.</p>\n\n<h2 id=\"tätigkeitsfelder-und-technologien\">Tätigkeitsfelder und Technologien</h2>\n<ul>\n  <li>Software mit Echtzeit-Anforderung (Microcontroller)</li>\n  <li>STM32-Peripherie: Timer</li>\n  <li>Recherche und Dokumentation</li>\n  <li>Simulation mit geeigneter Toolchain</li>\n</ul>\n"
-       
-     } ,
-   
-     {
-       
-          "title"    : "Projekt: Kooperative Lokalisierung mit Ultraschall und IMU (Bachelor/Master Thesis)",
-          "category" : "Projekt",
-          "tags"     : " software, elektronik",
-          "url"      : "/projekt/imu.html",
-          "date"     : "June 11, 2018",
-          "excerpt"  : "Kooperative Lokalisierung mit Ultraschall und Inertial Measurement Unit (IMU) für kompetitive mobile Robotik.",
-          "content"  : "<h2 id=\"zusammenfassung\">Zusammenfassung</h2>\n\n<p>Im der kommenden Saison setzt der RCA ein neues System zu Lokalisierung und der Roboter auf dem Spielfeld ein. Das Lokalisierungssystem basiert zur Zeit auf Ultraschallsignalen die von festen Ankerknoten (Baken) ausgestrahlt werden.\nDie Zeitsynchronisierung erfolgt mit Hilfe von Funksignalen.\nZusätlich können die mobilen Knoten des Systems drahtlos ihre jeweiligen Messdaten austauschen,\nso dass eine kooperative Lokalisierung ermöglicht wird. Dies ermöglicht eine Verbesserung der Zuverlässigkeit.\nDas grundlegen technische Konzept wurde in den letzten Jahren bereits entwicket und erfolgreich getestet.</p>\n\n<p>In dieser Masterarbeit sollen die mobilen Knoten des System um jeweils eine inertial measurement unit (IMU) erweitert werden.\nDabei geht es vor allem um die Implementierung und Leistungsanalyse von Sensorfusionsalgorithmen.</p>\n\n<h3 id=\"ziel\">Ziel</h3>\n\n<p>Theoretische Analyse und dazugehöriger experimenteller Aufbau eines kooperativen Lokalisierungssystems am Spielfeldrand und auf den mobilen Robotereinheiten.</p>\n\n<h3 id=\"requirements\">Requirements</h3>\n\n<ul>\n  <li>Verständnis von Signalverarbeitung</li>\n  <li>Erfahrung mit C++ Programmierung</li>\n  <li>Erfahrung mit Mikrocontrollerprogrammierung (Embedded Software Entwicklung)</li>\n  <li>Python or Matlab</li>\n</ul>\n\n<p><strong>Beneficial</strong></p>\n\n<ul>\n  <li>Soldering skills</li>\n  <li>PCB design</li>\n</ul>\n"
        
      } ,
    
