@@ -367,6 +367,18 @@
    
      {
        
+          "title"    : "Projekt: SCARA",
+          "category" : "Projekt",
+          "tags"     : " ",
+          "url"      : "/projekt/scara.html",
+          "date"     : "June 11, 2018",
+          "excerpt"  : "Der SCARA ist ein Roboterarm, der sich besonders für planare Pick-And-Place-Handhabungen eignet",
+          "content"  : "<h2 id=\"zusammenfassung\">Zusammenfassung</h2>\n\n<p>Der SCARA ist während der Saison 2018 enstanden und sollte zum Aufsammeln und Stapeln von Bauklötzen eingesetzt werden. Für die Handhabung ist momentan ein Saugnapf montiert.</p>\n\n<p>Angetrieben wird der Arm über insgesamt vier Motoren. Die Z-Achse wird über eine Spindel verfahren, die restlichen Motoren sind direkt mit den jeweiligen Achsen verbunden. Mit den Motorencodern werden die aktuelle Positionen erfasst, dabei ist beim Einschalten eine Referenzfahrt nötig, um die Nullpunkte der Z-Achse und Armwinkel zu ermitteln.Die gewünschte Position wird vom Anwender in kartesischen Koordinaten vorgegeben. Innerhalb der Software werden daraus die einzelnen Sollwinkel errechnet und validiert. Die Positionregelung erfolgt bislang für jeden Motor durch einen einzelnen PID-Reglern. Bei Vorgabe eines Punkts fahren alle Motoren den jeweiligen gewünschte Winkel an, wobei der langsamste Motor die Zeitdauer bestimmt. Ebenso ist der abgefahrene Weg eine Kurve, die von Anfangs- Endposition und der SCARA-Kinematik abhängt. Eine kontrollierte Fahrt entlang einer Linie ist angedacht.\nDie Mechanik ist weitgehend Spielfrei und sehr robust konstruiert. Mit geeignetem Werkzeug kann man auch Bäume ausreißen.</p>\n\n<h2 id=\"tätigkeitsfelder-und-technologien\">Tätigkeitsfelder und Technologien</h2>\n<ul>\n  <li>Mechanik: CAD, Fräsen, Berechnung von Kinematik und Dynamik</li>\n  <li>Elektrik: Ansteuerung der Motoren, Auswertung der Encoder, Verkabelung</li>\n  <li>Software: Anwenderschnittstelle, Regelung und Berechnungen zur Positionierung</li>\n</ul>\n"
+       
+     } ,
+   
+     {
+       
           "title"    : "Projekt: Sensorik zur Gewichtsmessung",
           "category" : "Projekt",
           "tags"     : " elektronik, pcb, software, mechanik",
