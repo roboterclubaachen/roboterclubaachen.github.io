@@ -51,9 +51,9 @@
 <meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/modm-dokumentation.html" />
 <meta property="og:site_name" content="Roboterclub Aachen" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-06-10T23:12:03+02:00" />
+<meta property="article:published_time" content="2018-06-11T15:19:21+02:00" />
 <script type="application/ld+json">
-{"url":"http://www.roboterclub.rwth-aachen.de/projekt/modm-dokumentation.html","headline":"modm: Besseres Dokumentationsformat","dateModified":"2018-06-10T23:12:03+02:00","datePublished":"2018-06-10T23:12:03+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/modm-dokumentation.html"},"description":"Zusammenfassung","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"url":"http://www.roboterclub.rwth-aachen.de/projekt/modm-dokumentation.html","headline":"modm: Besseres Dokumentationsformat","dateModified":"2018-06-11T15:19:21+02:00","datePublished":"2018-06-11T15:19:21+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/modm-dokumentation.html"},"description":"Zusammenfassung","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
@@ -140,14 +140,14 @@
   <hr>
 <h2 id="zusammenfassung">Zusammenfassung</h2>
 
-<p>Sowohl xpcc als auch modm sind relativ gut <em>im Code</em> mittels Doxygen dokumentiert.
-Für xpcc haben wir somit einfach den generierten Doxygenoutput online gestellt [1].
+<p>Sowohl xpcc als auch modm [1] sind relativ gut <em>im Code</em> mittels Doxygen dokumentiert.
+Für xpcc haben wir somit einfach den generierten Doxygenoutput online gestellt [2].
 Doxygen eignet sich allerdings nicht besonders gut für Konzeptdokumentation und Beispielcode.</p>
 
-<p>Mit <code class="highlighter-rouge">lbuild</code> ist modm in mehrere Module aufgeteilt, die jeweils nur eine überschaubare Anzahl an Klassen verwalten.
-Diese Module können separat in Markdown dokumentiert werden und erlauben detailierte Konzeptdokumentation [2].
-Die Doxygendokumentation des Codes kann als XML ausgegeben und per Python3 eingelesen werden [3], momentan, werden
-allerdings nur die wichtigsten Objektnamen angezeigt [4].</p>
+<p>Mit <code class="highlighter-rouge">lbuild</code> [3] ist modm in mehrere Module aufgeteilt, die jeweils nur eine überschaubare Anzahl an Klassen verwalten.
+Diese Module können separat in Markdown dokumentiert werden und erlauben detailierte Konzeptdokumentation [4].
+Die Doxygendokumentation des Codes kann als XML ausgegeben und per Python3 eingelesen werden [5], momentan, werden
+allerdings nur die wichtigsten Objektnamen angezeigt [6].</p>
 
 <p>Es soll ein Konzept erarbeitet werden, wie am Besten die Doxygendokumentation in die Moduldokumentation eingebunden werden kann,
 sodass es einfach ist komplexe Dokumentation zu schreiben und mit der Implementation zu verlinken.
@@ -157,7 +157,7 @@ Abschließend soll diese Dokumentation visuell ansprechendend, durchsuchbar und 
 deployed werden.</p>
 
 <p>In Zukunft soll dieses Tool auch für librobots und evtl. andere RCA Projekte verwendet werden.
-Als Vorbild für Design und Vollständigkeit gilt die Qt5 Dokumentation [5].</p>
+Als Vorbild für Design und Vollständigkeit gilt die Qt5 Dokumentation [7].</p>
 
 <p><em>Es ist explizit nicht erforderlich, Dokumentation für modm zu schreiben!</em>
 Es geht hier um die automatische Erstellung und Pflege der Dokumentation, nicht unbedingt den Inhalt.</p>
@@ -180,23 +180,31 @@ Es geht hier um die automatische Erstellung und Pflege der Dokumentation, nicht 
 
 
 
-<li>[1] http://xpcc.io/api</li>
+<li>[1] https://modm.io</li>
 
 
 
-<li>[2] https://modm.io/reference/module/modm-platform-core</li>
+<li>[3] https://xpcc.io/api</li>
 
 
 
-<li>[3] https://github.com/modm-io/modm/blob/feature/docs/tools/doc_generator/module.lb</li>
+<li>[2] https://github.com/dergraaf/library-builder</li>
 
 
 
-<li>[4] https://modm.io/reference/module/modm-architecture</li>
+<li>[4] https://modm.io/reference/module/modm-platform-core</li>
 
 
 
-<li>[5] https://doc.qt.io</li>
+<li>[5] https://github.com/modm-io/modm/blob/feature/docs/tools/doc_generator/module.lb</li>
+
+
+
+<li>[6] https://modm.io/reference/module/modm-architecture</li>
+
+
+
+<li>[7] https://doc.qt.io</li>
 
 </ul>
   </section>

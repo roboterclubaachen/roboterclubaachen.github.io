@@ -17,7 +17,7 @@
     <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/img/rca.svg">
 
     <!-- Canonical -->
-    <link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/fraese-aufarbeiten.html">
+    <link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/debugserver-softwarestack.html">
 
     <!-- RSS -->
     <link rel="alternate" type="application/atom+xml" title="Roboterclub Aachen" href="http://www.roboterclub.rwth-aachen.de///feed.xml"/>
@@ -41,24 +41,24 @@
     
     <!-- seo tags -->
     <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>CNC Fräse Aufarbeiten | Roboterclub Aachen</title>
+<title>Debugserver – Softwarestack | Roboterclub Aachen</title>
 <meta name="generator" content="Jekyll v3.8.3" />
-<meta property="og:title" content="CNC Fräse Aufarbeiten" />
+<meta property="og:title" content="Debugserver – Softwarestack" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Zusammenfassung" />
 <meta property="og:description" content="Zusammenfassung" />
-<link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/fraese-aufarbeiten.html" />
-<meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/fraese-aufarbeiten.html" />
+<link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/debugserver-softwarestack.html" />
+<meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/debugserver-softwarestack.html" />
 <meta property="og:site_name" content="Roboterclub Aachen" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2018-06-11T15:19:21+02:00" />
 <script type="application/ld+json">
-{"url":"http://www.roboterclub.rwth-aachen.de/projekt/fraese-aufarbeiten.html","headline":"CNC Fräse Aufarbeiten","dateModified":"2018-06-11T15:19:21+02:00","datePublished":"2018-06-11T15:19:21+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/fraese-aufarbeiten.html"},"description":"Zusammenfassung","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"url":"http://www.roboterclub.rwth-aachen.de/projekt/debugserver-softwarestack.html","headline":"Debugserver – Softwarestack","dateModified":"2018-06-11T15:19:21+02:00","datePublished":"2018-06-11T15:19:21+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/debugserver-softwarestack.html"},"description":"Zusammenfassung","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
     <!--
-    <title>CNC Fräse Aufarbeiten | Roboterclub Aachen</title>
+    <title>Debugserver – Softwarestack | Roboterclub Aachen</title>
     <meta name="description" content="Zusammenfassung">
     -->
 </head>
@@ -130,39 +130,40 @@
 
     <div class="content">
       <article class="feature-image">
-  <header id="main" style="background-image: url('/assets/img/projektbeschreibungen/fraese.jpg');background-position: center;">
-    <h1 id="CNC+Fr%C3%A4se+Aufarbeiten" class="title">CNC Fräse Aufarbeiten</h1>
+  <header id="main" style="background-image: url('/assets/img/projektbeschreibungen/linux-bootlog.jpg');background-position: center;">
+    <h1 id="Debugserver+%E2%80%93+Softwarestack" class="title">Debugserver – Softwarestack</h1>
   </header>
   <section class="post-content post-content-text">
   <hr>
-<p>Die CNC-Fräse wird samt Umhausung und Kühlschmiermittelkreislauf überholt.</p>
+<p>Aufsetzten des Betriebssystems für den Raspberry Pi.</p>
 
   <hr>
 <h2 id="zusammenfassung">Zusammenfassung</h2>
 
-<p>Der Roboterclub ist im Besitz einer CNC-Fräse vom Typ Haase Cut 2500M [1] aus dem Jahr 2008.
-Hiermit fräsen wir den Großteil der Bauteile für unsere Roboter aus Aluminium, Kunststoffen oder selten auch Holz.</p>
+<p>Der Debugserver (siehe Projekt “Debugserver Hardware”) basiert auf einem Raspberry Pi.
+Auf dem Raspberry Pi läuft ein Debian-basiertes Linux-System, dieses soll mittels <code class="highlighter-rouge">debootstrap</code> [1],
+ähnlich des Image-Builders [2] aufgesetzt werden um Reproduzierbarkeit zu gewährleisten.</p>
 
-<p>Die Umhausung der Fräse weist einige Probleme auf, welche behoben werden sollen, um in Zukunft bequemes und sicheres Fräsen mit hochqualitativen Ergebnissen zu ermöglichen.</p>
+<p>Zusätzlich werden diverse Dienste auf dem Debugserver benötigt, wie beipielsweise OpenOCD zum Programmieren des Mikrocontrollers, eine CAN-to-Network Brücke oder  die Überwachung des Roboterzustandes anhand welcher der Debugserver ggf. heruntergefahren wird.
+Diese Dienste müssen konfiguriert, beim Hochfahren automatisch gestartet und teilweise zuvor noch implementiert werden.
+Ebenso muss die Netzwerkkonfiguaration mit der Möglichkeit zum Umschalten zwischen Client- und Accesspoint- Betrieb zuverlässig eingerichtet werden.</p>
 
-<p>Desweiteren gibt es viele kleine Aufgaben:</p>
+<h3 id="technische-daten-geplant">Technische Daten (geplant):</h3>
 <ul>
-  <li>Die Elektrik der Fräse soll in einen bereitliegenden Schaltschrank eingebaut werden</li>
-  <li>Für die Fräse liegt eine Werkzeuglängensensor bereit, welcher eingebaut und in der Software passend konfiguriert werden muss.</li>
-  <li>Der Filter im Kühlschmiermittelkreislauf ist schwer zugänglich, daher schwer zu leeren und zu klein. Daher soll der Kühlschmiermittelkreislauf konzeptionell überarbeitet werden und neu aufgebaut werden, wobei der Kühlschmiermittel-Durchfluss erhöht wird.</li>
-  <li>Ein Spritzschutz um den Fräser herum soll konstruiert und gebaut werden.</li>
-  <li>Das Gehäuse soll von innen vollständig mit 2K-EP-Harz abgedichtet werden.</li>
-  <li>Der Endschalter der X-Achse ist defekt und muss ersetzt werden.</li>
-  <li>Verbesserung der Aufspannvorrichtung für Platten.</li>
-  <li>Beschaffung oder Konstruktion und Bau eines Schraubstocks für kleine Bauteile.</li>
+  <li>Debian Stretch (9) oder Fedora
+    <ul>
+      <li>ARMv7 (<em>armhf</em>) oder ARMv8 (<em>aarch64</em>)</li>
+    </ul>
+  </li>
+  <li>Reproduzierbarkeit der Betriebssystem-Images durch Nutzung von Debootstrap und Skripten zur Installation und Konfiguration der Software</li>
 </ul>
 
 <h2 id="tätigkeitsfelder-und-technologien">Tätigkeitsfelder und Technologien</h2>
 <ul>
-  <li>Holz- und Metallbearbeitung</li>
-  <li>LinuxCNC</li>
-  <li>Einweisung zur Bedienung der Fräse</li>
-  <li>Schaltschrank aufbauen</li>
+  <li>Linux: Debian (oder Fedora?)</li>
+  <li>Systemd</li>
+  <li>Debootstrap</li>
+  <li>Systemadministration</li>
 </ul>
 
 
@@ -172,7 +173,11 @@ Hiermit fräsen wir den Großteil der Bauteile für unsere Roboter aus Aluminium
 
 
 
-<li>[1] https://www.team-haase.de/cut2500/ Haase Cut 2500M (Profiversion)</li>
+<li>[1] https://wiki.debian.org/Debootstrap</li>
+
+
+
+<li>[2] https://github.com/strongly-typed/image-builder (siehe auch diverse teils private Forks)</li>
 
 </ul>
   </section>
@@ -183,14 +188,14 @@ Hiermit fräsen wir den Großteil der Bauteile für unsere Roboter aus Aluminium
         <div class="meta">Teilen</div>
          
         <li>
-            <a href="https://twitter.com/intent/tweet?source=http://www.roboterclub.rwth-aachen.de/projekt/fraese-aufarbeiten.html&text=CNC Fräse Aufarbeiten%20%7C%20Roboterclub Aachen:%20http://www.roboterclub.rwth-aachen.de/projekt/fraese-aufarbeiten.html" target="_blank" title="Twittern">
+            <a href="https://twitter.com/intent/tweet?source=http://www.roboterclub.rwth-aachen.de/projekt/debugserver-softwarestack.html&text=Debugserver – Softwarestack%20%7C%20Roboterclub Aachen:%20http://www.roboterclub.rwth-aachen.de/projekt/debugserver-softwarestack.html" target="_blank" title="Twittern">
 			<i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Twittern</span>
 		</a>
         </li>
                 
         <li>
-            <a href="mailto:?subject=CNC Fräse Aufarbeiten%20%7C%20Roboterclub Aachen&body=:%20http://www.roboterclub.rwth-aachen.de/projekt/fraese-aufarbeiten.html" target="_blank" title="Email">
+            <a href="mailto:?subject=Debugserver – Softwarestack%20%7C%20Roboterclub Aachen&body=:%20http://www.roboterclub.rwth-aachen.de/projekt/debugserver-softwarestack.html" target="_blank" title="Email">
 			<i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Email</span>
 		</a>
@@ -206,16 +211,12 @@ Hiermit fräsen wir den Großteil der Bauteile für unsere Roboter aus Aluminium
 <footer>
   <div class="tag-list">
     
-      <div class="meta">Tags</div>
+      <div class="meta">Tag</div>
     
 
     
-    <a class="button" href="/tags#werkzeug">
-      <p><i class="fa fa-tag fa-fw"></i> werkzeug</p>
-    </a>
-    
-    <a class="button" href="/tags#mechanik">
-      <p><i class="fa fa-tag fa-fw"></i> mechanik</p>
+    <a class="button" href="/tags#software">
+      <p><i class="fa fa-tag fa-fw"></i> software</p>
     </a>
     
   </div>
