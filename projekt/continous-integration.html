@@ -17,7 +17,7 @@
     <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/img/rca.svg">
 
     <!-- Canonical -->
-    <link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html">
+    <link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/continous-integration.html">
 
     <!-- RSS -->
     <link rel="alternate" type="application/atom+xml" title="Roboterclub Aachen" href="http://www.roboterclub.rwth-aachen.de///feed.xml"/>
@@ -41,24 +41,24 @@
     
     <!-- seo tags -->
     <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>Alpha-Motor | Roboterclub Aachen</title>
+<title>CI für unsere eingebettete Software | Roboterclub Aachen</title>
 <meta name="generator" content="Jekyll v3.8.3" />
-<meta property="og:title" content="Alpha-Motor" />
+<meta property="og:title" content="CI für unsere eingebettete Software" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Zusammenfassung" />
 <meta property="og:description" content="Zusammenfassung" />
-<link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html" />
-<meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html" />
+<link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/continous-integration.html" />
+<meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/continous-integration.html" />
 <meta property="og:site_name" content="Roboterclub Aachen" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2018-06-11T15:36:51+02:00" />
 <script type="application/ld+json">
-{"url":"http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html","headline":"Alpha-Motor","dateModified":"2018-06-11T15:36:51+02:00","datePublished":"2018-06-11T15:36:51+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html"},"description":"Zusammenfassung","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"url":"http://www.roboterclub.rwth-aachen.de/projekt/continous-integration.html","headline":"CI für unsere eingebettete Software","dateModified":"2018-06-11T15:36:51+02:00","datePublished":"2018-06-11T15:36:51+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/continous-integration.html"},"description":"Zusammenfassung","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
     <!--
-    <title>Alpha-Motor | Roboterclub Aachen</title>
+    <title>CI für unsere eingebettete Software | Roboterclub Aachen</title>
     <meta name="description" content="Zusammenfassung">
     -->
 </head>
@@ -130,56 +130,33 @@
 
     <div class="content">
       <article class="feature-image">
-  <header id="main" style="background-image: url('/assets/img/projektbeschreibungen/alpha-motor-layout.jpg');background-position: center;">
-    <h1 id="Alpha-Motor" class="title">Alpha-Motor</h1>
+  <header id="main" style="background-image: url('/assets/img/projektbeschreibungen/rca-ci.png');background-position: center;">
+    <h1 id="CI+f%C3%BCr+unsere+eingebettete+Software" class="title">CI für unsere eingebettete Software</h1>
   </header>
   <section class="post-content post-content-text">
   <hr>
-<p>Alpha-Motor ist eine Platine zur Ansteuerung von zwei Antriebsmotoren und momentan die Hauptplatine des Roboters.</p>
+<p>Konzipieren und Programmieren eines CI-Service in GitLab für unsere Softwareprojekte und Anzeige auf einem Dashboard.</p>
 
   <hr>
 <h2 id="zusammenfassung">Zusammenfassung</h2>
 
-<p>Der Alpha-Motor erfüllt mehrere Funktionen gleichzeitig: Ansteuern von ein oder zwei Motoren, etwa den Antriebsmotoren des Roboters, Odometrie und das Ausführen der Robotersoftware.</p>
+<p>Der Roboterclub hat viele eingebettete Softwareprojekte, deren Qualitäts-Zustand wir gerne im Blick behalten möchten.
+Dazu brauchen wir einen sinnvollen und einfach zu benutzenden Continous Integration Service, der unsere Projekte in GitLab
+mindestens kompiliert und optional Unittests auswertet.
+Es sollen Docker Images gebaut werden um in GitLab Pipelines [1] verwendet zu werden.</p>
 
-<p>Jede Platine verfügt dazu über ein Setup, das sowohl ein oder zwei DC-Motoren als auch ein oder zwei dreiphasige Brushless-DC Motoren unterstützt.
-Benötigt werden also sechs H-Brücken aus jeweils vier Leistungstransistoren, die von drei Brückentreibern kontrolliert werden.
-Das Herzstück ist dann der Mikrocontroller.
-Dieser steuert nicht nur die genannten Brückentreiber, sondern liest Motorencoder aus und kommuniziert über verschiedene Schnittstellen (vor allem CAN) mit dem Rest des Roboters.
-Zusätzlich wird durch den Mikrocontroller auf zwei Wegen der Strom in den Motoren überwacht:
-Eine grobe Strommessung über jeweils einen Shunt-Widerstand pro Motor und eine genauere, die von Hall-Sensoren in einem eigenen Bauteil durchgeführt wird.
-Zu guter Letzt dürfen Ausgänge und LEDs zu Debug-Zwecken auch nicht fehlen.</p>
+<p>Dies ist besonders wertvoll, wenn der gesamte Setup mobil sein kann, sodass wir eine kleine Version dieses CIs zu Wettkämpfen 
+mitnehmen können, bei denen es evtl. kein (oder sehr langsames) Internet gibt (*<em>hust</em>* in Frankreich *<em>hust</em>*).</p>
 
-<p>Auf dem Microcontroller befindet sich neben den Motor-Reglern auch der Code, der den restlichen Roboter steuert. Die Befehle werden über CAN an die Peripherie (zum Beispiel die Motortreiberplatinen “Micro-Motor” oder andere Alpha-Motor-Platinen) weitergeleitet, aber andersherum können auch Sensordaten oder die Kommunikation mit dem Display hierüber ablaufen.</p>
-
-<h3 id="technische-daten-geplant">Technische Daten (geplant)</h3>
-<ul>
-  <li>3 Phasen (DC und Brushless-DC Motoren)</li>
-  <li>ca. 20A pro Phase in der Spitze</li>
-  <li>20V Betriebsspannung (Akku) -&gt; 40V oder 60V Auslegung</li>
-  <li>Mikrocontroller STM32F407</li>
-  <li>2x CAN-Bus mit 4 Steckern, 1 UART, 1 SPI/I2C</li>
-  <li>Anschlüsse für 4 AB-Encoder inklusive UART 1-Wire</li>
-  <li>Anschlüsse für 2 Hall-Sensoren</li>
-  <li>Strommessung und Strombegrenzung</li>
-  <li>LEDs für Software-Status &amp; Encoderstatus</li>
-  <li>Konfigurierbare ID</li>
-  <li>Einfach lötbar und aufbaubar</li>
-  <li>Abmessungen: 49 x 77 mm²</li>
-</ul>
+<p>Es wäre schön, zusätzlich ein kleines Dashboard zu haben, was auf einen Blick anzeigt, wie der Zustand unserer Softwareprojekte ist.
+Dieses Dashboard darf auch sehr gerne physikalisch sein (Ampel, LED Streifen oder so).</p>
 
 <h2 id="tätigkeitsfelder-und-technologien">Tätigkeitsfelder und Technologien</h2>
+
 <ul>
-  <li>PCB Design 4-Layer (mit KiCAD)
-    <ul>
-      <li>EMV-gerechtes Design</li>
-    </ul>
-  </li>
-  <li>STM32-Peripherie: Timer, ADC, DAC, Komparator</li>
-  <li>Recherche und Auslegung Leistungs-MOSFETs und MOSFET-Treiber</li>
-  <li>Software Low-Level Hardware-Ansteuerung</li>
-  <li>Software Hardwareabstraktion</li>
-  <li>Reflow-Löten</li>
+  <li>GitLab CI Pipelines</li>
+  <li>Dashboard Programmierung</li>
+  <li>Docker Images</li>
 </ul>
 
 
@@ -189,8 +166,7 @@ Zu guter Letzt dürfen Ausgänge und LEDs zu Debug-Zwecken auch nicht fehlen.</p
 
 
 
-<li>https://github.com/roboterclubaachen/alpha-motor</li>
-
+<li>[1] https://docs.gitlab.com/ee/ci/pipelines.html</li>
 
 </ul>
   </section>
@@ -201,14 +177,14 @@ Zu guter Letzt dürfen Ausgänge und LEDs zu Debug-Zwecken auch nicht fehlen.</p
         <div class="meta">Teilen</div>
          
         <li>
-            <a href="https://twitter.com/intent/tweet?source=http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html&text=Alpha-Motor%20%7C%20Roboterclub Aachen:%20http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html" target="_blank" title="Twittern">
+            <a href="https://twitter.com/intent/tweet?source=http://www.roboterclub.rwth-aachen.de/projekt/continous-integration.html&text=CI für unsere eingebettete Software%20%7C%20Roboterclub Aachen:%20http://www.roboterclub.rwth-aachen.de/projekt/continous-integration.html" target="_blank" title="Twittern">
 			<i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Twittern</span>
 		</a>
         </li>
                 
         <li>
-            <a href="mailto:?subject=Alpha-Motor%20%7C%20Roboterclub Aachen&body=:%20http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html" target="_blank" title="Email">
+            <a href="mailto:?subject=CI für unsere eingebettete Software%20%7C%20Roboterclub Aachen&body=:%20http://www.roboterclub.rwth-aachen.de/projekt/continous-integration.html" target="_blank" title="Email">
 			<i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Email</span>
 		</a>
@@ -228,12 +204,16 @@ Zu guter Letzt dürfen Ausgänge und LEDs zu Debug-Zwecken auch nicht fehlen.</p
     
 
     
-    <a class="button" href="/tags#elektronik">
-      <p><i class="fa fa-tag fa-fw"></i> elektronik</p>
+    <a class="button" href="/tags#software">
+      <p><i class="fa fa-tag fa-fw"></i> software</p>
     </a>
     
-    <a class="button" href="/tags#pcb">
-      <p><i class="fa fa-tag fa-fw"></i> pcb</p>
+    <a class="button" href="/tags#webentwicklung">
+      <p><i class="fa fa-tag fa-fw"></i> webentwicklung</p>
+    </a>
+    
+    <a class="button" href="/tags#werkzeug">
+      <p><i class="fa fa-tag fa-fw"></i> werkzeug</p>
     </a>
     
   </div>

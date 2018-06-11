@@ -92,6 +92,12 @@
 
   <url>
 	<!-- project -->
+    <loc>http://www.roboterclub.rwth-aachen.de/projekt/continous-integration.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
     <loc>http://www.roboterclub.rwth-aachen.de/projekt/debugserver-hardware.html</loc>
     <changefreq>monthly</changefreq>
   </url>

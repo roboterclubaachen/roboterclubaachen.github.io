@@ -139,6 +139,18 @@
    
      {
        
+          "title"    : "Projekt: CI für unsere eingebettete Software",
+          "category" : "Projekt",
+          "tags"     : " software, webentwicklung, werkzeug",
+          "url"      : "/projekt/continous-integration.html",
+          "date"     : "June 11, 2018",
+          "excerpt"  : "Konzipieren und Programmieren eines CI-Service in GitLab für unsere Softwareprojekte und Anzeige auf einem Dashboard.",
+          "content"  : "<h2 id=\"zusammenfassung\">Zusammenfassung</h2>\n\n<p>Der Roboterclub hat viele eingebettete Softwareprojekte, deren Qualitäts-Zustand wir gerne im Blick behalten möchten.\nDazu brauchen wir einen sinnvollen und einfach zu benutzenden Continous Integration Service, der unsere Projekte in GitLab\nmindestens kompiliert und optional Unittests auswertet.\nEs sollen Docker Images gebaut werden um in GitLab Pipelines [1] verwendet zu werden.</p>\n\n<p>Dies ist besonders wertvoll, wenn der gesamte Setup mobil sein kann, sodass wir eine kleine Version dieses CIs zu Wettkämpfen \nmitnehmen können, bei denen es evtl. kein (oder sehr langsames) Internet gibt (*<em>hust</em>* in Frankreich *<em>hust</em>*).</p>\n\n<p>Es wäre schön, zusätzlich ein kleines Dashboard zu haben, was auf einen Blick anzeigt, wie der Zustand unserer Softwareprojekte ist.\nDieses Dashboard darf auch sehr gerne physikalisch sein (Ampel, LED Streifen oder so).</p>\n\n<h2 id=\"tätigkeitsfelder-und-technologien\">Tätigkeitsfelder und Technologien</h2>\n\n<ul>\n  <li>GitLab CI Pipelines</li>\n  <li>Dashboard Programmierung</li>\n  <li>Docker Images</li>\n</ul>\n"
+       
+     } ,
+   
+     {
+       
           "title"    : "Projekt: CNC Fräse Aufarbeiten",
           "category" : "Projekt",
           "tags"     : " werkzeug, mechanik",
