@@ -5,7 +5,7 @@
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
         <link>http://www.roboterclub.rwth-aachen.de/</link>
         <description></description>
-        <pubDate>Tue, 26 Jun 2018 21:07:26 +0200</pubDate>
+        <pubDate>Tue, 26 Jun 2018 16:58:28 -0500</pubDate>
         
         <item>
             <title>µMotor</title>
@@ -113,7 +113,7 @@ Der Adapter verfügt außerdem über eine Pin zum abgreifen der UART-Ausgabe zu 
 
 &lt;p&gt;To be continued…&lt;/p&gt;
 </description>
-            <pubDate>Sat, 05 May 2018 00:00:00 +0200</pubDate>
+            <pubDate>Sat, 05 May 2018 00:00:00 -0500</pubDate>
         </item>
         
         <item>
@@ -127,7 +127,7 @@ Dieses Jahr steht der Eurobot unter dem Motto “Robot Cities”.&lt;/p&gt;
 
 &lt;p&gt;Wir haben schonmal einen neuen Allradantrieb konstruiert, hilf uns mit ihn zu bauen.&lt;/p&gt;
 </description>
-            <pubDate>Mon, 23 Oct 2017 00:00:00 +0200</pubDate>
+            <pubDate>Mon, 23 Oct 2017 00:00:00 -0500</pubDate>
         </item>
         
         <item>
@@ -147,7 +147,7 @@ The competition was well organized by TURAG. Thank you for the great time!&lt;/p
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/blog/2017/Juri_Siggi_Rooftop_Front.jpg&quot; alt=&quot;Juri Siggi Rooftop Front&quot; /&gt;&lt;/p&gt;
 </description>
-            <pubDate>Mon, 01 May 2017 00:00:00 +0200</pubDate>
+            <pubDate>Mon, 01 May 2017 00:00:00 -0500</pubDate>
         </item>
         
         <item>
@@ -165,7 +165,7 @@ Our robots, Hassel and Hoff, won every game at the German Eurobot contest 2016 i
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/blog/2016/2016HasselHoff.jpg&quot; alt=&quot;Roboter Hassel und Hoff&quot; /&gt;&lt;/p&gt;
 </description>
-            <pubDate>Tue, 03 May 2016 00:00:00 +0200</pubDate>
+            <pubDate>Tue, 03 May 2016 00:00:00 -0500</pubDate>
         </item>
         
         <item>
@@ -176,7 +176,7 @@ Our robots, Hassel and Hoff, won every game at the German Eurobot contest 2016 i
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/blog/2016/phobos_in_castle.jpg&quot; alt=&quot;Phobos in castle&quot; /&gt;&lt;/p&gt;
 </description>
-            <pubDate>Tue, 20 Oct 2015 00:00:00 +0200</pubDate>
+            <pubDate>Tue, 20 Oct 2015 00:00:00 -0500</pubDate>
         </item>
         
     </channel>
