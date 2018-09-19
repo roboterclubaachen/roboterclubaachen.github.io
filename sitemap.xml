@@ -3,6 +3,14 @@
 
   <url>
 	<!-- post -->
+    <loc>http://www.roboterclub.rwth-aachen.de/blog/2018/saisonstart-2019.html</loc>
+    
+    <changefreq>weekly</changefreq>
+    
+  </url>
+
+  <url>
+	<!-- post -->
     <loc>http://www.roboterclub.rwth-aachen.de/blog/2018/micro-motor-motorcontroller.html</loc>
     
     <changefreq>weekly</changefreq>
@@ -224,6 +232,12 @@
 
   <url>
 	<!-- project -->
+    <loc>http://www.roboterclub.rwth-aachen.de/projekt/rca-projekte-auf-modm-portieren.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
     <loc>http://www.roboterclub.rwth-aachen.de/projekt/roboter-caddy.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -320,5 +334,13 @@
     
     <priority>0.3</priority>
   </url>
-   
+    
+  <url>
+	<!-- page -->
+    <loc>http://www.roboterclub.rwth-aachen.de/blog/page/2/</loc>
+    
+    
+    
+  </url>
+ 
 </urlset>

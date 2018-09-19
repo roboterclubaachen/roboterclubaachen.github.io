@@ -5,7 +5,28 @@
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
         <link>http://www.roboterclub.rwth-aachen.de/</link>
         <description></description>
-        <pubDate>Tue, 18 Sep 2018 13:18:49 -0500</pubDate>
+        <pubDate>Wed, 19 Sep 2018 04:17:02 -0500</pubDate>
+        
+        <item>
+            <title>Saisonstart 2019</title>
+            <link>/blog/2018/saisonstart-2019.html</link>
+            <guid isPermaLink="true">/blog/2018/saisonstart-2019.html</guid>
+            <description>&lt;p&gt;Am letzten Wochenende wurden die Regeln für die kommende Eurobot-Saison erstmals veröffentlicht.
+Das Regelwerk ist noch im Beta-Status, kann aber schon auf &lt;a href=&quot;http://www.eurobot.org/eurobot/eurobot-2019/eurobot-2019-rules&quot;&gt;eurobot.org&lt;/a&gt; gelesen werden.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/2018/eurobot-2019-field.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Wir freuen uns schon auf die kreative Phase in den kommenden Woche, wenn wir die Konzepte entwickeln und anfangen Roboter zu konstruieren.&lt;/p&gt;
+
+&lt;h2 id=&quot;mitmachen&quot;&gt;Mitmachen&lt;/h2&gt;
+
+&lt;p&gt;Die nächste Zeit ist ideal zum Einstieg für Interessenten.
+Wir haben eine Menge &lt;a href=&quot;http://www.roboterclub.rwth-aachen.de/mach-mit/&quot;&gt;Projekte&lt;/a&gt; für die wir motivierte Studenten suchen, egal in welchem Semester und Studiengang.&lt;/p&gt;
+
+&lt;p&gt;Wenn wir dein Interesse gewecht haben komm Dienstag abends bei unserem &lt;a href=&quot;http://www.roboterclub.rwth-aachen.de/kontakt/&quot;&gt;wöchentlichen Meeting&lt;/a&gt; vorbei und lerne uns kennen.&lt;/p&gt;
+</description>
+            <pubDate>Tue, 18 Sep 2018 00:00:00 -0500</pubDate>
+        </item>
         
         <item>
             <title>µMotor</title>
