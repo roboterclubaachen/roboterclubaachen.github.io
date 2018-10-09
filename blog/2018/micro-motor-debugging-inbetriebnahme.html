@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer=true src="/assets/js/main.min.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/img/rca.svg">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/blog/2018/micro-motor-debugging-inbetriebnahme.html">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="Roboterclub Aachen" href="http://www.roboterclub.rwth-aachen.de///feed.xml"/>
+
+    <!-- Font Awesome -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/vendor/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    
+
+    <!-- KaTeX 0.8.3 -->
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/vendor/katex.min.css">
+    <script src="/assets/js/vendor/katex.min.js">
+    </script>
+    
+
+    <!-- Google Analytics -->
+    
+    
+    <!-- seo tags -->
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>µMotor: Inbetriebnahme und Debugging | Roboterclub Aachen</title>
+<meta name="generator" content="Jekyll v3.8.4" />
+<meta property="og:title" content="µMotor: Inbetriebnahme und Debugging" />
+<meta name="author" content="Raphael Lehmann" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Die Idee zur Entwicklung des µMotors ist schon älter. Damals, als die Auswahl der Komponenten noch geschah, wurde im RCA fast zeitgleich auch der größere Bruder des µMotors, der Alpha-Motor, entworfen." />
+<meta property="og:description" content="Die Idee zur Entwicklung des µMotors ist schon älter. Damals, als die Auswahl der Komponenten noch geschah, wurde im RCA fast zeitgleich auch der größere Bruder des µMotors, der Alpha-Motor, entworfen." />
+<link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/blog/2018/micro-motor-debugging-inbetriebnahme.html" />
+<meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/blog/2018/micro-motor-debugging-inbetriebnahme.html" />
+<meta property="og:site_name" content="Roboterclub Aachen" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-10-06T00:00:00-05:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","url":"http://www.roboterclub.rwth-aachen.de/blog/2018/micro-motor-debugging-inbetriebnahme.html","headline":"µMotor: Inbetriebnahme und Debugging","dateModified":"2018-10-06T00:00:00-05:00","datePublished":"2018-10-06T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/blog/2018/micro-motor-debugging-inbetriebnahme.html"},"author":{"@type":"Person","name":"Raphael Lehmann"},"description":"Die Idee zur Entwicklung des µMotors ist schon älter. Damals, als die Auswahl der Komponenten noch geschah, wurde im RCA fast zeitgleich auch der größere Bruder des µMotors, der Alpha-Motor, entworfen.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- Manual seo tags -->
+    <!--
+    <title>µMotor: Inbetriebnahme und Debugging | Roboterclub Aachen</title>
+    <meta name="description" content="Die Idee zur Entwicklung des µMotors ist schon älter.Damals, als die Auswahl der Komponenten noch geschah, wurde im RCA fast zeitgleich auch der größere Brud...">
+    -->
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+		<a href="/">
+			<img class="avatar" src="/assets/img/rca.svg" alt=""/>
+		</a>
+
+		<h1 class="site-title">
+			<a href="/">Roboterclub Aachen</a>
+		</h1>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a id="pull" class="toggle" href="#">
+    <i class="fa fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        <!-- Auto Generation of pages in the navbar -->
+        
+        <li class="separator">|</li>
+        <li>
+            <a class="clear" href="/mach-mit">
+            
+                Mach Mit!
+            
+            </a>
+        </li>
+        
+        <li class="separator">|</li>
+        <li>
+            <a class="clear" href="/blog">
+            
+                Blog
+            
+            </a>
+        </li>
+        
+        <li class="separator">|</li>
+        <li>
+            <a class="clear" href="/kontakt">
+            
+                Kontakt
+            
+            </a>
+        </li>
+        
+        <li class="separator">|</li>
+        <li>
+            <a class="clear" href="/search">
+            
+                <i class="fa fa-search" aria-hidden="true"></i>
+            
+            </a>
+        </li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article class="feature-image">
+  <header id="main" style="background-image: url('/assets/img/blog/micro-motor/umotor-pcb.jpg');background-position: center;">
+    <h1 class="title">µMotor: Inbetriebnahme und Debugging</h1>
+    <p class="meta">
+    October 6, 2018
+     - Raphael Lehmann
+    </p>
+  </header>
+  <section class="post-content post-content-text"><p>Die Idee zur Entwicklung des <a href="/blog/2018/micro-motor-motorcontroller.html">µMotors</a> ist schon älter.
+Damals, als die Auswahl der Komponenten noch geschah, wurde im RCA fast zeitgleich auch der größere Bruder des µMotors, der Alpha-Motor, entworfen.</p>
+
+<p>Beim Design der Leistungselektronik fiel die Wahl des MOSFET-Gatetreibers auf den <a href="http://ww1.microchip.com/downloads/en/DeviceDoc/20005604B.pdf">MIC4606</a> in Kombination mit den <a href="https://www.vishay.com/docs/68550/sqjb40ep.pdf">SQJB40EP</a> MOSFETs von Vishay.
+(Vielen Dank an dieser Stelle an Vishay für das unkomplizierte und schnell zur Verfügung stellen von Samples.)</p>
+
+<p>Um die Eignung der ausgewählten Komponenten zu verifizieren wurde eine Testplatine entworfen, welche außerdem eine schöne und lehrreiche Aufgabe für zwei neue, bisher nicht mit dem Platinendesign vertrauten Mitgliedern des Roboterclubs darstellte.
+Die Testplatine enthielt neben den MOSFET-Treibern und MOSFETs selbst nur Stecker, Testpunkte, die nötige passive Beschaltung aus Widerständen und Kondensatoren sowie die Spannungsversorgung.</p>
+
+<p><img src="../../assets/img/blog/2018/alpha-motor-testboard.jpg" alt="Testplatine für MIC4606" /></p>
+
+<p>In Kombination mit einem Entwicklungs-Board für Microcontroller, in unserem Fall das [STM32F4Discovery], wurde die Ansteuerung von DC und BLDC Motoren erfolgreich getestet.</p>
+
+<p>Dadurch wurde der MIC4606 Chip für den Alpha-Motor ausgewählt und war auch für den Micro-Motor vorgesehen.
+Im Laufe der weiteren Komponentenauswahl für den Micro-Motor stellten sich die mechanischen Dimensionen des Chips allerdings als zu groß heraus und der <a href="http://www.ti.com/lit/ds/symlink/drv8323.pdf">DRV8323</a> Gate-Treiber bot einen insgesamt kleineren Footprint.
+Der Chip selbst ist größer (6x6mm² WQFN zu 4x4mm² QFN), allerdings wird deutlich weniger externe Beschaltung (u.A. keine Gate-Serienwiderstände, keine Bootstrap-Kondensatoren) benötigt und drei Strommessverstärker sind direkt integriert.</p>
+
+<p>Der DRV8323 ist zugleich auch wesentlich komplexer als des MIC4606, statt einer <a href="https://de.wikipedia.org/wiki/Bootstrapping_(Elektrotechnik)">Bootstrap-Schaltung</a> zur Ansteuerung der High-Side-MOSFETs integriert der Chip eine <a href="https://de.wikipedia.org/wiki/Ladungspumpe">Ladungspumpe</a> und viele Parameter wie Gate-Serienwiderstände, Überstom-Abschaltung und die integrierten Strommessverstärker lassen sich beim DRV8323 digital über ein SPI-Interface konfigurieren.</p>
+
+<p>Trotzdem wurde es nicht als nötig erachtet für den DRV8323 Chip eine simple Testplatine zu entwerfen, was sich im Verlauf als Fehlentscheidung herausstellte.</p>
+
+<p>Nervig wurde die Situation bereits beim Schreiben des <a href="https://github.com/modm-io/modm/pull/27">modm.io-Treibers</a>.
+Es ist meist hilfreich mit einem Logic-Analyser oder Oszilloskop de SPI-Bus auf der Platine an Testpunkten abgreifen und beobachten zu können.
+Leider passten auf die Platine des Micro-Motors keine Testpunkte, manche der Leiterbahnen waren nicht einmal auf zugänglichen Außenlagen der Platine, sondern ausschließlich unter Chips und auf den Innenlagen geführt.
+Somit musste filigraner Fädeldraht an die kleinen Lötperlen an den Außenkanten der QFN/DFN-Pads des Chips anlöten werden um an diesem Fädeldraht dann die Signale mit Logic-Analyser und Oszilloskop ab zugreifen.</p>
+
+<p><img src="../../assets/img/blog/2018/micro-motor-faedeldraht.jpg" alt="Makro-Aufnahme Micro-Motor Fädeldraht" /></p>
+
+<p>Dabei wurde das erste Problem recht schnell deutlich: Die MISO-Leitung des DRV8323 ist ungewöhlicherweise als <a href="https://de.wikipedia.org/wiki/Open-Collector-Ausgang">Open-Drain</a> und nicht wie üblich als <a href="https://de.wikipedia.org/wiki/Gegentaktendstufe">Push-Pull-Stufe</a> ausgeführt, infolgedessen wird ein externer Pull-Up-Widerstand benötigt.
+Um diesen Widerstand einzusparen sollte der intern zuschaltbare <a href="https://de.wikipedia.org/wiki/Pull-up-Widerstand">Pull-Up Widerstand</a> im STM32 Microcontroller genutzt werden.
+Leider ist der Widerstand dieses Pull-Ups (laut Datenblatt 30 Kiloohm bis 70 Kiloohm viel zu groß für die minimal konfigurierbare SPI-Frequenz (mehrere 100kHz) des STM32L433 Microcontrollers.
+Folglich musste neben dem Fädeldraht für die Messinstrumente noch ein 10 Kiloohm Pull-Up-Widerstand mit Fädeldraht nachgerüstet werden.
+Das Löten war schon fast zur Routine geworden, da sich der Fädeldraht in der Zwischenzeit mehrfach gelöst hatte.</p>
+
+<p><img src="../../assets/img/blog/2018/micro-motor-testaufbau.jpg" alt="Micro-Motor Testaufbau mit zwei Oszilloskopen und zwei Netzteilen" /></p>
+
+<p>In Endeffekt hat die vorhandene Hardware aber ihre Inbetriebnahme und die Software-Entwicklung unter Zusatzaufwand ermöglicht.</p>
+
+<p><img src="../../assets/img/blog/2018/qfn-dfn-pad.jpg" alt="Makro-Aufnahme: Pad eines DFN/QFN-Chips" /></p>
+
+<p>Bis letzte Woche ein merkwürdiges Verhalten der PWM-Waveform bei der Ansteuerung von BLDC-Motoren auftrat.
+Zum lokalisieren des Fehlers wurden neben den Signalen an den Motorphasen auch die Signale der Gates vor und nach dem Gatetreiber betrachtet.
+Auch diese Signale sind nur an den seitlichen Pads von QFN-Chips ab zugreifen.
+Der Pad-Pitch beträgt hier 0,5 mm, also etwa gleich dem Durchmesser des Spitze der Oszilloskop-Probe.
+Natürlich rutschte die Spitze ab und verursachte einen Kurzschluss, welcher vom Gatetreiber mit erhöhten Stromverbrauch und Rauchentwicklung quittiert wurde.</p>
+
+<p>Schnell war die Entscheidung getroffen um weitere Zerstörung zu verhindern nun doch eine Testplatine für den DRV8323-Chip zu konstruieren.</p>
+
+<p>Da es für den verwendeten Microcontroller kein Entwicklungs-Board vom Hersteller gibt wurde dieser integriert, der Schaltplan ist daher fast identisch mit dem des Micro-Motors.
+Die Platinengröße wurde von einem Kreis mit Durchmesser von 20 mm auf ein Rechteck von 100 mm x 33 mm erweitert um Platz für die etwa 50 Testpunkte zu bieten.</p>
+
+<p><img src="../../assets/img/blog/2018/macro-motor-pcb.png" alt="Macro-Motor Testplatine" /></p>
+
+<p>Der Name ist entsprechend auch nicht weit von Micro-Motor entfernt gewählt: <em>Macro-Motor</em>.</p>
+
+<p>Dank der schnellen Platinenfertigung von Aisler reicht eine gute Woche Wartezeit aus, bis die neue Testplatine in unserer Werkstatt liegen wird.</p>
+</section>
+
+  <!-- Social media shares -->
+  <div class="share-buttons">
+    <ul class="share-buttons">
+        <div class="meta">Teilen</div>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?source=http://www.roboterclub.rwth-aachen.de/blog/2018/micro-motor-debugging-inbetriebnahme.html&text=µMotor: Inbetriebnahme und Debugging%20%7C%20Roboterclub Aachen:%20http://www.roboterclub.rwth-aachen.de/blog/2018/micro-motor-debugging-inbetriebnahme.html" target="_blank" title="Twittern">
+			<i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
+			<span class="sr-only">Twittern</span>
+		</a>
+        </li>
+                
+        <li>
+            <a href="mailto:?subject=µMotor: Inbetriebnahme und Debugging%20%7C%20Roboterclub Aachen&body=:%20http://www.roboterclub.rwth-aachen.de/blog/2018/micro-motor-debugging-inbetriebnahme.html" target="_blank" title="Email">
+			<i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i>
+			<span class="sr-only">Email</span>
+		</a>
+        </li>
+        
+    </ul>
+</div>
+
+   <!-- Tag list -->
+  
+
+
+<footer>
+  <div class="tag-list">
+    
+      <div class="meta">Tags</div>
+    
+
+    
+    <a class="button" href="/tags#elektronik">
+      <p><i class="fa fa-tag fa-fw"></i> elektronik</p>
+    </a>
+    
+    <a class="button" href="/tags#saison19">
+      <p><i class="fa fa-tag fa-fw"></i> saison19</p>
+    </a>
+    
+  </div>
+</footer>
+
+
+</article>
+
+    </div>
+    
+<footer class="site-footer">
+    <p class="text"><a href="/impressum">Impressum | Datenschutz</a></p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+	<a href="http://www.roboterclub.rwth-aachen.de/feed.xml" title="Folge dem RSS Feed">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/RoboterClubAachen" title="Folge uns GitHub">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/RCA_eV" title="Folge uns Twitter" class="type">
+        <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+
+  </body>
+</html>

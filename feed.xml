@@ -5,7 +5,71 @@
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
         <link>http://www.roboterclub.rwth-aachen.de/</link>
         <description></description>
-        <pubDate>Thu, 20 Sep 2018 16:16:19 -0500</pubDate>
+        <pubDate>Tue, 09 Oct 2018 05:50:46 -0500</pubDate>
+        
+        <item>
+            <title>µMotor: Inbetriebnahme und Debugging</title>
+            <link>/blog/2018/micro-motor-debugging-inbetriebnahme.html</link>
+            <guid isPermaLink="true">/blog/2018/micro-motor-debugging-inbetriebnahme.html</guid>
+            <description>&lt;p&gt;Die Idee zur Entwicklung des &lt;a href=&quot;/blog/2018/micro-motor-motorcontroller.html&quot;&gt;µMotors&lt;/a&gt; ist schon älter.
+Damals, als die Auswahl der Komponenten noch geschah, wurde im RCA fast zeitgleich auch der größere Bruder des µMotors, der Alpha-Motor, entworfen.&lt;/p&gt;
+
+&lt;p&gt;Beim Design der Leistungselektronik fiel die Wahl des MOSFET-Gatetreibers auf den &lt;a href=&quot;http://ww1.microchip.com/downloads/en/DeviceDoc/20005604B.pdf&quot;&gt;MIC4606&lt;/a&gt; in Kombination mit den &lt;a href=&quot;https://www.vishay.com/docs/68550/sqjb40ep.pdf&quot;&gt;SQJB40EP&lt;/a&gt; MOSFETs von Vishay.
+(Vielen Dank an dieser Stelle an Vishay für das unkomplizierte und schnell zur Verfügung stellen von Samples.)&lt;/p&gt;
+
+&lt;p&gt;Um die Eignung der ausgewählten Komponenten zu verifizieren wurde eine Testplatine entworfen, welche außerdem eine schöne und lehrreiche Aufgabe für zwei neue, bisher nicht mit dem Platinendesign vertrauten Mitgliedern des Roboterclubs darstellte.
+Die Testplatine enthielt neben den MOSFET-Treibern und MOSFETs selbst nur Stecker, Testpunkte, die nötige passive Beschaltung aus Widerständen und Kondensatoren sowie die Spannungsversorgung.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/2018/alpha-motor-testboard.jpg&quot; alt=&quot;Testplatine für MIC4606&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In Kombination mit einem Entwicklungs-Board für Microcontroller, in unserem Fall das [STM32F4Discovery], wurde die Ansteuerung von DC und BLDC Motoren erfolgreich getestet.&lt;/p&gt;
+
+&lt;p&gt;Dadurch wurde der MIC4606 Chip für den Alpha-Motor ausgewählt und war auch für den Micro-Motor vorgesehen.
+Im Laufe der weiteren Komponentenauswahl für den Micro-Motor stellten sich die mechanischen Dimensionen des Chips allerdings als zu groß heraus und der &lt;a href=&quot;http://www.ti.com/lit/ds/symlink/drv8323.pdf&quot;&gt;DRV8323&lt;/a&gt; Gate-Treiber bot einen insgesamt kleineren Footprint.
+Der Chip selbst ist größer (6x6mm² WQFN zu 4x4mm² QFN), allerdings wird deutlich weniger externe Beschaltung (u.A. keine Gate-Serienwiderstände, keine Bootstrap-Kondensatoren) benötigt und drei Strommessverstärker sind direkt integriert.&lt;/p&gt;
+
+&lt;p&gt;Der DRV8323 ist zugleich auch wesentlich komplexer als des MIC4606, statt einer &lt;a href=&quot;https://de.wikipedia.org/wiki/Bootstrapping_(Elektrotechnik)&quot;&gt;Bootstrap-Schaltung&lt;/a&gt; zur Ansteuerung der High-Side-MOSFETs integriert der Chip eine &lt;a href=&quot;https://de.wikipedia.org/wiki/Ladungspumpe&quot;&gt;Ladungspumpe&lt;/a&gt; und viele Parameter wie Gate-Serienwiderstände, Überstom-Abschaltung und die integrierten Strommessverstärker lassen sich beim DRV8323 digital über ein SPI-Interface konfigurieren.&lt;/p&gt;
+
+&lt;p&gt;Trotzdem wurde es nicht als nötig erachtet für den DRV8323 Chip eine simple Testplatine zu entwerfen, was sich im Verlauf als Fehlentscheidung herausstellte.&lt;/p&gt;
+
+&lt;p&gt;Nervig wurde die Situation bereits beim Schreiben des &lt;a href=&quot;https://github.com/modm-io/modm/pull/27&quot;&gt;modm.io-Treibers&lt;/a&gt;.
+Es ist meist hilfreich mit einem Logic-Analyser oder Oszilloskop de SPI-Bus auf der Platine an Testpunkten abgreifen und beobachten zu können.
+Leider passten auf die Platine des Micro-Motors keine Testpunkte, manche der Leiterbahnen waren nicht einmal auf zugänglichen Außenlagen der Platine, sondern ausschließlich unter Chips und auf den Innenlagen geführt.
+Somit musste filigraner Fädeldraht an die kleinen Lötperlen an den Außenkanten der QFN/DFN-Pads des Chips anlöten werden um an diesem Fädeldraht dann die Signale mit Logic-Analyser und Oszilloskop ab zugreifen.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/2018/micro-motor-faedeldraht.jpg&quot; alt=&quot;Makro-Aufnahme Micro-Motor Fädeldraht&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Dabei wurde das erste Problem recht schnell deutlich: Die MISO-Leitung des DRV8323 ist ungewöhlicherweise als &lt;a href=&quot;https://de.wikipedia.org/wiki/Open-Collector-Ausgang&quot;&gt;Open-Drain&lt;/a&gt; und nicht wie üblich als &lt;a href=&quot;https://de.wikipedia.org/wiki/Gegentaktendstufe&quot;&gt;Push-Pull-Stufe&lt;/a&gt; ausgeführt, infolgedessen wird ein externer Pull-Up-Widerstand benötigt.
+Um diesen Widerstand einzusparen sollte der intern zuschaltbare &lt;a href=&quot;https://de.wikipedia.org/wiki/Pull-up-Widerstand&quot;&gt;Pull-Up Widerstand&lt;/a&gt; im STM32 Microcontroller genutzt werden.
+Leider ist der Widerstand dieses Pull-Ups (laut Datenblatt 30 Kiloohm bis 70 Kiloohm viel zu groß für die minimal konfigurierbare SPI-Frequenz (mehrere 100kHz) des STM32L433 Microcontrollers.
+Folglich musste neben dem Fädeldraht für die Messinstrumente noch ein 10 Kiloohm Pull-Up-Widerstand mit Fädeldraht nachgerüstet werden.
+Das Löten war schon fast zur Routine geworden, da sich der Fädeldraht in der Zwischenzeit mehrfach gelöst hatte.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/2018/micro-motor-testaufbau.jpg&quot; alt=&quot;Micro-Motor Testaufbau mit zwei Oszilloskopen und zwei Netzteilen&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In Endeffekt hat die vorhandene Hardware aber ihre Inbetriebnahme und die Software-Entwicklung unter Zusatzaufwand ermöglicht.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/2018/qfn-dfn-pad.jpg&quot; alt=&quot;Makro-Aufnahme: Pad eines DFN/QFN-Chips&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Bis letzte Woche ein merkwürdiges Verhalten der PWM-Waveform bei der Ansteuerung von BLDC-Motoren auftrat.
+Zum lokalisieren des Fehlers wurden neben den Signalen an den Motorphasen auch die Signale der Gates vor und nach dem Gatetreiber betrachtet.
+Auch diese Signale sind nur an den seitlichen Pads von QFN-Chips ab zugreifen.
+Der Pad-Pitch beträgt hier 0,5 mm, also etwa gleich dem Durchmesser des Spitze der Oszilloskop-Probe.
+Natürlich rutschte die Spitze ab und verursachte einen Kurzschluss, welcher vom Gatetreiber mit erhöhten Stromverbrauch und Rauchentwicklung quittiert wurde.&lt;/p&gt;
+
+&lt;p&gt;Schnell war die Entscheidung getroffen um weitere Zerstörung zu verhindern nun doch eine Testplatine für den DRV8323-Chip zu konstruieren.&lt;/p&gt;
+
+&lt;p&gt;Da es für den verwendeten Microcontroller kein Entwicklungs-Board vom Hersteller gibt wurde dieser integriert, der Schaltplan ist daher fast identisch mit dem des Micro-Motors.
+Die Platinengröße wurde von einem Kreis mit Durchmesser von 20 mm auf ein Rechteck von 100 mm x 33 mm erweitert um Platz für die etwa 50 Testpunkte zu bieten.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/2018/macro-motor-pcb.png&quot; alt=&quot;Macro-Motor Testplatine&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Der Name ist entsprechend auch nicht weit von Micro-Motor entfernt gewählt: &lt;em&gt;Macro-Motor&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Dank der schnellen Platinenfertigung von Aisler reicht eine gute Woche Wartezeit aus, bis die neue Testplatine in unserer Werkstatt liegen wird.&lt;/p&gt;
+</description>
+            <pubDate>Sat, 06 Oct 2018 00:00:00 -0500</pubDate>
+        </item>
         
         <item>
             <title>Saisonstart 2019</title>
