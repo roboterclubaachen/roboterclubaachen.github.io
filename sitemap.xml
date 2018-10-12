@@ -276,6 +276,12 @@
 
   <url>
 	<!-- project -->
+    <loc>http://www.roboterclub.rwth-aachen.de/projekt/spielfeld.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
     <loc>http://www.roboterclub.rwth-aachen.de/projekt/ultraschall-baken.html</loc>
     <changefreq>monthly</changefreq>
   </url>
