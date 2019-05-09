@@ -5,7 +5,7 @@
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
         <link>http://www.roboterclub.rwth-aachen.de/</link>
         <description></description>
-        <pubDate>Sat, 19 Jan 2019 19:34:25 -0600</pubDate>
+        <pubDate>Thu, 09 May 2019 16:51:07 -0500</pubDate>
         
         <item>
             <title>µMotor: Inbetriebnahme und Debugging</title>
@@ -90,6 +90,25 @@ Wir haben eine Menge &lt;a href=&quot;http://www.roboterclub.rwth-aachen.de/mach
 &lt;p&gt;Wenn wir dein Interesse geweckt haben, komme Dienstag abends bei unserem &lt;a href=&quot;http://www.roboterclub.rwth-aachen.de/kontakt/&quot;&gt;wöchentlichen Meeting&lt;/a&gt; vorbei und lerne uns kennen.&lt;/p&gt;
 </description>
             <pubDate>Tue, 18 Sep 2018 00:00:00 -0500</pubDate>
+        </item>
+        
+        <item>
+            <title>ɑMotor: Ein neues Motorboard</title>
+            <link>/blog/2018/alpha-motor-description.html</link>
+            <guid isPermaLink="true">/blog/2018/alpha-motor-description.html</guid>
+            <description>&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/alpha-motor/AlphaMotor_Antrieb.jpg&quot; alt=&quot;AlphaMotor_Antrieb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In der Saison 2019 ist unsere Elektronik fast vollständig überarbeitet oder sogar neu entwickelt. Eine der Neuentwicklungen ist unser neues Motorcontrol-Board, genannt AlphaMotor. Der Name bricht mit dem Schema, das vorher verwendet wurde: Auf den Zweimotor folgte der Dreimotor, wiederum gefolgt vom iMotor. Der Alphamotor kann anders als sein direkter Vorgänger nur zwei DC- oder BLDC-Motoren antreiben. Dafür wurden mehrere Features hinzugefügt, die den Roboter leistungsfähiger und besser kontrollierbar machen. Die wohl wichtigste Änderung betrifft die Ausgangsstufen. Wo vorher vollintegrierte Chips verwendet wurden, sitzen nun simple Motortreiber-ICs (MIC4606), die Leistungstransistoren steuern. Die Leistungsabgabe kann mit diesem simpleren Design verdoppelt werden, da Abwärme besser abgestrahlt wird. Für ein proof-of-concept der neuen Bauelemente wurde ein Testboard entwickelt.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/alpha-motor/AlphaMotor_Testboard.jpg&quot; alt=&quot;AlphaMotor_Testboard&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Hier ist bereits zu sehen,dass die Ansteuerung nicht sehr komplex ist, da einfach ein Timer des Mikrocontrollers über drei komplementäre Ausgänge einen Motor steuern kann. Die Verwendung einer SPI-Verbindung oder ähnlichem um mit den Endstufen zu kommunizieren entfällt. Es ist jetzt noch leichter die Kontrolle zu behalten, da eine neue Strommessung für jeden Motor hinzugefügt wurde, die mit 1 MHz Abtastrate den Strom durch die Schaltbrücken begrenzen kann. Der Spannungsabfall über einen Shunt-Widerstand wird in einem Komparator mit der frei verstellbaren Vorgabe verglichen und das Ergebnis auf den asynchronen Break-Input des Mikrocontrollers gegeben. Das Ergebnis ist eine effektive Stromregelung. Zusätzlich wird in jeweils zwei der drei Phasen die Stromstärke mit Hall-Sensoren gemessen, um eine sinusförmige Kommutierung statt einer einfacheren blöckförmigen zu ermöglichen. Die Hauptaufgabe der Schaltung wird jetzt also besser erfüllt, ohne auf Funktionalität verzichten zu müssen.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/alpha-motor/AlphaMotor_Haupt.jpg&quot; alt=&quot;AlphaMotor_Haupt&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Neben der Steuerung von Motoren, ist der AlphaMotor wie sein Vorgänger das Gehirn des Roboters. Über zwei CAN-Busse werden die Befehle vom Master-Board zu den Slaves geschickt und ein UART kommuniziert mit unserem Debugger, über den nicht nur Events geloggt werden können, sondern der Roboter auch over-the-air neue Software erhält. Da weiterhin der gleiche Mikrocontroller verwendet wird, ist grundsätzlich die Verwendung zusammen mit älteren Boards möglich um im Notfall eine Ausweichmöglichkeit zu haben.&lt;/p&gt;
+</description>
+            <pubDate>Thu, 10 May 2018 00:00:00 -0500</pubDate>
         </item>
         
         <item>
