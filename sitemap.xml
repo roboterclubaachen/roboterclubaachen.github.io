@@ -19,14 +19,6 @@
 
   <url>
 	<!-- post -->
-    <loc>http://www.roboterclub.rwth-aachen.de/blog/2018/alpha-motor-description.html</loc>
-    
-    <changefreq>weekly</changefreq>
-    
-  </url>
-
-  <url>
-	<!-- post -->
     <loc>http://www.roboterclub.rwth-aachen.de/blog/2018/micro-motor-motorcontroller.html</loc>
     
     <changefreq>weekly</changefreq>
