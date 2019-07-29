@@ -5,7 +5,91 @@
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
         <link>http://www.roboterclub.rwth-aachen.de/</link>
         <description></description>
-        <pubDate>Sun, 28 Jul 2019 08:28:47 -0500</pubDate>
+        <pubDate>Mon, 29 Jul 2019 12:52:32 -0500</pubDate>
+        
+        <item>
+            <title>µMotor: Version 2</title>
+            <link>/blog/2019/micro-motor-2.html</link>
+            <guid isPermaLink="true">/blog/2019/micro-motor-2.html</guid>
+            <description>&lt;p&gt;In diesem Blogpost geht es um die Weiterentwicklung des Motorcontrollers “Micro-Motor” zur Version 2.
+Die bisherige Entwicklung des Motorcontrollers kann in &lt;a href=&quot;&quot;&gt;mehreren&lt;/a&gt; &lt;a href=&quot;&quot;&gt;älteren&lt;/a&gt; &lt;a href=&quot;&quot;&gt;Blogposts&lt;/a&gt; nachgelesen werden.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/2018/micro-motor-faedeldraht.jpg&quot; alt=&quot;Makro-Aufnahme Micro-Motor Fädeldraht&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Nachdem der einzige aufgebaute Prototyp des Micro-Motors beim Testen durch einen von einer Oszi-Probe verursachten Kurzschluss am Gatetreiber defekt war, wurde eine minimal modifizierte Schaltung als “Macro-Motor” auf einer größeren Platine aufgebaut um bequemer verschiedene Messungen durchführen zu können.&lt;/p&gt;
+
+&lt;p&gt;Auch die Macro-Motor-Platine war leider nicht fehlerfrei. Unter anderem war leider der Footprint des neuen Spannungsreglers im WLCSP-6 (Wafer Level Chip Scale Package; 1x1,6mm²) spiegelverkehrt.
+Ebenso war einer der beiden aufgebauten Prototypen nach dem Reflow-Löten nicht funktionsfähig, was auf durch von Hersteller zusätzlich verkleinerte Ausschnitte im Stencil verursachte zu geringe Menge an Lötpaste zurückzuführen war.
+Beim Versuch die nicht verlöteten Pins des Gatetreiber-ICs von Hand nachzulöten ist dieser leider zerstört worden.&lt;/p&gt;
+
+&lt;!-- TODO: Messergebnisse --&gt;
+
+&lt;p&gt;Unabhängig von den bisher aufgetretenen Problemen sind neue Wünsche entstanden.
+Für eine &lt;a href=&quot;/projekt/motor-commutation.html&quot;&gt;intelligente Motor-Kommutierung&lt;/a&gt; statt der bisher verwendeten stupiden Block-Kommutierung ist es teilweise nötig die Ström in den Phasen sowie auch die Spannung der Motorphasen zu messen.
+Bessere Motor-Kommutierungen erlauben durch Sinus-förmige Ansteuerung mehr und gleichmäßigeres Drehmoment in sehr niedrigen Drehzahlbereichen zu erzeugen sowie auch Motoren ohne Hall-Sensoren anzusteuern.
+Außerdem wurde in der Saison eine präzise und zuverlässige Strommessung sehnlichst vermisst, sodass auch diese ein erklärtes Ziel ist.&lt;/p&gt;
+
+&lt;h3 id=&quot;systemüberblick&quot;&gt;Systemüberblick&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/micro-motor/Micro-Motor-V2-Block-diagram.svg&quot; alt=&quot;Micro-Motor V2 Blockdiagram&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;komponentenauswahl&quot;&gt;Komponentenauswahl&lt;/h3&gt;
+
+&lt;p&gt;Der Microcontroller wird nach bisheriger Planung ein STM32L433CCU im UFQFPN48 Gehäuse bleiben.&lt;/p&gt;
+
+&lt;p&gt;Ebenso gibt es keinen Anlass den Gatetreiber &lt;a href=&quot;http://www.ti.com/product/DRV8323&quot;&gt;DRV8323S&lt;/a&gt; auszutauschen, da sich dieser durchgehend bewährt hat.
+Es wird jedoch die Variante ohne integrierte Shuntverstärker verwendet, da die Shuntverstärker ein zu geringes Gain-Bandbreiten-Produkt aufweisen und keine präzise Strommessung zulassen.&lt;/p&gt;
+
+&lt;p&gt;Die Spannungswandler werden für 5V und 3,3V werden durch &lt;a href=&quot;http://www.ti.com/product/TPS82150&quot;&gt;hochintegrierte Schaltwandler-Module&lt;/a&gt; ersetzt, welche sich schon beim &lt;a href=&quot;/blog/2019/alpha-motor-description.html&quot;&gt;Alpha-Motor&lt;/a&gt; bewährt haben und auch für leistungshungrige Encoder oder Endschalter genügend Strom liefern kann.&lt;/p&gt;
+
+&lt;h4 id=&quot;shuntverstärker-und-komparator&quot;&gt;Shuntverstärker und Komparator&lt;/h4&gt;
+
+&lt;p&gt;Neu auf der Liste der Bauteile sind dedizierte Shuntverstärker und Komparatoren.
+Hier müssen die verfügbaren Bauteile noch analysiert und verglichen werden.
+Ein gutes Rennen bei den Shuntverstärkern liefert aktuell der &lt;a href=&quot;https://www.analog.com/en/products/lt1999.html&quot;&gt;LT1999&lt;/a&gt; von Analog ab.&lt;/p&gt;
+
+&lt;p&gt;Da die Strommessung “inline” in den Motorphasen stattfindet muss der Shuntverstärker eine sehr hohe Gleichtaktunterdrückung aufweisen.
+Gleichzeitig ist eine hohe Bandbreite von etwa 500 kHz bis 1 MHz gefordert um bei einer PWM-Frequenz noch brauchbare Messwerte zu liefern.
+Die Gleichtaktspannung muss bis zu 24V betragen, außerdem ist neben einem hohen Gain, welcher die Verwendung von niederohmigen Shunt-Widerständen erlaubt, ein kleines Gehäuse gewünscht.&lt;/p&gt;
+
+&lt;p&gt;Folgende Shuntverstärker stehen aktuell zur Auswahl:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.analog.com/media/en/technical-documentation/data-sheets/1999fd.pdf&quot;&gt;&lt;strong&gt;LT1999&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Gain: Fixed 10, 20 or 50 V/V&lt;/li&gt;
+  &lt;li&gt;CMRR: &lt;strong&gt;&amp;gt;80dB @ 100kHz&lt;/strong&gt; (V_CM=0V, 7VP-P, f=100kHz); &amp;gt;96dB @ DC&lt;/li&gt;
+  &lt;li&gt;Bandwidth: 2MHz&lt;/li&gt;
+  &lt;li&gt;Package: MSOP-8&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://datasheets.maximintegrated.com/en/ds/MAX40056F-MAX40056U.pdf&quot;&gt;&lt;strong&gt;MAX40056&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Gain: Fixed 10, 20 or 50 V/V&lt;/li&gt;
+  &lt;li&gt;CMRR: &lt;strong&gt;typ. 70dB @ 100kHz&lt;/strong&gt; (100mV_AC Sine, f=100kHz); &amp;gt;120dB @ DC&lt;/li&gt;
+  &lt;li&gt;Bandwidth: 300kHz&lt;/li&gt;
+  &lt;li&gt;Package: 2.02mm x 1.4mm WLP-8 and 8-pin μMAX&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.ti.com/lit/ds/symlink/ina240.pdf&quot;&gt;&lt;strong&gt;INA240&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Gain: Fixed 20, 50, 100 or 200 V/V&lt;/li&gt;
+  &lt;li&gt;CMRR: &lt;strong&gt;typ. 93dB @ 50kHz&lt;/strong&gt; (f=50kHz); &amp;gt;120dB @ DC&lt;/li&gt;
+  &lt;li&gt;Bandwidth: 400kHz&lt;/li&gt;
+  &lt;li&gt;Package: TSSOP-8&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;formfaktor&quot;&gt;Formfaktor&lt;/h3&gt;
+
+&lt;p&gt;Im Gegensatz zur Version 1 wird für die zweite Version ein anderer Ansatz gewählt.
+Der integrierte Magnet-Encoder fällt weg, stattdessen gibt es einen gut lötbaren Anschluss für externe Encoder, sowohl einfach als auch mit differenziellen Signalen.
+Bei Bedarf kann ein &lt;a href=&quot;https://github.com/roboterclubaachen/magnet-motor-encoder&quot;&gt;externer magnetischer Encoder&lt;/a&gt; auch über dieses Interface angeschlossen werden.&lt;/p&gt;
+
+&lt;p&gt;Die Platine bekommt eine rechteckige Form und soll seitlich an den Motoren befestigt werden.
+So lässt sich der Micro-Motor flexibler an einer Vielzahl von verschiedenen Motoren nutzen.
+Die mechanischen Dimensionen werden sich kaum ändern, angepeil ist eine Platinenfläche von weniger als 500mm².&lt;/p&gt;
+</description>
+            <pubDate>Sat, 27 Jul 2019 00:00:00 -0500</pubDate>
+        </item>
         
         <item>
             <title>Review of Season 2019</title>
