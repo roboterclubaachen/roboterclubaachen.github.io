@@ -5,7 +5,7 @@
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
         <link>http://www.roboterclub.rwth-aachen.de/</link>
         <description></description>
-        <pubDate>Sun, 18 Aug 2019 16:37:55 -0500</pubDate>
+        <pubDate>Sun, 18 Aug 2019 17:22:47 -0500</pubDate>
         
         <item>
             <title>µMotor: Version 2</title>
@@ -40,7 +40,12 @@ Außerdem wurde in der Saison eine präzise und zuverlässige Strommessung sehnl
 &lt;p&gt;Ebenso gibt es keinen Anlass den Gatetreiber &lt;a href=&quot;http://www.ti.com/product/DRV8323&quot;&gt;DRV8323S&lt;/a&gt; auszutauschen, da sich dieser durchgehend bewährt hat.
 Es wird jedoch die Variante ohne integrierte Shuntverstärker verwendet, da die Shuntverstärker ein zu geringes Gain-Bandbreiten-Produkt aufweisen und keine präzise Strommessung zulassen.&lt;/p&gt;
 
-&lt;p&gt;Die Spannungswandler werden für 5V und 3,3V werden durch &lt;a href=&quot;http://www.ti.com/product/TPS82150&quot;&gt;hochintegrierte Schaltwandler-Module&lt;/a&gt; ersetzt, welche sich schon beim &lt;a href=&quot;/blog/2019/alpha-motor-description.html&quot;&gt;Alpha-Motor&lt;/a&gt; bewährt haben und auch für leistungshungrige Encoder oder Endschalter genügend Strom liefern kann.&lt;/p&gt;
+&lt;p&gt;Die Spannungswandler werden für 5V und 3,3V werden durch &lt;a href=&quot;http://www.ti.com/product/TPS82150&quot;&gt;hochintegrierte Schaltwandler-Module&lt;/a&gt; ersetzt,
+welche sich schon beim &lt;a href=&quot;/blog/2019/alpha-motor-description.html&quot;&gt;Alpha-Motor&lt;/a&gt; bewährt haben und auch für leistungshungrige Encoder oder Endschalter genügend Strom liefern kann.&lt;/p&gt;
+
+&lt;p&gt;Der bisher vorgesehene I²C-Temperatursensor &lt;a href=&quot;http://www.ti.com/ww/eu/sensampbook/tmp006.pdf&quot;&gt;TMP006&lt;/a&gt; (nicht mehr verfügbar)
+und die I²C-Anschlusspads für externe digitale Sensoren sollen durch einen analogen NTC-Temperatursensor ersetzt werden.
+Ein NTC ist kompakter, günstiger, leichter am Motor zu befestigen und hat eine zur Überwachung der Motortemperatur ausreichende Genauigkeit.&lt;/p&gt;
 
 &lt;h4 id=&quot;shuntverstärker-und-komparator&quot;&gt;Shuntverstärker und Komparator&lt;/h4&gt;
 
@@ -78,17 +83,65 @@ Die Gleichtaktspannung muss bis zu 24V betragen, außerdem ist neben einem hohen
   &lt;li&gt;Package: TSSOP-8&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p&gt;In den nächsten Wochen werden Samples dieser Chips unter den beim Micro-Motor herrschenden Umgebungsbedingungen getestet und dann ausgewählt.
+Sollte sich keiner der verfügbaren Inline-Shuntverstärker als brauchbar erweisen, werden wir Low-Side-Shuntverstärker evaluieren.&lt;/p&gt;
+
 &lt;h3 id=&quot;formfaktor&quot;&gt;Formfaktor&lt;/h3&gt;
 
 &lt;p&gt;Im Gegensatz zur Version 1 wird für die zweite Version ein anderer Ansatz gewählt.
-Der integrierte Magnet-Encoder fällt weg, stattdessen gibt es einen gut lötbaren Anschluss für externe Encoder, sowohl einfach als auch mit differenziellen Signalen.
-Bei Bedarf kann ein &lt;a href=&quot;https://github.com/roboterclubaachen/magnet-motor-encoder&quot;&gt;externer magnetischer Encoder&lt;/a&gt; auch über dieses Interface angeschlossen werden.&lt;/p&gt;
+Der integrierte Magnet-Encoder fällt weg, stattdessen gibt es einen &lt;del&gt;gut lötbaren&lt;/del&gt; steckbaren Anschluss für externe Encoder&lt;del&gt;, sowohl einfach als auch mit differenziellen Signalen&lt;/del&gt;.
+Da durch die kleine Bauform des Micromotors keine langen Kabel zum Encoder nötig sind, wird auf differenzielle Signale verzichtet.
+Sollte ein Motor keinen integrierten Encoder haben, kann ein &lt;a href=&quot;https://github.com/roboterclubaachen/magnet-motor-encoder&quot;&gt;externer magnetischer Encoder&lt;/a&gt; auch über dieses Interface angeschlossen werden.&lt;/p&gt;
 
 &lt;p&gt;Die Platine bekommt eine rechteckige Form und soll seitlich an den Motoren befestigt werden.
 So lässt sich der Micro-Motor flexibler an einer Vielzahl von verschiedenen Motoren nutzen.
-Die mechanischen Dimensionen werden sich kaum ändern, angepeil ist eine Platinenfläche von weniger als 500mm².&lt;/p&gt;
+Die mechanischen Dimensionen werden sich kaum ändern, angepeilt ist eine Platinenfläche von weniger als 500mm², z.B. 15x25mm².
+Dazu wird auch weiterhin eine beidseitige Bestückung notwendig sein.&lt;/p&gt;
+
+&lt;h3 id=&quot;stecker&quot;&gt;Stecker&lt;/h3&gt;
+
+&lt;p&gt;Um einen einfach Austausch der Platinen zu ermöglichen sollen keine Kabel fest auf der Platine verlötet werden.
+Es werden sechs Steckverbindungen benötigt:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Motor-Anschluss (Phasen U, V, W), 3-polig, &amp;gt;=5A&lt;/li&gt;
+  &lt;li&gt;Stromversorgung (20V, 6V und GND), 3-polig, &amp;gt;= 5A&lt;/li&gt;
+  &lt;li&gt;CAN Kommunikation (CAN-H, CAN-L), 2- oder 3-polig&lt;/li&gt;
+  &lt;li&gt;End-/Referenz-Schalter, 2- oder 3-polig&lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Hall-Sensor (Hall-Phasen U, V, W; GND und 5V&lt;/td&gt;
+          &lt;td&gt;3.3V), 5-polig&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Encoder (A, B, I; GND und 5V&lt;/td&gt;
+          &lt;td&gt;3.3V), 5-polig&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Für die leistungsführenden Steckverbinder soll 3-polige &lt;a href=&quot;https://jst.de/product-family/show/184/xh&quot;&gt;JST XH&lt;/a&gt; Stecker verwenden werden.
+Diese sind bis 5A nutzbar, bei höhreren Strömen müssen die Kabel fest verlötet werden und Stecker ins Kabel integriert werden.&lt;/p&gt;
+
+&lt;p&gt;Die Signalstecker sollen als 2-/3-polige und 5-polige &lt;a href=&quot;https://jst.de/product-family/show/89/gh&quot;&gt;JST GH&lt;/a&gt; Stecker ausgeführt werden.
+Ebenso wie die Leistungsstecker mit 2.5mm Pitch sind diese die Stecker auch in SMT-Bauform erhältlich und bei einem Pitch von 1.25mm deutlich kompakter.&lt;/p&gt;
+
+&lt;h3 id=&quot;weitere-entwicklung&quot;&gt;Weitere Entwicklung&lt;/h3&gt;
+
+&lt;p&gt;Noch mehr Probleme und Verbesserungsvorschläge der ersten Revision sind im &lt;a href=&quot;https://github.com/roboterclubaachen/micro-motor/issues&quot;&gt;Github Issue #1&lt;/a&gt; aufgeführt.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Der Blog-Post wurde ursprünglich am 27.7.2019 verfasst und zuletzt am 18.8.2019 aktualisiert.&lt;/em&gt;&lt;/p&gt;
 </description>
-            <pubDate>Sat, 27 Jul 2019 00:00:00 -0500</pubDate>
+            <pubDate>Sun, 18 Aug 2019 00:00:00 -0500</pubDate>
         </item>
         
         <item>

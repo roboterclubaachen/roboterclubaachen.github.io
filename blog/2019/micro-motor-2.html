@@ -52,9 +52,9 @@
 <meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/blog/2019/micro-motor-2.html" />
 <meta property="og:site_name" content="Roboterclub Aachen" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-07-27T00:00:00-05:00" />
+<meta property="article:published_time" content="2019-08-18T00:00:00-05:00" />
 <script type="application/ld+json">
-{"datePublished":"2019-07-27T00:00:00-05:00","author":{"@type":"Person","name":"Raphael Lehmann"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/blog/2019/micro-motor-2.html"},"description":"In diesem Blogpost geht es um die Weiterentwicklung des Motorcontrollers “Micro-Motor” zur Version 2. Die bisherige Entwicklung des Motorcontrollers kann in mehreren älteren Blogposts nachgelesen werden.","@type":"BlogPosting","url":"http://www.roboterclub.rwth-aachen.de/blog/2019/micro-motor-2.html","headline":"µMotor: Version 2","dateModified":"2019-07-27T00:00:00-05:00","@context":"https://schema.org"}</script>
+{"datePublished":"2019-08-18T00:00:00-05:00","author":{"@type":"Person","name":"Raphael Lehmann"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/blog/2019/micro-motor-2.html"},"description":"In diesem Blogpost geht es um die Weiterentwicklung des Motorcontrollers “Micro-Motor” zur Version 2. Die bisherige Entwicklung des Motorcontrollers kann in mehreren älteren Blogposts nachgelesen werden.","@type":"BlogPosting","url":"http://www.roboterclub.rwth-aachen.de/blog/2019/micro-motor-2.html","headline":"µMotor: Version 2","dateModified":"2019-08-18T00:00:00-05:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
@@ -134,7 +134,7 @@
   <header id="main" style="background-image: url('/assets/img/blog/micro-motor/umotor-pcb.jpg');background-position: center;">
     <h1 class="title">µMotor: Version 2</h1>
     <p class="meta">
-    July 27, 2019
+    August 18, 2019
      - Raphael Lehmann
     </p>
   </header>
@@ -167,7 +167,12 @@ Außerdem wurde in der Saison eine präzise und zuverlässige Strommessung sehnl
 <p>Ebenso gibt es keinen Anlass den Gatetreiber <a href="http://www.ti.com/product/DRV8323">DRV8323S</a> auszutauschen, da sich dieser durchgehend bewährt hat.
 Es wird jedoch die Variante ohne integrierte Shuntverstärker verwendet, da die Shuntverstärker ein zu geringes Gain-Bandbreiten-Produkt aufweisen und keine präzise Strommessung zulassen.</p>
 
-<p>Die Spannungswandler werden für 5V und 3,3V werden durch <a href="http://www.ti.com/product/TPS82150">hochintegrierte Schaltwandler-Module</a> ersetzt, welche sich schon beim <a href="/blog/2019/alpha-motor-description.html">Alpha-Motor</a> bewährt haben und auch für leistungshungrige Encoder oder Endschalter genügend Strom liefern kann.</p>
+<p>Die Spannungswandler werden für 5V und 3,3V werden durch <a href="http://www.ti.com/product/TPS82150">hochintegrierte Schaltwandler-Module</a> ersetzt,
+welche sich schon beim <a href="/blog/2019/alpha-motor-description.html">Alpha-Motor</a> bewährt haben und auch für leistungshungrige Encoder oder Endschalter genügend Strom liefern kann.</p>
+
+<p>Der bisher vorgesehene I²C-Temperatursensor <a href="http://www.ti.com/ww/eu/sensampbook/tmp006.pdf">TMP006</a> (nicht mehr verfügbar)
+und die I²C-Anschlusspads für externe digitale Sensoren sollen durch einen analogen NTC-Temperatursensor ersetzt werden.
+Ein NTC ist kompakter, günstiger, leichter am Motor zu befestigen und hat eine zur Überwachung der Motortemperatur ausreichende Genauigkeit.</p>
 
 <h4 id="shuntverstärker-und-komparator">Shuntverstärker und Komparator</h4>
 
@@ -205,15 +210,63 @@ Die Gleichtaktspannung muss bis zu 24V betragen, außerdem ist neben einem hohen
   <li>Package: TSSOP-8</li>
 </ul>
 
+<p>In den nächsten Wochen werden Samples dieser Chips unter den beim Micro-Motor herrschenden Umgebungsbedingungen getestet und dann ausgewählt.
+Sollte sich keiner der verfügbaren Inline-Shuntverstärker als brauchbar erweisen, werden wir Low-Side-Shuntverstärker evaluieren.</p>
+
 <h3 id="formfaktor">Formfaktor</h3>
 
 <p>Im Gegensatz zur Version 1 wird für die zweite Version ein anderer Ansatz gewählt.
-Der integrierte Magnet-Encoder fällt weg, stattdessen gibt es einen gut lötbaren Anschluss für externe Encoder, sowohl einfach als auch mit differenziellen Signalen.
-Bei Bedarf kann ein <a href="https://github.com/roboterclubaachen/magnet-motor-encoder">externer magnetischer Encoder</a> auch über dieses Interface angeschlossen werden.</p>
+Der integrierte Magnet-Encoder fällt weg, stattdessen gibt es einen <del>gut lötbaren</del> steckbaren Anschluss für externe Encoder<del>, sowohl einfach als auch mit differenziellen Signalen</del>.
+Da durch die kleine Bauform des Micromotors keine langen Kabel zum Encoder nötig sind, wird auf differenzielle Signale verzichtet.
+Sollte ein Motor keinen integrierten Encoder haben, kann ein <a href="https://github.com/roboterclubaachen/magnet-motor-encoder">externer magnetischer Encoder</a> auch über dieses Interface angeschlossen werden.</p>
 
 <p>Die Platine bekommt eine rechteckige Form und soll seitlich an den Motoren befestigt werden.
 So lässt sich der Micro-Motor flexibler an einer Vielzahl von verschiedenen Motoren nutzen.
-Die mechanischen Dimensionen werden sich kaum ändern, angepeil ist eine Platinenfläche von weniger als 500mm².</p>
+Die mechanischen Dimensionen werden sich kaum ändern, angepeilt ist eine Platinenfläche von weniger als 500mm², z.B. 15x25mm².
+Dazu wird auch weiterhin eine beidseitige Bestückung notwendig sein.</p>
+
+<h3 id="stecker">Stecker</h3>
+
+<p>Um einen einfach Austausch der Platinen zu ermöglichen sollen keine Kabel fest auf der Platine verlötet werden.
+Es werden sechs Steckverbindungen benötigt:</p>
+<ul>
+  <li>Motor-Anschluss (Phasen U, V, W), 3-polig, &gt;=5A</li>
+  <li>Stromversorgung (20V, 6V und GND), 3-polig, &gt;= 5A</li>
+  <li>CAN Kommunikation (CAN-H, CAN-L), 2- oder 3-polig</li>
+  <li>End-/Referenz-Schalter, 2- oder 3-polig</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Hall-Sensor (Hall-Phasen U, V, W; GND und 5V</td>
+          <td>3.3V), 5-polig</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Encoder (A, B, I; GND und 5V</td>
+          <td>3.3V), 5-polig</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<p>Für die leistungsführenden Steckverbinder soll 3-polige <a href="https://jst.de/product-family/show/184/xh">JST XH</a> Stecker verwenden werden.
+Diese sind bis 5A nutzbar, bei höhreren Strömen müssen die Kabel fest verlötet werden und Stecker ins Kabel integriert werden.</p>
+
+<p>Die Signalstecker sollen als 2-/3-polige und 5-polige <a href="https://jst.de/product-family/show/89/gh">JST GH</a> Stecker ausgeführt werden.
+Ebenso wie die Leistungsstecker mit 2.5mm Pitch sind diese die Stecker auch in SMT-Bauform erhältlich und bei einem Pitch von 1.25mm deutlich kompakter.</p>
+
+<h3 id="weitere-entwicklung">Weitere Entwicklung</h3>
+
+<p>Noch mehr Probleme und Verbesserungsvorschläge der ersten Revision sind im <a href="https://github.com/roboterclubaachen/micro-motor/issues">Github Issue #1</a> aufgeführt.</p>
+
+<p><em>Der Blog-Post wurde ursprünglich am 27.7.2019 verfasst und zuletzt am 18.8.2019 aktualisiert.</em></p>
 </section>
 
   <!-- Social media shares -->
