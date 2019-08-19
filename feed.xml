@@ -5,7 +5,7 @@
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
         <link>http://www.roboterclub.rwth-aachen.de/</link>
         <description></description>
-        <pubDate>Sun, 18 Aug 2019 17:22:47 -0500</pubDate>
+        <pubDate>Mon, 19 Aug 2019 12:35:04 -0500</pubDate>
         
         <item>
             <title>µMotor: Version 2</title>
@@ -107,26 +107,8 @@ Es werden sechs Steckverbindungen benötigt:&lt;/p&gt;
   &lt;li&gt;Stromversorgung (20V, 6V und GND), 3-polig, &amp;gt;= 5A&lt;/li&gt;
   &lt;li&gt;CAN Kommunikation (CAN-H, CAN-L), 2- oder 3-polig&lt;/li&gt;
   &lt;li&gt;End-/Referenz-Schalter, 2- oder 3-polig&lt;/li&gt;
-  &lt;li&gt;
-    &lt;table&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt;Hall-Sensor (Hall-Phasen U, V, W; GND und 5V&lt;/td&gt;
-          &lt;td&gt;3.3V), 5-polig&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;table&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt;Encoder (A, B, I; GND und 5V&lt;/td&gt;
-          &lt;td&gt;3.3V), 5-polig&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
-  &lt;/li&gt;
+  &lt;li&gt;Hall-Sensor (Hall-Phasen U, V, W; GND und 5V/3.3V), 5-polig&lt;/li&gt;
+  &lt;li&gt;Encoder (A, B, I; GND und 5/3.3V), 5-polig&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Für die leistungsführenden Steckverbinder soll 3-polige &lt;a href=&quot;https://jst.de/product-family/show/184/xh&quot;&gt;JST XH&lt;/a&gt; Stecker verwenden werden.
