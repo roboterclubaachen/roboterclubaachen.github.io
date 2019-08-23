@@ -3,7 +3,7 @@
 
   <url>
 	<!-- post -->
-    <loc>http://www.roboterclub.rwth-aachen.de/blog/2019/micro-motor-2.html</loc>
+    <loc>http://www.roboterclub.rwth-aachen.de/blog/2019/micro-motor-2-teil-1.html</loc>
     
     <changefreq>weekly</changefreq>
     
@@ -347,7 +347,7 @@
   
   <url>
 	<!-- page -->
-    <loc>http://www.roboterclub.rwth-aachen.de/</loc>
+    <loc>http://www.roboterclub.rwth-aachen.de/blog/</loc>
     
     
     
@@ -355,7 +355,7 @@
   
   <url>
 	<!-- page -->
-    <loc>http://www.roboterclub.rwth-aachen.de/blog/</loc>
+    <loc>http://www.roboterclub.rwth-aachen.de/</loc>
     
     
     
@@ -392,5 +392,5 @@
     
     
   </url>
- 
+   
 </urlset>

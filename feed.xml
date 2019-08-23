@@ -5,14 +5,14 @@
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
         <link>http://www.roboterclub.rwth-aachen.de/</link>
         <description></description>
-        <pubDate>Mon, 19 Aug 2019 12:35:04 -0500</pubDate>
+        <pubDate>Fri, 23 Aug 2019 20:48:55 +0000</pubDate>
         
         <item>
-            <title>µMotor: Version 2</title>
-            <link>/blog/2019/micro-motor-2.html</link>
-            <guid isPermaLink="true">/blog/2019/micro-motor-2.html</guid>
+            <title>µMotor 2: Teil 1</title>
+            <link>/blog/2019/micro-motor-2-teil-1.html</link>
+            <guid isPermaLink="true">/blog/2019/micro-motor-2-teil-1.html</guid>
             <description>&lt;p&gt;In diesem Blogpost geht es um die Weiterentwicklung des Motorcontrollers “Micro-Motor” zur Version 2.
-Die bisherige Entwicklung des Motorcontrollers kann in &lt;a href=&quot;&quot;&gt;mehreren&lt;/a&gt; &lt;a href=&quot;&quot;&gt;älteren&lt;/a&gt; &lt;a href=&quot;&quot;&gt;Blogposts&lt;/a&gt; nachgelesen werden.&lt;/p&gt;
+Die bisherige Entwicklung des Motorcontrollers kann in &lt;a href=&quot;/blog/2019/alpha-motor-description.html&quot;&gt;mehreren&lt;/a&gt; &lt;a href=&quot;http://www.roboterclub.rwth-aachen.de/blog/2018/micro-motor-debugging-inbetriebnahme.html&quot;&gt;älteren&lt;/a&gt; &lt;a href=&quot;http://www.roboterclub.rwth-aachen.de/blog/2018/micro-motor-motorcontroller.html&quot;&gt;Blogposts&lt;/a&gt; nachgelesen werden.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;../../assets/img/blog/2018/micro-motor-faedeldraht.jpg&quot; alt=&quot;Makro-Aufnahme Micro-Motor Fädeldraht&quot; /&gt;&lt;/p&gt;
 
@@ -21,8 +21,6 @@ Die bisherige Entwicklung des Motorcontrollers kann in &lt;a href=&quot;&quot;&g
 &lt;p&gt;Auch die Macro-Motor-Platine war leider nicht fehlerfrei. Unter anderem war leider der Footprint des neuen Spannungsreglers im WLCSP-6 (Wafer Level Chip Scale Package; 1x1,6mm²) spiegelverkehrt.
 Ebenso war einer der beiden aufgebauten Prototypen nach dem Reflow-Löten nicht funktionsfähig, was auf durch von Hersteller zusätzlich verkleinerte Ausschnitte im Stencil verursachte zu geringe Menge an Lötpaste zurückzuführen war.
 Beim Versuch die nicht verlöteten Pins des Gatetreiber-ICs von Hand nachzulöten ist dieser leider zerstört worden.&lt;/p&gt;
-
-&lt;!-- TODO: Messergebnisse --&gt;
 
 &lt;p&gt;Unabhängig von den bisher aufgetretenen Problemen sind neue Wünsche entstanden.
 Für eine &lt;a href=&quot;/projekt/motor-commutation.html&quot;&gt;intelligente Motor-Kommutierung&lt;/a&gt; statt der bisher verwendeten stupiden Block-Kommutierung ist es teilweise nötig die Ström in den Phasen sowie auch die Spannung der Motorphasen zu messen.
@@ -123,7 +121,7 @@ Ebenso wie die Leistungsstecker mit 2.5mm Pitch sind diese die Stecker auch in S
 
 &lt;p&gt;&lt;em&gt;Der Blog-Post wurde ursprünglich am 27.7.2019 verfasst und zuletzt am 18.8.2019 aktualisiert.&lt;/em&gt;&lt;/p&gt;
 </description>
-            <pubDate>Sun, 18 Aug 2019 00:00:00 -0500</pubDate>
+            <pubDate>Sun, 18 Aug 2019 00:00:00 +0000</pubDate>
         </item>
         
         <item>
@@ -174,7 +172,7 @@ Despite the sobering result, the members are proud of what they achieved in the 
 
 &lt;p&gt;&lt;img src=&quot;../../assets/img/blog/2019/eurobot-team-in-france.jpg&quot; alt=&quot;RCA Team im La-Roche-sur-Yon&quot; /&gt;&lt;/p&gt;
 </description>
-            <pubDate>Thu, 25 Jul 2019 00:00:00 -0500</pubDate>
+            <pubDate>Thu, 25 Jul 2019 00:00:00 +0000</pubDate>
         </item>
         
         <item>
@@ -208,7 +206,7 @@ Da weiterhin der gleiche Mikrocontroller verwendet wird, ist grundsätzlich die 
 
 &lt;p&gt;&lt;img src=&quot;../../assets/img/blog/alpha-motor/AlphaMotor_Antrieb.jpg&quot; alt=&quot;Antrieb mit Alpha-Motor Platinen im Roboter &amp;quot;Marie&amp;quot;&quot; /&gt;&lt;/p&gt;
 </description>
-            <pubDate>Thu, 09 May 2019 00:00:00 -0500</pubDate>
+            <pubDate>Thu, 09 May 2019 00:00:00 +0000</pubDate>
         </item>
         
         <item>
@@ -272,7 +270,7 @@ Die Platinengröße wurde von einem Kreis mit Durchmesser von 20 mm auf ein Rech
 
 &lt;p&gt;Dank der schnellen Platinenfertigung von Aisler reicht eine gute Woche Wartezeit aus, bis die neue Testplatine in unserer Werkstatt liegen wird.&lt;/p&gt;
 </description>
-            <pubDate>Sat, 06 Oct 2018 00:00:00 -0500</pubDate>
+            <pubDate>Sat, 06 Oct 2018 00:00:00 +0000</pubDate>
         </item>
         
         <item>
@@ -293,7 +291,7 @@ Wir haben eine Menge &lt;a href=&quot;http://www.roboterclub.rwth-aachen.de/mach
 
 &lt;p&gt;Wenn wir dein Interesse geweckt haben, komme Dienstag abends bei unserem &lt;a href=&quot;http://www.roboterclub.rwth-aachen.de/kontakt/&quot;&gt;wöchentlichen Meeting&lt;/a&gt; vorbei und lerne uns kennen.&lt;/p&gt;
 </description>
-            <pubDate>Tue, 18 Sep 2018 00:00:00 -0500</pubDate>
+            <pubDate>Tue, 18 Sep 2018 00:00:00 +0000</pubDate>
         </item>
         
         <item>
@@ -402,7 +400,7 @@ Der Adapter verfügt außerdem über eine Pin zum abgreifen der UART-Ausgabe zu 
 
 &lt;p&gt;To be continued…&lt;/p&gt;
 </description>
-            <pubDate>Sat, 05 May 2018 00:00:00 -0500</pubDate>
+            <pubDate>Sat, 05 May 2018 00:00:00 +0000</pubDate>
         </item>
         
         <item>
@@ -416,7 +414,7 @@ Dieses Jahr steht der Eurobot unter dem Motto “Robot Cities”.&lt;/p&gt;
 
 &lt;p&gt;Wir haben schonmal einen neuen Allradantrieb konstruiert, hilf uns mit ihn zu bauen.&lt;/p&gt;
 </description>
-            <pubDate>Mon, 23 Oct 2017 00:00:00 -0500</pubDate>
+            <pubDate>Mon, 23 Oct 2017 00:00:00 +0000</pubDate>
         </item>
         
         <item>
@@ -436,7 +434,7 @@ The competition was well organized by TURAG. Thank you for the great time!&lt;/p
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/blog/2017/Juri_Siggi_Rooftop_Front.jpg&quot; alt=&quot;Juri Siggi Rooftop Front&quot; /&gt;&lt;/p&gt;
 </description>
-            <pubDate>Mon, 01 May 2017 00:00:00 -0500</pubDate>
+            <pubDate>Mon, 01 May 2017 00:00:00 +0000</pubDate>
         </item>
         
         <item>
@@ -454,7 +452,7 @@ Our robots, Hassel and Hoff, won every game at the German Eurobot contest 2016 i
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/blog/2016/2016HasselHoff.jpg&quot; alt=&quot;Roboter Hassel und Hoff&quot; /&gt;&lt;/p&gt;
 </description>
-            <pubDate>Tue, 03 May 2016 00:00:00 -0500</pubDate>
+            <pubDate>Tue, 03 May 2016 00:00:00 +0000</pubDate>
         </item>
         
         <item>
@@ -465,7 +463,7 @@ Our robots, Hassel and Hoff, won every game at the German Eurobot contest 2016 i
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/blog/2016/phobos_in_castle.jpg&quot; alt=&quot;Phobos in castle&quot; /&gt;&lt;/p&gt;
 </description>
-            <pubDate>Tue, 20 Oct 2015 00:00:00 -0500</pubDate>
+            <pubDate>Tue, 20 Oct 2015 00:00:00 +0000</pubDate>
         </item>
         
     </channel>
