@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer=true src="/assets/js/main.min.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/img/rca.svg">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/blog/2019/micro-motor-2-teil-2.html">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="Roboterclub Aachen" href="http://www.roboterclub.rwth-aachen.de///feed.xml"/>
+
+    <!-- Font Awesome -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/vendor/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    
+
+    <!-- KaTeX 0.8.3 -->
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/vendor/katex.min.css">
+    <script src="/assets/js/vendor/katex.min.js">
+    </script>
+    
+
+    <!-- Google Analytics -->
+    
+    
+    <!-- seo tags -->
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>µMotor 2 - Teil 2: Strommessung | Roboterclub Aachen</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="µMotor 2 - Teil 2: Strommessung" />
+<meta name="author" content="Raphael Lehmann" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="In diesem Blogpost geht es um die Weiterentwicklung des Motorcontrollers “Micro-Motor” zur Version 2. Die bisherige Entwicklung des Motorcontrollers kann in mehreren älteren Blogposts nachgelesen werden." />
+<meta property="og:description" content="In diesem Blogpost geht es um die Weiterentwicklung des Motorcontrollers “Micro-Motor” zur Version 2. Die bisherige Entwicklung des Motorcontrollers kann in mehreren älteren Blogposts nachgelesen werden." />
+<link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/blog/2019/micro-motor-2-teil-2.html" />
+<meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/blog/2019/micro-motor-2-teil-2.html" />
+<meta property="og:site_name" content="Roboterclub Aachen" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-08-30T00:00:00+00:00" />
+<script type="application/ld+json">
+{"mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/blog/2019/micro-motor-2-teil-2.html"},"description":"In diesem Blogpost geht es um die Weiterentwicklung des Motorcontrollers “Micro-Motor” zur Version 2. Die bisherige Entwicklung des Motorcontrollers kann in mehreren älteren Blogposts nachgelesen werden.","@type":"BlogPosting","url":"http://www.roboterclub.rwth-aachen.de/blog/2019/micro-motor-2-teil-2.html","headline":"µMotor 2 - Teil 2: Strommessung","dateModified":"2019-08-30T00:00:00+00:00","datePublished":"2019-08-30T00:00:00+00:00","author":{"@type":"Person","name":"Raphael Lehmann"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- Manual seo tags -->
+    <!--
+    <title>µMotor 2 - Teil 2: Strommessung | Roboterclub Aachen</title>
+    <meta name="description" content="In diesem Blogpost geht es um die Weiterentwicklung des Motorcontrollers “Micro-Motor” zur Version 2.Die bisherige Entwicklung des Motorcontrollers kann in m...">
+    -->
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+		<a href="/">
+			<img class="avatar" src="/assets/img/rca.svg" alt=""/>
+		</a>
+
+		<h1 class="site-title">
+			<a href="/">Roboterclub Aachen</a>
+		</h1>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a id="pull" class="toggle" href="#">
+    <i class="fa fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        <!-- Auto Generation of pages in the navbar -->
+        
+        <li class="separator">|</li>
+        <li>
+            <a class="clear" href="/mach-mit">
+            
+                Mach Mit!
+            
+            </a>
+        </li>
+        
+        <li class="separator">|</li>
+        <li>
+            <a class="clear" href="/blog">
+            
+                Blog
+            
+            </a>
+        </li>
+        
+        <li class="separator">|</li>
+        <li>
+            <a class="clear" href="/kontakt">
+            
+                Kontakt
+            
+            </a>
+        </li>
+        
+        <li class="separator">|</li>
+        <li>
+            <a class="clear" href="/search">
+            
+                <i class="fa fa-search" aria-hidden="true"></i>
+            
+            </a>
+        </li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article class="feature-image">
+  <header id="main" style="background-image: url('/assets/img/blog/micro-motor/umotor-pcb.jpg');background-position: center;">
+    <h1 class="title">µMotor 2 - Teil 2: Strommessung</h1>
+    <p class="meta">
+    August 30, 2019
+     - Raphael Lehmann
+    </p>
+  </header>
+  <section class="post-content post-content-text"><p>In diesem Blogpost geht es um die Weiterentwicklung des Motorcontrollers “Micro-Motor” zur Version 2.
+Die bisherige Entwicklung des Motorcontrollers kann in <a href="/blog/2019/micro-motor-2-teil-1.html">mehreren</a> <a href="/blog/2018/micro-motor-debugging-inbetriebnahme.html">älteren</a> <a href="/blog/2018/micro-motor-motorcontroller.html">Blogposts</a> nachgelesen werden.</p>
+
+<p>Von den im <a href="/blog/2019/micro-motor-2-teil-1.html">vorherigen Blog-Post</a> aufgelisteten Shuntverstärkern sind die beiden Bauteile von Analog Devices (ehem. Linear Technologie) und Texas Instruments in die nähere Auswahl gekommen.
+Es wurden von TIs INA240 Muster bestellt mit Gain 50 und 200, sowie Gain 20 und 50 beim LT1999, da bei diesem keine Variante mit Gain über 50 verfügbar ist.</p>
+
+<p>Als Shunt dient ein 5mΩ 1W 1% SMD-Widerstand in Baugröße 0805 (<a href="https://octopart.com/tlr2attd5l00f-koa+speer-27701192">KOA Speer TLR2ATTD5L00F</a>).
+Durch die kleine Bauform ist ein kompakter Aufbau gewährleistet, wie in den Datenblättern empfohlen (<a href="https://www.analog.com/media/en/technical-documentation/data-sheets/1999fd.pdf">LT1999</a> Seite 16 bzw. <a href="http://www.ti.com/lit/ds/symlink/ina240.pdf">INA240</a> Seite 27).</p>
+
+<p><img src="../../assets/img/blog/micro-motor/shuntverstaerker-messungen/Versuchsaufbau-LT1999.jpg" alt="Shuntverstärker Versuchsaufbau" /></p>
+
+<p>Der weitere Messaufbau besteht aus einem <a href="/blog/2019/alpha-motor-description.html">Motor-Controller</a> über welchen Frequenz und Duty-Cycle eingestellt werden können.
+Als Last dient ein 2kW Lastwiderstand mit 9,4Ω nach Ground, wodurch ein Strom von maximal 2,1A bei 20V durch den Shunt fließen.
+Die Induktivität des Aufbaus ist leider nicht bekannt, das keine geeigenten Messgeräte zur Verfügung standen.</p>
+
+<p>An den folgenden Messungen ist leicht zu erkennen, dass der LT1999 in unserem Fall ungeeignet zur Strommessung In-Phase ist.
+Der durch die Common-Mode-Spannungsänderung erzeugte Spike am Ausgang ist größer als das erwartete Mess-Signal,
+gerade bei kleinen Duty-Cycles (&lt;10%) verschwindet der Messwert hier vollständig.</p>
+
+<p>Der Shuntverstärker INA240 eignet zur Strommessung In-Phase, hier ist kein störender Einfluss der Common-Mode-PWM-Signals auf den Ausgang zu beobachten.
+Die Variante INA240A4 mit Gain 200 kann mit einem 5mΩ Shuntwiderstand nur etwa 2A messen, der Messbereich von 10A beim INA240A2 (Gain 50) ist für den Motorcontroller besser geeignet.
+Denkbar wäre es natürlich auch einen kleineren Shuntwiderstand zu wählen, jedoch würde dies aufgrund von stärkeren Einkoppplungen wahrscheinlich schlechtere Ergebnisse liefern.</p>
+
+<p>Auf den Osziloskop-Bildern ist in Gelb der Ausgang des Shuntverstärkers zu sehen.
+Auf Kanal 2 (Blau) ist die Spannung an der Motor-Phase beziehungsweise über dem Last-Widerstand dargestellt.</p>
+
+<h2 id="duty-cycle-30">Duty-Cycle 30%</h2>
+
+<h3 id="in-phase">In-Phase</h3>
+
+<p><img src="../../assets/img/blog/micro-motor/shuntverstaerker-messungen/LT1999-20_In-Phase_160kHz_0uH.jpg" alt="Shuntverstärker Messung: LT1999, Gain 20, In-Phase, 160kHz, 0µH" /></p>
+<center>LT1999, Gain 20, In-Phase, 160kHz, 0µH</center>
+<p><br /></p>
+
+<p><img src="../../assets/img/blog/micro-motor/shuntverstaerker-messungen/LT1999-50_In-Phase_160kHz_0uH.jpg" alt="Shuntverstärker Messung: LT1999, Gain 50, In-Phase, 160kHz, 0µH" /></p>
+<center>LT1999, Gain 50, In-Phase, 160kHz, 0µH</center>
+<p><br /></p>
+
+<p><img src="../../assets/img/blog/micro-motor/shuntverstaerker-messungen/INA240-A2_In-Phase_160kHz-30.bmp" alt="INA240A2, Gain 50, In-Phase, 160kHz, 30%, (negativer Ausschlag, 20V)" /></p>
+<center>INA240A2, Gain 50, In-Phase, 160kHz, 30%, (negativer Ausschlag, 20V)</center>
+<p><br /></p>
+
+<p><img src="../../assets/img/blog/micro-motor/shuntverstaerker-messungen/INA240-A2_In-Phase_160kHz-30_12V.bmp" alt="INA240A2, Gain 50, In-Phase, 160kHz, 30%, (negativer Ausschlag, 12V -&gt; 1A)" /></p>
+<center>INA240A2, Gain 50, In-Phase, 160kHz, 30%, (negativer Ausschlag, 12V -&gt; 1A)</center>
+<p><br /></p>
+
+<p><img src="../../assets/img/blog/micro-motor/shuntverstaerker-messungen/INA240-A4_In-Phase_160kHz-30_12V.bmp" alt="INA240A4, Gain 200, In-Phase, 160kHz (negativer Ausschlag, 12V -&gt; 1A)" /></p>
+<center>INA240A4, Gain 200, In-Phase, 160kHz (negativer Ausschlag, 12V -&gt; 1A)</center>
+<p><br /></p>
+
+<p><img src="../../assets/img/blog/micro-motor/shuntverstaerker-messungen/INA240-A4_In-Phase_160kHz-30.bmp" alt="INA240A4, Gain 200, In-Phase, 160kHz (negativer Ausschlag)" /></p>
+<center>INA240A4, Gain 200, In-Phase, 160kHz (negativer Ausschlag)</center>
+<p><br /></p>
+
+<!--
+![Shuntverstärker Messung: LT1999, Gain 50, In-Phase, 160kHz, 0µH](../../assets/img/blog/micro-motor/shuntverstaerker-messungen/LT1999-50_In-Phase_160kHz.jpg)
+<center>LT1999, Gain 50, In-Phase, 160kHz, 0µH</center><br />
+
+![Shuntverstärker Messung: LT1999, Gain 50, In-Phase, 80kHz, 0µH](../../assets/img/blog/micro-motor/shuntverstaerker-messungen/LT1999-50_In-Phase_80kHz.jpg)
+<center>LT1999, Gain 50, In-Phase, 80kHz, 0µH</center><br />
+-->
+
+<h3 id="low-side">Low-Side</h3>
+
+<p><img src="../../assets/img/blog/micro-motor/shuntverstaerker-messungen/LT1999-20_Low-Side_160kHz_0uH.jpg" alt="Shuntverstärker Messung: LT1999, Gain 20, Low-Side, 160kHz, 0µH" /></p>
+<center>LT1999, Gain 20, Low-Side, 160kHz, 0µH</center>
+<p><br /></p>
+
+<p><img src="../../assets/img/blog/micro-motor/shuntverstaerker-messungen/LT1999-50_Low-Side_160kHz.jpg" alt="Shuntverstärker Messung: LT1999, Gain 50, Low-Side, 160kHz, 0µH" /></p>
+<center>LT1999, Gain 50, Low-Side, 160kHz, 0µH</center>
+<p><br /></p>
+
+<p><img src="../../assets/img/blog/micro-motor/shuntverstaerker-messungen/INA240-A2_Low-Side_160kHz-30.bmp" alt="INA240A2, Gain 50, Low-Side, 160kHz, 30%, (positiver Ausschlag, 20V)" /></p>
+<center>INA240A2, Gain 50, Low-Side, 160kHz, 30%, (positiver Ausschlag, 20V)</center>
+<p><br /></p>
+
+<p><img src="../../assets/img/blog/micro-motor/shuntverstaerker-messungen/INA240-A2_Low-Side_160kHz-30_12V.bmp" alt="INA240A2, Gain 50, Low-Side, 160kHz, 30%, (positiver Ausschlag, 12V -&gt; 1A)" /></p>
+<center>INA240A2, Gain 50, Low-Side, 160kHz, 30%, (positiver Ausschlag, 12V -&gt; 1A)</center>
+<p><br /></p>
+
+<p><img src="../../assets/img/blog/micro-motor/shuntverstaerker-messungen/INA240-A4_Low-Side_160kHz-30_12V.bmp" alt="INA240A4, Gain 200, Low-Side, 160kHz (positiver Ausschlag, 12V -&gt; 1A)" /></p>
+<center>INA240A4, Gain 200, Low-Side, 160kHz (positiver Ausschlag, 12V -&gt; 1A)</center>
+<p><br /></p>
+
+<p><img src="../../assets/img/blog/micro-motor/shuntverstaerker-messungen/INA240-A4_Low-Side_160kHz-30.bmp" alt="INA240A4, Gain 200, Low-Side, 160kHz (positiver Ausschlag)" /></p>
+<center>INA240A4, Gain 200, Low-Side, 160kHz (positiver Ausschlag)</center>
+<p><br /></p>
+
+<!--
+![Shuntverstärker Messung: LT1999, Gain 50, Low-Side, 160kHz, 10µH](../../assets/img/blog/micro-motor/shuntverstaerker-messungen/LT1999-50_Low-Side_160kHz_10uH.jpg)
+<center>LT1999, Gain 50, Low-Side, 160kHz, 10µH</center><br />
+
+![Shuntverstärker Messung: LT1999, Gain 50, In-Phase, 160kHz, 10µH](../../assets/img/blog/micro-motor/shuntverstaerker-messungen/LT1999-50_In-Phase_160kHz_10uH.jpg)
+<center>LT1999, Gain 50, In-Phase, 160kHz, 10µH</center><br />
+-->
+
+<h2 id="duty-cycle-5">Duty-Cycle 5%</h2>
+
+<h3 id="in-phase-1">In-Phase</h3>
+
+<p><img src="../../assets/img/blog/micro-motor/shuntverstaerker-messungen/LT1999-20_In-Phase_160kHz-5.bmp" alt="LT1999, Gain 20, In-Phase" /></p>
+<center>LT1999, Gain 20, In-Phase</center>
+<p><br /></p>
+
+<p><img src="../../assets/img/blog/micro-motor/shuntverstaerker-messungen/LT1999-50_In-Phase_160kHz-5.bmp" alt="LT1999, Gain 50, In-Phase" /></p>
+<center>LT1999, Gain 50, In-Phase</center>
+<p><br /></p>
+
+<p><img src="../../assets/img/blog/micro-motor/shuntverstaerker-messungen/INA240-A2_In-Phase_160kHz-5.bmp" alt="INA240A2, Gain 50, In-Phase" /></p>
+<center>INA240A2, Gain 50, In-Phase</center>
+<p><br /></p>
+
+<p><img src="../../assets/img/blog/micro-motor/shuntverstaerker-messungen/INA240-A4_In-Phase_160kHz-5.bmp" alt="INA240A4, Gain 200, In-Phase" /></p>
+<center>INA240A4, Gain 200, In-Phase</center>
+<p><br /></p>
+
+<h3 id="low-side-1">Low-Side</h3>
+
+<p><img src="../../assets/img/blog/micro-motor/shuntverstaerker-messungen/LT1999-20_Low-Side_160kHz-5.bmp" alt="LT1999, Gain 20, Low-Side" /></p>
+<center>LT1999, Gain 20, Low-Side</center>
+<p><br /></p>
+
+<p><img src="../../assets/img/blog/micro-motor/shuntverstaerker-messungen/LT1999-50_Low-Side_160kHz-5.bmp" alt="LT1999, Gain 50, Low-Side" /></p>
+<center>LT1999, Gain 50, Low-Side</center>
+<p><br /></p>
+
+<p><img src="../../assets/img/blog/micro-motor/shuntverstaerker-messungen/INA240-A2_Low-Side_160kHz-5.bmp" alt="INA240A2, Gain 50, Low-Side" /></p>
+<center>INA240A2, Gain 50, Low-Side</center>
+<p><br /></p>
+
+<p><img src="../../assets/img/blog/micro-motor/shuntverstaerker-messungen/INA240-A4_Low-Side_160kHz-5.bmp" alt="INA240A4, Gain 200, Low-Side" /></p>
+<center>INA240A4, Gain 200, Low-Side</center>
+<p><br /></p>
+</section>
+
+  <!-- Social media shares -->
+  <div class="share-buttons">
+    <ul class="share-buttons">
+        <div class="meta">Teilen</div>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?source=http://www.roboterclub.rwth-aachen.de/blog/2019/micro-motor-2-teil-2.html&text=µMotor 2 - Teil 2: Strommessung%20%7C%20Roboterclub Aachen:%20http://www.roboterclub.rwth-aachen.de/blog/2019/micro-motor-2-teil-2.html" target="_blank" title="Twittern">
+			<i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
+			<span class="sr-only">Twittern</span>
+		</a>
+        </li>
+                
+        <li>
+            <a href="mailto:?subject=µMotor 2 - Teil 2: Strommessung%20%7C%20Roboterclub Aachen&body=:%20http://www.roboterclub.rwth-aachen.de/blog/2019/micro-motor-2-teil-2.html" target="_blank" title="Email">
+			<i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i>
+			<span class="sr-only">Email</span>
+		</a>
+        </li>
+        
+    </ul>
+</div>
+
+   <!-- Tag list -->
+  
+
+
+<footer>
+  <div class="tag-list">
+    
+      <div class="meta">Tags</div>
+    
+
+    
+    <a class="button" href="/tags#elektronik">
+      <p><i class="fa fa-tag fa-fw"></i> elektronik</p>
+    </a>
+    
+    <a class="button" href="/tags#saison20">
+      <p><i class="fa fa-tag fa-fw"></i> saison20</p>
+    </a>
+    
+  </div>
+</footer>
+
+
+</article>
+
+    </div>
+    
+<footer class="site-footer">
+    <p class="text"><a href="/impressum">Impressum | Datenschutz</a></p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+	<a href="http://www.roboterclub.rwth-aachen.de/feed.xml" title="Folge dem RSS Feed">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/RoboterClubAachen" title="Folge uns GitHub">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/RCA_eV" title="Folge uns Twitter" class="type">
+        <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+
+  </body>
+</html>

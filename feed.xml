@@ -5,14 +5,155 @@
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
         <link>http://www.roboterclub.rwth-aachen.de/</link>
         <description></description>
-        <pubDate>Fri, 23 Aug 2019 20:48:55 +0000</pubDate>
+        <pubDate>Fri, 30 Aug 2019 16:24:34 +0000</pubDate>
+        
+        <item>
+            <title>µMotor 2 - Teil 2: Strommessung</title>
+            <link>/blog/2019/micro-motor-2-teil-2.html</link>
+            <guid isPermaLink="true">/blog/2019/micro-motor-2-teil-2.html</guid>
+            <description>&lt;p&gt;In diesem Blogpost geht es um die Weiterentwicklung des Motorcontrollers “Micro-Motor” zur Version 2.
+Die bisherige Entwicklung des Motorcontrollers kann in &lt;a href=&quot;/blog/2019/micro-motor-2-teil-1.html&quot;&gt;mehreren&lt;/a&gt; &lt;a href=&quot;/blog/2018/micro-motor-debugging-inbetriebnahme.html&quot;&gt;älteren&lt;/a&gt; &lt;a href=&quot;/blog/2018/micro-motor-motorcontroller.html&quot;&gt;Blogposts&lt;/a&gt; nachgelesen werden.&lt;/p&gt;
+
+&lt;p&gt;Von den im &lt;a href=&quot;/blog/2019/micro-motor-2-teil-1.html&quot;&gt;vorherigen Blog-Post&lt;/a&gt; aufgelisteten Shuntverstärkern sind die beiden Bauteile von Analog Devices (ehem. Linear Technologie) und Texas Instruments in die nähere Auswahl gekommen.
+Es wurden von TIs INA240 Muster bestellt mit Gain 50 und 200, sowie Gain 20 und 50 beim LT1999, da bei diesem keine Variante mit Gain über 50 verfügbar ist.&lt;/p&gt;
+
+&lt;p&gt;Als Shunt dient ein 5mΩ 1W 1% SMD-Widerstand in Baugröße 0805 (&lt;a href=&quot;https://octopart.com/tlr2attd5l00f-koa+speer-27701192&quot;&gt;KOA Speer TLR2ATTD5L00F&lt;/a&gt;).
+Durch die kleine Bauform ist ein kompakter Aufbau gewährleistet, wie in den Datenblättern empfohlen (&lt;a href=&quot;https://www.analog.com/media/en/technical-documentation/data-sheets/1999fd.pdf&quot;&gt;LT1999&lt;/a&gt; Seite 16 bzw. &lt;a href=&quot;http://www.ti.com/lit/ds/symlink/ina240.pdf&quot;&gt;INA240&lt;/a&gt; Seite 27).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/micro-motor/shuntverstaerker-messungen/Versuchsaufbau-LT1999.jpg&quot; alt=&quot;Shuntverstärker Versuchsaufbau&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Der weitere Messaufbau besteht aus einem &lt;a href=&quot;/blog/2019/alpha-motor-description.html&quot;&gt;Motor-Controller&lt;/a&gt; über welchen Frequenz und Duty-Cycle eingestellt werden können.
+Als Last dient ein 2kW Lastwiderstand mit 9,4Ω nach Ground, wodurch ein Strom von maximal 2,1A bei 20V durch den Shunt fließen.
+Die Induktivität des Aufbaus ist leider nicht bekannt, das keine geeigenten Messgeräte zur Verfügung standen.&lt;/p&gt;
+
+&lt;p&gt;An den folgenden Messungen ist leicht zu erkennen, dass der LT1999 in unserem Fall ungeeignet zur Strommessung In-Phase ist.
+Der durch die Common-Mode-Spannungsänderung erzeugte Spike am Ausgang ist größer als das erwartete Mess-Signal,
+gerade bei kleinen Duty-Cycles (&amp;lt;10%) verschwindet der Messwert hier vollständig.&lt;/p&gt;
+
+&lt;p&gt;Der Shuntverstärker INA240 eignet zur Strommessung In-Phase, hier ist kein störender Einfluss der Common-Mode-PWM-Signals auf den Ausgang zu beobachten.
+Die Variante INA240A4 mit Gain 200 kann mit einem 5mΩ Shuntwiderstand nur etwa 2A messen, der Messbereich von 10A beim INA240A2 (Gain 50) ist für den Motorcontroller besser geeignet.
+Denkbar wäre es natürlich auch einen kleineren Shuntwiderstand zu wählen, jedoch würde dies aufgrund von stärkeren Einkoppplungen wahrscheinlich schlechtere Ergebnisse liefern.&lt;/p&gt;
+
+&lt;p&gt;Auf den Osziloskop-Bildern ist in Gelb der Ausgang des Shuntverstärkers zu sehen.
+Auf Kanal 2 (Blau) ist die Spannung an der Motor-Phase beziehungsweise über dem Last-Widerstand dargestellt.&lt;/p&gt;
+
+&lt;h2 id=&quot;duty-cycle-30&quot;&gt;Duty-Cycle 30%&lt;/h2&gt;
+
+&lt;h3 id=&quot;in-phase&quot;&gt;In-Phase&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/micro-motor/shuntverstaerker-messungen/LT1999-20_In-Phase_160kHz_0uH.jpg&quot; alt=&quot;Shuntverstärker Messung: LT1999, Gain 20, In-Phase, 160kHz, 0µH&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;LT1999, Gain 20, In-Phase, 160kHz, 0µH&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/micro-motor/shuntverstaerker-messungen/LT1999-50_In-Phase_160kHz_0uH.jpg&quot; alt=&quot;Shuntverstärker Messung: LT1999, Gain 50, In-Phase, 160kHz, 0µH&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;LT1999, Gain 50, In-Phase, 160kHz, 0µH&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/micro-motor/shuntverstaerker-messungen/INA240-A2_In-Phase_160kHz-30.bmp&quot; alt=&quot;INA240A2, Gain 50, In-Phase, 160kHz, 30%, (negativer Ausschlag, 20V)&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;INA240A2, Gain 50, In-Phase, 160kHz, 30%, (negativer Ausschlag, 20V)&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/micro-motor/shuntverstaerker-messungen/INA240-A2_In-Phase_160kHz-30_12V.bmp&quot; alt=&quot;INA240A2, Gain 50, In-Phase, 160kHz, 30%, (negativer Ausschlag, 12V -&amp;gt; 1A)&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;INA240A2, Gain 50, In-Phase, 160kHz, 30%, (negativer Ausschlag, 12V -&amp;gt; 1A)&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/micro-motor/shuntverstaerker-messungen/INA240-A4_In-Phase_160kHz-30_12V.bmp&quot; alt=&quot;INA240A4, Gain 200, In-Phase, 160kHz (negativer Ausschlag, 12V -&amp;gt; 1A)&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;INA240A4, Gain 200, In-Phase, 160kHz (negativer Ausschlag, 12V -&amp;gt; 1A)&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/micro-motor/shuntverstaerker-messungen/INA240-A4_In-Phase_160kHz-30.bmp&quot; alt=&quot;INA240A4, Gain 200, In-Phase, 160kHz (negativer Ausschlag)&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;INA240A4, Gain 200, In-Phase, 160kHz (negativer Ausschlag)&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;!--
+![Shuntverstärker Messung: LT1999, Gain 50, In-Phase, 160kHz, 0µH](../../assets/img/blog/micro-motor/shuntverstaerker-messungen/LT1999-50_In-Phase_160kHz.jpg)
+&lt;center&gt;LT1999, Gain 50, In-Phase, 160kHz, 0µH&lt;/center&gt;&lt;br /&gt;
+
+![Shuntverstärker Messung: LT1999, Gain 50, In-Phase, 80kHz, 0µH](../../assets/img/blog/micro-motor/shuntverstaerker-messungen/LT1999-50_In-Phase_80kHz.jpg)
+&lt;center&gt;LT1999, Gain 50, In-Phase, 80kHz, 0µH&lt;/center&gt;&lt;br /&gt;
+--&gt;
+
+&lt;h3 id=&quot;low-side&quot;&gt;Low-Side&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/micro-motor/shuntverstaerker-messungen/LT1999-20_Low-Side_160kHz_0uH.jpg&quot; alt=&quot;Shuntverstärker Messung: LT1999, Gain 20, Low-Side, 160kHz, 0µH&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;LT1999, Gain 20, Low-Side, 160kHz, 0µH&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/micro-motor/shuntverstaerker-messungen/LT1999-50_Low-Side_160kHz.jpg&quot; alt=&quot;Shuntverstärker Messung: LT1999, Gain 50, Low-Side, 160kHz, 0µH&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;LT1999, Gain 50, Low-Side, 160kHz, 0µH&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/micro-motor/shuntverstaerker-messungen/INA240-A2_Low-Side_160kHz-30.bmp&quot; alt=&quot;INA240A2, Gain 50, Low-Side, 160kHz, 30%, (positiver Ausschlag, 20V)&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;INA240A2, Gain 50, Low-Side, 160kHz, 30%, (positiver Ausschlag, 20V)&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/micro-motor/shuntverstaerker-messungen/INA240-A2_Low-Side_160kHz-30_12V.bmp&quot; alt=&quot;INA240A2, Gain 50, Low-Side, 160kHz, 30%, (positiver Ausschlag, 12V -&amp;gt; 1A)&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;INA240A2, Gain 50, Low-Side, 160kHz, 30%, (positiver Ausschlag, 12V -&amp;gt; 1A)&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/micro-motor/shuntverstaerker-messungen/INA240-A4_Low-Side_160kHz-30_12V.bmp&quot; alt=&quot;INA240A4, Gain 200, Low-Side, 160kHz (positiver Ausschlag, 12V -&amp;gt; 1A)&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;INA240A4, Gain 200, Low-Side, 160kHz (positiver Ausschlag, 12V -&amp;gt; 1A)&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/micro-motor/shuntverstaerker-messungen/INA240-A4_Low-Side_160kHz-30.bmp&quot; alt=&quot;INA240A4, Gain 200, Low-Side, 160kHz (positiver Ausschlag)&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;INA240A4, Gain 200, Low-Side, 160kHz (positiver Ausschlag)&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;!--
+![Shuntverstärker Messung: LT1999, Gain 50, Low-Side, 160kHz, 10µH](../../assets/img/blog/micro-motor/shuntverstaerker-messungen/LT1999-50_Low-Side_160kHz_10uH.jpg)
+&lt;center&gt;LT1999, Gain 50, Low-Side, 160kHz, 10µH&lt;/center&gt;&lt;br /&gt;
+
+![Shuntverstärker Messung: LT1999, Gain 50, In-Phase, 160kHz, 10µH](../../assets/img/blog/micro-motor/shuntverstaerker-messungen/LT1999-50_In-Phase_160kHz_10uH.jpg)
+&lt;center&gt;LT1999, Gain 50, In-Phase, 160kHz, 10µH&lt;/center&gt;&lt;br /&gt;
+--&gt;
+
+&lt;h2 id=&quot;duty-cycle-5&quot;&gt;Duty-Cycle 5%&lt;/h2&gt;
+
+&lt;h3 id=&quot;in-phase-1&quot;&gt;In-Phase&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/micro-motor/shuntverstaerker-messungen/LT1999-20_In-Phase_160kHz-5.bmp&quot; alt=&quot;LT1999, Gain 20, In-Phase&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;LT1999, Gain 20, In-Phase&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/micro-motor/shuntverstaerker-messungen/LT1999-50_In-Phase_160kHz-5.bmp&quot; alt=&quot;LT1999, Gain 50, In-Phase&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;LT1999, Gain 50, In-Phase&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/micro-motor/shuntverstaerker-messungen/INA240-A2_In-Phase_160kHz-5.bmp&quot; alt=&quot;INA240A2, Gain 50, In-Phase&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;INA240A2, Gain 50, In-Phase&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/micro-motor/shuntverstaerker-messungen/INA240-A4_In-Phase_160kHz-5.bmp&quot; alt=&quot;INA240A4, Gain 200, In-Phase&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;INA240A4, Gain 200, In-Phase&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;low-side-1&quot;&gt;Low-Side&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/micro-motor/shuntverstaerker-messungen/LT1999-20_Low-Side_160kHz-5.bmp&quot; alt=&quot;LT1999, Gain 20, Low-Side&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;LT1999, Gain 20, Low-Side&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/micro-motor/shuntverstaerker-messungen/LT1999-50_Low-Side_160kHz-5.bmp&quot; alt=&quot;LT1999, Gain 50, Low-Side&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;LT1999, Gain 50, Low-Side&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/micro-motor/shuntverstaerker-messungen/INA240-A2_Low-Side_160kHz-5.bmp&quot; alt=&quot;INA240A2, Gain 50, Low-Side&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;INA240A2, Gain 50, Low-Side&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/micro-motor/shuntverstaerker-messungen/INA240-A4_Low-Side_160kHz-5.bmp&quot; alt=&quot;INA240A4, Gain 200, Low-Side&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;INA240A4, Gain 200, Low-Side&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+</description>
+            <pubDate>Fri, 30 Aug 2019 00:00:00 +0000</pubDate>
+        </item>
         
         <item>
             <title>µMotor 2: Teil 1</title>
             <link>/blog/2019/micro-motor-2-teil-1.html</link>
             <guid isPermaLink="true">/blog/2019/micro-motor-2-teil-1.html</guid>
             <description>&lt;p&gt;In diesem Blogpost geht es um die Weiterentwicklung des Motorcontrollers “Micro-Motor” zur Version 2.
-Die bisherige Entwicklung des Motorcontrollers kann in &lt;a href=&quot;/blog/2019/alpha-motor-description.html&quot;&gt;mehreren&lt;/a&gt; &lt;a href=&quot;http://www.roboterclub.rwth-aachen.de/blog/2018/micro-motor-debugging-inbetriebnahme.html&quot;&gt;älteren&lt;/a&gt; &lt;a href=&quot;http://www.roboterclub.rwth-aachen.de/blog/2018/micro-motor-motorcontroller.html&quot;&gt;Blogposts&lt;/a&gt; nachgelesen werden.&lt;/p&gt;
+Die bisherige Entwicklung des Motorcontrollers kann in &lt;a href=&quot;/blog/2019/alpha-motor-description.html&quot;&gt;mehreren&lt;/a&gt; &lt;a href=&quot;/blog/2018/micro-motor-debugging-inbetriebnahme.html&quot;&gt;älteren&lt;/a&gt; &lt;a href=&quot;/blog/2018/micro-motor-motorcontroller.html&quot;&gt;Blogposts&lt;/a&gt; nachgelesen werden.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;../../assets/img/blog/2018/micro-motor-faedeldraht.jpg&quot; alt=&quot;Makro-Aufnahme Micro-Motor Fädeldraht&quot; /&gt;&lt;/p&gt;
 
