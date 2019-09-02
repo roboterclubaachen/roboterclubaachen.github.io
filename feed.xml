@@ -5,7 +5,7 @@
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
         <link>http://www.roboterclub.rwth-aachen.de/</link>
         <description></description>
-        <pubDate>Mon, 02 Sep 2019 19:40:47 +0000</pubDate>
+        <pubDate>Mon, 02 Sep 2019 19:47:09 +0000</pubDate>
         
         <item>
             <title>µMotor 2 - Teil 3: Microcontroller &amp; Stromversorgung</title>
@@ -97,7 +97,7 @@ Eine Begrenzung der Rekuperationsleistung im Micro-Motor ist nicht vorgesehen, d
 
 &lt;h4 id=&quot;überspannungsschutz&quot;&gt;Überspannungsschutz&lt;/h4&gt;
 
-&lt;p&gt;TVS-Dioden an dem Logik- und Motor-Versorgungsspannungen müssen so ausgelegt werden, dass die auf Micro-Motor vorhandenen Sapnnungsregler bzw. andere direkt verbundenen Bauteile nicht beschädigt werden können.
+&lt;p&gt;TVS-Dioden an dem Logik- und Motor-Versorgungsspannungen müssen so ausgelegt werden, dass die auf Micro-Motor vorhandenen Spannungsregler bzw. andere direkt verbundenen Bauteile nicht beschädigt werden können.
 Um Rekuperation mit hoher Effizienz zu ermöglichen sollte die Clamping Voltage so hoch wie möglich gewählt werden.&lt;/p&gt;
 </description>
             <pubDate>Mon, 02 Sep 2019 00:00:00 +0000</pubDate>
