@@ -5,7 +5,103 @@
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
         <link>http://www.roboterclub.rwth-aachen.de/</link>
         <description></description>
-        <pubDate>Sun, 01 Sep 2019 14:33:22 +0000</pubDate>
+        <pubDate>Mon, 02 Sep 2019 19:40:47 +0000</pubDate>
+        
+        <item>
+            <title>µMotor 2 - Teil 3: Microcontroller &amp; Stromversorgung</title>
+            <link>/blog/2019/micro-motor-2-teil-3.html</link>
+            <guid isPermaLink="true">/blog/2019/micro-motor-2-teil-3.html</guid>
+            <description>&lt;p&gt;Als Teil der Entwicklung der zweiten Version des Micro-Motors findet nun die Auswahl des Microcontrollers statt.
+Außerdem geht es in diesem Blogpost um Komparatoren und die Stromversorgung.&lt;/p&gt;
+
+&lt;p&gt;Die bisherige Entwicklung des Motorcontrollers kann in &lt;a href=&quot;/blog/2019/micro-motor-2-teil-2.html&quot;&gt;mehreren&lt;/a&gt; &lt;a href=&quot;/blog/2019/micro-motor-2-teil-1.html&quot;&gt;älteren&lt;/a&gt; &lt;a href=&quot;/blog/2018/micro-motor-debugging-inbetriebnahme.html&quot;&gt;Blogposts&lt;/a&gt; nachgelesen werden.&lt;/p&gt;
+
+&lt;p&gt;Die vorläufige Auswahl der Shuntverstärker ist fast abgeschlossen, siehe &lt;a href=&quot;/blog/2019/micro-motor-2-teil-2.html&quot;&gt;Teil 2&lt;/a&gt;.
+Ebenso ist der Gatetreiber (&lt;em&gt;DRV832x&lt;/em&gt;) gesetzt in der Version ohne Strommessverstärker und mit SPI-Interface (&lt;em&gt;DRV8320S&lt;/em&gt; oder &lt;em&gt;DRV8350S&lt;/em&gt; in Gehäuse &lt;em&gt;WQFN32&lt;/em&gt;, 5x5mm²).
+Also MOSFET soll der in Micro-Motor Version 1 bewährte N-Channel Dual-FET &lt;em&gt;FDMD8260L&lt;/em&gt; (60V, 5.8mΩ) verwendet werden.&lt;/p&gt;
+
+&lt;p&gt;Als nächste wichtige Komponente wird der Microcontroller ausgewählt.&lt;/p&gt;
+
+&lt;h3 id=&quot;microcontroller&quot;&gt;Microcontroller&lt;/h3&gt;
+
+&lt;p&gt;Eher zufällig wurden wir auf die neue Microcontroller-Serie &lt;em&gt;STM32G4&lt;/em&gt; von ST Microelectronics aufmerksam.
+In &lt;a href=&quot;/blog/2019/micro-motor-2-teil-1.html&quot;&gt;Teil 1&lt;/a&gt; wurde der &lt;em&gt;STM32L432CC&lt;/em&gt; als präferierter Microcontroller genannt, jedoch bietet die neue &lt;em&gt;STM32G4&lt;/em&gt;-Serie, speziell der &lt;em&gt;STM32G474&lt;/em&gt; (oder &lt;em&gt;STM32G473&lt;/em&gt;, ohne High-Resolution-Timer) einige Vorteile:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Taktfreqenz bis zu 170MHz für Cortex-M4F und &lt;strong&gt;alle&lt;/strong&gt; Peripherals (max. 80MHz bei &lt;em&gt;STM32L4&lt;/em&gt;)&lt;/li&gt;
+  &lt;li&gt;High-Performance Analog Peripherals
+    &lt;ul&gt;
+      &lt;li&gt;7x Komparator (&lt;em&gt;COMP&lt;/em&gt;), 17ns Propagation delay, einstellbare Hysterese&lt;/li&gt;
+      &lt;li&gt;5x ADC 12bit, 4MSPS, differenzielle Inputs verfügbar)&lt;/li&gt;
+      &lt;li&gt;4x DAC 12bit, 1MSPS&lt;/li&gt;
+      &lt;li&gt;6x Opamp mit GBP (Gain Bandwidth Product) von 13MHz (&lt;em&gt;OPAMP&lt;/em&gt;)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;DSP (Rechenbeschleuniger) Funktionen für Trigonometrie und Filter (&lt;em&gt;CORDIC&lt;/em&gt;, &lt;em&gt;FMAC&lt;/em&gt;)&lt;/li&gt;
+  &lt;li&gt;High-Resolution-Timer (&lt;em&gt;HRTIM&lt;/em&gt;) mit 184ps Zeitauslösung&lt;/li&gt;
+  &lt;li&gt;3x Advanced Motor Control Timer (&lt;em&gt;TIM1&lt;/em&gt;, &lt;em&gt;TIM8&lt;/em&gt;, &lt;em&gt;TIM20&lt;/em&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Die folgenden Bilder zeigen die für den Micro-Motor relevanten Features der &lt;em&gt;STM32G4&lt;/em&gt;-Serie und stammen aus STs Präsentation “STM32G4 Mainstream MCUs Product Overview”.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/micro-motor/microcontrollers_STM32G4_series_product_overview__p10.png&quot; alt=&quot;Microcontrollers_STM32G4_series_product_overview.pdf, Seite 10&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/micro-motor/microcontrollers_STM32G4_series_product_overview__p11.png&quot; alt=&quot;Microcontrollers_STM32G4_series_product_overview.pdf, Seite 11&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;small&gt;Quelle: &lt;a href=&quot;https://www.st.com/resource/en/product_presentation/microcontrollers_stm32g4_series_product_overview.pdf&quot;&gt;https://www.st.com/resource/en/product_presentation/microcontrollers_stm32g4_series_product_overview.pdf&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+
+&lt;p&gt;Stand 2019/08 sind nur einige wenige Chips aus der &lt;em&gt;STM32G4&lt;/em&gt;-Serie verfügbar, für den Micro-Motor kommen &lt;a href=&quot;https://octopart.com/search?q=STM32G474CET6&quot;&gt;&lt;em&gt;STM32G474CET6&lt;/em&gt;&lt;/a&gt; und &lt;a href=&quot;https://octopart.com/search?q=STM32G473CET6&quot;&gt;&lt;em&gt;STM32G473CET6&lt;/em&gt;&lt;/a&gt; im &lt;em&gt;LQFP48&lt;/em&gt; Gehäuse in Frage.
+Im vom &lt;em&gt;STM32L433CCU&lt;/em&gt; bekannten Gehäuse &lt;em&gt;UFQFPN48&lt;/em&gt; stehen noch keine Chips zu Verfügung.
+Das Gehäuse &lt;em&gt;LQFP48&lt;/em&gt; benötigt zwar mehr Platinenoberfläche als der &lt;em&gt;UFQFPN48&lt;/em&gt;, allerdings sind bei letztem Gehäuse durch das Exposed Pad keine Durchkontaktierungen und Leiterbahnen unterhalb des Chips möglich, was den Platzvorteil unter Umständen aufwiegt.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/micro-motor/CubeMX_screenshot_STM32G474CE_201909.png&quot; alt=&quot;Mögliches Pinout des Microcontrollers STMG474CE, Screenshot aus ST CubeMX Software&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;small&gt;Mögliches Pinout des Microcontrollers &lt;i&gt;STM32G474CE&lt;/i&gt;, Screenshot aus ST CubeMX Software.&lt;/small&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Erfreulicherweise können die ADC- und Komparator-Eingänge zeitgleich genutzt werden, sodass hier keine unnötigen Pins verschwendet werden müssen.&lt;/p&gt;
+
+&lt;h3 id=&quot;komparator&quot;&gt;Komparator&lt;/h3&gt;
+
+&lt;p&gt;Da der Komparator im Microcontroller integriert ist, werden keine dedizierten Komparatoren benötigt.
+Das spart viel Platz und reduziert die Komplexität des Platinenlayouts.&lt;/p&gt;
+
+&lt;h3 id=&quot;systemüberblick&quot;&gt;Systemüberblick&lt;/h3&gt;
+
+&lt;p&gt;Durch die geänderte Auswahl des Microcontrollers ändert sich das Blockschaltbild geringfügig.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/micro-motor/Micro-Motor-V2-Block-diagram_201909.svg&quot; alt=&quot;Micro-Motor V2 Blockdiagram, aktualisiert 2019/09&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;stromversorgung&quot;&gt;Stromversorgung&lt;/h3&gt;
+
+&lt;p&gt;Die Logik, bzw. alle Komponenten außer den MOSFET-Halb-Brücken und dem Motor, werden über eine separate Spannungsschiene im Roboter mit 6V bis 7V versorgt.
+Aus diesen 6V bis 7V müssen lokal 3.3V für den Microcontroller und weitere Elektronik, sowie 5V für Hall-Sensoren und Encoder erzeugt werden.
+Die Logik-Versorgungsspannung bleibt im Gegensatz zu Versorgungsspannung für den Motor bei einem Not-Aus bestehen.&lt;/p&gt;
+
+&lt;p&gt;Um alle Komponenten auch ungünstigsten Situationen stabil mit Strom zu versorgen sind sowohl für 3.3V als auch für 5V Spannungsregler mit eine Ausgangsstrom von mindestens 200mA nötig.
+Beispielsweise der CAN-Transceiver &lt;em&gt;TCAN332&lt;/em&gt; kann bei einem Bus Fault bis zu 180mA benötigen, auch in diesem Fall muss der Betrieb des Micro-Motors aufrecht erhalten werden.&lt;/p&gt;
+
+&lt;p&gt;Der Gatetreiber &lt;em&gt;DRV832x&lt;/em&gt;/&lt;em&gt;DRV835x&lt;/em&gt; ist mit dem Suffix &lt;em&gt;R&lt;/em&gt; erhaltlich, wo ein Schaltregler galvanisch getrennt ins das Gehäuse integriert ist.
+Beim &lt;em&gt;DRV832x&lt;/em&gt; handelt es sich um den Buck-Regulator &lt;a href=&quot;http://www.ti.com/product/LMR16006&quot;&gt;LMR16006X&lt;/a&gt;, welcher bei Eingangsspannugen zwischen 4V und 60V ein Spannung zwischen 0,8V bis 60V bei 600mA bereitstellen kann.
+Der in den &lt;em&gt;DRV835x&lt;/em&gt; integrierte Buck-Regler &lt;a href=&quot;http://www.ti.com/product/LM5008A&quot;&gt;LM5008A&lt;/a&gt; liefert 2.5V bis 75V bei 350mA bei Eingangsspannugen zwischen 6V und 95V.
+Statt im &lt;em&gt;WQFN32&lt;/em&gt; (5x5mm²) Gehäuse kommt der Gatetreiber dann im &lt;em&gt;WQFN40&lt;/em&gt; (6x6mm²) Gehäuse, benötigt also 11mm² mehr Platinenfläche zuzüglich der externen Spule, Kondensatoren und Widerständen.&lt;/p&gt;
+
+&lt;p&gt;Das hochintegrierte Schaltwandler-Modul &lt;a href=&quot;http://www.ti.com/product/TPS82150&quot;&gt;TPS82150&lt;/a&gt; hat eine integrierte Spule und benötigt im &lt;em&gt;μSiL8&lt;/em&gt; Gehäuse lediglich 8.4mm² Platinenfläche.
+Zudem kann ein besseres Platinenlayout durch die flexible Platzierung ermöglicht werden.&lt;/p&gt;
+
+&lt;p&gt;Für die Versorgung der empfindlichen analogen Elektronik könnte ein dedizierter LDO-Wandler hinter dem 5V Schaltwandler eingesetzt werden, fall ein LC-Filter eine ausreichend rauschfreie Spannungsversorgung ermöglicht.&lt;/p&gt;
+
+&lt;h4 id=&quot;rekuperation&quot;&gt;Rekuperation&lt;/h4&gt;
+
+&lt;p&gt;Mit Hilfe von Rekuperation kann sowohl die Wärmeentwicklung im Micro-Motor, als auch die Batterie-Laufzeit des gesamten Roboters verbessert werden.
+Eine Begrenzung der Rekuperationsleistung im Micro-Motor ist nicht vorgesehen, da dies zentral im BMS besser lösbar ist.&lt;/p&gt;
+
+&lt;h4 id=&quot;überspannungsschutz&quot;&gt;Überspannungsschutz&lt;/h4&gt;
+
+&lt;p&gt;TVS-Dioden an dem Logik- und Motor-Versorgungsspannungen müssen so ausgelegt werden, dass die auf Micro-Motor vorhandenen Sapnnungsregler bzw. andere direkt verbundenen Bauteile nicht beschädigt werden können.
+Um Rekuperation mit hoher Effizienz zu ermöglichen sollte die Clamping Voltage so hoch wie möglich gewählt werden.&lt;/p&gt;
+</description>
+            <pubDate>Mon, 02 Sep 2019 00:00:00 +0000</pubDate>
+        </item>
         
         <item>
             <title>µMotor 2 - Teil 2: Strommessung</title>
@@ -170,7 +266,7 @@ Außerdem wurde in der Saison eine präzise und zuverlässige Strommessung sehnl
 
 &lt;h3 id=&quot;systemüberblick&quot;&gt;Systemüberblick&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/micro-motor/Micro-Motor-V2-Block-diagram.svg&quot; alt=&quot;Micro-Motor V2 Blockdiagram&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/micro-motor/Micro-Motor-V2-Block-diagram_201907.svg&quot; alt=&quot;Micro-Motor V2 Blockdiagram&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;komponentenauswahl&quot;&gt;Komponentenauswahl&lt;/h3&gt;
 
