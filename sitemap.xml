@@ -392,7 +392,15 @@
     
     <priority>0.9</priority>
   </url>
-          
+    
+  <url>
+	<!-- page -->
+    <loc>http://www.roboterclub.rwth-aachen.de/projekte/</loc>
+    
+    
+    <priority>0.9</priority>
+  </url>
+        
   <url>
 	<!-- page -->
     <loc>http://www.roboterclub.rwth-aachen.de/unterstuetzer-und-foerderer/</loc>
