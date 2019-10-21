@@ -5,7 +5,44 @@
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
         <link>http://www.roboterclub.rwth-aachen.de/</link>
         <description></description>
-        <pubDate>Thu, 10 Oct 2019 11:50:17 +0000</pubDate>
+        <pubDate>Mon, 21 Oct 2019 22:45:41 +0000</pubDate>
+        
+        <item>
+            <title>! W A N T E D ! - Einsteiger</title>
+            <link>/blog/2019/wanted-einsteiger.html</link>
+            <guid isPermaLink="true">/blog/2019/wanted-einsteiger.html</guid>
+            <description>&lt;h2 id=&quot;du-willst-bei-uns-mitmachen-super&quot;&gt;Du willst bei uns mitmachen? Super!&lt;/h2&gt;
+
+&lt;p&gt;Für die kommende Eurobot-Wettbewerbs-Saison gibt es viel zu tun im
+Roboterclub und wir freuen uns, wenn du dich in einem der folgenden
+Bereichen engagieren möchtest:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Bildverarbeitung&lt;/li&gt;
+  &lt;li&gt;Funk-Kommunikation&lt;/li&gt;
+  &lt;li&gt;Mechanische Aktoren zum Greifen von Bechern&lt;/li&gt;
+  &lt;li&gt;Antriebs-Plattform (Omnidrive)&lt;/li&gt;
+  &lt;li&gt;Regelung und Fahrtplanung&lt;/li&gt;
+  &lt;li&gt;Mechanische Fertigung (3D-Drucker und CNC-Fräse)&lt;/li&gt;
+  &lt;li&gt;Batterie-Management&lt;/li&gt;
+  &lt;li&gt;Motor-Controller&lt;/li&gt;
+  &lt;li&gt;Autonome Roboter-Steuerung mit ROS2&lt;/li&gt;
+  &lt;li&gt;Ultraschall-Indoor-Lokalisierung&lt;/li&gt;
+  &lt;li&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Um dir einen guten Einstieg zu ermöglichen findet am&lt;/p&gt;
+
+&lt;h4 id=&quot;dienstag-den-29102019-um-19h&quot;&gt;Dienstag, den 29.10.2019 um 19h&lt;/h4&gt;
+
+&lt;p&gt;ein Einsteiger-Event statt.
+Dort zeigen wir dir unser Roboter und Projekte, und vermitteln dir eine
+Aufgabe oder ein Projekt im RCA.&lt;/p&gt;
+
+&lt;h3 id=&quot;weitere-information-unter-mach-mit&quot;&gt;Weitere Information unter: &lt;a href=&quot;/mach-mit/&quot;&gt;Mach mit&lt;/a&gt;&lt;/h3&gt;
+</description>
+            <pubDate>Mon, 21 Oct 2019 00:00:00 +0000</pubDate>
+        </item>
         
         <item>
             <title>µMotor 2 - Teil 3: Microcontroller &amp; Stromversorgung</title>
