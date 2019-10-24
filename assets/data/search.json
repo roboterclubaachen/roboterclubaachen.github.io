@@ -339,6 +339,18 @@
    
      {
        
+          "title"    : "Projekt: Fahrplanung in ROS2",
+          "category" : "Projekt",
+          "tags"     : " eurobot",
+          "url"      : "/projekt/Fahrplanung_in_ROS2.html",
+          "date"     : "October 24, 2019",
+          "excerpt"  : "Da wir in den kommenden Jahren ROS2 verwenden, muss eine neue Fahrplanung geschrieben werden. Diese Fahrplanung kann z.B. auf den ROS2 Navigation Stack aufgebaut werden. ",
+          "content"  : "<h2 id=\"zusammenfassung\">Zusammenfassung</h2>\n\n<p>Da wir in den kommenden Jahren ROS2 verwenden, muss eine neue Fahrplanung geschrieben werden.\nDiese Fahrplanung kann z.B. auf den ROS2 Navigation Stack aufgebaut werden.</p>\n\n<p>Der ROS2 Navigation Stack kann automatisch Maps z.B. aus RVIZ einbinden und darin eine Trajektorie für einen Roboter generieren.\nDie Routenplanung sollte eine aktuelle Karte mit statischen und dynamischen Hindernissen berücksichtigen.\nUm aktuelle Hinderniskarten nutzen zu können sollten der Map Server aus dem Navigation Stack verwendet werden.</p>\n\n<p>https://github.com/ros-planning/navigation2</p>\n\n<h2 id=\"tätigkeitsfelder-und-technologien\">Tätigkeitsfelder und Technologien</h2>\n<ul>\n  <li>C++ / Python Programmierung</li>\n  <li>Einarbeitung in den ROS2 Navigation Stack</li>\n  <li>Arbeiten mit dem Map Server des Navigation Stack</li>\n  <li>Kollisionsfreie Routenplanung</li>\n</ul>\n"
+       
+     } ,
+   
+     {
+       
           "title"    : "Projekt: Fahrplattform Little",
           "category" : "Projekt",
           "tags"     : " mechanik",
