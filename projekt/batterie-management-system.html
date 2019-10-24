@@ -51,9 +51,9 @@
 <meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/batterie-management-system.html" />
 <meta property="og:site_name" content="Roboterclub Aachen" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-10-24T12:24:55+00:00" />
+<meta property="article:published_time" content="2019-10-24T12:29:41+00:00" />
 <script type="application/ld+json">
-{"description":"Zusammenfassung","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/batterie-management-system.html"},"@type":"BlogPosting","url":"http://www.roboterclub.rwth-aachen.de/projekt/batterie-management-system.html","headline":"Battery Management System","dateModified":"2019-10-24T12:24:55+00:00","datePublished":"2019-10-24T12:24:55+00:00","@context":"https://schema.org"}</script>
+{"description":"Zusammenfassung","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/batterie-management-system.html"},"@type":"BlogPosting","url":"http://www.roboterclub.rwth-aachen.de/projekt/batterie-management-system.html","headline":"Battery Management System","dateModified":"2019-10-24T12:29:41+00:00","datePublished":"2019-10-24T12:29:41+00:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
@@ -157,37 +157,41 @@
   <hr>
 <h2 id="zusammenfassung">Zusammenfassung</h2>
 
-<p>Die Roboter werden von zwei möglich Stromquellen – einem externen Netzteil oder dem austauschbaren LiFe-Akku mit 6 Zellen – versorgt.</p>
+<p>Der Roboter wird von zwei möglich Stromquellen – einem externen Netzteil oder dem austauschbaren LiFe-Akku mit 6 Zellen – versorgt.
+Die ausgewählte Spannung wird entweder direkt weitergeleitet, oder zunächst umgewandelt.
+Maßgeblich ist die erzeugte 12V Spannung. Diese ist sowohl die Versorgungsspannungen für einen zu versorgenden Industrie PC,
+als auch die Zwischenspannung aus der 5-7V Logikspannung und die benötigten On-Board Spannungen generiert werden.</p>
 
-<p>Daraus müssen müssen 20–22 V Motorspannung und für die elektronischen Komponenten eine Logikspannung von ca. 7 V bereitgestellt werden. Vom Eurobot-Regelwerk wird ein Notausschalter vorgeschrieben, welcher die Motorspannung deaktiviert.</p>
+<p>Als Features werden Kurzschlussschutz und eine Spannungsüberwachung an allen Ausgängen implementiert.
+Auch die Batterie wird natürlich beobachtet.
+Hier soll eine State of Charge Abschätzung mittels <em>Coulomb Counting</em> durchgeführt werden und Unterspannungen erkannt werden.
+Wichtige Informationen aus dem Betrieb sollen auf dem CAN Bus ausgegeben werden.</p>
 
-<p>Außerdem muss die Akkuspannung überwacht werden, um eine Tiefentladung zu verhindern, sowie alle Ausgänge gegen Kurzschlüsse abgesichert werden.
-Dies alles sind Aufgaben des BMS.</p>
-
-<h3 id="ideen">Ideen</h3>
+<h2 id="geplante-kenndaten">Geplante Kenndaten</h2>
 <ul>
-  <li>Dauerbelastbarkeit &gt;5A, besser &gt;10A</li>
-  <li>7V Schaltregler (TI SimpleSwitcher LMZ14xxx)</li>
-  <li>Diskussionsbedarf: Schaltregler für konstante Motorspannung?</li>
-  <li>Integrierte Akku-Spannungsüberwachung</li>
-  <li>Integrierter Microcontroller mit CAN-Interface zum Übermitteln der Akku-Zell-Spannungen</li>
-  <li>Mögliche Integration in einen Akku-Slot für passende Akku-Cases (siehe separate Projektbeschreibung)</li>
+  <li>20V Motorspannung bis zu 20A</li>
+  <li>12V Gerätepannung bis zu 10A</li>
+  <li>7V Logikspannung bis zu  5A</li>
+  <li>On-Board Spannung, herausgeführt</li>
+  <li>Kurzschlussschutz</li>
+  <li>Über/Unterspannungsschutz</li>
+  <li>Akku Überwachung</li>
+  <li>CAN-Interface</li>
   <li>Not-Aus Schalter nicht im Strompfad</li>
-  <li>Priorisierung des Netzteils falls Akku &amp; Netzteil angeschlossen sind</li>
 </ul>
 
-<h2 id="tätigkeitsfelder-und-technologien">Tätigkeitsfelder und Technologien</h2>
+<h2 id="mögliche-verbesserungen">Mögliche Verbesserungen</h2>
 <ul>
-  <li>PCB Design
-    <ul>
-      <li>Hochstrom-Design</li>
-    </ul>
-  </li>
-  <li>Akku-Spannungsüberwachung</li>
-  <li>Auslegung des Leistungselektronik</li>
-  <li>Ggf. Software für den Microcontroller (C++ mit modm.io)</li>
-  <li>Aufbau und Inbetriebnahme des Projekts</li>
+  <li>Rekuperation aus dem Motorstrompfad</li>
+  <li>Visueller Batteriestandindikator</li>
+  <li>Stromversorgung für USB</li>
+  <li>Fortgeschrittene SoC und SoH Abschätzung</li>
 </ul>
+
+<h2 id="herausforderungen">Herausforderungen</h2>
+<p>Das BMS soll dafür sorgen, dass alle gewünschten Geräte ohne weitere Maßnahmen angeschlossen und gleichzeitig betrieben werden können.
+Im worst case Szenario sollen daher 700W Dauerleistung bereitgestellt werden. Dies möglichst kostengünstig, auf geringem Raum und mit guter
+Wärmeabfuhr zu realisieren erfordert eine treffende Vorhersage der realen Lastprofile.</p>
 
 
 
