@@ -375,6 +375,18 @@
    
      {
        
+          "title"    : "Projekt: Fiducial marker: RUNE",
+          "category" : "Projekt",
+          "tags"     : " pcb, software",
+          "url"      : "/projekt/rune-tags.html",
+          "date"     : "October 24, 2019",
+          "excerpt"  : "Optische RUNE Tags sollen genutzt werden um unsere eigenen Roboter sowie gegnerische Roboter zu lokalisieren.",
+          "content"  : "<h2 id=\"zusammenfassung\">Zusammenfassung</h2>\n\n<p>Die Position und Orientierung der Roboter auf dem Eurobot-Spielfeld soll mittels Bilderkennung und Fiducial Markern bestimmt werden.</p>\n\n<p>Aufgrund der Anforderungen des Eurobot-Wettbewerbs wurden die RUNE-Tags hierzu ausgewählt deren Detektion vergleichweise wenig Rechenaufwand bedeutet.\nDie RUNE-Tags bestehen aus 129 in drei konzentrischen Kreisen angeordneten Punkten.\nVerschiedene Tags können durch spezielle Muster, bei denen einzelne Punkte fehlen, codiert werden.</p>\n\n<p>Um eine bessere Störfestigkeit zu erreichen sollen die Punkte der RUNE-Tags mit LEDs realisiert werden.\nDurch Syncronisation mit dem Kamera-System mittels Gold-Code moduliertem Infrarot-Licht können die LEDs syncron zum Kamera-Shutter leuchten.\nDies führt zu weniger Blendung der Zuschauer und spart Energie.</p>\n\n<p>Die Auswertung des Kamera-Bilds soll mittels OpenCV geschehen und die erkannten Positionen als ROS2-Topic bereit gestellt werden.</p>\n\n<p>Bonus: Auf den 129 LEDs pro RUNE-Tag kann man auch noch weitere Informationen darstellen.</p>\n\n<h3 id=\"technische-daten-geplant\">Technische Daten (geplant)</h3>\n<ul>\n  <li>Millimetergenaue Lokalisierung von eigenem und gegnerischem Roboter</li>\n  <li>Robuste Funktion auch bei schwierigen Lichverhältnissen</li>\n  <li>Syncronisation mit Kamera-System</li>\n</ul>\n\n<h2 id=\"tätigkeitsfelder-und-technologien\">Tätigkeitsfelder und Technologien</h2>\n<ul>\n  <li>Schaltungs- &amp; PCB- Design</li>\n  <li>Software für Microcontroller mit modm.io</li>\n  <li>Bildererkennung (OpenCV)</li>\n  <li>ROS2</li>\n</ul>\n"
+       
+     } ,
+   
+     {
+       
           "title"    : "Projekt: Funk-Kommunikation XPCC-Backend",
           "category" : "Projekt",
           "tags"     : " software",
