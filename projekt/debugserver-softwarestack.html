@@ -51,9 +51,9 @@
 <meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/debugserver-softwarestack.html" />
 <meta property="og:site_name" content="Roboterclub Aachen" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-10-24T12:29:41+00:00" />
+<meta property="article:published_time" content="2019-10-24T12:35:42+00:00" />
 <script type="application/ld+json">
-{"description":"Zusammenfassung","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/debugserver-softwarestack.html"},"@type":"BlogPosting","url":"http://www.roboterclub.rwth-aachen.de/projekt/debugserver-softwarestack.html","headline":"Debugserver – Softwarestack","dateModified":"2019-10-24T12:29:41+00:00","datePublished":"2019-10-24T12:29:41+00:00","@context":"https://schema.org"}</script>
+{"description":"Zusammenfassung","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/debugserver-softwarestack.html"},"@type":"BlogPosting","url":"http://www.roboterclub.rwth-aachen.de/projekt/debugserver-softwarestack.html","headline":"Debugserver – Softwarestack","dateModified":"2019-10-24T12:35:42+00:00","datePublished":"2019-10-24T12:35:42+00:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
@@ -161,13 +161,15 @@
 Auf dem Raspberry Pi läuft ein Debian-basiertes Linux-System, dieses soll mittels <code class="highlighter-rouge">debootstrap</code> [1],
 ähnlich des Image-Builders [2] aufgesetzt werden um Reproduzierbarkeit zu gewährleisten.</p>
 
-<p>Zusätzlich werden diverse Dienste auf dem Debugserver benötigt, wie beipielsweise OpenOCD zum Programmieren des Mikrocontrollers, eine CAN-to-Network Brücke oder  die Überwachung des Roboterzustandes anhand welcher der Debugserver ggf. heruntergefahren wird.
+<p>Zusätzlich werden diverse Dienste auf dem Debugserver benötigt,
+eine CAN-to-Network Brücke oder die Überwachung des Roboterzustandes anhand welcher der Debugserver ggf. heruntergefahren wird.
+Je nach Einsatz der zentralen Hardwareplattform wird ggf.  OpenOCD zum Programmieren des Mikrocontrollers benötigt.
 Diese Dienste müssen konfiguriert, beim Hochfahren automatisch gestartet und teilweise zuvor noch implementiert werden.
 Ebenso muss die Netzwerkkonfiguaration mit der Möglichkeit zum Umschalten zwischen Client- und Accesspoint- Betrieb zuverlässig eingerichtet werden.</p>
 
 <h3 id="technische-daten-geplant">Technische Daten (geplant):</h3>
 <ul>
-  <li>Debian Stretch (9) oder Fedora
+  <li>Debian Stretch (10) oder Fedora
     <ul>
       <li>ARMv7 (<em>armhf</em>) oder ARMv8 (<em>aarch64</em>)</li>
     </ul>
