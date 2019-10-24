@@ -51,9 +51,9 @@
 <meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html" />
 <meta property="og:site_name" content="Roboterclub Aachen" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-10-24T12:17:00+00:00" />
+<meta property="article:published_time" content="2019-10-24T12:19:53+00:00" />
 <script type="application/ld+json">
-{"description":"Zusammenfassung","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html"},"@type":"BlogPosting","url":"http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html","headline":"Alpha-Motor","dateModified":"2019-10-24T12:17:00+00:00","datePublished":"2019-10-24T12:17:00+00:00","@context":"https://schema.org"}</script>
+{"description":"Zusammenfassung","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html"},"@type":"BlogPosting","url":"http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html","headline":"Alpha-Motor","dateModified":"2019-10-24T12:19:53+00:00","datePublished":"2019-10-24T12:19:53+00:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
@@ -169,20 +169,22 @@ Zu guter Letzt dürfen Ausgänge und LEDs zu Debug-Zwecken auch nicht fehlen.</p
 
 <p>Auf dem Microcontroller befindet sich neben den Motor-Reglern auch der Code, der den restlichen Roboter steuert. Die Befehle werden über CAN an die Peripherie (zum Beispiel die Motortreiberplatinen “Micro-Motor” oder andere Alpha-Motor-Platinen) weitergeleitet, aber andersherum können auch Sensordaten oder die Kommunikation mit dem Display hierüber ablaufen.</p>
 
-<h3 id="technische-daten-geplant">Technische Daten (geplant)</h3>
+<p>In Version zwei ist die Software deutlich eingeschränkt, da nun ein dedizierter Industrie-PC mit ros2 die Steuerung des Roboters übernimmt. Dafür wird die Hardware leistungsfähiger, durch den Einsatz eines neuen Mikrocontrollers und vor allem neuer Chips zur Strommessung. Tests der ersten Version hatten gezeigt, dass die Strombegrenzung erst ab 800 mA greift und die Strommessung starkes Rauschen aufweist (verursacht durch die mangelnde Gleichtaktunterdrückung der verwendeten Chips).</p>
+
+<h3 id="technische-daten-v2">Technische Daten V2</h3>
 <ul>
   <li>3 Phasen (DC und Brushless-DC Motoren)</li>
   <li>ca. 20A pro Phase in der Spitze</li>
-  <li>20V Betriebsspannung (Akku) -&gt; 40V oder 60V Auslegung</li>
-  <li>Mikrocontroller STM32F407</li>
-  <li>2x CAN-Bus mit 4 Steckern, 1 UART, 1 SPI/I2C</li>
-  <li>Anschlüsse für 4 AB-Encoder inklusive UART 1-Wire</li>
+  <li>20V Betriebsspannung (Akku) -&gt; 40V Auslegung</li>
+  <li>Mikrocontroller <del>STM32F407</del> STM32G474</li>
+  <li>2x CAN-Bus mit 4 Steckern, 1 UART, <del>1 SPI/I2C</del></li>
+  <li>Anschlüsse für <del>4</del> 2 AB-Encoder <del>inklusive UART 1-Wire</del></li>
   <li>Anschlüsse für 2 Hall-Sensoren</li>
   <li>Strommessung und Strombegrenzung</li>
   <li>LEDs für Software-Status &amp; Encoderstatus</li>
-  <li>Konfigurierbare ID</li>
+  <li><del>Konfigurierbare ID</del></li>
   <li>Einfach lötbar und aufbaubar</li>
-  <li>Abmessungen: 49 x 77 mm²</li>
+  <li>Abmessungen: ca 50 x 80 mm²</li>
 </ul>
 
 <h2 id="tätigkeitsfelder-und-technologien">Tätigkeitsfelder und Technologien</h2>
