@@ -17,7 +17,7 @@
     <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/img/rca.svg">
 
     <!-- Canonical -->
-    <link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/micro-motor.html">
+    <link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/fpgas.html">
 
     <!-- RSS -->
     <link rel="alternate" type="application/atom+xml" title="Roboterclub Aachen" href="http://www.roboterclub.rwth-aachen.de///feed.xml"/>
@@ -41,24 +41,24 @@
     
     <!-- seo tags -->
     <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Micro-Motor | Roboterclub Aachen</title>
+<title>FPGA Controller | Roboterclub Aachen</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Micro-Motor" />
+<meta property="og:title" content="FPGA Controller" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Zusammenfassung" />
 <meta property="og:description" content="Zusammenfassung" />
-<link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/micro-motor.html" />
-<meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/micro-motor.html" />
+<link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/fpgas.html" />
+<meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/fpgas.html" />
 <meta property="og:site_name" content="Roboterclub Aachen" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-10-27T21:38:33+00:00" />
 <script type="application/ld+json">
-{"description":"Zusammenfassung","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/micro-motor.html"},"@type":"BlogPosting","url":"http://www.roboterclub.rwth-aachen.de/projekt/micro-motor.html","headline":"Micro-Motor","dateModified":"2019-10-27T21:38:33+00:00","datePublished":"2019-10-27T21:38:33+00:00","@context":"https://schema.org"}</script>
+{"description":"Zusammenfassung","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/fpgas.html"},"@type":"BlogPosting","url":"http://www.roboterclub.rwth-aachen.de/projekt/fpgas.html","headline":"FPGA Controller","dateModified":"2019-10-27T21:38:33+00:00","datePublished":"2019-10-27T21:38:33+00:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
     <!--
-    <title>Micro-Motor | Roboterclub Aachen</title>
+    <title>FPGA Controller | Roboterclub Aachen</title>
     <meta name="description" content="Zusammenfassung">
     -->
 </head>
@@ -146,53 +146,50 @@
 </header>
 
     <div class="content">
-      <article class="feature-image">
-  <header id="main" style="background-image: url('/assets/img/projektbeschreibungen/micro-motor.jpg');background-position: center;">
-    <h1 id="Micro-Motor" class="title">Micro-Motor</h1>
+      <article >
+  <header id="main" style="background-image: url('/');background-position: center;">
+    <h1 id="FPGA+Controller" class="title">FPGA Controller</h1>
   </header>
   <section class="post-content post-content-text">
   <hr>
-<p>Micro-Motor ist eine Platine zum Anschluss an CAN-Bus welche einen Motor ansteuern kann.</p>
+<p>Eigene Implementierung von Logik-Peripherie im FPGA z.B. für Motor-Steuerung</p>
 
   <hr>
 <h2 id="zusammenfassung">Zusammenfassung</h2>
 
-<p>In den Aktoren verbaute Motoren müssen angesteuert werden, dazu verfolgt der Micro-Motor das Konzept von verteilten Ansteuerungen.</p>
+<p>FPGAs bieten die Möglichkeit Logik-Komponenten z.B. zur Ansteuerung von Motoren diskret und nach den eigenen Ansprüchen zu entwerfen und zu implementieren.</p>
 
-<p>An jedem Motor wird unmittelbar eine kompakte Micro-Motor Platine montiert, welche gleichzeitig auch einen Magnet-Encoder [1] optional beinhaltet.
-Diese Platine wird über einen einzigen Stecker mit Strom und CAN-Bus versorgt und kann eigenständig den Motor ansteuern.
-Zusätzlich kann ein Endschalter ausgelesen werden und die Temperatur des Motors überwacht werden.</p>
-
-<p>Auf dem Microcontroller sollen frei konfigurierbare PID-Regler und ggf. auch “Motor-mit-Endschalter”-Komponenten, welche den Aktor parametrierbar initialisieren und verfahren können, das Interface nach außen bilden.</p>
+<p>Es gibt z.B. unter [1] bereits einige implementierte Komponenten, die zum Einstieg verwendet werden können.</p>
 
 <h3 id="technische-daten-geplant">Technische Daten (geplant)</h3>
 <ul>
-  <li>3 Phasen (DC und BLDC Motoren)</li>
-  <li>ca. 10A pro Phase</li>
-  <li>20V Betriebsspannung (Akku) -&gt; 40V oder 60V Auslegung</li>
-  <li>Anschluss für AB-Encoder</li>
-  <li>optional Magnet-Encoder [1] auf dem PCB</li>
-  <li>Anschluss für Hall-Sensor</li>
-  <li>Temperatursensor (kontaktlos auf dem PCB verlötet oder I²C)</li>
-  <li>Strommessung</li>
-  <li>LEDs für Software-Status &amp; Encoderstatus</li>
-  <li>Konfigurierbare ID (ggf. STM32-Hardware-ID)</li>
-  <li>Einfach lötbar und aufbaubar</li>
-  <li>Abmessungen: Rund, Grund-Ø 20mm (Namiki-Motoren: Ø 22mm)</li>
+  <li>zunächst Möglichkeiten evaluieren
+    <ul>
+      <li>CAN Controller integrieren, der einen begrenzten Satz an Nachrichten verarbeiten kann
+        <ul>
+          <li>Motor-PWM setzen</li>
+          <li>Encoder zurückschicken</li>
+          <li>ggf. innersten Regler hier implementieren</li>
+          <li>Strommessung</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Komplexere PWM-Generierung implementieren, testen
+    <ul>
+      <li>PWM Dithering (Erhöhung der PWM-Ausflösung)</li>
+      <li>Spread Spectrum PWM (geringe EMV-Störung)</li>
+    </ul>
+  </li>
 </ul>
 
 <h2 id="tätigkeitsfelder-und-technologien">Tätigkeitsfelder und Technologien</h2>
 <ul>
-  <li>PCB Design 4-Layer (mit KiCAD)
-    <ul>
-      <li>EMV-gerechtes Design</li>
-    </ul>
-  </li>
-  <li>STM32-Peripherie: Timer, ADC, DAC, Komparator</li>
-  <li>Recherche und Auslegung Leistungs-MOSFETs und MOSFET-Treiber</li>
-  <li>Software Low-Level Hardware-Ansteuerung</li>
-  <li>Software Hardwareabstraktion</li>
-  <li>Reflow-Löten</li>
+  <li>Implementierung von diskreter Logik in VHDL oder Verilog</li>
+  <li>Integration, Verifikation fertiger offener Implementierungen</li>
+  <li>Aufbauen von Test-Setups für Kommunikations-Interfaces, Tests mit Motor-Treiber</li>
+  <li>PCB-Design neuer Motor-Treiber</li>
+  <li>Beschaffen weiterer Eval-Boards</li>
 </ul>
 
 
@@ -202,10 +199,7 @@ Zusätzlich kann ein Endschalter ausgelesen werden und die Temperatur des Motors
 
 
 
-<li>[1] https://github.com/roboterclubaachen/magnet-motor-encoder</li>
-
-
-
+<li>[1] https://github.com/dergraaf/loa</li>
 
 </ul>
   </section>
@@ -216,14 +210,14 @@ Zusätzlich kann ein Endschalter ausgelesen werden und die Temperatur des Motors
         <div class="meta">Teilen</div>
          
         <li>
-            <a href="https://twitter.com/intent/tweet?source=http://www.roboterclub.rwth-aachen.de/projekt/micro-motor.html&text=Micro-Motor%20%7C%20Roboterclub Aachen:%20http://www.roboterclub.rwth-aachen.de/projekt/micro-motor.html" target="_blank" title="Twittern">
+            <a href="https://twitter.com/intent/tweet?source=http://www.roboterclub.rwth-aachen.de/projekt/fpgas.html&text=FPGA Controller%20%7C%20Roboterclub Aachen:%20http://www.roboterclub.rwth-aachen.de/projekt/fpgas.html" target="_blank" title="Twittern">
 			<i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Twittern</span>
 		</a>
         </li>
                 
         <li>
-            <a href="mailto:?subject=Micro-Motor%20%7C%20Roboterclub Aachen&body=:%20http://www.roboterclub.rwth-aachen.de/projekt/micro-motor.html" target="_blank" title="Email">
+            <a href="mailto:?subject=FPGA Controller%20%7C%20Roboterclub Aachen&body=:%20http://www.roboterclub.rwth-aachen.de/projekt/fpgas.html" target="_blank" title="Email">
 			<i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Email</span>
 		</a>
@@ -243,12 +237,16 @@ Zusätzlich kann ein Endschalter ausgelesen werden und die Temperatur des Motors
     
 
     
-    <a class="button" href="/tags#elektronik">
-      <p><i class="fa fa-tag fa-fw"></i> elektronik</p>
+    <a class="button" href="/tags#software">
+      <p><i class="fa fa-tag fa-fw"></i> software</p>
     </a>
     
-    <a class="button" href="/tags#pcb">
-      <p><i class="fa fa-tag fa-fw"></i> pcb</p>
+    <a class="button" href="/tags#hardware">
+      <p><i class="fa fa-tag fa-fw"></i> hardware</p>
+    </a>
+    
+    <a class="button" href="/tags#elektronik">
+      <p><i class="fa fa-tag fa-fw"></i> elektronik</p>
     </a>
     
   </div>
