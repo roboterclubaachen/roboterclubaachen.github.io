@@ -543,6 +543,18 @@
    
      {
        
+          "title"    : "Projekt: Sensorfusion",
+          "category" : "Projekt",
+          "tags"     : " software",
+          "url"      : "/projekt/sensorfusion.html",
+          "date"     : "October 28, 2019",
+          "excerpt"  : "Verbesserung der Roboter-Ortung durch Fusion mehrerer Systeme.",
+          "content"  : "<h2 id=\"zusammenfassung\">Zusammenfassung</h2>\n\n<p>Die Präszision der Ortung unserer Roboter hat einen großen Einfluss auf die Performance im Wettbewerb.\nMomentan haben die eingesetzten Ultraschallbaken Probleme mit Rotationen und die Odometrie [2] wird über die Antriebsräder durchgeführt,\ndie aufgrund von (unregelmäßigem) Schlupf einen wahrnehmbaren Fehler erzeugen.</p>\n\n<p>Zwei Ansätze sind geplant, um dem Abhilfe zu schaffen:\nIMUs (Inertial measurement unit) auf Ultraschall-Baken und RUNE-Tags [3] auf den Robotern, die von einer Kamera erkannt werden.\nDamit tatsächlich eine Verbesserung der Ortung erreicht werden kann, reicht es nicht diese Systeme einzuführen und die alten zu ersetzen.\nIntelligente Software ist nötig, um die verschiedenen Ortungsdaten zu vereinen.\nDa unsere Software mit ROS2 geschrieben wird wird muss ein dazu kompatibles System in Python und/oder C++ entwickelt werden.</p>\n\n<h3 id=\"geplante-features\">Geplante Features:</h3>\n<ul>\n  <li>Filterung der Messwerte</li>\n  <li>Ausreißer-Elimination (z.B. RANSAC-Verfahren)</li>\n  <li>Überwachung der Roboterbewegung; Präferenz für Systeme je nach Eignung in der jeweiligen Situation</li>\n  <li>Plausibilitätsprüfung der Positionen/Ausrichtungen vor Korrektur</li>\n  <li>Visualisierung der berechneten Daten zur Validierung des Verfahrens</li>\n  <li>Entwicklung als ROS2-Node</li>\n</ul>\n\n<h2 id=\"tätigkeitsfelder-und-technologien\">Tätigkeitsfelder und Technologien</h2>\n<ul>\n  <li>Herleitung von Geometrische Berechnungen und Algorithmen</li>\n  <li>Entwicklung von Algorithmen zur Signalverarbeitung (Filterung, Ausreißeranalyse)</li>\n  <li>Software-Entwicklung für ROS2 in Python und/oder C++</li>\n  <li>Software für Microcontroller in C++ mit modm.io</li>\n</ul>\n"
+       
+     } ,
+   
+     {
+       
           "title"    : "Projekt: Sensorik zur Gewichtsmessung",
           "category" : "Projekt",
           "tags"     : " elektronik, pcb, software, mechanik",
