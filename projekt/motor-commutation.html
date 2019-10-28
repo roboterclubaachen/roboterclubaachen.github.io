@@ -51,9 +51,9 @@
 <meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/motor-commutation.html" />
 <meta property="og:site_name" content="Roboterclub Aachen" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-10-28T14:12:25+00:00" />
+<meta property="article:published_time" content="2019-10-28T14:17:01+00:00" />
 <script type="application/ld+json">
-{"description":"Zusammenfassung","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/motor-commutation.html"},"@type":"BlogPosting","url":"http://www.roboterclub.rwth-aachen.de/projekt/motor-commutation.html","headline":"Intelligente Motor-Kommutierung","dateModified":"2019-10-28T14:12:25+00:00","datePublished":"2019-10-28T14:12:25+00:00","@context":"https://schema.org"}</script>
+{"description":"Zusammenfassung","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/motor-commutation.html"},"@type":"BlogPosting","url":"http://www.roboterclub.rwth-aachen.de/projekt/motor-commutation.html","headline":"Intelligente Motor-Kommutierung","dateModified":"2019-10-28T14:17:01+00:00","datePublished":"2019-10-28T14:17:01+00:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
@@ -157,14 +157,20 @@
   <hr>
 <h2 id="zusammenfassung">Zusammenfassung</h2>
 
-<p>Bei den zumeist verwendeten Motoren handelt es sich um Bürstenlose Gleichstrommotoren (BLDC), welche von einem externen Steuergerät angesteuert werden müssen.</p>
+<p>Bei den zumeist verwendeten Elektromotoren handelt es sich um Bürstenlose Gleichstrommotoren (BLDC),
+welche von einem externen Steuergerät angesteuert werden müssen.</p>
 
-<p>Dieses Steuergerät enthält neben der Leistungselektronik auch noch Logik welche das vom Motor benötigte rotierende Magnetfeld erzeugt.</p>
+<p>Dieses Steuergerät enthält neben der Leistungselektronik auch noch Logik welche das vom Motor benötigte rotierende Magnetfeld erzeugt.
+Im RCA werden dafür zur Zeit Alpha-Motoren der ersten Generation eingesetzt, die aber nicht über eine präzise Strommessung verfügen.
+Die neu-entwickelten Motortreiber der zweiten Generation (Alpha-Motor V2 und Micro-Motor V2) dagegen sollten neue Möglichkeiten bieten Motoren anzusteuern.</p>
 
 <p>Die einfachste und derzeit im RCA genutzte sogenannte Kommutierungsmethode ist die Block-Kommutierung.
-Es gibt Alternativen zur Block-Kommutierung, die u.a. Vorteile in den Punkten Kraft und Laufruhe bringen. Der Blog-Post [1] liefert hier ein erste Übersicht.</p>
+Es gibt Alternativen zur Block-Kommutierung, die u.a. Vorteile in den Punkten Kraft und Laufruhe bringen.
+Zudem soll ein Ziel sein, auch Elektromotoren ohne Hall-Sensoren ansteuern zu können.
+Der Blog-Post [1] liefert hier ein erste Übersicht.</p>
 
-<p>Ziel diese Projektes ist die Evaluierung der Möglichkeiten sowie die Erstellung einer an die Bedürfnisse des RCA angepasste Simulation und idealerweise anschließende reale Implementation einer intelligenten Kommutierungslogik.</p>
+<p>Ziel diese Projektes ist die Evaluierung der Möglichkeiten sowie die Erstellung einer an die Bedürfnisse des RCA angepasste Simulation
+und idealerweise anschließende reale Implementation einer intelligenten Kommutierungslogik.</p>
 
 <h2 id="tätigkeitsfelder-und-technologien">Tätigkeitsfelder und Technologien</h2>
 <ul>
