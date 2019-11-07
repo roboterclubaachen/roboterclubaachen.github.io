@@ -402,6 +402,12 @@
 
   <url>
 	<!-- project -->
+    <loc>http://www.roboterclub.rwth-aachen.de/projekt/usb2canfd.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
     <loc>http://www.roboterclub.rwth-aachen.de/projekt/win-the-eurobot.html</loc>
     <changefreq>monthly</changefreq>
   </url>

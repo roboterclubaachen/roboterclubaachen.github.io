@@ -17,7 +17,7 @@
     <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/img/rca.svg">
 
     <!-- Canonical -->
-    <link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/aktorik.html">
+    <link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/usb2canfd.html">
 
     <!-- RSS -->
     <link rel="alternate" type="application/atom+xml" title="Roboterclub Aachen" href="http://www.roboterclub.rwth-aachen.de///feed.xml"/>
@@ -41,24 +41,24 @@
     
     <!-- seo tags -->
     <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Aktorik für Spielelemente | Roboterclub Aachen</title>
+<title>USB nach FD-CAN Adapter | Roboterclub Aachen</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Aktorik für Spielelemente" />
+<meta property="og:title" content="USB nach FD-CAN Adapter" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Zusammenfassung" />
 <meta property="og:description" content="Zusammenfassung" />
-<link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/aktorik.html" />
-<meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/aktorik.html" />
+<link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/usb2canfd.html" />
+<meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/usb2canfd.html" />
 <meta property="og:site_name" content="Roboterclub Aachen" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-11-07T16:53:17+00:00" />
 <script type="application/ld+json">
-{"description":"Zusammenfassung","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/aktorik.html"},"@type":"BlogPosting","url":"http://www.roboterclub.rwth-aachen.de/projekt/aktorik.html","headline":"Aktorik für Spielelemente","dateModified":"2019-11-07T16:53:17+00:00","datePublished":"2019-11-07T16:53:17+00:00","@context":"https://schema.org"}</script>
+{"description":"Zusammenfassung","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/usb2canfd.html"},"@type":"BlogPosting","url":"http://www.roboterclub.rwth-aachen.de/projekt/usb2canfd.html","headline":"USB nach FD-CAN Adapter","dateModified":"2019-11-07T16:53:17+00:00","datePublished":"2019-11-07T16:53:17+00:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
     <!--
-    <title>Aktorik für Spielelemente | Roboterclub Aachen</title>
+    <title>USB nach FD-CAN Adapter | Roboterclub Aachen</title>
     <meta name="description" content="Zusammenfassung">
     -->
 </head>
@@ -147,43 +147,53 @@
 
     <div class="content">
       <article class="feature-image">
-  <header id="main" style="background-image: url('/assets/img/projektbeschreibungen/aktorik-spielelemente-juri.jpg');background-position: center;">
-    <h1 id="Aktorik+f%C3%BCr+Spielelemente" class="title">Aktorik für Spielelemente</h1>
+  <header id="main" style="background-image: url('/assets/img/projektbeschreibungen/usb2can.jpg');background-position: center;">
+    <h1 id="USB+nach+FD-CAN+Adapter" class="title">USB nach FD-CAN Adapter</h1>
   </header>
   <section class="post-content post-content-text">
   <hr>
-<p>Erfindung, Konstruktion und Fertigung von Greif-, Transport- und Lagersystemen für die Spielelemente der Saison 2019.</p>
+<p>Ein simpler, kleiner USB-Adapter für den CAN-Bus mit Flexible-Datarate (FD-CAN) Support.</p>
 
   <hr>
 <h2 id="zusammenfassung">Zusammenfassung</h2>
 
-<p>Im Eurobot-Wettbewerb müssen die Roboter regelmäßig verschiedene Objekte greifen, transportieren und nach bestimmten
-Kriterien anordnen. Dazu sind kreative mechanische Lösungen notwendig, um die Aufgaben mit möglichst hoher
-Geschwindigkeit und Zuverlässigkeit innerhalb des eingeschränkten Bauraums der Roboter zu erledigen.</p>
+<p>Die Aktoren und Sensoren im Roboter sind per CAN-Bus angebunden.
+Das Interface zum Steuerungscomputer (x86-PC mit ROS2) ist ein USB nach CAN Adapter.
+Da wir in der Zukunft für die Datenübertragung gerne die 10-mal höhere Bitrate durch FD-CAN nutzen wollen,
+benötigen wir einen solchen Adapter mit FD-CAN Unterstützung.
+Kommerziell verfügbare Produkte sind rar, teuer und haben eine zu große Bauform.</p>
 
-<p>Die Spielelemente waren in der Vergangenheit z.B. lackierte Holzbauklötze, Kunststoff-Zylinder, Bälle in verschiedenen
-Größen und Materialien, Puks, CDs, Becher, Textilien, Flaschen  und ähnliches. Ähnlich zu industriellen
-Automatisieungsaufgaben mussten diese innerhalb der 100 Sekunden eines Spiels oft an einer Stelle des Spielfeldes
-eingesammelt und an einer  anderen wieder abgelegt werden und dabei z.B. nach Größe oder Farbe sortiert, geschossen
-oder gestapelt werden. Dabei ist es oft erstrebenswert, möglichst viele der Elemente in den Roboter zu laden und
-gemeinsam zu transportieren. Zum Handling können z.B. aktive oder passive Greifer, Walzen, Bänder, Ketten- oder
-Schienensysteme, Gebläse, Saugnäpfe, usw. verbaut werden.</p>
+<p>Folglich entstand die Idee das Roboterclub-Projekt <em>USB2CAN</em> weiter zu entwickelt und FD-CAN-fähig zu machen.
+Inwiefern die bestehende Hardware und Software genutzt werden kann, muss evaluiert werden.</p>
 
-<p>Die Spezifikationen der Spielelemente und die damit zu lösenden Aufgaben werden mit Veröffentlichung der Regeln der
-neuen Wettbewerbssaison im September 2018 bekannt.</p>
+<h3 id="technische-daten-geplant">Technische Daten (geplant)</h3>
+<ul>
+  <li>FD-CAN Support mit voller 8MBit/s Datenrate</li>
+  <li>SocketCAN Support (CAN Framework des Linux Kernels)</li>
+  <li>Kleine Bauform: USB-Stick</li>
+  <li>Optional: Galvanische Isolation</li>
+</ul>
 
 <h2 id="tätigkeitsfelder-und-technologien">Tätigkeitsfelder und Technologien</h2>
 <ul>
-  <li>Erfinden von kreativen mechanischen Konzepten</li>
-  <li>„Basteln“ von Prototypen aus Holz (und Heißkleber)</li>
-  <li>CAD-Konstruktion mit SolidWorks</li>
-  <li>Fertigung von Aluminium- (mit CNC-Fräse) oder 3D-Druck-Teilen</li>
+  <li>CAN-Bus</li>
+  <li>PCB Design (mit KiCAD)</li>
+  <li>Linux-Kernel-Treiber</li>
+  <li>C++ Software</li>
 </ul>
 
 
 
 <h2>Referenzen und Links</h2>
 <ul>
+
+
+
+<li>[1] https://github.com/roboterclubaachen/usb2can</li>
+
+
+
+<li>https://github.com/candle-usb/candleLight_fw</li>
 
 </ul>
   </section>
@@ -194,14 +204,14 @@ neuen Wettbewerbssaison im September 2018 bekannt.</p>
         <div class="meta">Teilen</div>
          
         <li>
-            <a href="https://twitter.com/intent/tweet?source=http://www.roboterclub.rwth-aachen.de/projekt/aktorik.html&text=Aktorik für Spielelemente%20%7C%20Roboterclub Aachen:%20http://www.roboterclub.rwth-aachen.de/projekt/aktorik.html" target="_blank" title="Twittern">
+            <a href="https://twitter.com/intent/tweet?source=http://www.roboterclub.rwth-aachen.de/projekt/usb2canfd.html&text=USB nach FD-CAN Adapter%20%7C%20Roboterclub Aachen:%20http://www.roboterclub.rwth-aachen.de/projekt/usb2canfd.html" target="_blank" title="Twittern">
 			<i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Twittern</span>
 		</a>
         </li>
                 
         <li>
-            <a href="mailto:?subject=Aktorik für Spielelemente%20%7C%20Roboterclub Aachen&body=:%20http://www.roboterclub.rwth-aachen.de/projekt/aktorik.html" target="_blank" title="Email">
+            <a href="mailto:?subject=USB nach FD-CAN Adapter%20%7C%20Roboterclub Aachen&body=:%20http://www.roboterclub.rwth-aachen.de/projekt/usb2canfd.html" target="_blank" title="Email">
 			<i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Email</span>
 		</a>
@@ -217,12 +227,24 @@ neuen Wettbewerbssaison im September 2018 bekannt.</p>
 <footer>
   <div class="tag-list">
     
-      <div class="meta">Tag</div>
+      <div class="meta">Tags</div>
     
 
     
-    <a class="button" href="/tags#mechanik">
-      <p><i class="fa fa-tag fa-fw"></i> mechanik</p>
+    <a class="button" href="/tags#elektronik">
+      <p><i class="fa fa-tag fa-fw"></i> elektronik</p>
+    </a>
+    
+    <a class="button" href="/tags#pcb">
+      <p><i class="fa fa-tag fa-fw"></i> pcb</p>
+    </a>
+    
+    <a class="button" href="/tags#software">
+      <p><i class="fa fa-tag fa-fw"></i> software</p>
+    </a>
+    
+    <a class="button" href="/tags#werkzeug">
+      <p><i class="fa fa-tag fa-fw"></i> werkzeug</p>
     </a>
     
   </div>

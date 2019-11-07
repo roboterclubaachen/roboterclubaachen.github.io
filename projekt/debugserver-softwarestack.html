@@ -51,9 +51,9 @@
 <meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/debugserver-softwarestack.html" />
 <meta property="og:site_name" content="Roboterclub Aachen" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-11-01T21:24:57+00:00" />
+<meta property="article:published_time" content="2019-11-07T16:53:17+00:00" />
 <script type="application/ld+json">
-{"description":"Zusammenfassung","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/debugserver-softwarestack.html"},"@type":"BlogPosting","url":"http://www.roboterclub.rwth-aachen.de/projekt/debugserver-softwarestack.html","headline":"Debugserver – Softwarestack","dateModified":"2019-11-01T21:24:57+00:00","datePublished":"2019-11-01T21:24:57+00:00","@context":"https://schema.org"}</script>
+{"description":"Zusammenfassung","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/debugserver-softwarestack.html"},"@type":"BlogPosting","url":"http://www.roboterclub.rwth-aachen.de/projekt/debugserver-softwarestack.html","headline":"Debugserver – Softwarestack","dateModified":"2019-11-07T16:53:17+00:00","datePublished":"2019-11-07T16:53:17+00:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
@@ -159,7 +159,8 @@
 
 <p>Der Debugserver (siehe Projekt “Debugserver Hardware”) basiert auf einem Raspberry Pi.
 Auf dem Raspberry Pi läuft ein Debian-basiertes Linux-System, dieses soll mittels <code class="highlighter-rouge">debootstrap</code> [1],
-ähnlich des Image-Builders [2] aufgesetzt werden um Reproduzierbarkeit zu gewährleisten.</p>
+ähnlich des Image-Builders [2] aufgesetzt werden um Reproduzierbarkeit zu gewährleisten.
+Weitere Alternativen: [3] und [4].</p>
 
 <p>Zusätzlich werden diverse Dienste auf dem Debugserver benötigt,
 eine CAN-to-Network Brücke oder die Überwachung des Roboterzustandes anhand welcher der Debugserver ggf. heruntergefahren wird.
@@ -197,6 +198,14 @@ Ebenso muss die Netzwerkkonfiguaration mit der Möglichkeit zum Umschalten zwisc
 
 
 <li>[2] https://github.com/strongly-typed/image-builder (siehe auch diverse teils private Forks)</li>
+
+
+
+<li>[3] https://github.com/go-debos/debos</li>
+
+
+
+<li>[4] https://elbe-rfs.org/</li>
 
 </ul>
   </section>
