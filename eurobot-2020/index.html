@@ -17,7 +17,7 @@
     <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/img/rca.svg">
 
     <!-- Canonical -->
-    <link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/modm-dma.html">
+    <link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/eurobot-2020/">
 
     <!-- RSS -->
     <link rel="alternate" type="application/atom+xml" title="Roboterclub Aachen" href="http://www.roboterclub.rwth-aachen.de///feed.xml"/>
@@ -41,25 +41,23 @@
     
     <!-- seo tags -->
     <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>modm: Konzept und Umsetzung einer DMA Schnittstelle | Roboterclub Aachen</title>
+<title>Eurobot Deutschland 2020 | Roboterclub Aachen</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="modm: Konzept und Umsetzung einer DMA Schnittstelle" />
+<meta property="og:title" content="Eurobot Deutschland 2020" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Zusammenfassung" />
-<meta property="og:description" content="Zusammenfassung" />
-<link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/modm-dma.html" />
-<meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/modm-dma.html" />
+<meta name="description" content="Wir bauen autonome Roboter" />
+<meta property="og:description" content="Wir bauen autonome Roboter" />
+<link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/eurobot-2020/" />
+<meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/eurobot-2020/" />
 <meta property="og:site_name" content="Roboterclub Aachen" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-01-21T21:48:13+00:00" />
 <script type="application/ld+json">
-{"dateModified":"2020-01-21T21:48:13+00:00","@type":"BlogPosting","datePublished":"2020-01-21T21:48:13+00:00","url":"http://www.roboterclub.rwth-aachen.de/projekt/modm-dma.html","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/modm-dma.html"},"headline":"modm: Konzept und Umsetzung einer DMA Schnittstelle","description":"Zusammenfassung","@context":"https://schema.org"}</script>
+{"@type":"WebPage","url":"http://www.roboterclub.rwth-aachen.de/eurobot-2020/","headline":"Eurobot Deutschland 2020","description":"Wir bauen autonome Roboter","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
     <!--
-    <title>modm: Konzept und Umsetzung einer DMA Schnittstelle | Roboterclub Aachen</title>
-    <meta name="description" content="Zusammenfassung">
+    <title>Eurobot Deutschland 2020 | Roboterclub Aachen</title>
+    <meta name="description" content="">
     -->
 </head>
 
@@ -156,96 +154,61 @@
 
     <div class="content">
       <article class="feature-image">
-  <header id="main" style="background-image: url('/assets/img/projektbeschreibungen/memory-sodimm.jpg');background-position: center;">
-    <h1 id="modm%3A+Konzept+und+Umsetzung+einer+DMA+Schnittstelle" class="title">modm: Konzept und Umsetzung einer DMA Schnittstelle</h1>
+  <header id="main" style="background-image: url('/assets/img/roboter1.jpg');background-position: center;">
+    <h1 id="Eurobot+Deutschland+2020" class="title">
+        Eurobot Deutschland 2020
+    </h1>
+
+    
+    <h2 class="subtitle">Sail the World</h2>
+    
+
   </header>
-  <section class="post-content post-content-text">
-  <hr>
-<p>Erstellen eines Modells flexiblen und einfachen Nutzung von DMA (Direct Memory Access) in User-Code und anderen modm-Modulen.</p>
+  <section class="post-content post-content-text"><h2 id="eurobot-deutschland-2020">Eurobot Deutschland 2020</h2>
 
-  <hr>
-<h2 id="zusammenfassung">Zusammenfassung</h2>
+<p>Der <a href="https://www.eurobot.org/eurobot/eurobot-2020/">Eurobot 2020</a> findet dieses Jahr unter dem Motto “Sail the World” statt. Der Roboterclub Aachen ist dieses Jahr Ausrichter des deutschen Wettbewerbs, der den deutschen Teams als Qualifikation für den internationalen Wettbewerb in Frankreich dient.</p>
 
-<p>Die meisten Mikrocontroller haben eine DMA-Einheit, welche unabhängig von der CPU auf Speicher zugreifen kann und Daten kopieren kann.
-Durch die Nutzung von DMA kann beispielsweise Peripherie wie SPI mit Daten zum senden versorgt und die empfangenen Daten gespeichert werden ohne dass die CPU hierbei belastet wird,
-wovon in modm [2] bisher kein Nutzen gemacht wird.</p>
-
-<p>Einige sehr zeitkritische Anwendungen können ohne DMA gar nicht implementiert werden,
-beispielsweise eine Ansteuerung von WS2812-LEDs mit Bitmustern aus SPI.</p>
-
-<p>Im Rahmen dieses Projekts soll ein API für Abstraktion von DMA-Einheiten entwickelt werden welches sowohl flexibel im Bezug auf mögliche DMA-Einheiten ist,
-als auch universell in modm-Modulen wie Gerätetreibern und im User-Code einsetzbar ist.
-Die Abstraktion sollte mindestens für STM32 Mikrocontroller implementiert werden,
-weitere Implementierungen könnten später erfolgen.</p>
-
-<p>Anschließend können die vorhandene Treiber für STM32-Peripherie (SPI, UART, …) für DMA erweitert oder angepasst werden.</p>
-
-<p>Aus dem Vorgängerprojekt vom modm, xpcc, existiert eine DMA-API [1], die sich allerdings als suboptimal herausgestellt hat.</p>
-
-<h2 id="tätigkeitsfelder-und-technologien">Tätigkeitsfelder und Technologien</h2>
 <ul>
-  <li>C++17</li>
-  <li>STM32 Speicherarchitektur, sowie weitere mögliche weitere Architekturen</li>
-  <li>STM32 Peripherie: DMA, Timer, SPI, UART, …</li>
-  <li>Low-level Programming in modm.io</li>
+  <li><strong>Wann</strong>: 01.-03. Mai 2020</li>
+  <li><strong>Wo:</strong> Aula der RWTH-Aachen</li>
+  <li><strong>Wer:</strong> Alle deutschen und internationalen Teams.</li>
+  <li><strong>Anmeldung:</strong> Bis zum 29.02.20 über das <a href="https://docs.google.com/forms/d/e/1FAIpQLSc5ALFYnLU9ss_Ho6Ly-a0MVwQAXRVJNuyIjMfiCle0bWyf7g/viewform">Formular</a>.</li>
+  <li><strong>Meldegebühr:</strong> 50€ pro Team</li>
+  <li><strong>Motto:</strong> Sail the World</li>
+  <li><strong>Regeln:</strong> Es gelten die Regeln des <a href="https://www.eurobot.org/eurobot/eurobot-2020/rules">Eurobot 2020</a></li>
+  <li><strong>Zuschauen:</strong> Zuschauer sind herzlich willkommen.</li>
 </ul>
 
+<h3 id="vorläufiger-zeitplan">Vorläufiger Zeitplan</h3>
 
-
-<h2>Referenzen und Links</h2>
 <ul>
-
-
-
-<li>[1] https://xpcc.io/api/classxpcc_1_1stm32_1_1_dma_base.html</li>
-
-
-
-<li>[2] https://modm.io</li>
-
-</ul>
-  </section>
-
-  <!-- Social media shares -->
-  <div class="share-buttons">
-    <ul class="share-buttons">
-        <div class="meta">Teilen</div>
-         
-        <li>
-            <a href="https://twitter.com/intent/tweet?source=http://www.roboterclub.rwth-aachen.de/projekt/modm-dma.html&text=modm: Konzept und Umsetzung einer DMA Schnittstelle%20%7C%20Roboterclub Aachen:%20http://www.roboterclub.rwth-aachen.de/projekt/modm-dma.html" target="_blank" title="Twittern">
-			<i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
-			<span class="sr-only">Twittern</span>
-		</a>
-        </li>
-                
-        <li>
-            <a href="mailto:?subject=modm: Konzept und Umsetzung einer DMA Schnittstelle%20%7C%20Roboterclub Aachen&body=:%20http://www.roboterclub.rwth-aachen.de/projekt/modm-dma.html" target="_blank" title="Email">
-			<i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i>
-			<span class="sr-only">Email</span>
-		</a>
-        </li>
-        
+  <li><strong>Freitag</strong>:
+    <ul>
+      <li><em>ab 16:00 Uhr</em> Aufbau, Testspiele, Homologation</li>
     </ul>
-</div>
+  </li>
+  <li><strong>Samstag</strong>:
+    <ul>
+      <li><em>bis Mittag</em> Homologation</li>
+      <li><em>Mittagessen</em></li>
+      <li><em>Vorrunden</em></li>
+      <li><em>ab 22:00 Uhr</em> Gemütlicher gemeinsamer Ausklang</li>
+    </ul>
+  </li>
+  <li><strong>Sonntag</strong>:
+    <ul>
+      <li><em>Finalrunden</em></li>
+      <li><em>ab 16:00 Uhr</em> Gemütlicher gemeinsamer Ausklang.</li>
+    </ul>
+  </li>
+</ul>
 
-   <!-- Tag list -->
-  
+<h3 id="anfahrt">Anfahrt</h3>
 
-
-<footer>
-  <div class="tag-list">
-    
-      <div class="meta">Tag</div>
-    
-
-    
-    <a class="button" href="/tags#software">
-      <p><i class="fa fa-tag fa-fw"></i> software</p>
-    </a>
-    
-  </div>
-</footer>
-
+<iframe width="100%" height="400" scrolling="no" frameborder="0" marginheight="0" marginwidth="0" style="padding: 0;" src="https://www.openstreetmap.org/export/embed.html?bbox=6.07126%2C50.77944%2C6.08810%2C50.77334&amp;layers=NH&amp;marker=50.77756%2C6.07802">
+</iframe>
+<p><br /></p>
+</section>
 
 </article>
 

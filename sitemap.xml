@@ -415,6 +415,14 @@
    
   <url>
 	<!-- page -->
+    <loc>http://www.roboterclub.rwth-aachen.de/eurobot-2020/</loc>
+    
+    
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+	<!-- page -->
     <loc>http://www.roboterclub.rwth-aachen.de/feed.xml</loc>
     
     
