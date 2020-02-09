@@ -5,7 +5,7 @@
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
         <link>http://www.roboterclub.rwth-aachen.de/</link>
         <description></description>
-        <pubDate>Sun, 09 Feb 2020 18:54:27 +0000</pubDate>
+        <pubDate>Sun, 09 Feb 2020 19:39:37 +0000</pubDate>
         
         <item>
             <title>µMotor 2 - Teil 4: Strom- und Spannungsmessung mit ADC</title>
@@ -50,48 +50,59 @@ For this purpose we document in this blog post the requirements and development 
     &lt;tr&gt;
       &lt;th&gt;Measurement&lt;/th&gt;
       &lt;th&gt;Possible ADC channels&lt;/th&gt;
+      &lt;th&gt;Gpio pin&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
       &lt;td&gt;Current U&lt;/td&gt;
       &lt;td&gt;Adc1Ch1, Adc2Ch1&lt;/td&gt;
+      &lt;td&gt;GpioA0&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;Current V&lt;/td&gt;
       &lt;td&gt;Adc1Ch2, Adc2Ch2&lt;/td&gt;
+      &lt;td&gt;GpioA1&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;Current W&lt;/td&gt;
       &lt;td&gt;Adc1Ch4&lt;/td&gt;
+      &lt;td&gt;GpioA3&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;Voltage U&lt;/td&gt;
       &lt;td&gt;Adc1Ch15, Adc3Ch12&lt;/td&gt;
+      &lt;td&gt;GpioB0&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;Voltage V&lt;/td&gt;
       &lt;td&gt;Adc2Ch4&lt;/td&gt;
+      &lt;td&gt;GpioA7&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;Voltage W&lt;/td&gt;
       &lt;td&gt;Adc2Ch3&lt;/td&gt;
+      &lt;td&gt;GpioA6&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;Motor supply voltage&lt;/td&gt;
       &lt;td&gt;Adc2Ch12&lt;/td&gt;
+      &lt;td&gt;GpioB2&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;3.3V supply voltage&lt;/td&gt;
       &lt;td&gt;Adc1Ch17, Adc3Ch17&lt;/td&gt;
+      &lt;td&gt;N/A&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;NTC temperature sensor&lt;/td&gt;
       &lt;td&gt;Adc1Ch12, Adc3Ch1&lt;/td&gt;
+      &lt;td&gt;GpioB1&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;Internal temperature&lt;/td&gt;
       &lt;td&gt;Adc1Ch16, Adc5Ch4&lt;/td&gt;
+      &lt;td&gt;N/A&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
