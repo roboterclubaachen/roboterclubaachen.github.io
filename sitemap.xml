@@ -3,6 +3,14 @@
 
   <url>
 	<!-- post -->
+    <loc>http://www.roboterclub.rwth-aachen.de/blog/2020/micro-motor-2-teil-4.html</loc>
+    
+    <changefreq>weekly</changefreq>
+    
+  </url>
+
+  <url>
+	<!-- post -->
     <loc>http://www.roboterclub.rwth-aachen.de/blog/2019/wanted-einsteiger.html</loc>
     
     <changefreq>weekly</changefreq>

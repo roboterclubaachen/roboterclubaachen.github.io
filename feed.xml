@@ -5,7 +5,110 @@
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
         <link>http://www.roboterclub.rwth-aachen.de/</link>
         <description></description>
-        <pubDate>Sat, 01 Feb 2020 17:30:21 +0000</pubDate>
+        <pubDate>Sun, 09 Feb 2020 18:54:27 +0000</pubDate>
+        
+        <item>
+            <title>µMotor 2 - Teil 4: Strom- und Spannungsmessung mit ADC</title>
+            <link>/blog/2020/micro-motor-2-teil-4.html</link>
+            <guid isPermaLink="true">/blog/2020/micro-motor-2-teil-4.html</guid>
+            <description>&lt;p&gt;Over the past few weeks, a circuit diagram for the Micro-moto version 2 has been created from the previous considerations.
+After some productive reviews and discussions about the schematic and the incorporation of various improvements and changes, a board layout was drawn in KiCad.&lt;/p&gt;
+
+&lt;p&gt;The production of the board was sponsored by Aisler and after only about a week of waiting the boards and all components arrived in our lab.&lt;/p&gt;
+
+&lt;p&gt;Quickly two boards were assembled and except for one single solder bridge successfully soldered in the reflow oven.
+Only the (optional) vertical Micro-USB connector had been forgotten when ordering the components, but this was no problem, since programming via SWD is more convenient for testing due to its debugger interface.&lt;/p&gt;
+
+&lt;p&gt;Step by step, power supply, STM32 microcontroller, status LEDs and gate drivers including MOSFET power stage were tested successfully. Everything worked on the first try, for once.&lt;/p&gt;
+
+&lt;p&gt;The development process of the micro-motor can be followed up &lt;a href=&quot;/blog/2019/micro-motor-2-teil-3.html&quot;&gt;in&lt;/a&gt; &lt;a href=&quot;/blog/2019/micro-motor-2-teil-2.html&quot;&gt;several&lt;/a&gt; &lt;a href=&quot;/blog/2019/micro-motor-2-teil-1.html&quot;&gt;older&lt;/a&gt; &lt;a href=&quot;/blog/2018/micro-motor-debugging-inbetriebnahme.html&quot;&gt;blog posts&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The next step is to bring the current and voltage measurement into operation.
+For this purpose we document in this blog post the requirements and development of the implementation with the analog-to-digital converter of the STM32G4 microcontroller.&lt;/p&gt;
+
+&lt;h2 id=&quot;requirements&quot;&gt;Requirements&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ADC sampling synchronous to PWM of motor (approx. 100kHz)&lt;/li&gt;
+  &lt;li&gt;Sampling on every PWM cycle&lt;/li&gt;
+  &lt;li&gt;For all phases either current or voltage are measured: current on both “switched” phases, voltage on the “high-impedance” phase&lt;/li&gt;
+  &lt;li&gt;Measure current in both phases simultaneously&lt;/li&gt;
+  &lt;li&gt;Additional ADC measurements at low priority and with low frequency
+    &lt;ul&gt;
+      &lt;li&gt;Motor supply voltage&lt;/li&gt;
+      &lt;li&gt;3.3V supply voltage (Vbat)&lt;/li&gt;
+      &lt;li&gt;NTC temperature sensor&lt;/li&gt;
+      &lt;li&gt;Internal temperature&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;adc-channel-usage-on-the-micro-motor&quot;&gt;ADC channel usage on the micro-motor&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Measurement&lt;/th&gt;
+      &lt;th&gt;Possible ADC channels&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Current U&lt;/td&gt;
+      &lt;td&gt;Adc1Ch1, Adc2Ch1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Current V&lt;/td&gt;
+      &lt;td&gt;Adc1Ch2, Adc2Ch2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Current W&lt;/td&gt;
+      &lt;td&gt;Adc1Ch4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Voltage U&lt;/td&gt;
+      &lt;td&gt;Adc1Ch15, Adc3Ch12&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Voltage V&lt;/td&gt;
+      &lt;td&gt;Adc2Ch4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Voltage W&lt;/td&gt;
+      &lt;td&gt;Adc2Ch3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Motor supply voltage&lt;/td&gt;
+      &lt;td&gt;Adc2Ch12&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;3.3V supply voltage&lt;/td&gt;
+      &lt;td&gt;Adc1Ch17, Adc3Ch17&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;NTC temperature sensor&lt;/td&gt;
+      &lt;td&gt;Adc1Ch12, Adc3Ch1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Internal temperature&lt;/td&gt;
+      &lt;td&gt;Adc1Ch16, Adc5Ch4&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;implementation&quot;&gt;Implementation&lt;/h2&gt;
+
+&lt;p&gt;The three critical measurements will be sequenced as “Injected Conversions” and triggered by a event generated from the timer which generates the Motor-PWM.&lt;/p&gt;
+
+&lt;p&gt;In an “Injected conversions sequence” (sequence length is limited to 4) each conversion has its own output data register.
+Thus all conversion results can be easily read one after the other in the time until the next PWM cycle and no interrupts are needed.&lt;/p&gt;
+
+&lt;p&gt;For every of the six valid commutation steps that define the state of the three MOSFET half bridges, a mapping to the ADC channels is predefined and applied during the commutation.&lt;/p&gt;
+
+&lt;p&gt;Low-Priority measurements are sequenced in the ADCs “normal-mode” sequence and are triggered at a lower frequency (by another timer or manually from code).&lt;/p&gt;
+</description>
+            <pubDate>Fri, 31 Jan 2020 00:00:00 +0000</pubDate>
+        </item>
         
         <item>
             <title>! W A N T E D ! - Einsteiger</title>
