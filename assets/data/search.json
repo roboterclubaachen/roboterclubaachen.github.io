@@ -349,6 +349,18 @@
    
      {
        
+          "title"    : "Projekt: Eurobot Score Estimation",
+          "category" : "Projekt",
+          "tags"     : " software",
+          "url"      : "/projekt/eurobot-point-estimation.html",
+          "date"     : "November 17, 2020",
+          "excerpt"  : "Estimate the total scored point during a Eurobot match",
+          "content"  : "<h2 id=\"summary\">Summary</h2>\n\n<p>The rules of the Eurobot contest define an opportunity to score up to 20% additional points after the match:\nThe robot has to estimate the number of points picked up during the game time.</p>\n\n<p>In the first step the actions completed by other components must be evaluated and the points aggregated.\nIn the next step, probabilities of possible failures can also be included and/or even the images from different cameras can be used for additional analysis.\nIn this way, points “stolen” by the opposing robot can be detected.</p>\n\n<h2 id=\"technologies\">Technologies</h2>\n<ul>\n  <li>ROS2 (Robot Operation System 2)</li>\n  <li>Software development in C++ or Python</li>\n  <li>Optional: OpenCV</li>\n  <li>Optional: “Big Data” analysis of past matches</li>\n</ul>\n"
+       
+     } ,
+   
+     {
+       
           "title"    : "Projekt: Eurobot Wettbewerb gewinnen",
           "category" : "Projekt",
           "tags"     : " eurobot",
@@ -505,18 +517,6 @@
    
      {
        
-          "title"    : "Projekt: Lokalisierung (anhand Kamera, IMU und/oder Ultraschall)",
-          "category" : "Projekt",
-          "tags"     : " software",
-          "url"      : "/projekt/locatisation-camera-imu-us.html",
-          "date"     : "November 17, 2020",
-          "excerpt"  : "Kooperative Lokalisierung durch Mustererkennung mit einer Kamera, mit Ultraschall und Inertial Measurement Unit (IMU) für kompetitive mobile Robotik.",
-          "content"  : "<h2 id=\"zusammenfassung\">Zusammenfassung</h2>\n\n<p>Die Lokalisierung ist eine wichtiger Teil der Strategie, Wegeplanung und des Driver.\nDabei steht nicht nur der eigene Roboter im Fokus, sondern auch die des Gegners.\nDenn mit diesem darf man während der Fahrt nicht kollidieren, dazu kann es zur Entscheidungsfindung der Strategie beitragen.</p>\n\n<p>Dazu stehen verschiedene Datenquellen mit verschiedenen Eigenschaften zur Verfügung.\nZum einen kann am Spielfeldrand eine Kamera platziert werden, die am Roboter befindliche Aruco Marker erkennt und damit Position und Orientierung bestimmt.\nOder durch ein Ultraschallsystem wird die Position mittels Triangulation zu festen Referenzpunkten gemessen.\nDesweiteren bietet eine inertiale Messeinheit (Bewegungs-, Drehratensensor etc.) die Möglichkeit eine höhere Aktualisierungsrate durch die Messung relativer Bewegung zu erzielen.</p>\n\n<p>Konkret sind folgende Aufgaben zu erledigen:</p>\n\n<ul>\n  <li>Schnittstellen-Definition zu Datenquellen (IMU, Kamera, etc.)</li>\n  <li>Schnitsstellen-Definition zur Strategie (Lokalisierung: Postition, Orientierung)</li>\n  <li>Recherche, Implementierung und Auswertung von Algorithmen zur Datenfusion vorhandener Daten</li>\n  <li>Integration und Test am und im Roboter</li>\n</ul>\n\n<h3 id=\"requirements\">Requirements</h3>\n\n<ul>\n  <li>Verständnis von Signalverarbeitung</li>\n  <li>Erfahrung mit C++ oder Python Programmierung</li>\n  <li>Ggf. Erfahrung mit Mikrocontrollerprogrammierung (Embedded Software Entwicklung)</li>\n</ul>\n"
-       
-     } ,
-   
-     {
-       
           "title"    : "Projekt: Micro-Motor",
           "category" : "Projekt",
           "tags"     : " elektronik, pcb",
@@ -553,13 +553,13 @@
    
      {
        
-          "title"    : "Projekt: Robot-State",
+          "title"    : "Projekt: Robot State Estimation",
           "category" : "Projekt",
           "tags"     : " software",
-          "url"      : "/projekt/Roboter-State.html",
+          "url"      : "/projekt/robot-state.html",
           "date"     : "November 17, 2020",
-          "excerpt"  : "Entwicklung von Softwarekomponenten zur geregelten Ausführung von Bewegungen und Spielfeldinteraktionen.",
-          "content"  : "<h2 id=\"zusammenfassung\">Zusammenfassung</h2>\n\n<p>Damit unsere Roboter mit den Elementen auf dem Spielfeld interagieren kann, sind Software-Routinen nötig, die verschiedene\nBewegungen ausführen und regeln können. Daher soll es Software-Komponenten geben, die solche Routinen enthalten und\nvon anderen Komponenten über eine definierte Schnittstelle mit Bewegungsaufgaben beauftragt werden können. Dabei kann es\nsich um Greifbewegung, das Ablegen eines Spielelementes oder umschubsen einer Fahne handeln. Je nach Bewegungsart sind dazu unterschiedliche\ngeometrische Berechnungen, Regelungskonzepte und Sicherheitsfunktionen nötig.</p>\n\n<h3 id=\"geplante-features\">Geplante Features:</h3>\n<ul>\n  <li>Einheitliches Interface für verschiedene Bewegungsmanöver und Rückmeldung über Status und Fehler</li>\n  <li>Einfaches Interface zum Verfahren von Bewegungsabläufen (Sequenzen von Bewegungsmanövern)</li>\n  <li>Modulare Software (DRY – Don’t Repeat Yourself), Dokumentation der Konzepte und Schnittstellen</li>\n</ul>\n\n<h2 id=\"tätigkeitsfelder-und-technologien\">Tätigkeitsfelder und Technologien</h2>\n<ul>\n  <li>Entwurf eines Software-Interfaces (in Abstimmung mit Entwicklern anderer Komponenten)</li>\n  <li>Entwicklung von Geometrieberechnungen und Positionsreglern</li>\n  <li>Softwareentwicklung in C++ oder Python mit ROS2</li>\n</ul>\n"
+          "excerpt"  : "Entwicklung eines Modells des Zustands des Roboters",
+          "content"  : "<h2 id=\"zusammenfassung\">Zusammenfassung</h2>\n\n<p>Der Zustand eines Roboters wird durch viele verschiedene Eigenschaften definiert, wie beispielsweise die Position der Roboters auf dem Spielfeld, die Stellung der Aktoren, Füllstand von z.B. Tanks.\nZiel dieses Projektes ist es ein Modell zu implementieren welches den Roboterzustand darstellt, sodass andere Komponenten wie Spielstrategie oder Aktorik-Module dies als Grundlage für Entscheidungen und Aktionen verwenden können.\nAndere Komponenten veröffentlichen Nachrichten mit ihren Aktionen oder Zuständen, welche in dieser Komponente ausgewertet und aggregiert werden sollen.</p>\n\n<h2 id=\"tätigkeitsfelder-und-technologien\">Tätigkeitsfelder und Technologien</h2>\n<ul>\n  <li>ROS2 (Robot Operation System 2)</li>\n  <li>Softwareentwicklung in C++ oder Python</li>\n</ul>\n"
        
      } ,
    
@@ -625,6 +625,18 @@
    
      {
        
+          "title"    : "Projekt: Sensorik für Spielelemente",
+          "category" : "Projekt",
+          "tags"     : " software",
+          "url"      : "/projekt/sensorik-spielelemente.html",
+          "date"     : "November 17, 2020",
+          "excerpt"  : "Entwicklung von Softwarekomponenten zur Erkennung von Spielelementen.",
+          "content"  : "<h2 id=\"zusammenfassung\">Zusammenfassung</h2>\n\n<p>Bei jedem Eurobotwettbewerb sind auf dem Spielfeld verschiedene Komponenten wie Becher, Pucks, Fahnen etc. verteilt.\nUm Punkte zu holen müssen manche dieser Objekte eingesammelt und an einer anderen Position wider abgesetzt werden.\nMit anderen Komponenten hingegen muss interagiert werden wie z.B. eine Fahne um zu schubsen.\nDie Aufgabe besteht daher darin, eine Softwarekomponente zu schreiben, welche die einzelnen Objekte erkennt.</p>\n\n<p>Zur Verfügung stehen unter anderem:</p>\n<ul>\n  <li>Kamerabild eine auf der <em>Central Tracking Platform</em> zu installierenden Kamera (z.B. Raspberry Pi Camera)</li>\n  <li>Bilder mehrerer kleiner USB-Kameras am Roboter</li>\n  <li>Verschiedene Sensoren wie Taster, Distanzsensor oder Farbsensor an den einzelnen Aktuatoren</li>\n  <li>Feedback von den Aktuatoren (Position, Motorstrom, Kraft, …)</li>\n</ul>\n\n<h2 id=\"tätigkeitsfelder-und-technologien\">Tätigkeitsfelder und Technologien</h2>\n<ul>\n  <li>Bilderkennung und Verarbeitung mit OpenCV</li>\n  <li>Softwareentwicklung in C++ oder Python</li>\n  <li>ROS2 (Robot Operation System 2)</li>\n</ul>\n"
+       
+     } ,
+   
+     {
+       
           "title"    : "Projekt: Sensorik zur Gewichtsmessung",
           "category" : "Projekt",
           "tags"     : " elektronik, pcb, software, mechanik",
@@ -632,18 +644,6 @@
           "date"     : "November 17, 2020",
           "excerpt"  : "Aufbau eines Prototypen zur Gewichtsmessung von Spielelementen mit Roboterarmen.",
           "content"  : "<h2 id=\"zusammenfassung\">Zusammenfassung</h2>\n\n<p>Bei der Ankündigung des Eurobot-Mottos für 2019 “Atom Factory” [1] wurde erwähnt, dass die Roboter Spielelemente wiegen sollen.\nAuch für einige andere Aktorik ist die Technologie hilfreich.</p>\n\n<p>Das Ziel des Projekts ist einen Prototyp einer Sensorik zur Gewichtsmessung für einen Roboterarm zu implementieren.</p>\n\n<p>Die verschiedenen möglichen Methoden zur Gewichtsmessung soll verglichen und für den Einsatz im Roboter bewertet werden.</p>\n\n<h3 id=\"technische-daten-geplant\">Technische Daten (geplant)</h3>\n<ul>\n  <li>Mögliche Methoden\n    <ul>\n      <li>Strommessung Elektromotor</li>\n      <li>Dehnungsmessstreifen [2]</li>\n      <li>Mechanisch mit Feder und Taster</li>\n      <li>Weitere [3]</li>\n    </ul>\n  </li>\n  <li>Präzision je nach Anforderungen</li>\n  <li>Kraft/Gewicht je nach Anforderungen</li>\n  <li>Platine zum Anschluss an CAN</li>\n  <li>Kompakte Baugröße</li>\n</ul>\n\n<h2 id=\"tätigkeitsfelder-und-technologien\">Tätigkeitsfelder und Technologien</h2>\n<ul>\n  <li>Analoges Schaltungsdesign</li>\n  <li>PCB Design</li>\n  <li>STM32</li>\n  <li>Software Mikrocontroller</li>\n  <li>Ggf. Mechanik</li>\n</ul>\n"
-       
-     } ,
-   
-     {
-       
-          "title"    : "Projekt: Sensorik- Spielelemente",
-          "category" : "Projekt",
-          "tags"     : " software",
-          "url"      : "/projekt/Sensorik-Spielelemente.html",
-          "date"     : "November 17, 2020",
-          "excerpt"  : "Entwicklung von Softwarekomponenten zur geregelten Erkennung von Spielfeldkomponenten.",
-          "content"  : "<h2 id=\"zusammenfassung\">Zusammenfassung</h2>\n\n<p>Bei jedem Eurobotwettberwerb sind auf dem Spielfeld  verschiedene Komponenten wie Becher, Pucks, Fahnen etc. verteilt. Um Punkte zu holen müssen manche dieser Objekte eingesammelt und an einer anderen Position wider abgesetzt werden. Mit anderen Komponenten hingegen muss interagiert werden wie z.B. eine Fahne umzuschubsen. Die Aufgabe besteht daher darin, eine Softwarekomponente zu schreiben, welche die einzelnen Objekte erkennt und die ihnen zugehörige Operation einleitet.</p>\n\n<h2 id=\"tätigkeitsfelder-und-technologien\">Tätigkeitsfelder und Technologien</h2>\n<ul>\n  <li>Bilderkennung und Verarbeitung mit opencv</li>\n  <li>Softwareentwicklung in C++ oder Python</li>\n  <li>Softwarekommunikation mit ROS2</li>\n</ul>\n"
        
      } ,
    
@@ -721,6 +721,18 @@
    
      {
        
+          "title"    : "Projekt: User Interface",
+          "category" : "Projekt",
+          "tags"     : " eurobot",
+          "url"      : "/projekt/ui.html",
+          "date"     : "November 17, 2020",
+          "excerpt"  : "Die Interaktion mit dem Roboter erfolgt in erster Linie über unseren Touchscreen.",
+          "content"  : "<h2 id=\"zusammenfassung\">Zusammenfassung</h2>\n\n<p>Teil der Regeln im Eurobot ist, dass der Roboter in kurzer Zeit auf ein Spiel vorbereitet werden muss. Dazu ist es sehr hilfreich, wenn der Roboter direkt bedient werden kann und auch Fehlernachrichten direkt angezeigt werden können, ohne erst eine (Funk-) Verbindung mit einem Laptop herstellen zu müssen. In den vergangenen Jahren haben wir zu diesem Zweck einen Touchscreen eingesetzt, der zentral am Roboter angebracht war.</p>\n\n<p>Die Software für unseren Touchscreen muss jedes Jahr an den Roboter angepasst werden, da nicht nur das Spielfeld und damit die Auswahl an Strategien, sondern auch der Roboter selbst anders aussehen.</p>\n\n<h2 id=\"tätigkeitsfelder-und-technologien\">Tätigkeitsfelder und Technologien</h2>\n<ul>\n  <li>Softwareentwicklung in Python oder C++ mit Qt</li>\n  <li>Programmierung eines STM32 Microcontroller</li>\n  <li>UI/UX Entwicklung</li>\n</ul>\n"
+       
+     } ,
+   
+     {
+       
           "title"    : "Projekt: Vision-2-Win",
           "category" : "Projekt",
           "tags"     : " software",
@@ -775,7 +787,7 @@
           "url"      : "/projekt/modm-hwut.html",
           "date"     : "November 17, 2020",
           "excerpt"  : "Automatisches Ausführen von Unit- und Integrationstests auf Arm Cortex-M Mikrocontrollern.",
-          "content"  : "<h2 id=\"zusammenfassung\">Zusammenfassung</h2>\n\n<p>modm [1] enthält eine große Anzahl an Unittests [2], die auch in unserem CI automatisch auf x86 ausgeführt werden.\nDiese Unittests können auch direkt auf dem Mikrocontroller ausgeführt werden, allerdings nur manuell und mit diversen Einschränkungen [3].\nDieser Prozess soll automatisiert werden, und die Ergebnisse als Teil des modm CIs für alle öffentlichen Pull Requests auf GitHub zur Verfügung gestellt werden.\nDazu stellen wir eine große Anzahl an diversen STM32 Discovery und Nucleo Development Boards.</p>\n\n<p>Da die modm Unittests recht begrenzt sind in ihrer Funktionalität, wäre es evtl. sinnvoll ein vollständigeres Unittest Framework wie Metal.Test zu nutzen [4].\nTracing und Performance könnte zusätzlich mit der Arm Cortex-M Debughardware erfasst werden [5].</p>\n\n<p>Zusätzlich zu in sich geschlossenen Unittests sollen auch Hardware Integrationstests erforscht werden.\nDazu gibt es Überlegungen, während eines Testes die Input/Output Werte des Mikrocontrollers mit Hilfe vom SigRok [6] zu erfassen und gegen diverse Eigenschaften und Testcases zu überprüfen.\nHier sollen verschiedene komplexe Tests gefahren und ausgewertet werden können [7], evtl. mit FPGA als IO-Multiplexer und Logikanalyzer.</p>\n\n<h2 id=\"tätigkeitsfelder-und-technologien\">Tätigkeitsfelder und Technologien</h2>\n\n<ul>\n  <li>Testing mit Hardware-in-Loop</li>\n  <li>Anzeige als GitHub Continuous Integration Service</li>\n  <li>Debugging mit GDB auf Arm Cortex-M</li>\n  <li>Arm Cortex-M Debug-Hardware</li>\n  <li>Erstellen von Logikwaveformtests</li>\n  <li>Automatisierte Auswertung von Logikprotokollanalysen</li>\n  <li>PCB Design mit FPGAs</li>\n</ul>\n"
+          "content"  : "<h2 id=\"zusammenfassung\">Zusammenfassung</h2>\n\n<p>modm [1] enthält eine große Anzahl an Unittests [2], die auch in unserem CI automatisch auf x86 ausgeführt werden.\nDiese Unittests können auch direkt auf dem Mikrocontroller ausgeführt werden, allerdings nur manuell und mit diversen Einschränkungen [3].\nDieser Prozess soll automatisiert werden, und die Ergebnisse als Teil des modm CIs für alle öffentlichen Pull Requests auf GitHub zur Verfügung gestellt werden.\nDazu stellen wir eine große Anzahl an diversen STM32 Discovery und Nucleo Development Boards.</p>\n\n<p>Da die modm Unittests recht begrenzt sind in ihrer Funktionalität, wäre es evtl. sinnvoll ein vollständigeres Unittest Framework wie Metal.Test zu nutzen [4].\nTracing und Performance könnte zusätzlich mit der Arm Cortex-M Debughardware erfasst werden [5].</p>\n\n<p>Zusätzlich zu in sich geschlossenen Unittests sollen auch Hardware Integrationstests erforscht werden.\nDazu gibt es Überlegungen, während eines Testes die Input/Output Werte des Mikrocontrollers mit Hilfe vom SigRok [6] zu erfassen und gegen diverse Eigenschaften und Testcases zu überprüfen.\nHier sollen verschiedene komplexe Tests gefahren und ausgewertet werden können [7], evtl. mit FPGA als IO-Multiplexer und Logikanalyzer.</p>\n\n<h2 id=\"tätigkeitsfelder-und-technologien\">Tätigkeitsfelder und Technologien</h2>\n\n<ul>\n  <li>Testing mit Hardware-in-Loop</li>\n  <li>Anzeige als GitHub Continuous Integration Service</li>\n  <li>Debugging mit GDB auf Arm Cortex-M und RISC-V</li>\n  <li>Arm Cortex-M und RISC-V Debug-Hardware</li>\n  <li>Erstellen von Logikwaveformtests</li>\n  <li>Automatisierte Auswertung von Logikprotokollanalysen</li>\n  <li>PCB Design</li>\n  <li>Kommerzialisierung?</li>\n</ul>\n"
        
      } ,
    

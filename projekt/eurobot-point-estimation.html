@@ -17,7 +17,7 @@
     <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/img/rca.svg">
 
     <!-- Canonical -->
-    <link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/Roboter-State.html">
+    <link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/eurobot-point-estimation.html">
 
     <!-- RSS -->
     <link rel="alternate" type="application/atom+xml" title="Roboterclub Aachen" href="http://www.roboterclub.rwth-aachen.de///feed.xml"/>
@@ -41,27 +41,27 @@
     
     <!-- seo tags -->
     <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Robot-State | Roboterclub Aachen</title>
+<title>Eurobot Score Estimation | Roboterclub Aachen</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Robot-State" />
+<meta property="og:title" content="Eurobot Score Estimation" />
 <meta property="og:locale" content="de_DE" />
-<meta name="description" content="Zusammenfassung" />
-<meta property="og:description" content="Zusammenfassung" />
-<link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/Roboter-State.html" />
-<meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/Roboter-State.html" />
+<meta name="description" content="Summary" />
+<meta property="og:description" content="Summary" />
+<link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/eurobot-point-estimation.html" />
+<meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/eurobot-point-estimation.html" />
 <meta property="og:site_name" content="Roboterclub Aachen" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-11-17T01:31:40+00:00" />
+<meta property="article:published_time" content="2020-11-17T01:53:48+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Robot-State" />
+<meta property="twitter:title" content="Eurobot Score Estimation" />
 <script type="application/ld+json">
-{"description":"Zusammenfassung","url":"http://www.roboterclub.rwth-aachen.de/projekt/Roboter-State.html","@type":"BlogPosting","headline":"Robot-State","dateModified":"2020-11-17T01:31:40+00:00","datePublished":"2020-11-17T01:31:40+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/Roboter-State.html"},"@context":"https://schema.org"}</script>
+{"description":"Summary","url":"http://www.roboterclub.rwth-aachen.de/projekt/eurobot-point-estimation.html","@type":"BlogPosting","headline":"Eurobot Score Estimation","dateModified":"2020-11-17T01:53:48+00:00","datePublished":"2020-11-17T01:53:48+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/eurobot-point-estimation.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
     <!--
-    <title>Robot-State | Roboterclub Aachen</title>
-    <meta name="description" content="Zusammenfassung">
+    <title>Eurobot Score Estimation | Roboterclub Aachen</title>
+    <meta name="description" content="Summary">
     -->
 </head>
 
@@ -157,35 +157,30 @@
 </header>
 
     <div class="content">
-      <article >
-  <header id="main" style="background-image: url('/');background-position: center;">
-    <h1 id="Robot-State" class="title">Robot-State</h1>
+      <article class="feature-image">
+  <header id="main" style="background-image: url('/assets/img/projektbeschreibungen/eurobot-gewinnen.jpg');background-position: center;">
+    <h1 id="Eurobot+Score+Estimation" class="title">Eurobot Score Estimation</h1>
   </header>
   <section class="post-content post-content-text">
   <hr>
-<p>Entwicklung von Softwarekomponenten zur geregelten Ausführung von Bewegungen und Spielfeldinteraktionen.</p>
+<p>Estimate the total scored point during a Eurobot match</p>
 
   <hr>
-<h2 id="zusammenfassung">Zusammenfassung</h2>
+<h2 id="summary">Summary</h2>
 
-<p>Damit unsere Roboter mit den Elementen auf dem Spielfeld interagieren kann, sind Software-Routinen nötig, die verschiedene
-Bewegungen ausführen und regeln können. Daher soll es Software-Komponenten geben, die solche Routinen enthalten und
-von anderen Komponenten über eine definierte Schnittstelle mit Bewegungsaufgaben beauftragt werden können. Dabei kann es
-sich um Greifbewegung, das Ablegen eines Spielelementes oder umschubsen einer Fahne handeln. Je nach Bewegungsart sind dazu unterschiedliche
-geometrische Berechnungen, Regelungskonzepte und Sicherheitsfunktionen nötig.</p>
+<p>The rules of the Eurobot contest define an opportunity to score up to 20% additional points after the match:
+The robot has to estimate the number of points picked up during the game time.</p>
 
-<h3 id="geplante-features">Geplante Features:</h3>
+<p>In the first step the actions completed by other components must be evaluated and the points aggregated.
+In the next step, probabilities of possible failures can also be included and/or even the images from different cameras can be used for additional analysis.
+In this way, points “stolen” by the opposing robot can be detected.</p>
+
+<h2 id="technologies">Technologies</h2>
 <ul>
-  <li>Einheitliches Interface für verschiedene Bewegungsmanöver und Rückmeldung über Status und Fehler</li>
-  <li>Einfaches Interface zum Verfahren von Bewegungsabläufen (Sequenzen von Bewegungsmanövern)</li>
-  <li>Modulare Software (DRY – Don’t Repeat Yourself), Dokumentation der Konzepte und Schnittstellen</li>
-</ul>
-
-<h2 id="tätigkeitsfelder-und-technologien">Tätigkeitsfelder und Technologien</h2>
-<ul>
-  <li>Entwurf eines Software-Interfaces (in Abstimmung mit Entwicklern anderer Komponenten)</li>
-  <li>Entwicklung von Geometrieberechnungen und Positionsreglern</li>
-  <li>Softwareentwicklung in C++ oder Python mit ROS2</li>
+  <li>ROS2 (Robot Operation System 2)</li>
+  <li>Software development in C++ or Python</li>
+  <li>Optional: OpenCV</li>
+  <li>Optional: “Big Data” analysis of past matches</li>
 </ul>
 
 
@@ -202,14 +197,14 @@ geometrische Berechnungen, Regelungskonzepte und Sicherheitsfunktionen nötig.</
         <div class="meta">Teilen</div>
          
         <li>
-            <a href="https://twitter.com/intent/tweet?source=http://www.roboterclub.rwth-aachen.de/projekt/Roboter-State.html&text=Robot-State%20%7C%20Roboterclub Aachen:%20http://www.roboterclub.rwth-aachen.de/projekt/Roboter-State.html" target="_blank" title="Twittern">
+            <a href="https://twitter.com/intent/tweet?source=http://www.roboterclub.rwth-aachen.de/projekt/eurobot-point-estimation.html&text=Eurobot Score Estimation%20%7C%20Roboterclub Aachen:%20http://www.roboterclub.rwth-aachen.de/projekt/eurobot-point-estimation.html" target="_blank" title="Twittern">
 			<i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Twittern</span>
 		</a>
         </li>
                 
         <li>
-            <a href="mailto:?subject=Robot-State%20%7C%20Roboterclub Aachen&body=:%20http://www.roboterclub.rwth-aachen.de/projekt/Roboter-State.html" target="_blank" title="Email">
+            <a href="mailto:?subject=Eurobot Score Estimation%20%7C%20Roboterclub Aachen&body=:%20http://www.roboterclub.rwth-aachen.de/projekt/eurobot-point-estimation.html" target="_blank" title="Email">
 			<i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Email</span>
 		</a>

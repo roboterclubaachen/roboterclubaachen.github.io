@@ -17,7 +17,7 @@
     <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/img/rca.svg">
 
     <!-- Canonical -->
-    <link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/modm-dma.html">
+    <link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/robot-state.html">
 
     <!-- RSS -->
     <link rel="alternate" type="application/atom+xml" title="Roboterclub Aachen" href="http://www.roboterclub.rwth-aachen.de///feed.xml"/>
@@ -41,26 +41,26 @@
     
     <!-- seo tags -->
     <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>modm: Konzept und Umsetzung einer DMA Schnittstelle | Roboterclub Aachen</title>
+<title>Robot State Estimation | Roboterclub Aachen</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="modm: Konzept und Umsetzung einer DMA Schnittstelle" />
+<meta property="og:title" content="Robot State Estimation" />
 <meta property="og:locale" content="de_DE" />
 <meta name="description" content="Zusammenfassung" />
 <meta property="og:description" content="Zusammenfassung" />
-<link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/modm-dma.html" />
-<meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/modm-dma.html" />
+<link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/robot-state.html" />
+<meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/robot-state.html" />
 <meta property="og:site_name" content="Roboterclub Aachen" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-11-17T01:53:48+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="modm: Konzept und Umsetzung einer DMA Schnittstelle" />
+<meta property="twitter:title" content="Robot State Estimation" />
 <script type="application/ld+json">
-{"description":"Zusammenfassung","url":"http://www.roboterclub.rwth-aachen.de/projekt/modm-dma.html","@type":"BlogPosting","headline":"modm: Konzept und Umsetzung einer DMA Schnittstelle","dateModified":"2020-11-17T01:53:48+00:00","datePublished":"2020-11-17T01:53:48+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/modm-dma.html"},"@context":"https://schema.org"}</script>
+{"description":"Zusammenfassung","url":"http://www.roboterclub.rwth-aachen.de/projekt/robot-state.html","@type":"BlogPosting","headline":"Robot State Estimation","dateModified":"2020-11-17T01:53:48+00:00","datePublished":"2020-11-17T01:53:48+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/robot-state.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
     <!--
-    <title>modm: Konzept und Umsetzung einer DMA Schnittstelle | Roboterclub Aachen</title>
+    <title>Robot State Estimation | Roboterclub Aachen</title>
     <meta name="description" content="Zusammenfassung">
     -->
 </head>
@@ -158,52 +158,30 @@
 
     <div class="content">
       <article class="feature-image">
-  <header id="main" style="background-image: url('/assets/img/projektbeschreibungen/memory-sodimm.jpg');background-position: center;">
-    <h1 id="modm%3A+Konzept+und+Umsetzung+einer+DMA+Schnittstelle" class="title">modm: Konzept und Umsetzung einer DMA Schnittstelle</h1>
+  <header id="main" style="background-image: url('/assets/img/projektbeschreibungen/simulator.png');background-position: center;">
+    <h1 id="Robot+State+Estimation" class="title">Robot State Estimation</h1>
   </header>
   <section class="post-content post-content-text">
   <hr>
-<p>Erstellen eines Modells flexiblen und einfachen Nutzung von DMA (Direct Memory Access) in User-Code und anderen modm-Modulen.</p>
+<p>Entwicklung eines Modells des Zustands des Roboters</p>
 
   <hr>
 <h2 id="zusammenfassung">Zusammenfassung</h2>
 
-<p>Die meisten Mikrocontroller haben eine DMA-Einheit, welche unabhängig von der CPU auf Speicher zugreifen kann und Daten kopieren kann.
-Durch die Nutzung von DMA kann beispielsweise Peripherie wie SPI mit Daten zum senden versorgt und die empfangenen Daten gespeichert werden ohne dass die CPU hierbei belastet wird,
-wovon in modm [2] bisher kein Nutzen gemacht wird.</p>
-
-<p>Einige sehr zeitkritische Anwendungen können ohne DMA gar nicht implementiert werden,
-beispielsweise eine Ansteuerung von WS2812-LEDs mit Bitmustern aus SPI.</p>
-
-<p>Im Rahmen dieses Projekts soll ein API für Abstraktion von DMA-Einheiten entwickelt werden welches sowohl flexibel im Bezug auf mögliche DMA-Einheiten ist,
-als auch universell in modm-Modulen wie Gerätetreibern und im User-Code einsetzbar ist.
-Die Abstraktion sollte mindestens für STM32 Mikrocontroller implementiert werden,
-weitere Implementierungen könnten später erfolgen.</p>
-
-<p>Anschließend können die vorhandene Treiber für STM32-Peripherie (SPI, UART, …) für DMA erweitert oder angepasst werden.</p>
-
-<p>Aus dem Vorgängerprojekt vom modm, xpcc, existiert eine DMA-API [1], die sich allerdings als suboptimal herausgestellt hat.</p>
+<p>Der Zustand eines Roboters wird durch viele verschiedene Eigenschaften definiert, wie beispielsweise die Position der Roboters auf dem Spielfeld, die Stellung der Aktoren, Füllstand von z.B. Tanks.
+Ziel dieses Projektes ist es ein Modell zu implementieren welches den Roboterzustand darstellt, sodass andere Komponenten wie Spielstrategie oder Aktorik-Module dies als Grundlage für Entscheidungen und Aktionen verwenden können.
+Andere Komponenten veröffentlichen Nachrichten mit ihren Aktionen oder Zuständen, welche in dieser Komponente ausgewertet und aggregiert werden sollen.</p>
 
 <h2 id="tätigkeitsfelder-und-technologien">Tätigkeitsfelder und Technologien</h2>
 <ul>
-  <li>C++17</li>
-  <li>STM32 Speicherarchitektur, sowie weitere mögliche weitere Architekturen</li>
-  <li>STM32 Peripherie: DMA, Timer, SPI, UART, …</li>
-  <li>Low-level Programming in modm.io</li>
+  <li>ROS2 (Robot Operation System 2)</li>
+  <li>Softwareentwicklung in C++ oder Python</li>
 </ul>
 
 
 
 <h2>Referenzen und Links</h2>
 <ul>
-
-
-
-<li>[1] https://xpcc.io/api/classxpcc_1_1stm32_1_1_dma_base.html</li>
-
-
-
-<li>[2] https://modm.io</li>
 
 </ul>
   </section>
@@ -214,14 +192,14 @@ weitere Implementierungen könnten später erfolgen.</p>
         <div class="meta">Teilen</div>
          
         <li>
-            <a href="https://twitter.com/intent/tweet?source=http://www.roboterclub.rwth-aachen.de/projekt/modm-dma.html&text=modm: Konzept und Umsetzung einer DMA Schnittstelle%20%7C%20Roboterclub Aachen:%20http://www.roboterclub.rwth-aachen.de/projekt/modm-dma.html" target="_blank" title="Twittern">
+            <a href="https://twitter.com/intent/tweet?source=http://www.roboterclub.rwth-aachen.de/projekt/robot-state.html&text=Robot State Estimation%20%7C%20Roboterclub Aachen:%20http://www.roboterclub.rwth-aachen.de/projekt/robot-state.html" target="_blank" title="Twittern">
 			<i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Twittern</span>
 		</a>
         </li>
                 
         <li>
-            <a href="mailto:?subject=modm: Konzept und Umsetzung einer DMA Schnittstelle%20%7C%20Roboterclub Aachen&body=:%20http://www.roboterclub.rwth-aachen.de/projekt/modm-dma.html" target="_blank" title="Email">
+            <a href="mailto:?subject=Robot State Estimation%20%7C%20Roboterclub Aachen&body=:%20http://www.roboterclub.rwth-aachen.de/projekt/robot-state.html" target="_blank" title="Email">
 			<i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Email</span>
 		</a>

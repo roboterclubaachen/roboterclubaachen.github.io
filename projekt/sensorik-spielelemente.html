@@ -17,7 +17,7 @@
     <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/img/rca.svg">
 
     <!-- Canonical -->
-    <link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/Sensorik-Spielelemente.html">
+    <link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/sensorik-spielelemente.html">
 
     <!-- RSS -->
     <link rel="alternate" type="application/atom+xml" title="Roboterclub Aachen" href="http://www.roboterclub.rwth-aachen.de///feed.xml"/>
@@ -41,26 +41,26 @@
     
     <!-- seo tags -->
     <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Sensorik- Spielelemente | Roboterclub Aachen</title>
+<title>Sensorik für Spielelemente | Roboterclub Aachen</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Sensorik- Spielelemente" />
+<meta property="og:title" content="Sensorik für Spielelemente" />
 <meta property="og:locale" content="de_DE" />
 <meta name="description" content="Zusammenfassung" />
 <meta property="og:description" content="Zusammenfassung" />
-<link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/Sensorik-Spielelemente.html" />
-<meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/Sensorik-Spielelemente.html" />
+<link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/sensorik-spielelemente.html" />
+<meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/sensorik-spielelemente.html" />
 <meta property="og:site_name" content="Roboterclub Aachen" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-11-17T01:31:40+00:00" />
+<meta property="article:published_time" content="2020-11-17T01:53:48+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Sensorik- Spielelemente" />
+<meta property="twitter:title" content="Sensorik für Spielelemente" />
 <script type="application/ld+json">
-{"description":"Zusammenfassung","url":"http://www.roboterclub.rwth-aachen.de/projekt/Sensorik-Spielelemente.html","@type":"BlogPosting","headline":"Sensorik- Spielelemente","dateModified":"2020-11-17T01:31:40+00:00","datePublished":"2020-11-17T01:31:40+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/Sensorik-Spielelemente.html"},"@context":"https://schema.org"}</script>
+{"description":"Zusammenfassung","url":"http://www.roboterclub.rwth-aachen.de/projekt/sensorik-spielelemente.html","@type":"BlogPosting","headline":"Sensorik für Spielelemente","dateModified":"2020-11-17T01:53:48+00:00","datePublished":"2020-11-17T01:53:48+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/sensorik-spielelemente.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
     <!--
-    <title>Sensorik- Spielelemente | Roboterclub Aachen</title>
+    <title>Sensorik für Spielelemente | Roboterclub Aachen</title>
     <meta name="description" content="Zusammenfassung">
     -->
 </head>
@@ -157,24 +157,35 @@
 </header>
 
     <div class="content">
-      <article >
-  <header id="main" style="background-image: url('/');background-position: center;">
-    <h1 id="Sensorik-+Spielelemente" class="title">Sensorik- Spielelemente</h1>
+      <article class="feature-image">
+  <header id="main" style="background-image: url('/assets/img/projektbeschreibungen/gewichtsmessung-spielelemente.jpg');background-position: center;">
+    <h1 id="Sensorik+f%C3%BCr+Spielelemente" class="title">Sensorik für Spielelemente</h1>
   </header>
   <section class="post-content post-content-text">
   <hr>
-<p>Entwicklung von Softwarekomponenten zur geregelten Erkennung von Spielfeldkomponenten.</p>
+<p>Entwicklung von Softwarekomponenten zur Erkennung von Spielelementen.</p>
 
   <hr>
 <h2 id="zusammenfassung">Zusammenfassung</h2>
 
-<p>Bei jedem Eurobotwettberwerb sind auf dem Spielfeld  verschiedene Komponenten wie Becher, Pucks, Fahnen etc. verteilt. Um Punkte zu holen müssen manche dieser Objekte eingesammelt und an einer anderen Position wider abgesetzt werden. Mit anderen Komponenten hingegen muss interagiert werden wie z.B. eine Fahne umzuschubsen. Die Aufgabe besteht daher darin, eine Softwarekomponente zu schreiben, welche die einzelnen Objekte erkennt und die ihnen zugehörige Operation einleitet.</p>
+<p>Bei jedem Eurobotwettbewerb sind auf dem Spielfeld verschiedene Komponenten wie Becher, Pucks, Fahnen etc. verteilt.
+Um Punkte zu holen müssen manche dieser Objekte eingesammelt und an einer anderen Position wider abgesetzt werden.
+Mit anderen Komponenten hingegen muss interagiert werden wie z.B. eine Fahne um zu schubsen.
+Die Aufgabe besteht daher darin, eine Softwarekomponente zu schreiben, welche die einzelnen Objekte erkennt.</p>
+
+<p>Zur Verfügung stehen unter anderem:</p>
+<ul>
+  <li>Kamerabild eine auf der <em>Central Tracking Platform</em> zu installierenden Kamera (z.B. Raspberry Pi Camera)</li>
+  <li>Bilder mehrerer kleiner USB-Kameras am Roboter</li>
+  <li>Verschiedene Sensoren wie Taster, Distanzsensor oder Farbsensor an den einzelnen Aktuatoren</li>
+  <li>Feedback von den Aktuatoren (Position, Motorstrom, Kraft, …)</li>
+</ul>
 
 <h2 id="tätigkeitsfelder-und-technologien">Tätigkeitsfelder und Technologien</h2>
 <ul>
-  <li>Bilderkennung und Verarbeitung mit opencv</li>
+  <li>Bilderkennung und Verarbeitung mit OpenCV</li>
   <li>Softwareentwicklung in C++ oder Python</li>
-  <li>Softwarekommunikation mit ROS2</li>
+  <li>ROS2 (Robot Operation System 2)</li>
 </ul>
 
 
@@ -191,14 +202,14 @@
         <div class="meta">Teilen</div>
          
         <li>
-            <a href="https://twitter.com/intent/tweet?source=http://www.roboterclub.rwth-aachen.de/projekt/Sensorik-Spielelemente.html&text=Sensorik- Spielelemente%20%7C%20Roboterclub Aachen:%20http://www.roboterclub.rwth-aachen.de/projekt/Sensorik-Spielelemente.html" target="_blank" title="Twittern">
+            <a href="https://twitter.com/intent/tweet?source=http://www.roboterclub.rwth-aachen.de/projekt/sensorik-spielelemente.html&text=Sensorik für Spielelemente%20%7C%20Roboterclub Aachen:%20http://www.roboterclub.rwth-aachen.de/projekt/sensorik-spielelemente.html" target="_blank" title="Twittern">
 			<i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Twittern</span>
 		</a>
         </li>
                 
         <li>
-            <a href="mailto:?subject=Sensorik- Spielelemente%20%7C%20Roboterclub Aachen&body=:%20http://www.roboterclub.rwth-aachen.de/projekt/Sensorik-Spielelemente.html" target="_blank" title="Email">
+            <a href="mailto:?subject=Sensorik für Spielelemente%20%7C%20Roboterclub Aachen&body=:%20http://www.roboterclub.rwth-aachen.de/projekt/sensorik-spielelemente.html" target="_blank" title="Email">
 			<i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Email</span>
 		</a>

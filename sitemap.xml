@@ -134,18 +134,6 @@
 
   <url>
 	<!-- project -->
-    <loc>http://www.roboterclub.rwth-aachen.de/projekt/Roboter-State.html</loc>
-    <changefreq>monthly</changefreq>
-  </url>
-
-  <url>
-	<!-- project -->
-    <loc>http://www.roboterclub.rwth-aachen.de/projekt/Sensorik-Spielelemente.html</loc>
-    <changefreq>monthly</changefreq>
-  </url>
-
-  <url>
-	<!-- project -->
     <loc>http://www.roboterclub.rwth-aachen.de/projekt/aktorik.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -242,6 +230,12 @@
 
   <url>
 	<!-- project -->
+    <loc>http://www.roboterclub.rwth-aachen.de/projekt/eurobot-point-estimation.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
     <loc>http://www.roboterclub.rwth-aachen.de/projekt/eurobot-spielzeit-uhr.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -297,12 +291,6 @@
   <url>
 	<!-- project -->
     <loc>http://www.roboterclub.rwth-aachen.de/projekt/liteplacer.html</loc>
-    <changefreq>monthly</changefreq>
-  </url>
-
-  <url>
-	<!-- project -->
-    <loc>http://www.roboterclub.rwth-aachen.de/projekt/locatisation-camera-imu-us.html</loc>
     <changefreq>monthly</changefreq>
   </url>
 
@@ -380,6 +368,12 @@
 
   <url>
 	<!-- project -->
+    <loc>http://www.roboterclub.rwth-aachen.de/projekt/robot-state.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
     <loc>http://www.roboterclub.rwth-aachen.de/projekt/roboter-caddy.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -410,6 +404,12 @@
 
   <url>
 	<!-- project -->
+    <loc>http://www.roboterclub.rwth-aachen.de/projekt/sensorik-spielelemente.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
     <loc>http://www.roboterclub.rwth-aachen.de/projekt/silikon-raeder.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -423,6 +423,12 @@
   <url>
 	<!-- project -->
     <loc>http://www.roboterclub.rwth-aachen.de/projekt/spielfeld.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://www.roboterclub.rwth-aachen.de/projekt/ui.html</loc>
     <changefreq>monthly</changefreq>
   </url>
 
