@@ -361,6 +361,18 @@
    
      {
        
+          "title"    : "Projekt: Eurobot Spielstrategie",
+          "category" : "Projekt",
+          "tags"     : " software",
+          "url"      : "/projekt/eurobot-strategy.html",
+          "date"     : "November 17, 2020",
+          "excerpt"  : "Entwicklung und Implementierung einer Strategie-Komponente für den Eurobot-Wettbewerb",
+          "content"  : "<h2 id=\"zusammenfassung\">Zusammenfassung</h2>\n\n<p>Während eines Eurobot-Spiels müssen die Roboter verschiedene Aufgaben erledigen mit dem Ziel maximal viele Punkte zu erlangen.\nIm Rahmen diese Projekts sollen mehrere Komponenten entwickelt und implementiert werden, welche sowohl auf Level eines einzelnen Roboters, als auch global die Entscheidungen herbeiführen zu welchem Zeitpunkt welche Aufgaben von den Robotern erledigt werden sollen.\nHierbei müssen neben statischen Kriterien (beispielsweise: Punkteanzahl und Erfolgschance) auch sich dynamisch ändernde Kriterien beachtet werden, wenn eine Aktion etwa durch den gegnerischen Roboter mechanisch blockiert ist.</p>\n\n<p>Beide Roboter des eigenen Teams könnten sich gegenseitig blockieren und einige Aufgaben können nur kooperativ erledigt werden, sodass eine Koordination zwingend erforderlich ist.\nAußerdem beeinflussen Aktionen der gegnerischen Roboter den Spielverlauf, sodass hieraus auch reagiert muss kann um die spielentscheidenden Punkte zu erlangen.</p>\n\n<p>Weiterführend können Optimierungen z.B. durch verschiedene manuell vor Spielbeginn selektierbare Strategie-Optionen oder automatische Analyse vergangener Eurobot-Spiele (AI) ergänzt werden.</p>\n\n<h2 id=\"tätigkeitsfelder-und-technologien\">Tätigkeitsfelder und Technologien</h2>\n<ul>\n  <li>Modulare Software (DRY – Don’t Repeat Yourself), Dokumentation der Konzepte und Schnittstellen</li>\n  <li>Softwareentwicklung in C++ oder Python</li>\n  <li>ROS2 (Robot Operation System 2)</li>\n</ul>\n"
+       
+     } ,
+   
+     {
+       
           "title"    : "Projekt: Eurobot Wettbewerb gewinnen",
           "category" : "Projekt",
           "tags"     : " eurobot",
@@ -739,7 +751,7 @@
           "url"      : "/projekt/camera-vision.html",
           "date"     : "November 17, 2020",
           "excerpt"  : "Das Vision System erkennt Spielelemente und ihre Position mithilfe von Kameras am Spielfeldrand und Roboter.",
-          "content"  : "<h2 id=\"zusammenfassung\">Zusammenfassung</h2>\n\n<p>Mithilfe von Kameras an den stationären Barken um das Spielfeld sowie auf dem Roboter wollen wir in Zukunft Spielelemente und eigene und gegnerische Roboterposition erkennen.</p>\n\n<p>Eine Standard Library zur Bildverarbeitung, die wir dazu nutzen, ist OpenCV [1].\nZum Tracking der Roboterposition eigenen sich z.B. diverse Fiducial Marker Systeme [3,4,5].\nDiese können wir durch LED Marker etc. weiterentwickeln.</p>\n\n<p>Spielelemente können wir mithilfe diverser Matching und Detection Verfahren in OpenCV erkennen, oder sogar trainierte Object Detection Classifier [6] verwenden.\nEine weitere Möglichkeit der Positionserkennung von Spielelementen können in Zukunft Kameras unseres Sponsors Cognex sein, die auf dem Roboter montiert werden [7].</p>\n\n<h2 id=\"arbeitspakete-für-die-saison-2020\">Arbeitspakete für die Saison 2020</h2>\n\n<ol>\n  <li>Aufbau eines Kamerasystems und Hardware Plattform (z.B. Cognex Kameras, GigE Kameras, Intel NUC oder NVIDIA Jetson)</li>\n  <li>Kontinuierliche Erkennung der Roboterposition mithilfe von Markern</li>\n  <li>Erkennen von Spielelementen entsprechend neuem Regelwerk für 2020</li>\n  <li>Visualisierung der erkannten Spielelemente in RVIZ [8] oder GAZEBO [2]</li>\n</ol>\n"
+          "content"  : "<h2 id=\"zusammenfassung\">Zusammenfassung</h2>\n\n<p>Mithilfe von Kameras an den stationären Barken um das Spielfeld sowie auf dem Roboter wollen wir in Zukunft Spielelemente und eigene und gegnerische Roboterposition erkennen.</p>\n\n<p>Eine Standard Library zur Bildverarbeitung, die wir dazu nutzen, ist OpenCV [1].\nZum Tracking der Roboterposition eigenen sich z.B. diverse Fiducial Marker Systeme [3,4,5].\nDiese können wir durch LED Marker etc. weiterentwickeln.</p>\n\n<p>Spielelemente können wir mithilfe diverser Matching und Detection Verfahren in OpenCV erkennen, oder sogar trainierte Object Detection Classifier [6] verwenden.\nEine weitere Möglichkeit der Positionserkennung von Spielelementen können in Zukunft Kameras unseres Sponsors Cognex sein, die auf dem Roboter montiert werden [7].</p>\n\n<h2 id=\"arbeitspakete-für-die-saison-2021\">Arbeitspakete für die Saison 2021</h2>\n\n<ol>\n  <li>Aufbau eines Kamerasystems und Hardware Plattform (z.B. Raspberry Pi &amp; Pi-Camera, USB/GigE Kameras, Intel NUC oder NVIDIA Jetson)</li>\n  <li>Kontinuierliche Erkennung der Roboterposition mithilfe von Markern</li>\n  <li>Erkennen von Spielelementen entsprechend neuem Regelwerk für 2020</li>\n  <li>Visualisierung der erkannten Spielelemente in RVIZ [8] oder GAZEBO [2]</li>\n</ol>\n"
        
      } ,
    

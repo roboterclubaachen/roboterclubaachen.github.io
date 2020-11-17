@@ -17,7 +17,7 @@
     <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/img/rca.svg">
 
     <!-- Canonical -->
-    <link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/continous-integration.html">
+    <link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/eurobot-strategy.html">
 
     <!-- RSS -->
     <link rel="alternate" type="application/atom+xml" title="Roboterclub Aachen" href="http://www.roboterclub.rwth-aachen.de///feed.xml"/>
@@ -41,26 +41,26 @@
     
     <!-- seo tags -->
     <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>CI für unsere eingebettete Software | Roboterclub Aachen</title>
+<title>Eurobot Spielstrategie | Roboterclub Aachen</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="CI für unsere eingebettete Software" />
+<meta property="og:title" content="Eurobot Spielstrategie" />
 <meta property="og:locale" content="de_DE" />
 <meta name="description" content="Zusammenfassung" />
 <meta property="og:description" content="Zusammenfassung" />
-<link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/continous-integration.html" />
-<meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/continous-integration.html" />
+<link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/eurobot-strategy.html" />
+<meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/eurobot-strategy.html" />
 <meta property="og:site_name" content="Roboterclub Aachen" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-11-17T02:34:54+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="CI für unsere eingebettete Software" />
+<meta property="twitter:title" content="Eurobot Spielstrategie" />
 <script type="application/ld+json">
-{"description":"Zusammenfassung","url":"http://www.roboterclub.rwth-aachen.de/projekt/continous-integration.html","@type":"BlogPosting","headline":"CI für unsere eingebettete Software","dateModified":"2020-11-17T02:34:54+00:00","datePublished":"2020-11-17T02:34:54+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/continous-integration.html"},"@context":"https://schema.org"}</script>
+{"description":"Zusammenfassung","url":"http://www.roboterclub.rwth-aachen.de/projekt/eurobot-strategy.html","@type":"BlogPosting","headline":"Eurobot Spielstrategie","dateModified":"2020-11-17T02:34:54+00:00","datePublished":"2020-11-17T02:34:54+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/eurobot-strategy.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
     <!--
-    <title>CI für unsere eingebettete Software | Roboterclub Aachen</title>
+    <title>Eurobot Spielstrategie | Roboterclub Aachen</title>
     <meta name="description" content="Zusammenfassung">
     -->
 </head>
@@ -158,43 +158,36 @@
 
     <div class="content">
       <article class="feature-image">
-  <header id="main" style="background-image: url('/assets/img/projektbeschreibungen/rca-ci.png');background-position: center;">
-    <h1 id="CI+f%C3%BCr+unsere+eingebettete+Software" class="title">CI für unsere eingebettete Software</h1>
+  <header id="main" style="background-image: url('/assets/img/projektbeschreibungen/librobots.png');background-position: center;">
+    <h1 id="Eurobot+Spielstrategie" class="title">Eurobot Spielstrategie</h1>
   </header>
   <section class="post-content post-content-text">
   <hr>
-<p>Konzipieren und Programmieren eines CI-Service in GitLab für unsere Softwareprojekte und Anzeige auf einem Dashboard.</p>
+<p>Entwicklung und Implementierung einer Strategie-Komponente für den Eurobot-Wettbewerb</p>
 
   <hr>
 <h2 id="zusammenfassung">Zusammenfassung</h2>
 
-<p>Der Roboterclub hat viele eingebettete Softwareprojekte, deren Qualitäts-Zustand wir gerne im Blick behalten möchten.
-Dazu brauchen wir einen sinnvollen und einfach zu benutzenden Continous Integration Service, der unsere Projekte in GitLab
-mindestens kompiliert und optional Unittests auswertet.
-Es sollen Docker Images gebaut werden um in GitLab Pipelines [1] verwendet zu werden.</p>
+<p>Während eines Eurobot-Spiels müssen die Roboter verschiedene Aufgaben erledigen mit dem Ziel maximal viele Punkte zu erlangen.
+Im Rahmen diese Projekts sollen mehrere Komponenten entwickelt und implementiert werden, welche sowohl auf Level eines einzelnen Roboters, als auch global die Entscheidungen herbeiführen zu welchem Zeitpunkt welche Aufgaben von den Robotern erledigt werden sollen.
+Hierbei müssen neben statischen Kriterien (beispielsweise: Punkteanzahl und Erfolgschance) auch sich dynamisch ändernde Kriterien beachtet werden, wenn eine Aktion etwa durch den gegnerischen Roboter mechanisch blockiert ist.</p>
 
-<p>Dies ist besonders wertvoll, wenn der gesamte Setup mobil sein kann, sodass wir eine kleine Version dieses CIs zu Wettkämpfen 
-mitnehmen können, bei denen es evtl. kein (oder sehr langsames) Internet gibt (*<em>hust</em>* in Frankreich *<em>hust</em>*).</p>
+<p>Beide Roboter des eigenen Teams könnten sich gegenseitig blockieren und einige Aufgaben können nur kooperativ erledigt werden, sodass eine Koordination zwingend erforderlich ist.
+Außerdem beeinflussen Aktionen der gegnerischen Roboter den Spielverlauf, sodass hieraus auch reagiert muss kann um die spielentscheidenden Punkte zu erlangen.</p>
 
-<p>Es wäre schön, zusätzlich ein kleines Dashboard zu haben, was auf einen Blick anzeigt, wie der Zustand unserer Softwareprojekte ist.
-Dieses Dashboard darf auch sehr gerne physikalisch sein (Ampel, LED Streifen oder so).</p>
+<p>Weiterführend können Optimierungen z.B. durch verschiedene manuell vor Spielbeginn selektierbare Strategie-Optionen oder automatische Analyse vergangener Eurobot-Spiele (AI) ergänzt werden.</p>
 
 <h2 id="tätigkeitsfelder-und-technologien">Tätigkeitsfelder und Technologien</h2>
-
 <ul>
-  <li>GitLab CI Pipelines</li>
-  <li>Dashboard Programmierung</li>
-  <li>Docker Images</li>
+  <li>Modulare Software (DRY – Don’t Repeat Yourself), Dokumentation der Konzepte und Schnittstellen</li>
+  <li>Softwareentwicklung in C++ oder Python</li>
+  <li>ROS2 (Robot Operation System 2)</li>
 </ul>
 
 
 
 <h2>Referenzen und Links</h2>
 <ul>
-
-
-
-<li>[1] https://docs.gitlab.com/ee/ci/pipelines.html</li>
 
 </ul>
   </section>
@@ -205,14 +198,14 @@ Dieses Dashboard darf auch sehr gerne physikalisch sein (Ampel, LED Streifen ode
         <div class="meta">Teilen</div>
          
         <li>
-            <a href="https://twitter.com/intent/tweet?source=http://www.roboterclub.rwth-aachen.de/projekt/continous-integration.html&text=CI für unsere eingebettete Software%20%7C%20Roboterclub Aachen:%20http://www.roboterclub.rwth-aachen.de/projekt/continous-integration.html" target="_blank" title="Twittern">
+            <a href="https://twitter.com/intent/tweet?source=http://www.roboterclub.rwth-aachen.de/projekt/eurobot-strategy.html&text=Eurobot Spielstrategie%20%7C%20Roboterclub Aachen:%20http://www.roboterclub.rwth-aachen.de/projekt/eurobot-strategy.html" target="_blank" title="Twittern">
 			<i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Twittern</span>
 		</a>
         </li>
                 
         <li>
-            <a href="mailto:?subject=CI für unsere eingebettete Software%20%7C%20Roboterclub Aachen&body=:%20http://www.roboterclub.rwth-aachen.de/projekt/continous-integration.html" target="_blank" title="Email">
+            <a href="mailto:?subject=Eurobot Spielstrategie%20%7C%20Roboterclub Aachen&body=:%20http://www.roboterclub.rwth-aachen.de/projekt/eurobot-strategy.html" target="_blank" title="Email">
 			<i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Email</span>
 		</a>
@@ -228,20 +221,12 @@ Dieses Dashboard darf auch sehr gerne physikalisch sein (Ampel, LED Streifen ode
 <footer>
   <div class="tag-list">
     
-      <div class="meta">Tags</div>
+      <div class="meta">Tag</div>
     
 
     
     <a class="button" href="/tags#software">
       <p><i class="fa fa-tag fa-fw"></i> software</p>
-    </a>
-    
-    <a class="button" href="/tags#webentwicklung">
-      <p><i class="fa fa-tag fa-fw"></i> webentwicklung</p>
-    </a>
-    
-    <a class="button" href="/tags#werkzeug">
-      <p><i class="fa fa-tag fa-fw"></i> werkzeug</p>
     </a>
     
   </div>
