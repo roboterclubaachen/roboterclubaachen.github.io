@@ -171,7 +171,7 @@
        
           "title"    : "Projekt: Aktorik für den Roboter",
           "category" : "Projekt",
-          "tags"     : " mechanik",
+          "tags"     : " mechanik, 3d-druck",
           "url"      : "/projekt/aktorik.html",
           "date"     : "November 17, 2020",
           "excerpt"  : "Entwicklung und Konstruktion des Aufnahme und Lagersystems des Roboters für die Saison 2021.",
@@ -411,7 +411,7 @@
        
           "title"    : "Projekt: Fahrplanung in ROS2",
           "category" : "Projekt",
-          "tags"     : " eurobot",
+          "tags"     : " software",
           "url"      : "/projekt/Fahrplanung_in_ROS2.html",
           "date"     : "November 17, 2020",
           "excerpt"  : "Da wir in den kommenden Jahren ROS2 verwenden, muss eine neue Fahrplanung geschrieben werden. Diese Fahrplanung kann z.B. auf den ROS2 Navigation Stack aufgebaut werden. ",
@@ -735,7 +735,7 @@
        
           "title"    : "Projekt: User Interface",
           "category" : "Projekt",
-          "tags"     : " eurobot",
+          "tags"     : " software",
           "url"      : "/projekt/ui.html",
           "date"     : "November 17, 2020",
           "excerpt"  : "Die Interaktion mit dem Roboter erfolgt in erster Linie über unseren Touchscreen.",
