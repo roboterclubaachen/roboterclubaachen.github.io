@@ -17,7 +17,7 @@
     <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/img/rca.svg">
 
     <!-- Canonical -->
-    <link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/fahrplattform-little.html">
+    <link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/aruco-marker.html">
 
     <!-- RSS -->
     <link rel="alternate" type="application/atom+xml" title="Roboterclub Aachen" href="http://www.roboterclub.rwth-aachen.de///feed.xml"/>
@@ -41,26 +41,26 @@
     
     <!-- seo tags -->
     <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Fahrplattform Little | Roboterclub Aachen</title>
+<title>Aruco marker | Roboterclub Aachen</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Fahrplattform Little" />
+<meta property="og:title" content="Aruco marker" />
 <meta property="og:locale" content="de_DE" />
 <meta name="description" content="Zusammenfassung" />
 <meta property="og:description" content="Zusammenfassung" />
-<link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/fahrplattform-little.html" />
-<meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/fahrplattform-little.html" />
+<link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/aruco-marker.html" />
+<meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/aruco-marker.html" />
 <meta property="og:site_name" content="Roboterclub Aachen" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-11-17T01:31:40+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Fahrplattform Little" />
+<meta property="twitter:title" content="Aruco marker" />
 <script type="application/ld+json">
-{"description":"Zusammenfassung","url":"http://www.roboterclub.rwth-aachen.de/projekt/fahrplattform-little.html","@type":"BlogPosting","headline":"Fahrplattform Little","dateModified":"2020-11-17T01:31:40+00:00","datePublished":"2020-11-17T01:31:40+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/fahrplattform-little.html"},"@context":"https://schema.org"}</script>
+{"description":"Zusammenfassung","url":"http://www.roboterclub.rwth-aachen.de/projekt/aruco-marker.html","@type":"BlogPosting","headline":"Aruco marker","dateModified":"2020-11-17T01:31:40+00:00","datePublished":"2020-11-17T01:31:40+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/aruco-marker.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
     <!--
-    <title>Fahrplattform Little | Roboterclub Aachen</title>
+    <title>Aruco marker | Roboterclub Aachen</title>
     <meta name="description" content="Zusammenfassung">
     -->
 </head>
@@ -158,53 +158,37 @@
 
     <div class="content">
       <article class="feature-image">
-  <header id="main" style="background-image: url('/assets/img/projektbeschreibungen/fahrplattform-rendering.jpg');background-position: center;">
-    <h1 id="Fahrplattform+Little" class="title">Fahrplattform Little</h1>
+  <header id="main" style="background-image: url('/assets/img/projektbeschreibungen/aruco.jpg');background-position: center;">
+    <h1 id="Aruco+marker" class="title">Aruco marker</h1>
   </header>
   <section class="post-content post-content-text">
   <hr>
-<p>Konstruktion und Fertigung der Fahrplattform des kleinen Roboters für die neue Saison (2019).</p>
+<p>Optische Aruco Tags sollen genutzt werden um unsere eigenen Roboter sowie gegnerische Roboter zu lokalisieren.</p>
 
   <hr>
 <h2 id="zusammenfassung">Zusammenfassung</h2>
 
-<p>Für unsere neuen Roboter für den Eurobot-Wettbewerb 2019 müssen Grundstruktur und Antrieb konstruiert und gefertigt
-werden. Der kleine Roboter („Little“) soll mit einem Omnidrive-Antrieb [1] ausgerüstet werden. Durch diesen kann der
-Roboter sich in alle Richtungen bewegen. Die Grundkonstruktion wird aus einer gefrästen Aluminium-Bodenplatte bestehen,
-auf der die Lagerung der drei Omniwheels, die drei Antriebsmotoren, sowie der Aufbau des Roboters montiert werden.</p>
+<p>Die Position und Orientierung der Roboter auf dem Eurobot-Spielfeld soll mittels Bilderkennung und Aruco Markern bestimmt werden.</p>
 
-<p>Im Gegensatz zu anderen Fahrplattformen sind keine Odometrieräder zur Positionsbestimmung vorgesehen. Stattdessen sollen
-Ultraschall-Baken und ggf. eine IMU [2] zur Orientierung verwendet werden.</p>
+<p>Aufgrund der Anforderungen des Eurobot-Wettbewerbs wurden die Aruco-Tags hierzu ausgewählt, die vom Schiedsrichter jedem Roboter aufgesetzt werden.
+Verschiedene Tags können durch spezielle Muster, bei denen einzelne Felder ausgefüllt, codiert werden.</p>
+
+<p>Das Central Tracking Device kann dazu genutzt werden mit einer Kamera das Spielfeld zu überwachen.
+Dieses kann auf eine erhöte Plattform am Spielfeld angebracht werden.
+Die Auswertung des Kamera-Bilds soll mittels OpenCV geschehen und die erkannten Positionen als ROS2-Topic bereit gestellt werden.</p>
 
 <h3 id="technische-daten-geplant">Technische Daten (geplant)</h3>
 <ul>
-  <li>Geschwindigkeit 2 m/s</li>
-  <li>Kraft 50 N</li>
-  <li>Leistung 100 Watt</li>
-  <li>Motoren: 3x Maxon EC-max 30, Getriebe: 1:4,8</li>
-  <li>soll über Kanten von 3 mm fahren können</li>
-  <li>Räder Ø 50 mm</li>
-  <li>Bodenplatte Dicke ca. 10 mm
-    <ul>
-      <li>Motoren darin teilweise versenkt</li>
-    </ul>
-  </li>
-  <li>Umfang (nach Regeln 2018)
-    <ul>
-      <li>Startumfang        850 mm</li>
-      <li>Dynamischer Umfang 1050 mm</li>
-    </ul>
-  </li>
-  <li>Omnidrive (3 Räder)</li>
-  <li>IMU (inertial measurement unit) / Beschleunigungs- und Lagesensor [2]</li>
+  <li>Lokalisierung von eigenem und gegnerischem Roboter</li>
+  <li>Orientierung vor allen des eigenen Roboters</li>
 </ul>
 
 <h2 id="tätigkeitsfelder-und-technologien">Tätigkeitsfelder und Technologien</h2>
 <ul>
-  <li>CAD-Konstruktion mit SolidWorks</li>
-  <li>3D-Druck zum Prototyping</li>
-  <li>Fertigung von Aluminium mit CNC-Fräse</li>
-  <li>Simulation der Fahrdynamik (z.B. mit Matlab Simulink)</li>
+  <li>Entwurf des (regelkonformen) Central Tracking Device</li>
+  <li>Software für eine Embeddedplattform oder mobile Computerplattform</li>
+  <li>Bildererkennung (OpenCV)</li>
+  <li>ROS2</li>
 </ul>
 
 
@@ -214,12 +198,7 @@ Ultraschall-Baken und ggf. eine IMU [2] zur Orientierung verwendet werden.</p>
 
 
 
-<li>[1] https://de.wikipedia.org/wiki/Omnidirektionaler_Antrieb</li>
-
-
-
-<li>[2] https://de.wikipedia.org/wiki/Inertiale_Messeinheit</li>
-
+<li>https://www.uco.es/investiga/grupos/ava/node/26</li>
 
 </ul>
   </section>
@@ -230,14 +209,14 @@ Ultraschall-Baken und ggf. eine IMU [2] zur Orientierung verwendet werden.</p>
         <div class="meta">Teilen</div>
          
         <li>
-            <a href="https://twitter.com/intent/tweet?source=http://www.roboterclub.rwth-aachen.de/projekt/fahrplattform-little.html&text=Fahrplattform Little%20%7C%20Roboterclub Aachen:%20http://www.roboterclub.rwth-aachen.de/projekt/fahrplattform-little.html" target="_blank" title="Twittern">
+            <a href="https://twitter.com/intent/tweet?source=http://www.roboterclub.rwth-aachen.de/projekt/aruco-marker.html&text=Aruco marker%20%7C%20Roboterclub Aachen:%20http://www.roboterclub.rwth-aachen.de/projekt/aruco-marker.html" target="_blank" title="Twittern">
 			<i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Twittern</span>
 		</a>
         </li>
                 
         <li>
-            <a href="mailto:?subject=Fahrplattform Little%20%7C%20Roboterclub Aachen&body=:%20http://www.roboterclub.rwth-aachen.de/projekt/fahrplattform-little.html" target="_blank" title="Email">
+            <a href="mailto:?subject=Aruco marker%20%7C%20Roboterclub Aachen&body=:%20http://www.roboterclub.rwth-aachen.de/projekt/aruco-marker.html" target="_blank" title="Email">
 			<i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Email</span>
 		</a>
@@ -257,8 +236,8 @@ Ultraschall-Baken und ggf. eine IMU [2] zur Orientierung verwendet werden.</p>
     
 
     
-    <a class="button" href="/tags#mechanik">
-      <p><i class="fa fa-tag fa-fw"></i> mechanik</p>
+    <a class="button" href="/tags#software">
+      <p><i class="fa fa-tag fa-fw"></i> software</p>
     </a>
     
   </div>

@@ -164,6 +164,12 @@
 
   <url>
 	<!-- project -->
+    <loc>http://www.roboterclub.rwth-aachen.de/projekt/aruco-marker.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
     <loc>http://www.roboterclub.rwth-aachen.de/projekt/automotive-ethernet.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -291,6 +297,12 @@
   <url>
 	<!-- project -->
     <loc>http://www.roboterclub.rwth-aachen.de/projekt/liteplacer.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://www.roboterclub.rwth-aachen.de/projekt/locatisation-camera-imu-us.html</loc>
     <changefreq>monthly</changefreq>
   </url>
 

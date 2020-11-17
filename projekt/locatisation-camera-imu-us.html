@@ -17,7 +17,7 @@
     <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/img/rca.svg">
 
     <!-- Canonical -->
-    <link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/fahrplattform-little.html">
+    <link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/locatisation-camera-imu-us.html">
 
     <!-- RSS -->
     <link rel="alternate" type="application/atom+xml" title="Roboterclub Aachen" href="http://www.roboterclub.rwth-aachen.de///feed.xml"/>
@@ -41,26 +41,26 @@
     
     <!-- seo tags -->
     <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Fahrplattform Little | Roboterclub Aachen</title>
+<title>Lokalisierung (anhand Kamera, IMU und/oder Ultraschall) | Roboterclub Aachen</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Fahrplattform Little" />
+<meta property="og:title" content="Lokalisierung (anhand Kamera, IMU und/oder Ultraschall)" />
 <meta property="og:locale" content="de_DE" />
 <meta name="description" content="Zusammenfassung" />
 <meta property="og:description" content="Zusammenfassung" />
-<link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/fahrplattform-little.html" />
-<meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/fahrplattform-little.html" />
+<link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/locatisation-camera-imu-us.html" />
+<meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/locatisation-camera-imu-us.html" />
 <meta property="og:site_name" content="Roboterclub Aachen" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-11-17T01:31:40+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Fahrplattform Little" />
+<meta property="twitter:title" content="Lokalisierung (anhand Kamera, IMU und/oder Ultraschall)" />
 <script type="application/ld+json">
-{"description":"Zusammenfassung","url":"http://www.roboterclub.rwth-aachen.de/projekt/fahrplattform-little.html","@type":"BlogPosting","headline":"Fahrplattform Little","dateModified":"2020-11-17T01:31:40+00:00","datePublished":"2020-11-17T01:31:40+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/fahrplattform-little.html"},"@context":"https://schema.org"}</script>
+{"description":"Zusammenfassung","url":"http://www.roboterclub.rwth-aachen.de/projekt/locatisation-camera-imu-us.html","@type":"BlogPosting","headline":"Lokalisierung (anhand Kamera, IMU und/oder Ultraschall)","dateModified":"2020-11-17T01:31:40+00:00","datePublished":"2020-11-17T01:31:40+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/locatisation-camera-imu-us.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
     <!--
-    <title>Fahrplattform Little | Roboterclub Aachen</title>
+    <title>Lokalisierung (anhand Kamera, IMU und/oder Ultraschall) | Roboterclub Aachen</title>
     <meta name="description" content="Zusammenfassung">
     -->
 </head>
@@ -157,54 +157,41 @@
 </header>
 
     <div class="content">
-      <article class="feature-image">
-  <header id="main" style="background-image: url('/assets/img/projektbeschreibungen/fahrplattform-rendering.jpg');background-position: center;">
-    <h1 id="Fahrplattform+Little" class="title">Fahrplattform Little</h1>
+      <article >
+  <header id="main" style="background-image: url('/');background-position: center;">
+    <h1 id="Lokalisierung+%28anhand+Kamera%2C+IMU+und%2Foder+Ultraschall%29" class="title">Lokalisierung (anhand Kamera, IMU und/oder Ultraschall)</h1>
   </header>
   <section class="post-content post-content-text">
   <hr>
-<p>Konstruktion und Fertigung der Fahrplattform des kleinen Roboters für die neue Saison (2019).</p>
+<p>Kooperative Lokalisierung durch Mustererkennung mit einer Kamera, mit Ultraschall und Inertial Measurement Unit (IMU) für kompetitive mobile Robotik.</p>
 
   <hr>
 <h2 id="zusammenfassung">Zusammenfassung</h2>
 
-<p>Für unsere neuen Roboter für den Eurobot-Wettbewerb 2019 müssen Grundstruktur und Antrieb konstruiert und gefertigt
-werden. Der kleine Roboter („Little“) soll mit einem Omnidrive-Antrieb [1] ausgerüstet werden. Durch diesen kann der
-Roboter sich in alle Richtungen bewegen. Die Grundkonstruktion wird aus einer gefrästen Aluminium-Bodenplatte bestehen,
-auf der die Lagerung der drei Omniwheels, die drei Antriebsmotoren, sowie der Aufbau des Roboters montiert werden.</p>
+<p>Die Lokalisierung ist eine wichtiger Teil der Strategie, Wegeplanung und des Driver.
+Dabei steht nicht nur der eigene Roboter im Fokus, sondern auch die des Gegners.
+Denn mit diesem darf man während der Fahrt nicht kollidieren, dazu kann es zur Entscheidungsfindung der Strategie beitragen.</p>
 
-<p>Im Gegensatz zu anderen Fahrplattformen sind keine Odometrieräder zur Positionsbestimmung vorgesehen. Stattdessen sollen
-Ultraschall-Baken und ggf. eine IMU [2] zur Orientierung verwendet werden.</p>
+<p>Dazu stehen verschiedene Datenquellen mit verschiedenen Eigenschaften zur Verfügung.
+Zum einen kann am Spielfeldrand eine Kamera platziert werden, die am Roboter befindliche Aruco Marker erkennt und damit Position und Orientierung bestimmt.
+Oder durch ein Ultraschallsystem wird die Position mittels Triangulation zu festen Referenzpunkten gemessen.
+Desweiteren bietet eine inertiale Messeinheit (Bewegungs-, Drehratensensor etc.) die Möglichkeit eine höhere Aktualisierungsrate durch die Messung relativer Bewegung zu erzielen.</p>
 
-<h3 id="technische-daten-geplant">Technische Daten (geplant)</h3>
+<p>Konkret sind folgende Aufgaben zu erledigen:</p>
+
 <ul>
-  <li>Geschwindigkeit 2 m/s</li>
-  <li>Kraft 50 N</li>
-  <li>Leistung 100 Watt</li>
-  <li>Motoren: 3x Maxon EC-max 30, Getriebe: 1:4,8</li>
-  <li>soll über Kanten von 3 mm fahren können</li>
-  <li>Räder Ø 50 mm</li>
-  <li>Bodenplatte Dicke ca. 10 mm
-    <ul>
-      <li>Motoren darin teilweise versenkt</li>
-    </ul>
-  </li>
-  <li>Umfang (nach Regeln 2018)
-    <ul>
-      <li>Startumfang        850 mm</li>
-      <li>Dynamischer Umfang 1050 mm</li>
-    </ul>
-  </li>
-  <li>Omnidrive (3 Räder)</li>
-  <li>IMU (inertial measurement unit) / Beschleunigungs- und Lagesensor [2]</li>
+  <li>Schnittstellen-Definition zu Datenquellen (IMU, Kamera, etc.)</li>
+  <li>Schnitsstellen-Definition zur Strategie (Lokalisierung: Postition, Orientierung)</li>
+  <li>Recherche, Implementierung und Auswertung von Algorithmen zur Datenfusion vorhandener Daten</li>
+  <li>Integration und Test am und im Roboter</li>
 </ul>
 
-<h2 id="tätigkeitsfelder-und-technologien">Tätigkeitsfelder und Technologien</h2>
+<h3 id="requirements">Requirements</h3>
+
 <ul>
-  <li>CAD-Konstruktion mit SolidWorks</li>
-  <li>3D-Druck zum Prototyping</li>
-  <li>Fertigung von Aluminium mit CNC-Fräse</li>
-  <li>Simulation der Fahrdynamik (z.B. mit Matlab Simulink)</li>
+  <li>Verständnis von Signalverarbeitung</li>
+  <li>Erfahrung mit C++ oder Python Programmierung</li>
+  <li>Ggf. Erfahrung mit Mikrocontrollerprogrammierung (Embedded Software Entwicklung)</li>
 </ul>
 
 
@@ -214,12 +201,11 @@ Ultraschall-Baken und ggf. eine IMU [2] zur Orientierung verwendet werden.</p>
 
 
 
-<li>[1] https://de.wikipedia.org/wiki/Omnidirektionaler_Antrieb</li>
+<li>https://de.wikipedia.org/wiki/Inertiale_Messeinheit</li>
 
 
 
-<li>[2] https://de.wikipedia.org/wiki/Inertiale_Messeinheit</li>
-
+<li>https://www.uco.es/investiga/grupos/ava/node/26</li>
 
 </ul>
   </section>
@@ -230,14 +216,14 @@ Ultraschall-Baken und ggf. eine IMU [2] zur Orientierung verwendet werden.</p>
         <div class="meta">Teilen</div>
          
         <li>
-            <a href="https://twitter.com/intent/tweet?source=http://www.roboterclub.rwth-aachen.de/projekt/fahrplattform-little.html&text=Fahrplattform Little%20%7C%20Roboterclub Aachen:%20http://www.roboterclub.rwth-aachen.de/projekt/fahrplattform-little.html" target="_blank" title="Twittern">
+            <a href="https://twitter.com/intent/tweet?source=http://www.roboterclub.rwth-aachen.de/projekt/locatisation-camera-imu-us.html&text=Lokalisierung (anhand Kamera, IMU und/oder Ultraschall)%20%7C%20Roboterclub Aachen:%20http://www.roboterclub.rwth-aachen.de/projekt/locatisation-camera-imu-us.html" target="_blank" title="Twittern">
 			<i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Twittern</span>
 		</a>
         </li>
                 
         <li>
-            <a href="mailto:?subject=Fahrplattform Little%20%7C%20Roboterclub Aachen&body=:%20http://www.roboterclub.rwth-aachen.de/projekt/fahrplattform-little.html" target="_blank" title="Email">
+            <a href="mailto:?subject=Lokalisierung (anhand Kamera, IMU und/oder Ultraschall)%20%7C%20Roboterclub Aachen&body=:%20http://www.roboterclub.rwth-aachen.de/projekt/locatisation-camera-imu-us.html" target="_blank" title="Email">
 			<i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Email</span>
 		</a>
@@ -257,8 +243,8 @@ Ultraschall-Baken und ggf. eine IMU [2] zur Orientierung verwendet werden.</p>
     
 
     
-    <a class="button" href="/tags#mechanik">
-      <p><i class="fa fa-tag fa-fw"></i> mechanik</p>
+    <a class="button" href="/tags#software">
+      <p><i class="fa fa-tag fa-fw"></i> software</p>
     </a>
     
   </div>

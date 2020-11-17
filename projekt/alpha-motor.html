@@ -41,9 +41,9 @@
     
     <!-- seo tags -->
     <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Alpha-Motor | Roboterclub Aachen</title>
+<title>Alpha-Motor (V2) | Roboterclub Aachen</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Alpha-Motor" />
+<meta property="og:title" content="Alpha-Motor (V2)" />
 <meta property="og:locale" content="de_DE" />
 <meta name="description" content="Zusammenfassung" />
 <meta property="og:description" content="Zusammenfassung" />
@@ -51,16 +51,16 @@
 <meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html" />
 <meta property="og:site_name" content="Roboterclub Aachen" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-11-11T10:54:03+00:00" />
+<meta property="article:published_time" content="2020-11-17T01:31:40+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Alpha-Motor" />
+<meta property="twitter:title" content="Alpha-Motor (V2)" />
 <script type="application/ld+json">
-{"description":"Zusammenfassung","url":"http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html","@type":"BlogPosting","headline":"Alpha-Motor","dateModified":"2020-11-11T10:54:03+00:00","datePublished":"2020-11-11T10:54:03+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html"},"@context":"https://schema.org"}</script>
+{"description":"Zusammenfassung","url":"http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html","@type":"BlogPosting","headline":"Alpha-Motor (V2)","dateModified":"2020-11-17T01:31:40+00:00","datePublished":"2020-11-17T01:31:40+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
     <!--
-    <title>Alpha-Motor | Roboterclub Aachen</title>
+    <title>Alpha-Motor (V2) | Roboterclub Aachen</title>
     <meta name="description" content="Zusammenfassung">
     -->
 </head>
@@ -159,30 +159,36 @@
     <div class="content">
       <article class="feature-image">
   <header id="main" style="background-image: url('/assets/img/projektbeschreibungen/alpha-motor-layout.jpg');background-position: center;">
-    <h1 id="Alpha-Motor" class="title">Alpha-Motor</h1>
+    <h1 id="Alpha-Motor+%28V2%29" class="title">Alpha-Motor (V2)</h1>
   </header>
   <section class="post-content post-content-text">
   <hr>
-<p>Alpha-Motor ist eine Platine zur Ansteuerung von zwei Antriebsmotoren und momentan die Hauptplatine des Roboters.</p>
+<p>Alpha-Motor ist eine Platine zur Ansteuerung von zwei Antriebsmotoren. Die neue Version 2 soll vor allem eine präzisere Strombegrenzung und die Nutzung von Encodern mit differenziellen Ausgangssignalen ermöglichen</p>
 
   <hr>
 <h2 id="zusammenfassung">Zusammenfassung</h2>
 
-<p>Der Alpha-Motor erfüllt mehrere Funktionen gleichzeitig: Ansteuern von ein oder zwei Motoren, etwa den Antriebsmotoren des Roboters, Odometrie und das Ausführen der Robotersoftware.</p>
+<p>Eines der wichtigsten Elemente in unserem Roboter nennen wir ganz bescheiden den Alpha-Motor. Der Alpha-Motor ist eine Platine die in erster Linie zwei Funktionen erfüllt: Ansteuerung und Regelung von ein bis zwei Motoren und das Auslesen von Encodern für die Odometrie.</p>
 
-<p>Jede Platine verfügt dazu über ein Setup, das sowohl ein oder zwei DC-Motoren als auch ein oder zwei dreiphasige Brushless-DC Motoren unterstützt.
-Benötigt werden also sechs H-Brücken aus jeweils vier Leistungstransistoren, die von drei Brückentreibern kontrolliert werden.
+<p>Jede Platine verfügt dazu über ein Setup, das sowohl DC-Motoren als auch dreiphasige Brushless-DC Motoren oder einen Mix der beiden unterstützt.
+Verbaut sind dementsprechend sechs Halb-Brücken aus jeweils zwei Leistungstransistoren, die von drei Brückentreibern kontrolliert werden.
 Das Herzstück ist dann der Mikrocontroller.
-Dieser steuert nicht nur die genannten Brückentreiber, sondern liest Motorencoder aus und kommuniziert über verschiedene Schnittstellen (vor allem CAN) mit dem Rest des Roboters.
-Zusätzlich wird durch den Mikrocontroller auf zwei Wegen der Strom in den Motoren überwacht:
-Eine grobe Strommessung über jeweils einen Shunt-Widerstand pro Motor und eine genauere, die von Hall-Sensoren in einem eigenen Bauteil durchgeführt wird.
-Zu guter Letzt dürfen Ausgänge und LEDs zu Debug-Zwecken auch nicht fehlen.</p>
+Dieser steuert nicht nur die genannten Brückentreiber, sondern liest auch die Motorencoder aus und kommuniziert über verschiedene Schnittstellen (vor allem CAN) mit dem Rest des Roboters, wobei ein paar GPIOs und Debug-LEDs natürlich auch nicht fehlen dürfen.
+Zusätzlich wird durch den Mikrocontroller der Strom in den Motoren überwacht, was allerdings in Version 1 nur für sehr große Ströme funktionierte. Um in Zukunft auch kleine Ströme einstellen zu können, wie es zum Beispiel für eine akkurate Kraftregelung notwendig wäre, wurde für diese Version die Strommessung von Hall-Sensoren auf Instrumentenverstärker umgestellt. Das Problem war, dass die Gleichtaktunterdrückung nicht ausreichte, um schnell genug auf Änderungen im Spannungslevel zu regieren.</p>
 
-<p>Auf dem Microcontroller befindet sich neben den Motor-Reglern auch der Code, der den restlichen Roboter steuert. Die Befehle werden über CAN an die Peripherie (zum Beispiel die Motortreiberplatinen “Micro-Motor” oder andere Alpha-Motor-Platinen) weitergeleitet, aber andersherum können auch Sensordaten oder die Kommunikation mit dem Display hierüber ablaufen.</p>
+<h2 id="aufgabenstellung">Aufgabenstellung</h2>
 
-<p>In Version zwei ist die Software deutlich eingeschränkt, da nun ein dedizierter Industrie-PC mit ros2 die Steuerung des Roboters übernimmt. Dafür wird die Hardware leistungsfähiger, durch den Einsatz eines neuen Mikrocontrollers und vor allem neuer Chips zur Strommessung. Tests der ersten Version hatten gezeigt, dass die Strombegrenzung erst ab 800 mA greift und die Strommessung starkes Rauschen aufweist (verursacht durch die mangelnde Gleichtaktunterdrückung der verwendeten Chips).</p>
+<p>Der Schaltplan für den Alpha-Motor V2 ist bereits abgeschlossen, es fehlt allerdings noch alles, was aus diesem Plan eine echte Platine macht. Konkret sind folgende Aufgaben zu erledigen:</p>
+<ul>
+  <li>Layout einer 4-Layer Platine in KiCAD, Herausforderungen dabei sind die Anforderungen an Größe, Stromfestigkeit, Signalintegrität und EM-Verträglichkeit</li>
+  <li>Aufbau der gefertigten Platine, das heißt bestücken und anschließendes Reflow-Löten in unserem Ofen</li>
+  <li>Anpassen der bestehenden Software (C++) an den neuen Microcontroller, vor allem Änderungen in der Peripherie des verwendeten STM32</li>
+  <li>Und selbstverständlich testen, testen, testen</li>
+</ul>
 
-<h3 id="technische-daten-v2">Technische Daten V2</h3>
+<p>Vorkenntnisse im PCB-Design oder Löten von Platinen sind natürlich von großem Vorteil, unbedingt erforderlich um diese Aufgaben zu erfüllen sind aber nur Grundkenntnisse in der Programmierung mit C++ und Grundkenntnisse der Schaltungstechnik.</p>
+
+<h2 id="technische-daten-alpha-motor-v2">Technische Daten Alpha-Motor V2</h2>
 <ul>
   <li>3 Phasen (DC und Brushless-DC Motoren)</li>
   <li>ca. 20A pro Phase in der Spitze</li>
@@ -195,20 +201,6 @@ Zu guter Letzt dürfen Ausgänge und LEDs zu Debug-Zwecken auch nicht fehlen.</p
   <li>LEDs für Software-Status &amp; Encoderstatus</li>
   <li>Einfach lötbar und aufbaubar</li>
   <li>Abmessungen: ca 50 x 80 mm²</li>
-</ul>
-
-<h2 id="tätigkeitsfelder-und-technologien">Tätigkeitsfelder und Technologien</h2>
-<ul>
-  <li>PCB Design 4-Layer (mit KiCAD)
-    <ul>
-      <li>EMV-gerechtes Design</li>
-    </ul>
-  </li>
-  <li>STM32-Peripherie: Timer, ADC, DAC, Komparator</li>
-  <li>Recherche und Auslegung Leistungs-MOSFETs und MOSFET-Treiber</li>
-  <li>Software Low-Level Hardware-Ansteuerung</li>
-  <li>Software Hardwareabstraktion</li>
-  <li>Reflow-Löten</li>
 </ul>
 
 
@@ -230,14 +222,14 @@ Zu guter Letzt dürfen Ausgänge und LEDs zu Debug-Zwecken auch nicht fehlen.</p
         <div class="meta">Teilen</div>
          
         <li>
-            <a href="https://twitter.com/intent/tweet?source=http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html&text=Alpha-Motor%20%7C%20Roboterclub Aachen:%20http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html" target="_blank" title="Twittern">
+            <a href="https://twitter.com/intent/tweet?source=http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html&text=Alpha-Motor (V2)%20%7C%20Roboterclub Aachen:%20http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html" target="_blank" title="Twittern">
 			<i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Twittern</span>
 		</a>
         </li>
                 
         <li>
-            <a href="mailto:?subject=Alpha-Motor%20%7C%20Roboterclub Aachen&body=:%20http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html" target="_blank" title="Email">
+            <a href="mailto:?subject=Alpha-Motor (V2)%20%7C%20Roboterclub Aachen&body=:%20http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html" target="_blank" title="Email">
 			<i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Email</span>
 		</a>

@@ -51,11 +51,11 @@
 <meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/batterie-management-system.html" />
 <meta property="og:site_name" content="Roboterclub Aachen" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-11-11T10:54:03+00:00" />
+<meta property="article:published_time" content="2020-11-17T01:31:40+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Battery Management System" />
 <script type="application/ld+json">
-{"description":"Zusammenfassung","url":"http://www.roboterclub.rwth-aachen.de/projekt/batterie-management-system.html","@type":"BlogPosting","headline":"Battery Management System","dateModified":"2020-11-11T10:54:03+00:00","datePublished":"2020-11-11T10:54:03+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/batterie-management-system.html"},"@context":"https://schema.org"}</script>
+{"description":"Zusammenfassung","url":"http://www.roboterclub.rwth-aachen.de/projekt/batterie-management-system.html","@type":"BlogPosting","headline":"Battery Management System","dateModified":"2020-11-17T01:31:40+00:00","datePublished":"2020-11-17T01:31:40+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/batterie-management-system.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
@@ -173,10 +173,23 @@ Die ausgewählte Spannung wird entweder direkt weitergeleitet, oder zunächst um
 Maßgeblich ist die erzeugte 12V Spannung. Diese ist sowohl die Versorgungsspannungen für einen zu versorgenden Industrie PC,
 als auch die Zwischenspannung aus der 5-7V Logikspannung und die benötigten On-Board Spannungen generiert werden.</p>
 
-<p>Als Features werden Kurzschlussschutz und eine Spannungsüberwachung an allen Ausgängen implementiert.
-Auch die Batterie wird natürlich beobachtet.
-Hier soll eine State of Charge Abschätzung mittels <em>Coulomb Counting</em> durchgeführt werden und Unterspannungen erkannt werden.
+<p>Als Features sollen ein Kurzschlussschutz und eine Spannungsüberwachung an allen Ausgängen implementiert werden.
+Auch die Batterie muss natürlich überwacht werden.
+Hier soll eine State of Charge Abschätzung durchgeführt werden und Unterspannungen erkannt werden.
 Wichtige Informationen aus dem Betrieb sollen auf dem CAN Bus ausgegeben werden.</p>
+
+<h2 id="aufgabenstellung">Aufgabenstellung</h2>
+
+<p>Der Schaltplan für das BMS ist größtenteils abgeschlossen, ebenso gibt es einen Entwurf für ein Layout.
+Konkret sind folgende Aufgaben zu erledigen:</p>
+
+<ul>
+  <li>Review des Layout einer 4-Layer Platine in KiCAD, Herausforderungen dabei sind die Anforderungen an Größe, EM-Verträglichkeit und vor allem Stromfestigkeit</li>
+  <li>Aufbau der gefertigten Platine, inklusive Test unter Last</li>
+</ul>
+
+<p>Um die Aufgaben zu erfüllen sind Grundkenntnisse der Schaltungstechnik und Erfahrungen mit PCB-Design von großem Vorteil.
+Die Komplexität dieses Projekts ist allerdings nicht so hoch, dass nicht auch Anfänger eine Chance haben, es erfolgreich abzuschließen.</p>
 
 <h2 id="geplante-kenndaten">Geplante Kenndaten</h2>
 <ul>
@@ -191,18 +204,14 @@ Wichtige Informationen aus dem Betrieb sollen auf dem CAN Bus ausgegeben werden.
   <li>Not-Aus Schalter nicht im Strompfad</li>
 </ul>
 
-<h2 id="mögliche-verbesserungen">Mögliche Verbesserungen</h2>
+<h2 id="optionale-features">Optionale Features</h2>
+
 <ul>
   <li>Rekuperation aus dem Motorstrompfad</li>
   <li>Visueller Batteriestandindikator</li>
   <li>Stromversorgung für USB</li>
   <li>Fortgeschrittene SoC und SoH Abschätzung</li>
 </ul>
-
-<h2 id="herausforderungen">Herausforderungen</h2>
-<p>Das BMS soll dafür sorgen, dass alle gewünschten Geräte ohne weitere Maßnahmen angeschlossen und gleichzeitig betrieben werden können.
-Im worst case Szenario sollen daher 700W Dauerleistung bereitgestellt werden. Dies möglichst kostengünstig, auf geringem Raum und mit guter
-Wärmeabfuhr zu realisieren erfordert eine treffende Vorhersage der realen Lastprofile.</p>
 
 
 
