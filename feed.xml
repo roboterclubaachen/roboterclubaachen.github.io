@@ -5,7 +5,7 @@
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
         <link>http://www.roboterclub.rwth-aachen.de/</link>
         <description></description>
-        <pubDate>Wed, 11 Aug 2021 23:08:58 +0000</pubDate>
+        <pubDate>Mon, 18 Oct 2021 15:41:45 +0000</pubDate>
         
         <item>
             <title>µMotor 2 - Teil 4: Strom- und Spannungsmessung mit ADC</title>
