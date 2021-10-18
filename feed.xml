@@ -5,7 +5,7 @@
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
         <link>http://www.roboterclub.rwth-aachen.de/</link>
         <description></description>
-        <pubDate>Mon, 18 Oct 2021 19:36:50 +0000</pubDate>
+        <pubDate>Mon, 18 Oct 2021 20:18:12 +0000</pubDate>
         
         <item>
             <title>! W A N T E D ! - Einsteiger</title>
@@ -169,6 +169,22 @@ Thus all conversion results can be easily read one after the other in the time u
 &lt;p&gt;Low-Priority measurements are sequenced in the ADCs “normal-mode” sequence and are triggered at a lower frequency (by another timer or manually from code).&lt;/p&gt;
 </description>
             <pubDate>Fri, 31 Jan 2020 00:00:00 +0000</pubDate>
+        </item>
+        
+        <item>
+            <title>Umzug gemeistert</title>
+            <link>/blog/2019/umzug.html</link>
+            <guid isPermaLink="true">/blog/2019/umzug.html</guid>
+            <description>&lt;p&gt;Für uns hieß einmal wieder: “Es ist Zeit, etwas Neues zu beginnen”.
+Darum haben wir unsere Sachen gepackt und sind umgezogen.
+Ihr findet uns nun in der Melatener Straße 25 im zweiten Stock beim IHF.&lt;/p&gt;
+
+&lt;p&gt;Wir danken sehr herzlich dem Institut für Theoretische Informationstechnik unter der Leitung von Prof. Mathar
+und der langjährigen Herberge unter seinem Dach.&lt;/p&gt;
+
+&lt;h3 id=&quot;weitere-information-unter-kontakt&quot;&gt;Weitere Information unter: &lt;a href=&quot;/kontakt/&quot;&gt;Kontakt&lt;/a&gt;&lt;/h3&gt;
+</description>
+            <pubDate>Fri, 01 Nov 2019 00:00:00 +0000</pubDate>
         </item>
         
         <item>
@@ -873,24 +889,6 @@ The competition was well organized by TURAG. Thank you for the great time!&lt;/p
 &lt;p&gt;&lt;img src=&quot;/assets/img/blog/2017/Juri_Siggi_Rooftop_Front.jpg&quot; alt=&quot;Juri Siggi Rooftop Front&quot; /&gt;&lt;/p&gt;
 </description>
             <pubDate>Mon, 01 May 2017 00:00:00 +0000</pubDate>
-        </item>
-        
-        <item>
-            <title>We are German champion 2016</title>
-            <link>/blog/2016/we-are-german-champion-2016.html</link>
-            <guid isPermaLink="true">/blog/2016/we-are-german-champion-2016.html</guid>
-            <description>&lt;p&gt;We are qualified for the international contest in France!
-Our robots, Hassel and Hoff, won every game at the German Eurobot contest 2016 in Stuttgart.&lt;/p&gt;
-
-&lt;p&gt;The competition was well organized by VtAS. Thank you for the great time!&lt;/p&gt;
-
-&lt;p&gt;We would like to thank our sponsors for their generous support.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/2016/Foto2016StuttgartCropped.jpg&quot; alt=&quot;RCA in Stuttgart 2016&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/2016/2016HasselHoff.jpg&quot; alt=&quot;Roboter Hassel und Hoff&quot; /&gt;&lt;/p&gt;
-</description>
-            <pubDate>Tue, 03 May 2016 00:00:00 +0000</pubDate>
         </item>
         
     </channel>
