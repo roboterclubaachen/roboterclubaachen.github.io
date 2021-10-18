@@ -2,6 +2,26 @@
   
    
       {
+        "title"    : "! W A N T E D ! - Einsteiger",
+        "category" : "",
+        "tags"     : " saison22",
+        "url"      : "/blog/2021/wanted-einsteiger.html",
+        "date"     : "October 15, 2021",
+        "excerpt"  : "<h2 id=\"du-willst-bei-uns-mitmachen-super\">Du willst bei uns mitmachen? Super!</h2>\n",
+        "content"  : "<h2 id=\"du-willst-bei-uns-mitmachen-super\">Du willst bei uns mitmachen? Super!</h2>\n\n<p>Für die kommende Eurobot-Wettbewerbs-Saison gibt es viel zu tun im\nRoboterclub und wir freuen uns, wenn du dich in einem der folgenden\nBereichen engagieren möchtest:</p>\n\n<ul>\n  <li>Bildverarbeitung</li>\n  <li>Funk-Kommunikation</li>\n  <li>Mechanische Aktoren zum Greifen von Hexagons</li>\n  <li>Antriebs-Plattform (Omnidrive)</li>\n  <li>Regelung und Fahrtplanung</li>\n  <li>Mechanische Fertigung (3D-Drucker und CNC-Fräse)</li>\n  <li>Batterie-Management</li>\n  <li>Autonome Roboter-Steuerung mit ROS2</li>\n  <li>Lokalisierung (Kamera-basiert, Ultraschall-Indoor-Lokaliserung, ..)</li>\n  <li>…</li>\n</ul>\n\n<p>Um dir einen guten Einstieg zu ermöglichen findet am</p>\n\n<h4 id=\"dienstag-den-26102021\">Dienstag, den 26.10.2021</h4>\n\n<p>ein Einsteiger-Event statt.\nDort zeigen wir dir unser Roboter und Projekte, und vermitteln dir eine\nAufgabe oder ein Projekt im RCA.</p>\n\n<h3 id=\"weitere-information-unter-mach-mit\">Weitere Information unter: <a href=\"/mach-mit/\">Mach mit</a></h3>\n"
+      },
+   
+      {
+        "title"    : "The Rules for Eurobot 2022 are published",
+        "category" : "",
+        "tags"     : " eurobot, saison22",
+        "url"      : "/blog/2021/rules-eurobot-2022.html",
+        "date"     : "September 18, 2021",
+        "excerpt"  : "<p>The new theme for Eurobot 2022 is “Age of Bots”. There are many actions for the Robots to do and many parts to move.\nWe are already brainstorming and looking forward to exiting games.</p>\n",
+        "content"  : "<p>The new theme for Eurobot 2022 is “Age of Bots”. There are many actions for the Robots to do and many parts to move.\nWe are already brainstorming and looking forward to exiting games.</p>\n\n<p>The rules are published on the <a href=\"https://www.eurobot.org/\">website of eurobot.org</a>.</p>\n\n<p><img src=\"/assets/img/blog/2016/phobos_in_castle.jpg\" alt=\"Phobos in castle\" /></p>\n"
+      },
+   
+      {
         "title"    : "µMotor 2 - Teil 4: Strom- und Spannungsmessung mit ADC",
         "category" : "",
         "tags"     : " elektronik, saison20",

@@ -3,6 +3,22 @@
 
   <url>
 	<!-- post -->
+    <loc>http://www.roboterclub.rwth-aachen.de/blog/2021/wanted-einsteiger.html</loc>
+    
+    <changefreq>weekly</changefreq>
+    
+  </url>
+
+  <url>
+	<!-- post -->
+    <loc>http://www.roboterclub.rwth-aachen.de/blog/2021/rules-eurobot-2022.html</loc>
+    
+    <changefreq>weekly</changefreq>
+    
+  </url>
+
+  <url>
+	<!-- post -->
     <loc>http://www.roboterclub.rwth-aachen.de/blog/2020/micro-motor-2-teil-4.html</loc>
     
     <changefreq>weekly</changefreq>
@@ -540,6 +556,14 @@
   <url>
 	<!-- page -->
     <loc>http://www.roboterclub.rwth-aachen.de/blog/page/3/</loc>
+    
+    
+    
+  </url>
+  
+  <url>
+	<!-- page -->
+    <loc>http://www.roboterclub.rwth-aachen.de/blog/page/4/</loc>
     
     
     

@@ -5,7 +5,57 @@
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
         <link>http://www.roboterclub.rwth-aachen.de/</link>
         <description></description>
-        <pubDate>Mon, 18 Oct 2021 15:41:45 +0000</pubDate>
+        <pubDate>Mon, 18 Oct 2021 19:36:50 +0000</pubDate>
+        
+        <item>
+            <title>! W A N T E D ! - Einsteiger</title>
+            <link>/blog/2021/wanted-einsteiger.html</link>
+            <guid isPermaLink="true">/blog/2021/wanted-einsteiger.html</guid>
+            <description>&lt;h2 id=&quot;du-willst-bei-uns-mitmachen-super&quot;&gt;Du willst bei uns mitmachen? Super!&lt;/h2&gt;
+
+&lt;p&gt;Für die kommende Eurobot-Wettbewerbs-Saison gibt es viel zu tun im
+Roboterclub und wir freuen uns, wenn du dich in einem der folgenden
+Bereichen engagieren möchtest:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Bildverarbeitung&lt;/li&gt;
+  &lt;li&gt;Funk-Kommunikation&lt;/li&gt;
+  &lt;li&gt;Mechanische Aktoren zum Greifen von Hexagons&lt;/li&gt;
+  &lt;li&gt;Antriebs-Plattform (Omnidrive)&lt;/li&gt;
+  &lt;li&gt;Regelung und Fahrtplanung&lt;/li&gt;
+  &lt;li&gt;Mechanische Fertigung (3D-Drucker und CNC-Fräse)&lt;/li&gt;
+  &lt;li&gt;Batterie-Management&lt;/li&gt;
+  &lt;li&gt;Autonome Roboter-Steuerung mit ROS2&lt;/li&gt;
+  &lt;li&gt;Lokalisierung (Kamera-basiert, Ultraschall-Indoor-Lokaliserung, ..)&lt;/li&gt;
+  &lt;li&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Um dir einen guten Einstieg zu ermöglichen findet am&lt;/p&gt;
+
+&lt;h4 id=&quot;dienstag-den-26102021&quot;&gt;Dienstag, den 26.10.2021&lt;/h4&gt;
+
+&lt;p&gt;ein Einsteiger-Event statt.
+Dort zeigen wir dir unser Roboter und Projekte, und vermitteln dir eine
+Aufgabe oder ein Projekt im RCA.&lt;/p&gt;
+
+&lt;h3 id=&quot;weitere-information-unter-mach-mit&quot;&gt;Weitere Information unter: &lt;a href=&quot;/mach-mit/&quot;&gt;Mach mit&lt;/a&gt;&lt;/h3&gt;
+</description>
+            <pubDate>Fri, 15 Oct 2021 00:00:00 +0000</pubDate>
+        </item>
+        
+        <item>
+            <title>The Rules for Eurobot 2022 are published</title>
+            <link>/blog/2021/rules-eurobot-2022.html</link>
+            <guid isPermaLink="true">/blog/2021/rules-eurobot-2022.html</guid>
+            <description>&lt;p&gt;The new theme for Eurobot 2022 is “Age of Bots”. There are many actions for the Robots to do and many parts to move.
+We are already brainstorming and looking forward to exiting games.&lt;/p&gt;
+
+&lt;p&gt;The rules are published on the &lt;a href=&quot;https://www.eurobot.org/&quot;&gt;website of eurobot.org&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/2016/phobos_in_castle.jpg&quot; alt=&quot;Phobos in castle&quot; /&gt;&lt;/p&gt;
+</description>
+            <pubDate>Sat, 18 Sep 2021 00:00:00 +0000</pubDate>
+        </item>
         
         <item>
             <title>µMotor 2 - Teil 4: Strom- und Spannungsmessung mit ADC</title>
@@ -841,17 +891,6 @@ Our robots, Hassel and Hoff, won every game at the German Eurobot contest 2016 i
 &lt;p&gt;&lt;img src=&quot;/assets/img/blog/2016/2016HasselHoff.jpg&quot; alt=&quot;Roboter Hassel und Hoff&quot; /&gt;&lt;/p&gt;
 </description>
             <pubDate>Tue, 03 May 2016 00:00:00 +0000</pubDate>
-        </item>
-        
-        <item>
-            <title>The Rules for Eurobot 2016 are published</title>
-            <link>/blog/2015/rules-eurobot-2016.html</link>
-            <guid isPermaLink="true">/blog/2015/rules-eurobot-2016.html</guid>
-            <description>&lt;p&gt;The new theme for Eurobot 2016 is “The Beach Bots”. There are many actions for the Robots to do and many parts to move. We are already brainstorming and looking forward to exiting games.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/2016/phobos_in_castle.jpg&quot; alt=&quot;Phobos in castle&quot; /&gt;&lt;/p&gt;
-</description>
-            <pubDate>Tue, 20 Oct 2015 00:00:00 +0000</pubDate>
         </item>
         
     </channel>
