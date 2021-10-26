@@ -17,7 +17,7 @@
     <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/img/rca.svg">
 
     <!-- Canonical -->
-    <link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/simulator.html">
+    <link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/high-resolution-camera.html">
 
     <!-- RSS -->
     <link rel="alternate" type="application/atom+xml" title="Roboterclub Aachen" href="http://www.roboterclub.rwth-aachen.de///feed.xml"/>
@@ -41,26 +41,26 @@
     
     <!-- seo tags -->
     <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Simulator | Roboterclub Aachen</title>
+<title>High-Resolution Kamera | Roboterclub Aachen</title>
 <meta name="generator" content="Jekyll v4.2.1" />
-<meta property="og:title" content="Simulator" />
+<meta property="og:title" content="High-Resolution Kamera" />
 <meta property="og:locale" content="de_DE" />
 <meta name="description" content="Zusammenfassung" />
 <meta property="og:description" content="Zusammenfassung" />
-<link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/simulator.html" />
-<meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/simulator.html" />
+<link rel="canonical" href="http://www.roboterclub.rwth-aachen.de/projekt/high-resolution-camera.html" />
+<meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/high-resolution-camera.html" />
 <meta property="og:site_name" content="Roboterclub Aachen" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-10-26T09:35:17+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Simulator" />
+<meta property="twitter:title" content="High-Resolution Kamera" />
 <script type="application/ld+json">
-{"headline":"Simulator","dateModified":"2021-10-26T09:35:17+00:00","datePublished":"2021-10-26T09:35:17+00:00","description":"Zusammenfassung","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/simulator.html"},"url":"http://www.roboterclub.rwth-aachen.de/projekt/simulator.html","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"headline":"High-Resolution Kamera","dateModified":"2021-10-26T09:35:17+00:00","datePublished":"2021-10-26T09:35:17+00:00","description":"Zusammenfassung","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/high-resolution-camera.html"},"url":"http://www.roboterclub.rwth-aachen.de/projekt/high-resolution-camera.html","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
     <!--
-    <title>Simulator | Roboterclub Aachen</title>
+    <title>High-Resolution Kamera | Roboterclub Aachen</title>
     <meta name="description" content="Zusammenfassung">
     -->
 </head>
@@ -149,39 +149,36 @@
 
     <div class="content">
       <article class="feature-image">
-  <header id="main" style="background-image: url('/assets/img/projektbeschreibungen/simulator.png');background-position: center;">
-    <h1 id="Simulator" class="title">Simulator</h1>
+  <header id="main" style="background-image: url('/assets/img/projektbeschreibungen/image-sensor-annotated.jpg');background-position: center;">
+    <h1 id="High-Resolution+Kamera" class="title">High-Resolution Kamera</h1>
   </header>
   <section class="post-content post-content-text">
   <hr>
-<p>Im Simulator können die Roboter virtuell getestet werden, dazu wird die Roboterhardware emuliert und das Spielfeld mit Spielelementen sowie Gegnerroboter simuliert.</p>
+<p>Nutzung von hochauflösenden Kamera-Modulen aus Smartphones an Raspberry Pi</p>
 
   <hr>
 <h2 id="zusammenfassung">Zusammenfassung</h2>
 
-<p>Für das Testen von unserer Eurobot Spielstrategie wollen wir einen Simulator entwickeln,
-der den Roboter auf dem Spielfeld mit Spielelementen in 2 bis 2,5 Dimensionen simuliert,
-mit vereinfachten oder ideellen physikalischen Berechnungen.</p>
+<p>Es gibt viele Kamera-Module aus Smartphones günstig als Ersatzteil verfügbar, beispeisweise mit Sonys IMX576 Sensor mit 24 Megapixeln oder IMX686 mit 48 Megapixel.
+Diese Sensoren haben ein CSI-2 Interface mit 4 Lanes, über welches diese an Raspberry Pi (Compute Module, †) angeschlossen werden können.</p>
 
-<p>Dieser Simulator soll auch genutzt werden, um verschiedene Subsyteme des Roboters (zB. Regelungsschleifen, Sensorauswertungen mit Rauschen)
-während der Entwicklungsphase schnell zu testen, ohne auf einen funktionierenden Roboter angewiesen zu sein.
-Insbesondere zum Evaluieren unserer Spielstrategie ist es sinnvoll auch schneller als Echtzeit simulieren zu können.</p>
+<p>Seit 2020 gibt es auf der Raspberry Pi Plattform mit dem <em>bcm2835-unicam</em> Treiber und der dazugehörigen Dokumentation die Möglichkeit eigene Kamera-Sensor-Treiber zu schreiben.
+Dies soll für den IMX576-Sensor passieren, da hier durch zwischenzeitlich öffentlich zugängliche Datenblätter und akzeptabel zu reverse-engineerbare Android-Treiber auch über den Sensor genügend Informationen verfügbar sind.</p>
 
-<p>Desweiteren soll eine Anbindung an Matlab oder Numpy bereitstellt werden, sodass komplexere Simulationen von physikalischen 
-Eigenschaften als Plugin hinzugeschaltet werden können.
-Die Saison spezifischen Daten für das Spielfeld und Roboter können aus den Eurobot Shared Resources eingelesen werden [1].</p>
+<p>†: Die CPU des Raspberry Pi hat 2 CSI-2 Interfaces mit 4 bzw. 2 Lanes, jedoch ist am Kamera-Stecker nur 1 Lane herausgeführt. Das Raspberry Pi CM4 macht alle Lanes zugänglich.</p>
 
-<p>Der Zeitraum zwischen der Bekanntgabe der Eurobot-Regeln und den Wettbewerben ist mit einem halben Jahr recht kurz,
-daher soll die Software-Entwicklung parallel zur Konstruktion und Bau der Mechanik erfolgen.</p>
+<h3 id="technische-daten-geplant">Technische Daten (geplant)</h3>
+<ul>
+  <li>Hochaulösendes Kamera-System aus einer oder mehreren Kameras</li>
+  <li>Gesamtauflösung &gt;100 Megapixel auf das Eurobot-Spielfeld (2x3 m² aus 1 m Entfernung)</li>
+  <li>Synchronisation mit Beleuchtung und RUNE-Tags</li>
+</ul>
 
 <h2 id="tätigkeitsfelder-und-technologien">Tätigkeitsfelder und Technologien</h2>
-
 <ul>
-  <li>Softwareentwicklung in Python oder C++ mit Qt5</li>
-  <li>Simulation von Robotern, Spielfeld und Spielelementen</li>
-  <li>Datenverarbeitung und Replay</li>
-  <li>Sensoren (Distanz, Laserscanner, Farbe, etc.)</li>
-  <li>Interface mit Matlab für Regelungen modellieren</li>
+  <li>Linux-Treiber schreiben (C)</li>
+  <li>Markt- und Datenblatt-Recherche</li>
+  <li>Schaltungs- &amp; PCB- Design</li>
 </ul>
 
 
@@ -190,8 +187,6 @@ daher soll die Software-Entwicklung parallel zur Konstruktion und Bau der Mechan
 <ul>
 
 
-
-<li>[1] https://github.com/roboterclubaachen/eurobot-resources</li>
 
 
 
@@ -204,14 +199,14 @@ daher soll die Software-Entwicklung parallel zur Konstruktion und Bau der Mechan
         <div class="meta">Teilen</div>
          
         <li>
-            <a href="https://twitter.com/intent/tweet?source=http://www.roboterclub.rwth-aachen.de/projekt/simulator.html&text=Simulator%20%7C%20Roboterclub Aachen:%20http://www.roboterclub.rwth-aachen.de/projekt/simulator.html" target="_blank" title="Twittern">
+            <a href="https://twitter.com/intent/tweet?source=http://www.roboterclub.rwth-aachen.de/projekt/high-resolution-camera.html&text=High-Resolution Kamera%20%7C%20Roboterclub Aachen:%20http://www.roboterclub.rwth-aachen.de/projekt/high-resolution-camera.html" target="_blank" title="Twittern">
 			<i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Twittern</span>
 		</a>
         </li>
                 
         <li>
-            <a href="mailto:?subject=Simulator%20%7C%20Roboterclub Aachen&body=:%20http://www.roboterclub.rwth-aachen.de/projekt/simulator.html" target="_blank" title="Email">
+            <a href="mailto:?subject=High-Resolution Kamera%20%7C%20Roboterclub Aachen&body=:%20http://www.roboterclub.rwth-aachen.de/projekt/high-resolution-camera.html" target="_blank" title="Email">
 			<i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Email</span>
 		</a>
@@ -227,9 +222,13 @@ daher soll die Software-Entwicklung parallel zur Konstruktion und Bau der Mechan
 <footer>
   <div class="tag-list">
     
-      <div class="meta">Tag</div>
+      <div class="meta">Tags</div>
     
 
+    
+    <a class="button" href="/tags#pcb">
+      <p><i class="fa fa-tag fa-fw"></i> pcb</p>
+    </a>
     
     <a class="button" href="/tags#software">
       <p><i class="fa fa-tag fa-fw"></i> software</p>
