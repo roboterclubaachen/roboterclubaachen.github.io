@@ -3,6 +3,14 @@
 
   <url>
 	<!-- post -->
+    <loc>http://www.roboterclub.rwth-aachen.de/blog/2022/tag-der-offenen-werkstatt.html</loc>
+    
+    <changefreq>weekly</changefreq>
+    
+  </url>
+
+  <url>
+	<!-- post -->
     <loc>http://www.roboterclub.rwth-aachen.de/blog/2021/wanted-einsteiger.html</loc>
     
     <changefreq>weekly</changefreq>
