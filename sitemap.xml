@@ -3,15 +3,7 @@
 
   <url>
 	<!-- post -->
-    <loc>http://www.roboterclub.rwth-aachen.de/blog/2022/tag-der-offenen-werkstatt.html</loc>
-    
-    <changefreq>weekly</changefreq>
-    
-  </url>
-
-  <url>
-	<!-- post -->
-    <loc>http://www.roboterclub.rwth-aachen.de/blog/2021/wanted-einsteiger.html</loc>
+    <loc>http://www.roboterclub.rwth-aachen.de/blog/2022/saisonrueckblick-2022.html</loc>
     
     <changefreq>weekly</changefreq>
     
@@ -36,14 +28,6 @@
   <url>
 	<!-- post -->
     <loc>http://www.roboterclub.rwth-aachen.de/blog/2019/umzug.html</loc>
-    
-    <changefreq>weekly</changefreq>
-    
-  </url>
-
-  <url>
-	<!-- post -->
-    <loc>http://www.roboterclub.rwth-aachen.de/blog/2019/wanted-einsteiger.html</loc>
     
     <changefreq>weekly</changefreq>
     

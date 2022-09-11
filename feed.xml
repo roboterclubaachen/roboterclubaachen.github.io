@@ -5,61 +5,101 @@
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
         <link>http://www.roboterclub.rwth-aachen.de/</link>
         <description></description>
-        <pubDate>Sun, 14 Aug 2022 00:39:42 +0000</pubDate>
+        <pubDate>Sun, 11 Sep 2022 20:52:40 +0000</pubDate>
         
         <item>
-            <title>Tag der Offenen Werkstatt</title>
-            <link>/blog/2022/tag-der-offenen-werkstatt.html</link>
-            <guid isPermaLink="true">/blog/2022/tag-der-offenen-werkstatt.html</guid>
-            <description>&lt;h2 id=&quot;tag-der-offenen-werkstatt&quot;&gt;Tag der Offenen Werkstatt&lt;/h2&gt;
+            <title>Saisonrückblick 2022</title>
+            <link>/blog/2022/saisonrueckblick-2022.html</link>
+            <guid isPermaLink="true">/blog/2022/saisonrueckblick-2022.html</guid>
+            <description>&lt;p&gt;Nach zwei Jahren Corona-Pandemie wurde endlich im Roboterclub wieder ein Roboter entworfen, ausgelegt, konstruiert und gebaut.
+Bis auf den letzten Schritt, das Aufbauen, sogar eigentlich zwei Roboter.&lt;/p&gt;
 
-&lt;p&gt;Termin:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/2022/2022-robot-1.jpg&quot; alt=&quot;Roboter _Wanda_, Eurobot-Saison 2022&quot; /&gt;&lt;/p&gt;
 
-&lt;center&gt;&lt;h3&gt;14. Juni 2022&lt;/h3&gt;&lt;/center&gt;
+&lt;p&gt;Auch war diese Saison für viele Studierende die erste Gelegenheit einen Eurobot-Wettbewerb live zu erleben.&lt;/p&gt;
 
-&lt;p&gt;Ab 20 Uhr sind alle Interessierte, Freunde und Gäste des Vereins herzlich willkommen uns zu besuchen
-und in unserer Werkstatt oder beim Grillen kennenzulernen.&lt;/p&gt;
+&lt;p&gt;Vielleicht kommt zum zweiten Roboter in der Zukunft noch ein weiterer Blog-Post.&lt;/p&gt;
 
-&lt;p&gt;Bitte gebt uns (am besten per E-Mail) eine kurze Rückmeldung, ob ihr kommen möchtet.
-Dazu bekommt ihr Information, wo und wie ihr uns am besten findet.&lt;/p&gt;
+&lt;h3 id=&quot;mechnik-für-roboter-wanda&quot;&gt;Mechnik für Roboter &lt;em&gt;Wanda&lt;/em&gt;&lt;/h3&gt;
+
+&lt;p&gt;Der Antrieb von Wanda besteht aus drei im Stern angeordneten bürstenlosen Motoren mit Planetengetriebe von Dunker. Diese treiben über ein zweistufiges Stirnradgetriebe die Antriebsräder an. Bei den Antriebsrädern handelt es sich um so genannte &lt;em&gt;Onmiwheels&lt;/em&gt;, wodurch der Roboter zu jedem Zeitpunkt in jede beliebige Richtung fahren kann.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/2022/2022-robot-2.jpg&quot; alt=&quot;Roboter _Wanda_, Eurobot-Saison 2022&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Als Aktorik wurde ein drei-gelenkiger Greifarm entwickelt mit welchem die Spielelemente gegriffen und im Roboter verstaut werden sollten.
+Der Arm erwies sich allerdings als untermotorisiert und sehr komplex in der Ansteuerung aufgrund der hohen Anzahl an verbauten Motoren (insgesamt fünf).
+Auch aufgrund der engen personellen Lage im Team wurde der Arm nicht am Roboter verbaut sondern ein Stupser vorne am Roboter montiert, um trotzdem Interaktion mit den Spielelementen zu ermöglichen.
+Im Roboter sollte ein Greifer die Spielelemente wenden und in einer Vorrichtung ablegen. Der Greifer im Roboter und die Aufnahme für die Spielelemente sind im Roboter verbaut, wurden aufgrund des fehlenden Arms jedoch nicht benutzt.
+Die Erfahrungen aus der Entwicklung des Arms werden in zukünftige Greifaktoriken mit einfließen, wodurch man hoffentlich zukünftig eine Nachfolgeversion des Arms an einem der Roboter sehen kann.&lt;/p&gt;
+
+&lt;h3 id=&quot;elektronik&quot;&gt;Elektronik&lt;/h3&gt;
+
+&lt;p&gt;Für die Elektronik musste leider auf viele alte Lösungen zurückgegriffen werden,
+da es neben den Supply-Chain-Problemen auch personell eng im Team war.&lt;/p&gt;
+
+&lt;p&gt;Ein neues Power-Distribution-Board als Ersatz für das in die Jahre gekommene &lt;em&gt;BMS&lt;/em&gt; ist in Arbeit, allerdings nicht fertig.
+Das neue Modul hat zwei Anschlüsse für 6S-LiFe-Akkus und zusätzlich einen Netzteil-Anschluss.
+Da die alte BMS-Platine nur einen Akku nutzen kann, wurde die im ungenutzten zweiten Akku-Slot untergebracht.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/2022/2022-battery-bms-hack.jpg&quot; alt=&quot;Gepfuschte Anbringung der BMS Platine&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Leider kamen auch die inzwischen in Version 2.1 vorhandenen &lt;a href=&quot;https://github.com/roboterclubaachen/micro-motor&quot;&gt;Motor-Controller &lt;em&gt;Micro-Motor&lt;/em&gt;&lt;/a&gt; noch nicht zu Einsatz,
+weil die Software noch nie zuvor getestet wurde und es genügend aufgebaute &lt;a href=&quot;/projekt/alpha-motor.html&quot;&gt;&lt;em&gt;Alpha-Motor&lt;/em&gt;&lt;/a&gt;-Platinen beziehungsweise hinreichend wenig Motoren im Roboter gab.&lt;/p&gt;
+
+&lt;h3 id=&quot;software&quot;&gt;Software&lt;/h3&gt;
+
+&lt;p&gt;Entgegen des ursprünglichen Vorsatzes einen Linux-Computer in den Roboter zu integrieren und die Steuerung der Roboters in ROS2 zu implementieren, wurde zwei Wochen vor den Wettbewerben entschieden doch den alten und “bewährten” Software-Stack erneut zu verwenden.
+Dieser Software-Stack nutzt das im RCA ursprünglich entwickelte Microcontroller-Framework &lt;a href=&quot;https://modm.io/&quot;&gt;&lt;em&gt;modm&lt;/em&gt;&lt;/a&gt; und das dazugehörige &lt;a href=&quot;https://github.com/modm-io/lbuild&quot;&gt;&lt;em&gt;lbuild&lt;/em&gt;&lt;/a&gt; und lässt alle Software auf einem Haupt-Microcontroller (STM32F407) laufen.
+Der Haupt-Microcontroller übernimmt neben der Spielstrategie, Fahrplanung und Motionplanning auch die Motorregelungen.
+Die Motoren sind über selbst entwickelte Motorcontroller (&lt;a href=&quot;/projekt/alpha-motor.html&quot;&gt;&lt;em&gt;Alpha-Motor&lt;/em&gt;&lt;/a&gt;) per CAN-Bus angeschlossen und bekommen darüber quasi Duty-Cycle-Werte zugeschickt und senden Encoder-Werte zurück.&lt;/p&gt;
+
+&lt;p&gt;Schnell war eine Kopie der Software von 2019 im Gitlab angelegt.
+Das Anpassen an verschiedene, inzwischen drei Jahre weiter entwickelte Abhängigkeiten, wie das &lt;a href=&quot;https://modm.io/&quot;&gt;modm Framework&lt;/a&gt;, und beheben von Compiler- und Linker-Fehlern stellten sich als nervig heraus.&lt;/p&gt;
+
+&lt;p&gt;Ein weiteres Problem trat beim Wettbewerb in der Schweiz zu Tage: Der Haupt-Microcontroller resettete sich reproduzierbar nach ein paar Sekunden, was sich nach einigem Debuggen als Speicherproblem herausstellte.
+Eine Queue von CAN-Nachrichten wuchs schneller als diese geleert wurde, hatte keine Größenbegrenzung und belegt dann nach einigen Sekunden den gesamten SRAM des STM32.
+Ursächlich war hier die falsche Verteilung der vier Terminierungswiderstände für die zwei CAN-Busse im Roboter: Einer der Busse hatte drei, der andere nur einen Widerstand abbekommen.&lt;/p&gt;
+
+&lt;h3 id=&quot;wettbewerbe&quot;&gt;Wettbewerbe&lt;/h3&gt;
+
+&lt;p&gt;Der Roboterclub ist mit eher kleineren Gruppen zu den Wettbewerben nach Belgien, in die Schweiz und zum Internationalen Finale nach La Roche-sur-Yon gefahren.&lt;/p&gt;
+
+&lt;h4 id=&quot;belgien&quot;&gt;Belgien&lt;/h4&gt;
+
+&lt;p&gt;Zum Wettbewerb in Belgien am 23.24. April 2022 war der Roboter leider noch nicht in einem Zustand um für den Wettbewerb zu homologieren,
+jedoch konnten wertvolle Erfahrungen gesammelt werden und einige Tests mit den vollständig aufgebauten Wettbewerbsspielfeldern durchgeführt werden.
+Außerdem entstand ein Großteil der saisonspezifischen Software vor Ort, sodass das Wochenende insgesamt positiv aufgefasst wurde.&lt;/p&gt;
+
+&lt;h4 id=&quot;schweiz&quot;&gt;Schweiz&lt;/h4&gt;
+
+&lt;p&gt;Etwa einen Monat später, am 12. Mai, ging es los in den Süden der Schweiz nach Yverdon-Les-Bains um vom 13. bis zum 14. Mai am dortigen Wettbewerb teilzunehmen.
+Der Roboter homologierte hier nach kleineren Problem, die jedoch einfach zu lösen waren, etwas verspätet und konnte an den Spielen teilgenommen werden.
+Mit wenigen Ausnahmen wurde auch eine stattliche Anzahl an Punkte erreicht.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/2022/2022-swisseurobot-playground-robot-team.jpg&quot; alt=&quot;Ein Teil des RCA-Teams beim Eurobot-Wettbewerb in der Schweiz&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Während des Wettbewerbes wurde außerdem eine &lt;em&gt;Inertiale Messeinheit&lt;/em&gt; (IMU) nachgerüstet und in die Software eingebunden um die schlechte Qualität der Orientierungs-Information den Encodern des &lt;a href=&quot;/projekt/fahrplattform-little.html&quot;&gt;Omniwheel-Antriebs&lt;/a&gt; und des &lt;a href=&quot;/projekt/ultraschall-baken.html&quot;&gt;Ultraschall-Baken&lt;/a&gt; zu verbessern.
+Leider ist die vollständige Integration in unseren Software-Stack erst nach dem Wettbewerb fertig geworden.&lt;/p&gt;
+
+&lt;p&gt;Auf dem Rückweg aus der Schweiz nach Aachen wurde auf dem Weg noch ein Zwischenstopp eingelegt beim &lt;em&gt;Creux du Van&lt;/em&gt; und die beeindruckende Felsformation umwandert.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/2022/2022-rueckweg-wanderung.jpg&quot; alt=&quot;Creux du Van&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;internationales-finale-in-frankreich&quot;&gt;Internationales Finale in Frankreich&lt;/h4&gt;
+
+&lt;p&gt;Auch nach Frankreich ist am 25. Mai eine kleine Vertretung des Roboterclubs gefahren.
+Da nach wie vor der aufwendige Greifarm nicht verbaut war, wurde die Integration der IMU im Wettkampf getestet.
+Eine einfache Kombination aus der Position der Ultraschall-Baken](/projekt/ultraschall-baken.html)
+und die Orientierung der IMU führte zu einer deutlichen Verbesserung der Fahrweise des Roboters als zuvor.
+Dadurch konnten einfache Aufgaben in fast Wettbewerbsspielen erledigt, sodass auch die Punkteschätzung der Roboterstrategie korrekt war.&lt;/p&gt;
+
+&lt;h4 id=&quot;deutschland&quot;&gt;Deutschland&lt;/h4&gt;
+
+&lt;p&gt;Weil aus Deutschland nur drei Teams bereit waren, war kein nationaler Vorentscheid nötig.
+Da bei den Teams jedoch trotzdem Bedarf nach einem Zusammentreffen bestand wurde entschieden einen Wettbewerb im späten Sommer (8./9. Oktober 2022) in Aachen auszurichten.
+Dazu gibt es &lt;a href=&quot;/eurobot-2022/&quot;&gt;hier mehr Informationen&lt;/a&gt;.&lt;/p&gt;
 </description>
-            <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
-        </item>
-        
-        <item>
-            <title>! W A N T E D ! - Einsteiger</title>
-            <link>/blog/2021/wanted-einsteiger.html</link>
-            <guid isPermaLink="true">/blog/2021/wanted-einsteiger.html</guid>
-            <description>&lt;h2 id=&quot;du-willst-bei-uns-mitmachen-super&quot;&gt;Du willst bei uns mitmachen? Super!&lt;/h2&gt;
-
-&lt;p&gt;Für die kommende Eurobot-Wettbewerbs-Saison gibt es viel zu tun im
-Roboterclub und wir freuen uns, wenn du dich in einem der folgenden
-Bereichen engagieren möchtest:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Bildverarbeitung&lt;/li&gt;
-  &lt;li&gt;Funk-Kommunikation&lt;/li&gt;
-  &lt;li&gt;Mechanische Aktoren zum Greifen von Hexagons&lt;/li&gt;
-  &lt;li&gt;Antriebs-Plattform (Omnidrive)&lt;/li&gt;
-  &lt;li&gt;Regelung und Fahrtplanung&lt;/li&gt;
-  &lt;li&gt;Mechanische Fertigung (3D-Drucker und CNC-Fräse)&lt;/li&gt;
-  &lt;li&gt;Batterie-Management&lt;/li&gt;
-  &lt;li&gt;Autonome Roboter-Steuerung mit ROS2&lt;/li&gt;
-  &lt;li&gt;Lokalisierung (Kamera-basiert, Ultraschall-Indoor-Lokaliserung, ..)&lt;/li&gt;
-  &lt;li&gt;…&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Um dir einen guten Einstieg zu ermöglichen findet am&lt;/p&gt;
-
-&lt;h4 id=&quot;dienstag-den-26102021&quot;&gt;Dienstag, den 26.10.2021&lt;/h4&gt;
-
-&lt;p&gt;ein Einsteiger-Event statt.
-Dort zeigen wir dir unser Roboter und Projekte, und vermitteln dir eine
-Aufgabe oder ein Projekt im RCA.&lt;/p&gt;
-
-&lt;h3 id=&quot;weitere-information-unter-mach-mit&quot;&gt;Weitere Information unter: &lt;a href=&quot;/mach-mit/&quot;&gt;Mach mit&lt;/a&gt;&lt;/h3&gt;
-</description>
-            <pubDate>Fri, 15 Oct 2021 00:00:00 +0000</pubDate>
+            <pubDate>Sun, 11 Sep 2022 00:00:00 +0000</pubDate>
         </item>
         
         <item>
@@ -198,49 +238,14 @@ Thus all conversion results can be easily read one after the other in the time u
 Darum haben wir unsere Sachen gepackt und sind umgezogen.
 Ihr findet uns nun in der Melatener Straße 25 im zweiten Stock beim IHF.&lt;/p&gt;
 
+&lt;p&gt;&lt;img src=&quot;../../assets/img/raum-2021.jpg&quot; alt=&quot;Der neue Raum&quot; /&gt;&lt;/p&gt;
+
 &lt;p&gt;Wir danken sehr herzlich dem Institut für Theoretische Informationstechnik unter der Leitung von Prof. Mathar
 und der langjährigen Herberge unter seinem Dach.&lt;/p&gt;
 
 &lt;h3 id=&quot;weitere-information-unter-kontakt&quot;&gt;Weitere Information unter: &lt;a href=&quot;/kontakt/&quot;&gt;Kontakt&lt;/a&gt;&lt;/h3&gt;
 </description>
             <pubDate>Fri, 01 Nov 2019 00:00:00 +0000</pubDate>
-        </item>
-        
-        <item>
-            <title>! W A N T E D ! - Einsteiger</title>
-            <link>/blog/2019/wanted-einsteiger.html</link>
-            <guid isPermaLink="true">/blog/2019/wanted-einsteiger.html</guid>
-            <description>&lt;h2 id=&quot;du-willst-bei-uns-mitmachen-super&quot;&gt;Du willst bei uns mitmachen? Super!&lt;/h2&gt;
-
-&lt;p&gt;Für die kommende Eurobot-Wettbewerbs-Saison gibt es viel zu tun im
-Roboterclub und wir freuen uns, wenn du dich in einem der folgenden
-Bereichen engagieren möchtest:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Bildverarbeitung&lt;/li&gt;
-  &lt;li&gt;Funk-Kommunikation&lt;/li&gt;
-  &lt;li&gt;Mechanische Aktoren zum Greifen von Bechern&lt;/li&gt;
-  &lt;li&gt;Antriebs-Plattform (Omnidrive)&lt;/li&gt;
-  &lt;li&gt;Regelung und Fahrtplanung&lt;/li&gt;
-  &lt;li&gt;Mechanische Fertigung (3D-Drucker und CNC-Fräse)&lt;/li&gt;
-  &lt;li&gt;Batterie-Management&lt;/li&gt;
-  &lt;li&gt;Motor-Controller&lt;/li&gt;
-  &lt;li&gt;Autonome Roboter-Steuerung mit ROS2&lt;/li&gt;
-  &lt;li&gt;Ultraschall-Indoor-Lokalisierung&lt;/li&gt;
-  &lt;li&gt;…&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Um dir einen guten Einstieg zu ermöglichen findet am&lt;/p&gt;
-
-&lt;h4 id=&quot;dienstag-den-29102019-um-19h&quot;&gt;Dienstag, den 29.10.2019 um 19h&lt;/h4&gt;
-
-&lt;p&gt;ein Einsteiger-Event statt.
-Dort zeigen wir dir unser Roboter und Projekte, und vermitteln dir eine
-Aufgabe oder ein Projekt im RCA.&lt;/p&gt;
-
-&lt;h3 id=&quot;weitere-information-unter-mach-mit&quot;&gt;Weitere Information unter: &lt;a href=&quot;/mach-mit/&quot;&gt;Mach mit&lt;/a&gt;&lt;/h3&gt;
-</description>
-            <pubDate>Mon, 21 Oct 2019 00:00:00 +0000</pubDate>
         </item>
         
         <item>
@@ -888,6 +893,44 @@ Dieses Jahr steht der Eurobot unter dem Motto “Robot Cities”.&lt;/p&gt;
 &lt;p&gt;Wir haben schonmal einen neuen Allradantrieb konstruiert, hilf uns mit ihn zu bauen.&lt;/p&gt;
 </description>
             <pubDate>Mon, 23 Oct 2017 00:00:00 +0000</pubDate>
+        </item>
+        
+        <item>
+            <title>We are German champion 2017</title>
+            <link>/blog/2017/we-are-german-champion-2017.html</link>
+            <guid isPermaLink="true">/blog/2017/we-are-german-champion-2017.html</guid>
+            <description>&lt;p&gt;We are qualified for the international contest in France!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/2017/PR_Eurobot2017_Siegerfoto_Dresden.jpg&quot; alt=&quot;Eurobot 2017 Siegerfoto Dresden&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Our robots, Juri and Siggi, won nearly every game at the German Eurobot contest 2018 in Dresden.
+The competition was well organized by TURAG. Thank you for the great time!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/2017/Juri_Siggi_Rooftop_Back.jpg&quot; alt=&quot;Juri Siggi Rooftop Back&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We would like to thank our sponsors and supporters for their generous backing.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/2017/Juri_Siggi_Rooftop_Front.jpg&quot; alt=&quot;Juri Siggi Rooftop Front&quot; /&gt;&lt;/p&gt;
+</description>
+            <pubDate>Mon, 01 May 2017 00:00:00 +0000</pubDate>
+        </item>
+        
+        <item>
+            <title>We are German champion 2016</title>
+            <link>/blog/2016/we-are-german-champion-2016.html</link>
+            <guid isPermaLink="true">/blog/2016/we-are-german-champion-2016.html</guid>
+            <description>&lt;p&gt;We are qualified for the international contest in France!
+Our robots, Hassel and Hoff, won every game at the German Eurobot contest 2016 in Stuttgart.&lt;/p&gt;
+
+&lt;p&gt;The competition was well organized by VtAS. Thank you for the great time!&lt;/p&gt;
+
+&lt;p&gt;We would like to thank our sponsors for their generous support.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/2016/Foto2016StuttgartCropped.jpg&quot; alt=&quot;RCA in Stuttgart 2016&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/2016/2016HasselHoff.jpg&quot; alt=&quot;Roboter Hassel und Hoff&quot; /&gt;&lt;/p&gt;
+</description>
+            <pubDate>Tue, 03 May 2016 00:00:00 +0000</pubDate>
         </item>
         
     </channel>
