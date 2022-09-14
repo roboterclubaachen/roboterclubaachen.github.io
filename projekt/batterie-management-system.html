@@ -41,9 +41,9 @@
     
     <!-- seo tags -->
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Battery Management System | Roboterclub Aachen</title>
+<title>Power Distribution | Roboterclub Aachen</title>
 <meta name="generator" content="Jekyll v4.2.2" />
-<meta property="og:title" content="Battery Management System" />
+<meta property="og:title" content="Power Distribution" />
 <meta property="og:locale" content="de_DE" />
 <meta name="description" content="Zusammenfassung" />
 <meta property="og:description" content="Zusammenfassung" />
@@ -51,16 +51,16 @@
 <meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/batterie-management-system.html" />
 <meta property="og:site_name" content="Roboterclub Aachen" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-09-11T20:52:40+00:00" />
+<meta property="article:published_time" content="2022-09-14T13:16:55+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Battery Management System" />
+<meta property="twitter:title" content="Power Distribution" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-09-11T20:52:40+00:00","datePublished":"2022-09-11T20:52:40+00:00","description":"Zusammenfassung","headline":"Battery Management System","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/batterie-management-system.html"},"url":"http://www.roboterclub.rwth-aachen.de/projekt/batterie-management-system.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-09-14T13:16:55+00:00","datePublished":"2022-09-14T13:16:55+00:00","description":"Zusammenfassung","headline":"Power Distribution","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/batterie-management-system.html"},"url":"http://www.roboterclub.rwth-aachen.de/projekt/batterie-management-system.html"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
     <!--
-    <title>Battery Management System | Roboterclub Aachen</title>
+    <title>Power Distribution | Roboterclub Aachen</title>
     <meta name="description" content="Zusammenfassung">
     -->
 </head>
@@ -159,19 +159,20 @@
     <div class="content">
       <article class="feature-image">
   <header id="main" style="background-image: url('/assets/img/projektbeschreibungen/bms.jpg');background-position: center;">
-    <h1 id="Battery+Management+System" class="title">Battery Management System</h1>
+    <h1 id="Power+Distribution" class="title">Power Distribution</h1>
   </header>
   <section class="post-content post-content-text">
   <hr>
-<p>Neuentwurf des BMS (Battery Management System), das im Roboter die zentrale Komponente für Stromversorgung und Verteilung darstellt</p>
+<p>Neuentwurf des Power Distribution Board für zwei Akkus, höhere Ströme und ggf. höhere Spannungen</p>
 
   <hr>
 <h2 id="zusammenfassung">Zusammenfassung</h2>
 
-<p>Der Roboter wird von zwei möglich Stromquellen – einem externen Netzteil oder dem austauschbaren LiFe-Akku mit 6 Zellen – versorgt.
-Die ausgewählte Spannung wird entweder direkt weitergeleitet, oder zunächst umgewandelt.
-Maßgeblich ist die erzeugte 12V Spannung. Diese ist sowohl die Versorgungsspannungen für einen zu versorgenden Industrie PC,
-als auch die Zwischenspannung aus der 5-7V Logikspannung und die benötigten On-Board Spannungen generiert werden.</p>
+<p>Der Roboter wird von bis zu drei möglich Stromquellen – einem externen Netzteil und ein oder zwei austauschbaren LiFe-Akkus mit 6 Zellen – versorgt.
+Die ausgewählte Stromquellen wird, geschaltet und konfigurierbar abgesichert für die Aktorik an mehreren Ausgängen zu Verfügung gestellt.
+Außerdem wird aus der Eingangsspannung die Logikversorgung (12V) für alle Steuerelektronik und Computer mittels Schaltregler erzeugt
+und an mehreren individuell abgesicherten Ausgängen zur Verfügung gestellt.
+Für die Aktorikversordung soll zudem eine Precharge-Schaltung implementiert werden.</p>
 
 <p>Als Features sollen ein Kurzschlussschutz und eine Spannungsüberwachung an allen Ausgängen implementiert werden.
 Auch die Batterie muss natürlich überwacht werden.
@@ -180,11 +181,11 @@ Wichtige Informationen aus dem Betrieb sollen auf dem CAN Bus ausgegeben werden.
 
 <h2 id="aufgabenstellung">Aufgabenstellung</h2>
 
-<p>Der Schaltplan für das BMS ist größtenteils abgeschlossen, ebenso gibt es einen Entwurf für ein Layout.
+<p>Der Schaltplan für das Power-Distribution ist in Arbeit, danach steht das Layout an.
 Konkret sind folgende Aufgaben zu erledigen:</p>
 
 <ul>
-  <li>Review des Layout einer 4-Layer Platine in KiCAD, Herausforderungen dabei sind die Anforderungen an Größe, EM-Verträglichkeit und vor allem Stromfestigkeit</li>
+  <li>Layout einer 4-Layer Platine in Kicad, Herausforderungen dabei sind die Anforderungen an Größe, EM-Verträglichkeit und vor allem Stromfestigkeit</li>
   <li>Aufbau der gefertigten Platine, inklusive Test unter Last</li>
 </ul>
 
@@ -193,30 +194,23 @@ Die Komplexität dieses Projekts ist allerdings nicht so hoch, dass nicht auch A
 
 <h2 id="geplante-kenndaten">Geplante Kenndaten</h2>
 <ul>
-  <li>20V Motorspannung bis zu 20A</li>
-  <li>12V Gerätepannung bis zu 10A</li>
-  <li>7V Logikspannung bis zu  5A</li>
-  <li>On-Board Spannung, herausgeführt</li>
+  <li>Eingangspannung aus zwei Akkus (18.8V nominell) und/oder einem Netzteil</li>
+  <li>Option: höhere Eingangspannung (ca. 40V) aus zwei seriellen Akkus</li>
+  <li>Motorspannung mit 50A</li>
+  <li>12V Logikspannung mit 10A</li>
   <li>Kurzschlussschutz</li>
   <li>Über/Unterspannungsschutz</li>
   <li>Akku Überwachung</li>
   <li>CAN-Interface</li>
-  <li>Not-Aus Schalter nicht im Strompfad</li>
-</ul>
-
-<h2 id="optionale-features">Optionale Features</h2>
-
-<ul>
-  <li>Rekuperation aus dem Motorstrompfad</li>
-  <li>Visueller Batteriestandindikator</li>
-  <li>Stromversorgung für USB</li>
-  <li>Fortgeschrittene SoC und SoH Abschätzung</li>
+  <li>Integration Not-Aus (mechanischer Schalter nicht im Strompfad)</li>
 </ul>
 
 
 
 <h2>Referenzen und Links</h2>
 <ul>
+
+
 
 </ul>
   </section>
@@ -227,14 +221,14 @@ Die Komplexität dieses Projekts ist allerdings nicht so hoch, dass nicht auch A
         <div class="meta">Teilen</div>
          
         <li>
-            <a href="https://twitter.com/intent/tweet?source=http://www.roboterclub.rwth-aachen.de/projekt/batterie-management-system.html&text=Battery Management System%20%7C%20Roboterclub Aachen:%20http://www.roboterclub.rwth-aachen.de/projekt/batterie-management-system.html" target="_blank" title="Twittern">
+            <a href="https://twitter.com/intent/tweet?source=http://www.roboterclub.rwth-aachen.de/projekt/batterie-management-system.html&text=Power Distribution%20%7C%20Roboterclub Aachen:%20http://www.roboterclub.rwth-aachen.de/projekt/batterie-management-system.html" target="_blank" title="Twittern">
 			<i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Twittern</span>
 		</a>
         </li>
                 
         <li>
-            <a href="mailto:?subject=Battery Management System%20%7C%20Roboterclub Aachen&body=:%20http://www.roboterclub.rwth-aachen.de/projekt/batterie-management-system.html" target="_blank" title="Email">
+            <a href="mailto:?subject=Power Distribution%20%7C%20Roboterclub Aachen&body=:%20http://www.roboterclub.rwth-aachen.de/projekt/batterie-management-system.html" target="_blank" title="Email">
 			<i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Email</span>
 		</a>
