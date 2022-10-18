@@ -5,7 +5,37 @@
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
         <link>http://www.roboterclub.rwth-aachen.de/</link>
         <description></description>
-        <pubDate>Sun, 09 Oct 2022 13:07:48 +0000</pubDate>
+        <pubDate>Tue, 18 Oct 2022 14:52:58 +0000</pubDate>
+        
+        <item>
+            <title>Eurobot Deutschland 2022</title>
+            <link>/blog/2022/eurobot-germany-2022.html</link>
+            <guid isPermaLink="true">/blog/2022/eurobot-germany-2022.html</guid>
+            <description>&lt;p&gt;Obwohl das internationale Finale des Eurobts in Frankreich bereits vorbei ist, 
+fand der deutsche Eurobot Wettbewerb vom 08-09.10.2022 bei uns in Aachen statt. 
+Mit uns haben das Team MAI aus Markt Indersdorf,
+das Team M.A.M.U.T. Robotics der THM Gießen
+und das Team TURAG aus Dresden teilgenommen.
+Bei diesem Wettbewerb ging es nicht wie sonst üblich um eine Qualifikation für das Finale in Frankreich, 
+sondern um das Wiederaufleben des Eurobots in Deutschland nach zwei Jahren Corona Pause.
+In sechs Vorrunden und einem Finalspiel nach dem Konzept der &lt;em&gt;Double Elimination&lt;/em&gt;,
+konnten die Teams mit ihren Robotern gegeneinander antreten. 
+Dabei konnte jedes Team die Fähigkeiten seines Roboters mehrfach demonstrieren und von Runde zu Runde seinen Roboter optimieren.
+Im Finale spielten wir gegen das Team TURAG und konnten mit zwei direkten Siegen im &lt;em&gt;Best-of-Three&lt;/em&gt;-Modus den Eurobot Deutschland gewinnen.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/2022/2022-10-eurobot-ger-ac-DSC05264_.JPG&quot; alt=&quot;Team Foto; Erster und Zweiter Platz (RCA, TURAG)&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Neben dem Eurobotwettbewerb gab es noch einen &lt;em&gt;Technical Innovation Contest&lt;/em&gt;,
+bei welchem die Teams technische Problemstellungen und deren Umsetzungen an ihren Robotern präsentieren durften. 
+Bewertet wurden die Teams von einem Gremium aus drei externen Expertinnen und Experten aus den Bereichen Mechatronik,
+Wirtschaft und Mensch Maschine Interaktion. 
+Den Kontest konnte das Team TURAG für sich entscheiden durch ihre innovative Nutzung von Bilderkennung.
+Der Deutsche Eurobot Wettbewerb 2023 soll aller Voraussicht nach in Dresden von der TURAG ausgerichtet werden.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/2022/2022-10-eurobot-ger-ac-DSC05270_.JPG&quot; alt=&quot;Roboter aller teilgenommenen Teams&quot; /&gt;&lt;/p&gt;
+</description>
+            <pubDate>Sun, 09 Oct 2022 00:00:00 +0000</pubDate>
+        </item>
         
         <item>
             <title>Saisonrückblick 2022</title>
@@ -913,24 +943,6 @@ The competition was well organized by TURAG. Thank you for the great time!&lt;/p
 &lt;p&gt;&lt;img src=&quot;/assets/img/blog/2017/Juri_Siggi_Rooftop_Front.jpg&quot; alt=&quot;Juri Siggi Rooftop Front&quot; /&gt;&lt;/p&gt;
 </description>
             <pubDate>Mon, 01 May 2017 00:00:00 +0000</pubDate>
-        </item>
-        
-        <item>
-            <title>We are German champion 2016</title>
-            <link>/blog/2016/we-are-german-champion-2016.html</link>
-            <guid isPermaLink="true">/blog/2016/we-are-german-champion-2016.html</guid>
-            <description>&lt;p&gt;We are qualified for the international contest in France!
-Our robots, Hassel and Hoff, won every game at the German Eurobot contest 2016 in Stuttgart.&lt;/p&gt;
-
-&lt;p&gt;The competition was well organized by VtAS. Thank you for the great time!&lt;/p&gt;
-
-&lt;p&gt;We would like to thank our sponsors for their generous support.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/2016/Foto2016StuttgartCropped.jpg&quot; alt=&quot;RCA in Stuttgart 2016&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/2016/2016HasselHoff.jpg&quot; alt=&quot;Roboter Hassel und Hoff&quot; /&gt;&lt;/p&gt;
-</description>
-            <pubDate>Tue, 03 May 2016 00:00:00 +0000</pubDate>
         </item>
         
     </channel>
