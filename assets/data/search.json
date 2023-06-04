@@ -535,6 +535,18 @@
    
      {
        
+          "title"    : "Projekt: Klappspielfeld",
+          "category" : "Projekt",
+          "tags"     : " mechanik",
+          "url"      : "/projekt/Klappspielfeld.html",
+          "date"     : "June 4, 2023",
+          "excerpt"  : "Transportables Spielfeld ",
+          "content"  : "<h2 id=\"zusammenfassung\">Zusammenfassung</h2>\n<p>Um während der Wettbewerbe unseren Roboter weiterhin optimal testen zu können, ist ein transportables Spielfeld, welches wir überall hin mitnehmen können, essentiell. Das Spielfeld ist 2 mal 3 Meter groß und besitzt Halterungen für weitere Komponenten an allen Seiten.  Für einen schnellen Auf- und Abbau muss  Spielfeld schnell zerlegbar und einfach zu transportieren sein. Das zerlegte Spielfeld soll in einen Kombi Autokofferaum passen ohne diesen komplett auszufüllen. Die Spielfeldoberfläche hingegen sollte möglichst wenig Kanten aufweisen.</p>\n\n<h2 id=\"tätigkeitsfelder-und-technologien\">Tätigkeitsfelder und Technologien</h2>\n<ul>\n  <li>CAD Entwicklung und Konstruktion in AUtodesk Inventor</li>\n  <li>Arbeiten mit Holz</li>\n</ul>\n"
+       
+     } ,
+   
+     {
+       
           "title"    : "Projekt: Laserscanner-Positionierung",
           "category" : "Projekt",
           "tags"     : " software",
