@@ -613,7 +613,7 @@
           "url"      : "/projekt/octoprint-verbesserungen.html",
           "date"     : "June 4, 2023",
           "excerpt"  : "Verbesserungen des Octoprint setups durch plugins usw.",
-          "content"  : "<h2 id=\"zusammenfassung\">Zusammenfassung</h2>\n\n<p>Unser 3D-Drucker ist an einen Raspberry Pi angeschlossen und ein basis Octoprint\nist aufgesetzt. An diesem System soll nun die Software sowie möglicherweise auch\ndie Hardware verbessert werden.</p>\n\n<p>Interessante plugins sind zum beispiel Thumbnais[3], eine Que [4] und auch\nein Filament manager [5].</p>\n\n<p>Weitere möglichkeiten können evaluiert werden wie zum beispiel die möglichkeit\nteile des Druckes abzubreichen, ohne dabei den Gesamtdruck zu beinflussen.</p>\n\n<h2 id=\"tätigkeitsfelder-und-technologien\">Tätigkeitsfelder und Technologien</h2>\n<ul>\n  <li>3D-Druck</li>\n  <li>Octoprint</li>\n</ul>\n"
+          "content"  : "<h2 id=\"zusammenfassung\">Zusammenfassung</h2>\n\n<p>Unser 3D-Drucker ist an einen Raspberry Pi angeschlossen und ein basis Octoprint\nist aufgesetzt. An diesem System soll nun die Software sowie möglicherweise auch\ndie Hardware verbessert werden.</p>\n\n<p>Interessante plugins sind zum beispiel Thumbnais[3], eine Que [4] und auch\nein Filament manager [5].</p>\n\n<p>Weitere Features können evaluiert werden wie zum Beispiel die Möglichkeit\nTeile des Druckes abzubreichen, ohne dabei den Gesamtdruck zu beinflussen.</p>\n\n<h2 id=\"tätigkeitsfelder-und-technologien\">Tätigkeitsfelder und Technologien</h2>\n<ul>\n  <li>3D-Druck</li>\n  <li>Octoprint</li>\n</ul>\n"
        
      } ,
    
