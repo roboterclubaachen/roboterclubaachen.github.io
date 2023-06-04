@@ -188,6 +188,18 @@
 
   <url>
 	<!-- project -->
+    <loc>http://www.roboterclub.rwth-aachen.de/projekt/baken-neuaufbau-elektronik.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://www.roboterclub.rwth-aachen.de/projekt/baken-neuaufbau-mechanik.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
     <loc>http://www.roboterclub.rwth-aachen.de/projekt/batterie-management-system.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -381,6 +393,12 @@
   <url>
 	<!-- project -->
     <loc>http://www.roboterclub.rwth-aachen.de/projekt/motor-commutation.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+	<!-- project -->
+    <loc>http://www.roboterclub.rwth-aachen.de/projekt/octoprint-verbesserungen.html</loc>
     <changefreq>monthly</changefreq>
   </url>
 
