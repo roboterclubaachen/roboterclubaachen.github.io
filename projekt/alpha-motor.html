@@ -51,11 +51,11 @@
 <meta property="og:url" content="http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html" />
 <meta property="og:site_name" content="Roboterclub Aachen" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-06-05T19:11:00+00:00" />
+<meta property="article:published_time" content="2023-06-05T20:18:50+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Alpha-Motor (V2)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-06-05T19:11:00+00:00","datePublished":"2023-06-05T19:11:00+00:00","description":"Zusammenfassung","headline":"Alpha-Motor (V2)","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html"},"url":"http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-06-05T20:18:50+00:00","datePublished":"2023-06-05T20:18:50+00:00","description":"Zusammenfassung","headline":"Alpha-Motor (V2)","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html"},"url":"http://www.roboterclub.rwth-aachen.de/projekt/alpha-motor.html"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
@@ -159,7 +159,7 @@
   <hr>
 <h2 id="zusammenfassung">Zusammenfassung</h2>
 
-<p>Eines der wichtigsten Elemente in unserem Roboter nennen wir ganz bescheiden den Alpha-Motor. Der Alpha-Motor ist eine Platine die in erster Linie zwei Funktionen erfüllt: Ansteuerung und Regelung von ein bis zwei Motoren und das Auslesen von Encodern für die Odometrie.</p>
+<p>Eines der wichtigsten Elemente in unserem Roboter nennen wir ganz bescheiden den Alpha-Motor. Der Alpha-Motor ist eine Platine die in erster Linie zwei Funktionen erfüllt: Ansteuerung und Regelung von ein bis zwei Motoren und das Auslesen von Encodern für die Odometrie. Bisher hat uns die Platine gute Dienste geleistet und ist auch in Zukunft vor allem für Antriebsräder interessant, da zwei Motoren zu koordinieren auf einer Platine einfacher ist als auf zwei.</p>
 
 <p>Jede Platine verfügt dazu über ein Setup, das sowohl DC-Motoren als auch dreiphasige Brushless-DC Motoren oder einen Mix der beiden unterstützt.
 Verbaut sind dementsprechend sechs Halb-Brücken aus jeweils zwei Leistungstransistoren, die von drei Brückentreibern kontrolliert werden.
@@ -169,8 +169,9 @@ Zusätzlich wird durch den Mikrocontroller der Strom in den Motoren überwacht, 
 
 <h2 id="aufgabenstellung">Aufgabenstellung</h2>
 
-<p>Der Schaltplan für den Alpha-Motor V2 ist bereits abgeschlossen, es fehlt allerdings noch alles, was aus diesem Plan eine echte Platine macht. Konkret sind folgende Aufgaben zu erledigen:</p>
+<p>Der Schaltplan für den Alpha-Motor V2 ist bereits fast abgeschlossen, es fehlt allerdings noch alles, was aus diesem Plan eine echte Platine macht. Konkret sind folgende Aufgaben zu erledigen:</p>
 <ul>
+  <li>Anpassung des Designs an die aktuelle Verfügbarkeit von Bauteilen</li>
   <li>Layout einer 4-Layer Platine in KiCAD, Herausforderungen dabei sind die Anforderungen an Größe, Stromfestigkeit, Signalintegrität und EM-Verträglichkeit</li>
   <li>Aufbau der gefertigten Platine, das heißt bestücken und anschließendes Reflow-Löten in unserem Ofen</li>
   <li>Anpassen der bestehenden Software (C++) an den neuen Microcontroller, vor allem Änderungen in der Peripherie des verwendeten STM32</li>
@@ -185,8 +186,8 @@ Zusätzlich wird durch den Mikrocontroller der Strom in den Motoren überwacht, 
   <li>ca. 20A pro Phase in der Spitze</li>
   <li>20V Betriebsspannung (Akku) -&gt; 40V Auslegung</li>
   <li>Mikrocontroller STM32G474 (vorher: STM32F407)</li>
-  <li>2x CAN-Bus mit 4 Steckern, 1 UART, (vorher:zusätzlich 1 SPI/I2C)</li>
-  <li>Anschlüsse für zwei (vorher: vier) AB-Encoder (vorher: inklusive UART 1-Wire)</li>
+  <li>2x CAN-Bus mit 4 Steckern, 1 UART, (vorher: zusätzlich 1 SPI/I2C)</li>
+  <li>Anschlüsse für vier AB-Encoder (vorher: inklusive UART 1-Wire)</li>
   <li>Anschlüsse für 2 Hall-Sensoren</li>
   <li>Strommessung und Strombegrenzung</li>
   <li>LEDs für Software-Status &amp; Encoderstatus</li>
