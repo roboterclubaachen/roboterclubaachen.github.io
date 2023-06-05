@@ -679,6 +679,18 @@
    
      {
        
+          "title"    : "Projekt: ROS2 Architektur erweitern",
+          "category" : "Projekt",
+          "tags"     : " software",
+          "url"      : "/projekt/ros2-erweiterungen.html",
+          "date"     : "June 5, 2023",
+          "excerpt"  : "Unsere ROS2 Architektur muss laufend erweitert und angepasst werden, um neue Packages und Funktionalitäten integrieren zu können.",
+          "content"  : "<h2 id=\"zusammenfassung\">Zusammenfassung</h2>\n<p>Aktuell nutzen wir für unsere Robotersoftware ROS2 mit Python und C++. Für die ROS2 Packages, die für die Spielablaufsteuerung zuständig sind, benutzen wir Python, für die hardwarenahen ROS2 Nodes C++. Jede Saison muss die Spielablaufsteuerung und die Spielstrategie and die Saison aktuellen Regeln angepasst werden. Dies beinhaltet unter anderem auch das Integrieren der Ansteuerung neuer Hardwarekomponenten. Des weiteren werden Subsysteme, wie Positionserkennung, Gegnererkennung, Spielelementeerkennung saisonsunabhängig laufend weiter entwickelt und die benutzten Technologien geupdated. Diese Änderungen müssen in das ROS2 System übernommen und in bestehende Software integriert werden.\nWir streben an, in der nächsten Saison mit zwei Robotern anzutreten, was ROS-seitig noch zu implementieren ist.</p>\n\n<h3 id=\"featuresideen\">Features/Ideen:</h3>\n<ul>\n  <li>Beschleunigung der Kommunikation zwischen den einzelnen ROS2 Nodes</li>\n  <li>Kommunikation und Informationsaustausch zwischen mindestens zwei Agenten</li>\n</ul>\n\n<h2 id=\"tätigkeitsfelder-und-technologien\">Tätigkeitsfelder und Technologien</h2>\n<ul>\n  <li>ROS2 Humble</li>\n  <li>Python</li>\n  <li>C++</li>\n  <li>Linux</li>\n</ul>\n"
+       
+     } ,
+   
+     {
+       
           "title"    : "Projekt: Robot State Estimation",
           "category" : "Projekt",
           "tags"     : " software",
