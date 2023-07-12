@@ -5,7 +5,105 @@
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
         <link>http://www.roboterclub.rwth-aachen.de/</link>
         <description></description>
-        <pubDate>Tue, 13 Jun 2023 19:52:19 +0000</pubDate>
+        <pubDate>Wed, 12 Jul 2023 17:54:32 +0000</pubDate>
+        
+        <item>
+            <title>Saisonrückblick 2023</title>
+            <link>/blog/2023/season-2023.html</link>
+            <guid isPermaLink="true">/blog/2023/season-2023.html</guid>
+            <description>&lt;p&gt;Auch im Jahr 2023 wollen wir die nun beendete Saison resümieren.
+Der Roboterclub kann auf einen deutlichen personellen Zuwachs und damit neuen Teamspirit zurückblicken.
+Wie üblich haben wir dieses Jahr einen neuen Roboter konstruiert und von Grund auf neu gebaut.&lt;/p&gt;
+
+&lt;p&gt;Dürfen wir vorstellen: Antoinette&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/2023/antoinette-20230518_173951.jpg&quot; alt=&quot;Roboter 2023 Antoinette&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;mechanik&quot;&gt;Mechanik&lt;/h3&gt;
+
+&lt;p&gt;Im Vergleich zum Vorjahr hat sich einiges geändert.
+Antoinette ist dieses Jahr mit einem Differentialantrieb ausgestattet.
+Zwei große getriebene Räder mit zwei Omniwheels als Stützräder bilden die Basis des Antriebsstrangs.&lt;/p&gt;
+
+&lt;p&gt;Um mit den diesjährige Spielelementen interagieren zu können ist,
+Antoinette auf der Vorderseite mit einem Greifer ausgestattet,
+der die Kuchenscheiben greifen und anschließend mit einem Aufzugsmechanismus anheben kann.
+Die Kuchenscheiben sollen so auf die Stangen des Sortiermechanismus geschoben werden.
+Diese sind dazu gedacht im Ablegeprozess die richtige Reihenfolge der Kuchen für das &lt;em&gt;Legendary Recipe&lt;/em&gt;,
+ganz unten der dunklen Kuchenboden, gefolgt von der gelben Buttercremescheibe und obendrauf die rosa &lt;em&gt;Toppingscheibe&lt;/em&gt;, zu realisieren.
+Zusätzlich ist im Roboter ein Kirschenportionier-Mechanismus verbaut,
+der es mit nur einem Motor erlaubt eine einzelne Kirsche zum Schluss des Absetzens auf dem fertigen Kuchen zu platzieren.&lt;/p&gt;
+
+&lt;p&gt;Der spaßigste Mechanismus am diesjährigen Roboter ist wahrscheinlich die &lt;em&gt;Cherry-Kanone&lt;/em&gt;.
+Um uns einige Extrapunkte sichern zu können haben wir kurzfristig vorm Wettbewerb noch einen durch eine Feder getrieben Schussmechanismus überlegt,
+der eine Kirsche zu Spielbeginn in den am Spielfeldrand stehenden Korb befördert.
+Den finalen Touch hat Antoinette durch die zweifarbige LED-Beleuchtung, in grün-blau, erhalten.&lt;/p&gt;
+
+&lt;h2 id=&quot;elektronik&quot;&gt;Elektronik&lt;/h2&gt;
+
+&lt;p&gt;Antoinette ist auch dieses Jahr fast ausschließlich mit selbstdesignten Platinen versehen.
+Ausnahme bildet hier das UP2-Board von Intel, welches diese Saison erstmalig verbaut wurde.
+Abgesehen davon wurden die Mikro-Motoren der zweiten Generation für alle Motoren verbaut,
+sowie das neue BMS, welches diese Saison nur teilweise in Benutzung war.
+Dies ermöglichte uns den Roboter wie auch zuvor über einen 6S-LiFe-Akku oder alternativ über das Netzteil mit dem nötigen Strom zu versorgen.
+Die größte Neuerung stellt die Kamera dar, die am Spielfeldrand in etwa einem Meter Höhe angebracht ist.
+Diese soll die &lt;em&gt;ArUco-Marker&lt;/em&gt;, die auf den Gegnerrobotern sowie den Spielelementen abgedruckt sind, erkennen und auf dem Spielfeld tracken.&lt;/p&gt;
+
+&lt;h2 id=&quot;software&quot;&gt;Software&lt;/h2&gt;
+
+&lt;p&gt;Diese Saison wurde nun der Schritt gewagt auf ROS2 (Robot Operating System) umzusteigen.
+Zum Testen und Entwickeln läuft ROS2 Humble Hawksbill in einem Dockercontainer auf dem UP2-Board.
+Der ROS2 Softwarestack stellt die zentrale Steuereinheit des Roboters dar und
+ist unter anderem für die Routenplanung, Sensorauswertung und Ausführung der Spielstrategie zuständig.
+Die Motorsteuerung in C++ basiert auf dem Embedded-Framework modm aus den vorherigen Jahren, die für die aktuellen Mikromotoren weiterentwickelt wurde.
+Um die Kommunikation zwischen der ROS2 basierten Spielsteuerung, dem Antrieb, und den Aktoren zu ermöglichen,
+wurde eine &lt;em&gt;canOpen&lt;/em&gt;  Schnittstelle implementiert.
+Das altbewährte Lokalisierungssystem per Ultraschallsensoren und IMU,
+welches noch das &lt;em&gt;Xpcc&lt;/em&gt; Protokoll über CAN aus dem &lt;em&gt;modm&lt;/em&gt; Framework nutzt, wurde ebenfalls an ROS2 angebunden.
+Bei Spielstrategie und Routenplanung wurde vor allem Wert auf Wiederverwendbarkeit gelegt,
+um eine Anpassung an die Regeln der kommenden Saison zu ermöglichen,
+sowie um neue Features, wie visuelle Spielelemente-Erkennung, einfach einbinden zu können.&lt;/p&gt;
+
+&lt;h2 id=&quot;wettbewerbe&quot;&gt;Wettbewerbe&lt;/h2&gt;
+
+&lt;p&gt;Der Roboterclub hat dieses Jahr an den Wettbewerben in Deutschland und dem Finale in Frankreich mit jeweils zwölf Mitgliedern teilgenommen.&lt;/p&gt;
+
+&lt;h3 id=&quot;vorentscheid-deutschland&quot;&gt;Vorentscheid Deutschland&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/2023/eurobot-2023-d-IMG_20230423_161521751.jpg&quot; alt=&quot;Season 2023 Teamfoto Dresden&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Am 21. und 22. April hat der Roboterclub am deutschen Vorentscheid in Dresden teilgenommen, welcher von der TURAG vorort organisiert wurde.
+Am Freitag vor dem Wettbewerb wurde bereits angereist, um weiter am Roboter arbeiten zu können.
+Leider war der Roboter Antoinette noch nicht soweit, als das wir mit ihr in Dresden antreten konnten.
+Daher musste der Roboter &lt;em&gt;Wanda&lt;/em&gt; der letzten Saison noch einmal genutzt werden.
+Hinzu kam ein Problem mit fehlerhaften Bauteilen in unserem Lokalisierungssystem, was zu einem arbeitsreichen Samstag führte.
+Allerdings konnten am Samstagabend sowohl Antoinette ihre ersten Fahrmanöver ausüben als auch Wanda Spiele bestreiten.
+Dadurch konnten wir uns in der Finalrunde am Sonntag mit dem dritten PLatz für das Finale in Frankreich qualifizieren.&lt;/p&gt;
+
+&lt;h3 id=&quot;internationales-finale-frankreich&quot;&gt;Internationales Finale Frankreich&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/2023/team-tbd.jpg&quot; alt=&quot;Season 2023 Teamfoto Frankreich&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Vom 17. bis 20. Mai fand das Eurobotfinale in La Roche-sur-Yon statt.
+Über vier Tagen haben wir mit Hochdruck an dem Roboter Antoinette gearbeitet und konnten letztendlich auch das letzte Spiel mit ihr bestreiten.
+Dafür wurde teilweise komplett auf Schlaf verzichtet, was mit Platz 11 von 25 nach den Vorrunden belohnt wurde.
+Bei den Spielen davor wurde noch einmal auf den Roboter Wanda zurückgegriffen.
+Dabei stellte sich heraus, dass unser Lokalisierungssystem sehr anfällig gegenüber LIDAR-Sensoren anderer Roboter ist,
+was die Positionsgenauigkeit massiv beeinflusste.
+Weiterhin wurden die beiden Roboter noch um einen sogenannten &lt;em&gt;Disguise-Mechanismus&lt;/em&gt; aufgerüstet,
+welcher den Roboter kurz vor Spielende ausleuchtet.
+Zur Beleuchtung wurde eine unserer Runetag-Platinen zweckentfremdet.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/img/blog/2023/wanda-glowing-20230519_143017-cut.jpg&quot; alt=&quot;Zweiter Roboter 2023 Wanda angeleuchtet&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Alles in allem war die Saison ein großer Erfolg.
+Wir konnten mit einem weitgehend neuen Team, einen komplett neuen Roboter in kurzer Zeit bauen, der an einem Wettbewerb partizipieren konnte.
+Dabei haben wir endlich den Umstieg auf ROS2 absolvieren können.
+Hinzu hat das Team sehr viel gelernt und bereits viele neue Ideen für Verbesserungen entwickelt.
+Und natürlich am wichtigsten, alle hatten sehr viel Spaß dabei!&lt;/p&gt;
+</description>
+            <pubDate>Tue, 11 Jul 2023 00:00:00 +0000</pubDate>
+        </item>
         
         <item>
             <title>Eurobot Deutschland 2022</title>
@@ -923,26 +1021,6 @@ Dieses Jahr steht der Eurobot unter dem Motto “Robot Cities”.&lt;/p&gt;
 &lt;p&gt;Wir haben schonmal einen neuen Allradantrieb konstruiert, hilf uns mit ihn zu bauen.&lt;/p&gt;
 </description>
             <pubDate>Mon, 23 Oct 2017 00:00:00 +0000</pubDate>
-        </item>
-        
-        <item>
-            <title>We are German champion 2017</title>
-            <link>/blog/2017/we-are-german-champion-2017.html</link>
-            <guid isPermaLink="true">/blog/2017/we-are-german-champion-2017.html</guid>
-            <description>&lt;p&gt;We are qualified for the international contest in France!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/2017/PR_Eurobot2017_Siegerfoto_Dresden.jpg&quot; alt=&quot;Eurobot 2017 Siegerfoto Dresden&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Our robots, Juri and Siggi, won nearly every game at the German Eurobot contest 2018 in Dresden.
-The competition was well organized by TURAG. Thank you for the great time!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/2017/Juri_Siggi_Rooftop_Back.jpg&quot; alt=&quot;Juri Siggi Rooftop Back&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;We would like to thank our sponsors and supporters for their generous backing.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/2017/Juri_Siggi_Rooftop_Front.jpg&quot; alt=&quot;Juri Siggi Rooftop Front&quot; /&gt;&lt;/p&gt;
-</description>
-            <pubDate>Mon, 01 May 2017 00:00:00 +0000</pubDate>
         </item>
         
     </channel>
